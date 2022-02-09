@@ -1,0 +1,40 @@
+USE [notificacion]
+GO
+
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_Area;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_TipoMovimiento;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_Etapa;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_Estado;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_TipoEscrito;
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TipoMovimiento]') AND type in (N'U'))
+DROP TABLE [dbo].[TipoMovimiento]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Area]') AND type in (N'U'))
+DROP TABLE [dbo].[Area]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Etapa]') AND type in (N'U'))
+DROP TABLE [dbo].[Etapa]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Estado]') AND type in (N'U'))
+DROP TABLE [dbo].[Estado]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Rol]') AND type in (N'U'))
+DROP TABLE [dbo].[Rol]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TipoEscrito]') AND type in (N'U'))
+DROP TABLE [dbo].[TipoEscrito]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ve_Notificacion]') AND type in (N'U'))
+DROP TABLE [dbo].[Ve_Notificacion]
+GO
