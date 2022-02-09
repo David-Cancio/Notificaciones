@@ -5,8 +5,8 @@
     padding: 30px;
     min-height: 100%;
     min-width: 100%;
-}*/
-.listado{
+}
+table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
@@ -17,27 +17,27 @@
     font-weight: 900;
     line-height: 2;
 }
-.listado thead th:nth-child(1) {
+thead th:nth-child(1) {
     width: 30%;
 }
-.listado thead th:nth-child(2) {
+thead th:nth-child(2) {
     width: 20%;
 }
-.listado thead th:nth-child(3) {
+thead th:nth-child(3) {
     width: 15%;
 }
-.listado thead th:nth-child(4) {
+thead th:nth-child(4) {
     width: 35%;
 }
-.listado th, td {
+th, td {
     padding: 20px;
 }
-.listado tbody tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
     background-color: #FAE887;
 }
-.listado tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: #F6FAC4;
-}/*
+}
 .inputTablas {
     border-radius: 5px;
     background-color: #EBEBEB;
@@ -181,4 +181,4 @@ h2{
 }
 h3{
     padding: 10px;
-}
+}*/
