@@ -1,19 +1,19 @@
-<!--#include file="../Partials/Utf8Asp.asp"-->
+<!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
         dim conexion
         dim area
         set conexion=Server.CreateObject("ADODB.Connection")
         set area = Server.CreateObject("ADODB.RecordSet")
         %>
-        <!--#include file="../connectionSQL.asp"-->
+        <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
         area.open "select * from Area",conexion
         %>
 <html>
-    <!--#include file="../Partials/Head.asp"-->
+    <!--#include virtual="/Partials/Head.asp"-->
 <body>
-    <!--#include file="../Partials/Header.asp"-->
+    <!--#include virtual="/Partials/Header.asp"-->
     <div>
         <h1>Área</h1>
         <%
@@ -36,13 +36,13 @@
                 <th colspan="3"><%response.write(area("Area_Descripcion"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarArea.asp" method="post">
-                        <input type="text" name="Area_Codigo" value="<%response.write(area("Area_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos del Área">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarArea.asp" method="post">
-                        <input type="text" name="Area_Codigo" value="<%response.write(area("Area_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine esta Área">
                     </form>
                 </th>
@@ -52,17 +52,17 @@
             loop
             %>
         </table>
-        <form action="./Agregar/IngresoNuevaArea.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue una nueva Área">
-        </form>
         <%
         else
         %>
-        <h3>Aún no hay ninguna Materia</h3>
+        <h3>Aún no hay ningun Área</h3>
         <%
         end if
         conexion.close
         %>
+        <form action="./Agregar/IngresoNuevoArea.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue una nueva Área">
+        </form>
     </div>
 </body>
    <!--#include virtual="Partials/ScriptBootstrap.asp"-->

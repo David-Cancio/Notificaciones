@@ -8,10 +8,10 @@ set area = Server.CreateObject("ADODB.RecordSet")
 <!--#include virtual="/connectionSQL.asp"-->
 <%conexion.open
 dim area_nombre
-dim area_codigo
+dim id
 dim area_descripcion
 area_nombre=Request.form("area_nombre")
-area_codigo=Request.form("area_codigo")
+id=Request.form("id")
 area_descripcion=Request.form("area_descripcion")
 if area_nombre="" Then
 %>

@@ -6,11 +6,11 @@
             set area = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
-        <!--#include virtual="/Partials/RecuperarAreaCodigo.asp"-->
+        <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select * from area where Area_Codigo='"&area_codigo&"'",conexion
-            if materia.eof then
+            area.open "select * from area where Area_Codigo='"&id&"'",conexion
+            if area.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -23,7 +23,7 @@
 
     <div>
         <form action="ModificarArea.asp" method="post">
-            <input type="text" name="Area_Codigo" value="<%response.write(area_codigo) %>" hidden />
+            <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
                 Modificar Área
             </h1>

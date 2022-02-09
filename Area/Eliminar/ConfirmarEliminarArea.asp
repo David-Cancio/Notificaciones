@@ -6,10 +6,10 @@
             set area = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
-        <!--#include virtual="/Partials/RecuperarIdMateria.asp"-->
+        <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select * from Area where Area_Codigo='"&area_codigo&"'",conexion
+            area.open "select * from Area where Area_Codigo='"&id&"'",conexion
             if area.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -18,10 +18,10 @@
         %>
 <html>
 
-    <!--#include virtual="/Partials/Header.asp"-->
+    <!--#include virtual="/Partials/Head.asp"-->
 
 <body>
-    <!--#include file="../Partials/Header.asp"-->
+    <!--#include virtual="/Partials/Header.asp"-->
 
     <div>
         <h1>Eliminar Área: <%response.Write(area("Area_Nombre"))%>
@@ -41,7 +41,7 @@
                 <td>Descripción:
                 </td>
                 <td>
-                    <%response.Write(materia("Area_Descripcion"))%>
+                    <%response.Write(area("Area_Descripcion"))%>
                 </td>
             </tr>
         </table>
@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-sm-7 col-md-4 py-2">
                     <form action="EliminarArea.asp" method="post">
-                        <input type="text" name="Area_Codigo" value="<%response.write(area_codigo)%>" hidden />
+                        <input type="text" name="id" value="<%response.write(id)%>" hidden />
                         <input type="submit" value="Confirmar" title="Elimine la Materia"><br>
                     </form>
                 </div>

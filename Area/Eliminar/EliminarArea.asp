@@ -6,19 +6,19 @@
             set area = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
-        <!--#include virtual="/Partials/RecuperarAreaCodigo.asp"-->
+        <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select Area_Codigo from Area Where Area_Codigo='"&area_codigo&"'",conexion
+            area.open "select Area_Codigo from Area Where Area_Codigo='"&id&"'",conexion
             if not area.EOF Then
-                conexion.execute("delete from Area where Area_Codigo='"&area_codigo&"'")
+                conexion.execute("delete from Area where Area_Codigo='"&id&"'")
             End If
             conexion.close
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
 <body>
-    <!--#include file="../Partials/Header.asp"-->
+    <!--#include virtual="/Partials/Header.asp"-->
 
     <div>               
         <h1>Los datos fueron borrados exitosamente</h1>

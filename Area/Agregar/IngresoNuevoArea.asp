@@ -1,11 +1,10 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%%>
 <html>
-<head>
-    <!--#include virtual="/Partials/header.asp"-->
-    <title>Crear Nueva Materia</title>
-</head>
+    <!--#include virtual="/Partials/head.asp"-->
 <body>
+    <!--#include virtual="/Partials/header.asp"-->
+
     <div>
         <form action="CrearArea.asp" method="post">
             <h1>Ingrese los nuevos datos</h1>

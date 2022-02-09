@@ -2,18 +2,16 @@
 <%
             dim conexion
             dim area_nombre
-            dim area_codigo
             dim area_descripcion
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
-        <!--#include virtual="/Partials/RecuperarIdMateria.asp"-->
+        <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
             area_nombre=Request.form("Area_Nombre")
-            area_codigo=Request.form("Area_Codigo")
             area_descripcion=Request.form("Area_Descripcion")
-            conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"', Area_Codigo='"&area_codigo&"', Area_Descripcion='"&area_descripcion&"' WHERE Area_Codigo='"&area_codigo&"' ")
+            conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"', Area_Descripcion='"&area_descripcion&"' WHERE Area_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>
