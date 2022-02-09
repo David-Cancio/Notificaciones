@@ -2,7 +2,6 @@
 <%
             dim conexion
             dim area_nombre
-            dim area_descripcion
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
@@ -10,8 +9,7 @@
         <%
             conexion.Open
             area_nombre=Request.form("Area_Nombre")
-            area_descripcion=Request.form("Area_Descripcion")
-            conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"', Area_Descripcion='"&area_descripcion&"' WHERE Area_Codigo='"&id&"' ")
+            conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"' WHERE Area_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>

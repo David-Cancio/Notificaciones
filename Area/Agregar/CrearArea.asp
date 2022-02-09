@@ -12,7 +12,6 @@ dim id
 dim area_descripcion
 area_nombre=Request.form("area_nombre")
 id=Request.form("id")
-area_descripcion=Request.form("area_descripcion")
 if area_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -20,7 +19,7 @@ if area_nombre="" Then
 end if
 area.open "select Area_Codigo from Area WHERE Area_Nombre = '"&area_nombre&"'",conexion
 if area.EOF then
-    conexion.execute("insert into Area (Area_Nombre,Area_Descripcion) VALUES('"&area_nombre&"','"&area_descripcion&"')")
+    conexion.execute("insert into Area (Area_Nombre) VALUES('"&area_nombre&"')")
     area.Close
 %>
 <html>

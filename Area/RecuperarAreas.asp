@@ -23,7 +23,6 @@
             <tr>
                 <th>Código</th>
                 <th colspan="2">Nombre</th>
-                <th colspan="3">Descripción</th>
                 <th>Modificar</th>
                 <th>Eliminar</th>
             </tr>
@@ -33,7 +32,6 @@
             <tr>
                 <th><%response.write(area("Area_Codigo"))%></th>
                 <th colspan="2"><%response.write(area("Area_Nombre"))%></th>
-                <th colspan="3"><%response.write(area("Area_Descripcion"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarArea.asp" method="post">
                         <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
