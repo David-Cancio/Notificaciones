@@ -1,2 +1,5 @@
 connectionSql.asp
 .vs
+*.vs
+*.sqlite
+/.vscode
