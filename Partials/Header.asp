@@ -1,13 +1,13 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light-blue pb-lg-3">
 
-        <a class="navbar-brand mx-5" href="#">Notificaciones</a>
+        <a class="navbar-brand mx-5" style=" font-weight: 700" href="#">Notificaciones Estatales</a>
  
       
         <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="#">Notificaciones</a>
