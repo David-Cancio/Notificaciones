@@ -5,8 +5,8 @@
     padding: 30px;
     min-height: 100%;
     min-width: 100%;
-}
-table {
+}*/
+.listado{
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
@@ -17,27 +17,27 @@ table {
     font-weight: 900;
     line-height: 2;
 }
-thead th:nth-child(1) {
+.listado thead th:nth-child(1) {
     width: 30%;
 }
-thead th:nth-child(2) {
+.listado thead th:nth-child(2) {
     width: 20%;
 }
-thead th:nth-child(3) {
+.listado thead th:nth-child(3) {
     width: 15%;
 }
-thead th:nth-child(4) {
+.listado thead th:nth-child(4) {
     width: 35%;
 }
-th, td {
+.listado th, td {
     padding: 20px;
 }
-tbody tr:nth-child(odd) {
+.listado tbody tr:nth-child(odd) {
     background-color: #FAE887;
 }
-tbody tr:nth-child(even) {
+.listado tbody tr:nth-child(even) {
     background-color: #F6FAC4;
-}
+}/*
 .inputTablas {
     border-radius: 5px;
     background-color: #EBEBEB;

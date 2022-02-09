@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light-blue pb-lg-3">
 
-        <a class="navbar-brand mx-5" href="#">Notificaciones</a>
+        <a class="navbar-brand mx-5" href="#">Sistema de Notificaciones</a>
  
       
         <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
@@ -12,15 +12,12 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Notificaciones</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Parametros</a>
-              </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ABM
+                Parametros
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">AREA</a>
+                <a class="dropdown-item" href="#">Area</a>
                 <a class="dropdown-item" href="#">Movimiento</a>
                 <a class="dropdown-item" href="#">Etapa</a>
                 <a class="dropdown-item" href="#">Estado</a>
