@@ -1,0 +1,1 @@
+<%conexion.ConnectionString = "Provider=SQLOLEDB;Server=DESKTOP-BE50K9K\SQLEXPRESS;Database=notificacion;User ID=David;Password=12345"%>
