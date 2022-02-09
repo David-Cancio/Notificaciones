@@ -12,15 +12,12 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Notificaciones</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Parametros</a>
-              </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ABM
+                Parametros
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">AREA</a>
+                <a class="dropdown-item" href="#">Area</a>
                 <a class="dropdown-item" href="#">Movimiento</a>
                 <a class="dropdown-item" href="#">Etapa</a>
                 <a class="dropdown-item" href="#">Estado</a>

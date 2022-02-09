@@ -1,10 +1,6 @@
-
+<!--#include file="Partials/UTF8Asp.asp"-->
 <html>
-<head>
 <!--#include file="Partials/Head.asp"-->
-</head>
-    
-
 <body>
        <!--#include file="Partials/Header.asp"-->
     <div class="fondo">

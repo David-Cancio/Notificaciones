@@ -3924,7 +3924,7 @@ textarea.form-control-lg {
     padding: 0.5rem 1rem;
     color: #000000;
     font: 2em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }

@@ -10,6 +10,5 @@
     <link href="/./Assets/css/estilos.css" rel="stylesheet" />
     <link href="/./Assets/css/bootstrap.css" rel="stylesheet" />
     <script src="/./Assets/css/bootstrap.js"></script>
-
     <title>Notificaciones</title>
 </head>
