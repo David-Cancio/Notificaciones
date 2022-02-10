@@ -16,12 +16,37 @@
     padding: 10px;
     text-align: center;
 }
+.listado input[type=text] {
+    color: #08233e;
+    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size: 110%;
+    border-radius: 5px;
+    background-color: #EBEBEB;
+    width: 50%;
+}
+.listado input[type=submit] {
+    color: #08233e;
+    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size: 110%;
+    border-radius: 5px;
+    background-color: #EBEBEB;
+    padding: 5px;
+}
+.listado select {
+    color: #08233e;
+    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size: 110%;
+    border-radius: 5px;
+    background-color: #EBEBEB;
+    width: 40%;
+}
 
 .tabla {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
     border: 3px solid black;
+    border-radius: 5px;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
