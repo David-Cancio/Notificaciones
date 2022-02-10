@@ -59,7 +59,7 @@ Else
         <div class="contenedor">
             <div class="row">
                 <div class="col-sm-7 col-md-4 py-2">
-                    <form action="IngresoNuevoArea.asp" method="post">
+                    <form action="IngresoNuevoTipoMovimiento.asp" method="post">
                         <input type="submit" value="Agregar Otro" title="Agregue otro Movimiento"><br>
                     </form>
                 </div>
