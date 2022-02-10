@@ -41,6 +41,15 @@
     width: 40%;
 }
 
+.btn-eliminar {
+    color: #08233e;
+    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size: 110%;
+    border-radius: 5px;
+    background-color: red;
+    padding: 5px;
+}
+
 .tabla {
     table-layout: fixed;
     width: 100%;
