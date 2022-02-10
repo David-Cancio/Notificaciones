@@ -1,17 +1,17 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area
+            dim estado
             set conexion = Server.CreateObject("ADODB.Connection")
-            set area = Server.CreateObject("ADODB.RecordSet") 
+            set estado = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select Area_Codigo from Area Where Area_Codigo='"&id&"'",conexion
-            if not area.EOF Then
-                conexion.execute("delete from Area where Area_Codigo='"&id&"'")
+            estado.open "select Estado_Codigo from Estado Where Estado_Codigo='"&id&"'",conexion
+            if not estado.EOF Then
+                conexion.execute("delete from Estado where Estado_Codigo='"&id&"'")
             End If
             conexion.close
         %>
@@ -22,8 +22,8 @@
 
     <div class="listado">               
         <h1>Los datos fueron borrados exitosamente</h1>
-        <form action="../RecuperarAreas.asp" method="post">
-            <input type="submit" value="Listado de Áreas" title="Vuelva listado de Áreas">
+        <form action="../RecuperarEstados.asp" method="post">
+            <input type="submit" value="Listado de Estados" title="Vuelva listado de Estados">
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->

@@ -1,7 +1,7 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area_nombre
+            dim estado_nombre
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
@@ -9,8 +9,8 @@
         <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            area_nombre=Mayusculatodas(Request.form("Area_Nombre"))
-            conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"' WHERE Area_Codigo='"&id&"' ")
+            estado_nombre=Mayusculatodas(Request.form("Estado_Nombre"))
+            conexion.execute("UPDATE Estado SET Estado_Nombre='"&estado_nombre&"' WHERE Estado_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>
@@ -20,8 +20,8 @@
 
     <div class="listado">
         <h1>Los datos fueron modificados</h1>
-        <form action="../RecuperarAreas.asp" method="post">
-            <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+        <form action="../RecuperarEstados.asp" method="post">
+            <input type="submit" value="Listado de Estados" title="Vuelva al listado de Estados">
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
