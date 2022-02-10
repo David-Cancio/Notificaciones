@@ -10,7 +10,7 @@
         <%
             conexion.Open
             tipoMovimiento.open "select * from TipoMovimiento where TipoMov_Codigo='"&id&"'",conexion
-            if area.eof then
+            if tipoMovimiento.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Tipo de Movimiento:
-                            <input type="text" name="tipoMov_nombre" size="40" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü]{1,}" title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("TipoMov_Nombre"))%>"/>
+                            <input type="text" name="tipoMov_nombre" size="40" required title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("TipoMov_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>

@@ -6,9 +6,10 @@
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
+        <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            tipoMov_nombre=Request.form("tipoMov_nombre")
+            tipoMov_nombre=MayusculaTodas(Request.form("tipoMov_nombre"))
             conexion.execute("UPDATE TipoMovimiento SET TipoMov_Nombre='"&tipoMov_nombre&"' WHERE TipoMov_Codigo='"&id&"' ")
             conexion.close
         %>
