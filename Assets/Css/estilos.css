@@ -18,18 +18,28 @@
 }
 .listado input[type=text] {
     color: #08233e;
-    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font: 2.2em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
     font-size: 110%;
     border-radius: 5px;
     background-color: #EBEBEB;
     width: 50%;
 }
 .listado input[type=submit] {
+    border-radius: 5px;
+    background-color: #EBEBEB;
+    font: 1.5em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    padding: 5px;
+}
+.listado input[type=submit]:hover {
+    background-color: #E3E2E2;
+    padding: 5px;
+}
+.listado input[type=submit]:hover {
     color: #08233e;
     font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
     font-size: 110%;
     border-radius: 5px;
-    background-color: #EBEBEB;
+    background-color: #E3E2E2;
     padding: 5px;
 }
 .listado select {
@@ -42,37 +52,17 @@
 }
 
 .btn-agregar {
-    color: #08233e !important;
-    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
-    font-size: 110% !important;
-    border-radius: 5px !important;
-    background-color: #A7F92A !important;
-    padding: 5px !important;
+    background-color: #66E80D !important;
 }
 .btn-agregar:hover {
-    color: #08233e !important;
-    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
-    font-size: 110% !important;
-    border-radius: 5px !important;
-    background-color: #66E80D !important;
-    padding: 5px !important;
+    background-color: #1FD324 !important;
 }
 
 .btn-eliminar {
-    color: #08233e !important;
-    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
-    font-size: 110% !important;
-    border-radius: 5px !important;
     background-color: #F3734A !important;
-    padding: 5px !important;
 }
 .btn-eliminar:hover {
-    color: #08233e !important;
-    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
-    font-size: 110% !important;
-    border-radius: 5px !important;
     background-color: #D60808 !important;
-    padding: 5px !important;
 }
 
 .tabla {
@@ -103,10 +93,11 @@
     padding: 20px;
 }
 .tabla tbody tr:nth-child(odd) {
-    background-color: #EAECEC;
+        
+    background-color: #C3CACA;
 }
 .tabla tbody tr:nth-child(even) {
-    background-color: #C3CACA;
+    background-color: #EAECEC;
 }
 
 /*
