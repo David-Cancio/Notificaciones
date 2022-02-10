@@ -17,7 +17,7 @@
                 Parametros
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="Area/RecuperarAreas.asp">Area</a>
+                <a class="dropdown-item" href="/Parametros/Area/RecuperarAreas.asp">Area</a>
                 <a class="dropdown-item" href="#">Movimiento</a>
                 <a class="dropdown-item" href="#">Etapa</a>
                 <a class="dropdown-item" href="#">Estado</a>
