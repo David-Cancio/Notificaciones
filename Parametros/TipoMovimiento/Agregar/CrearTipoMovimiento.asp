@@ -6,11 +6,11 @@ set conexion=Server.CreateObject("ADODB.Connection")
 set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
+<!--#include virtual="/Partials/Validations.asp"-->
 <%conexion.open
 dim tipoMov_nombre
 dim id
-dim tipoMov_descripcion
-tipoMov_nombre=Request.form("tipoMov_nombre")
+tipoMov_nombre=MayusculaTodas(Request.form("tipoMov_nombre"))
 id=Request.form("id")
 if tipoMov_nombre="" Then
 %>
@@ -71,8 +71,8 @@ Else
             </div>
         </div>
     </div>
-</body>
    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
+</body>
 </html>
 <%
 End If

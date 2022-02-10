@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area
+            dim tipoMovimiento
             set conexion=Server.CreateObject("ADODB.Connection")
-            set area = Server.CreateObject("ADODB.RecordSet")
+            set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select * from Area where Area_Codigo='"&id&"'",conexion
-            if area.eof then
+            tipoMovimiento.open "select * from TipoMovimiento where TipoMov_Codigo='"&id&"'",conexion
+            if tipoMovimiento.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -24,38 +24,38 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Área: <%response.Write(area("Area_Nombre"))%>
+        <h1>Eliminar Área: <%response.Write(tipoMovimiento("TipoMov_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td>Código:
                 </td>
                 <td>
-                    <%response.Write(area("Area_Codigo"))%>
+                    <%response.Write(tipoMovimiento("TipoMov_Codigo"))%>
                 </td>
                 <td>Nombre:
                 </td>
                 <td>
-                    <%response.Write(area("Area_Nombre"))%>
+                    <%response.Write(tipoMovimiento("TipoMov_Nombre"))%>
                 </td>
             </tr>
         </table>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-4 py-2">
-                    <form action="EliminarArea.asp" method="post">
+                    <form action="EliminarTipoMovimiento.asp" method="post">
                         <input type="text" name="id" value="<%response.write(id)%>" hidden />
-                        <input type="submit" value="Confirmar" title="Elimine la Materia"><br>
+                        <input type="submit" value="Confirmar" title="Elimine el Movimiento"><br>
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-4 py-2">
-                    <form action="../RecuperarAreas.asp" method="post">
-                        <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+                    <form action="../RecuperarTipoMovimientos.asp" method="post">
+                        <input type="submit" value="Cancelar" title="Cancele la Eliminación">
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
+</body>
 </html>

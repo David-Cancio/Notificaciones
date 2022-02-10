@@ -11,7 +11,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Tipo de Movimiento:
-                            <input type="text" name="tipoMov-nombre" size="40" placeholder="Tipo Movimiento" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Tipo de Movimiento"/>
+                            <input type="text" name="tipoMov_nombre" size="40" placeholder="Tipo Movimiento" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Tipo de Movimiento"/>
                     </td>
                 </tr>
             </table>
@@ -31,6 +31,6 @@
             </div>
         </form>
     </div>
-</body>
    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
+</body>
 </html>
