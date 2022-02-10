@@ -21,7 +21,7 @@
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
 
-    <div>
+    <div class="listado">
         <form action="ModificarArea.asp" method="post">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
@@ -36,12 +36,12 @@
             </table>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-7 col-md-4 py-2">
+                    <div class="col-sm-7 col-md-6 py-2">
                         <form action="ModificarArea.asp" method="post">
-                            <input type="submit" value="Modificar" title="Confirme la modificación" />
+                            <input type="submit" value="Modificar" title="Confirme la modificación" class="btn-agregar"/>
                         </form>
                     </div>
-                    <div class="col-sm-7 col-md-4 py-2">
+                    <div class="col-sm-7 col-md-6 py-2">
                         <form action="../RecuperarAreas.asp" method="post">
                             <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
                         </form>
@@ -53,6 +53,6 @@
             end if
             conexion.close
         %>
+    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
-   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>

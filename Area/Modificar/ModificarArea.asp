@@ -17,7 +17,7 @@
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
 
-    <div>
+    <div class="listado">
         <h1>Los datos fueron modificados</h1>
         <div class="container">
             <div class="row">
@@ -29,6 +29,6 @@
             </div>
         </div>
     </div>
+    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
-   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>

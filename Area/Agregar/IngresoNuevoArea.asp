@@ -5,7 +5,7 @@
 <body>
     <!--#include virtual="/Partials/header.asp"-->
 
-    <div>
+    <div class="listado">   
         <form action="CrearArea.asp" method="post">
             <h1>Ingrese los nuevos datos</h1>
             <table Class="tabla">
@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="CrearArea.asp" method="post">
-                            <input type="submit" value="Agregar" title="Agregue el Área" />
+                            <input type="submit" value="Agregar" title="Agregue el Área" class="btn-agregar" />
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
@@ -31,6 +31,6 @@
             </div>
         </form>
     </div>
+    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
-   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>
