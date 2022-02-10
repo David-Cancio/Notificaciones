@@ -5,7 +5,7 @@
 <body>
     <!--#include virtual="/Partials/header.asp"-->
 
-    <div>
+    <div class="listado">
         <form action="CrearTipoMovimiento.asp" method="post">
             <h1>Ingrese los nuevos datos</h1>
             <table Class="tabla">
