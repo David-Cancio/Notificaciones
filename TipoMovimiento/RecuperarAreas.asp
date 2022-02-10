@@ -14,7 +14,7 @@
     <!--#include virtual="/Partials/Head.asp"-->
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
-    <div class="listado">
+    <div>
         <h1>Área</h1>
         <%
         if not area.eof then
@@ -41,7 +41,7 @@
                 <th>
                     <form action="Eliminar/ConfirmarEliminarArea.asp" method="post">
                         <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
-                        <input type="submit" value="Eliminar" title="Elimine esta Área" class="btn-eliminar">
+                        <input type="submit" value="Eliminar" title="Elimine esta Área">
                     </form>
                 </th>
             </tr>
@@ -59,7 +59,7 @@
         conexion.close
         %>
         <form action="./Agregar/IngresoNuevoArea.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue una nueva Área" class="btn-agregar">
+            <input type="submit" value="Agregar" title="Agregue una nueva Área">
         </form>
     </div>
 </body>

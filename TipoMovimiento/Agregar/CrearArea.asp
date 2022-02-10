@@ -32,7 +32,7 @@ if area.EOF then
             <div class="row">
                 <div class="col-sm-7 col-md-4 py-2">
                     <form action="IngresoNuevoArea.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otra Área" class="btn-agregar"><br>
+                        <input type="submit" value="Agregar Otra" title="Agregue otra Área"><br>
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-4 py-2">
@@ -60,7 +60,7 @@ Else
             <div class="row">
                 <div class="col-sm-7 col-md-4 py-2">
                     <form action="IngresoNuevoArea.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otro Area" class="btn-agregar"><br>
+                        <input type="submit" value="Agregar Otra" title="Agregue otro Area"><br>
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-4 py-2">
