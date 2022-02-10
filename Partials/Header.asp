@@ -1,9 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light-blue pb-lg-3">
-
         <a class="navbar-brand mx-5" style=" font-weight: 700" href="#">Notificaciones Estatales</a>
- 
-      
         <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -27,15 +24,10 @@
                 <a class="dropdown-item" href="/Parametros/SectorFirmante/RecuperarSectorFirmante.asp">Sectores Firmantes</a>
                 <a class="dropdown-item" href="/Parametros/CuitDestino/RecuperarCuitDestino.asp">CUIT destino</a>
                 <div class="dropdown-divider"></div>
-               
               </div>
             </li>
           </ul>
-
         </div>
-      
-     
       </nav>
-
 </header>
    
