@@ -11,7 +11,6 @@ set area = Server.CreateObject("ADODB.RecordSet")
 conexion.open
 dim area_nombre
 dim id
-dim area_descripcion
 area_nombre=MayusculaTodas(Request.form("area_nombre"))
 id=Request.form("id")
 if area_nombre="" Then
