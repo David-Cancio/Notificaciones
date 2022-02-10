@@ -6,11 +6,13 @@ set conexion=Server.CreateObject("ADODB.Connection")
 set area = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
-<%conexion.open
+<!--#include virtual="/Partials/Validations.asp"-->
+<%
+conexion.open
 dim area_nombre
 dim id
 dim area_descripcion
-area_nombre=Request.form("area_nombre")
+area_nombre=MayusculaTodas(Request.form("area_nombre"))
 id=Request.form("id")
 if area_nombre="" Then
 %>

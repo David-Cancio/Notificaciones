@@ -6,9 +6,10 @@
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
+        <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            area_nombre=Request.form("Area_Nombre")
+            area_nombre=Mayusculatodas(Request.form("Area_Nombre"))
             conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"' WHERE Area_Codigo='"&id&"' ")
             conexion.close
         %>
