@@ -22,7 +22,7 @@
         <table Class="tabla">
             <tr>
                 <th>Código</th>
-                <th colspan="2">Nombre</th>
+                <th colspan="3">Nombre</th>
                 <th>Modificar</th>
                 <th>Eliminar</th>
             </tr>
@@ -31,7 +31,7 @@
             %>
             <tr>
                 <th><%response.write(area("Area_Codigo"))%></th>
-                <th colspan="2"><%response.write(area("Area_Nombre"))%></th>
+                <th colspan="3"><%response.write(area("Area_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarArea.asp" method="post">
                         <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
@@ -62,6 +62,6 @@
             <input type="submit" value="Agregar" title="Agregue una nueva Área" class="btn-agregar">
         </form>
     </div>
+    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
-   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>
