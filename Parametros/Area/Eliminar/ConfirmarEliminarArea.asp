@@ -28,14 +28,18 @@
         </h1>
         <table Class="tabla">
             <tr>
+                <td></td>
                 <td>Código:
-                </td>
                 <td>
                     <%response.Write(area("Area_Codigo"))%>
                 </td>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
                 <td>Nombre:
                 </td>
-                <td>
+                <td colspan="3">
                     <%response.Write(area("Area_Nombre"))%>
                 </td>
             </tr>
@@ -50,7 +54,7 @@
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarAreas.asp" method="post">
-                        <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+                        <input type="submit" value="Cancelar" title="Cancelar">
                     </form>
                 </div>
             </div>
