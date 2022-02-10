@@ -23,7 +23,7 @@
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
 
-    <div>
+    <div class="listado">
         <h1>Eliminar Área: <%response.Write(area("Area_Nombre"))%>
         </h1>
         <table Class="tabla">
@@ -38,19 +38,17 @@
                 <td>
                     <%response.Write(area("Area_Nombre"))%>
                 </td>
-                <td>Descripción:
-                </td>
             </tr>
         </table>
         <div class="container">
             <div class="row">
-                <div class="col-sm-7 col-md-4 py-2">
+                <div class="col-sm-7 col-md-6 py-2">
                     <form action="EliminarArea.asp" method="post">
                         <input type="text" name="id" value="<%response.write(id)%>" hidden />
-                        <input type="submit" value="Confirmar" title="Elimine la Materia"><br>
+                        <input type="submit" value="Confirmar" title="Elimine la Área" class="btn-eliminar">
                     </form>
                 </div>
-                <div class="col-sm-7 col-md-4 py-2">
+                <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarAreas.asp" method="post">
                         <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
                     </form>
