@@ -86,10 +86,10 @@
     padding: 20px;
 }
 .tabla tbody tr:nth-child(odd) {
-    background-color: #4EF7FC;
+    background-color: #083DAD3;
 }
 .tabla tbody tr:nth-child(even) {
-    background-color: #0FEFF5;
+    background-color: #4EF7FC;
 }
 
 /*
