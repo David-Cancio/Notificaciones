@@ -14,7 +14,7 @@
     <!--#include virtual="/Partials/Head.asp"-->
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
-    <div>
+    <div class="listado">
         <h1>Tipo de Movimiento</h1>
         <%
         if not tipoMovimiento.eof then

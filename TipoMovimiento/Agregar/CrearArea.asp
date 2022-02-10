@@ -26,7 +26,7 @@ if tipoMovimiento.EOF then
     <!--#include virtual="/Partials/Head.asp"-->
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
-    <div>
+    <div class="listado">
         <h1>Los datos fueron agregados exitosamente</h1>
         <div class="container">
             <div class="row">
@@ -53,7 +53,7 @@ Else
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
 
-    <div class="fondo">
+    <div class="listado">
         <h1>Este Movimiento ya Existe</h1>
         <h2>Los datos no fueron Agregados</h2>
         <div class="contenedor">

@@ -1,4 +1,10 @@
 <% 
+function MayusculaTodas(var)
+dim mayuscula
+mayuscula=UCase(mid(var,1,len(var)))
+MayusculaTodas=mayuscula
+end function
+
 function MayusculaPrimera(var)
 dim mayuscula
 mayuscula=UCase(left(var,1)) & LCase(mid(var,2,len(var)))

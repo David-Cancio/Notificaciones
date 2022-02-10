@@ -23,7 +23,7 @@
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
 
-    <div>
+    <div class="listado">
         <h1>Eliminar Área: <%response.Write(area("Area_Nombre"))%>
         </h1>
         <table Class="tabla">
@@ -37,8 +37,6 @@
                 </td>
                 <td>
                     <%response.Write(area("Area_Nombre"))%>
-                </td>
-                <td>Descripción:
                 </td>
             </tr>
         </table>

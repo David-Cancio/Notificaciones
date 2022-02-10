@@ -21,7 +21,7 @@
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
 
-    <div>
+    <div class="listado">
         <form action="ModificarTipoMovimiento.asp" method="post">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
