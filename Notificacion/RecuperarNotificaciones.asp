@@ -3,7 +3,7 @@
         dim conexion
         dim notificacion
         set conexion=Server.CreateObject("ADODB.Connection")
-        set notificaciones = Server.CreateObject("ADODB.RecordSet")
+        set notificacion = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <%

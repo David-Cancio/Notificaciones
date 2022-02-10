@@ -7,7 +7,7 @@
                 <a class="nav-link" href="/default.asp">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/Notificacion/recuperarNotificacion.asp">Notificaciones</a>
+                <a class="nav-link " href="/Notificacion/recuperarNotificaciones.asp">Notificaciones</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
