@@ -88,9 +88,9 @@
 .tabla tbody tr:nth-child(odd) {
     background-color: #AAF1EB;
 }
-.tabla tbody tr:nth-child(even) {
-    background-color: #75FFF5;
-}
+    .tabla tbody tr:nth-child(even) {
+        background-color: #75FFDD;
+    }
 
 /*
 .inputTablas {
