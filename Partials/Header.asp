@@ -14,13 +14,13 @@
                 Parametros
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/Parametros/Area/RecuperarAreas.asp">¡reas</a>
+                <a class="dropdown-item" href="/Parametros/Area/RecuperarAreas.asp">√Åreas</a>
                 <a class="dropdown-item" href="/Parametros/TipoMovimiento/RecuperarTipoMovimientos.asp">Tipo de Movimientos</a>
-                <a class="dropdown-item" href="/Parametros/Etapa/RecuperarEtapa.asp">Etapas</a>
-                <a class="dropdown-item" href="/Parametros/Estado/RecuperarEstado.asp">Estados</a>
-                <a class="dropdown-item" href="/Parametros/Rol/RecuperarRol.asp">Roles</a>
-                <a class="dropdown-item" href="/Parametros/TipoEscrito/RecuperarTipoEscrito.asp">Tipo Escritos</a>
-                <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritoHabilitado.asp">Escritos Habilitados</a>
+                <a class="dropdown-item" href="/Parametros/Etapa/RecuperarEtapas.asp">Etapas</a>
+                <a class="dropdown-item" href="/Parametros/Estado/RecuperarEstados.asp">Estados</a>
+                <a class="dropdown-item" href="/Parametros/Rol/RecuperarRoles.asp">Roles</a>
+                <a class="dropdown-item" href="/Parametros/TipoEscrito/RecuperarTipoEscritos.asp">Tipo Escritos</a>
+                <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritoHabilitados.asp">Escritos Habilitados</a>
                 <a class="dropdown-item" href="/Parametros/SectorFirmante/RecuperarSectorFirmante.asp">Sectores Firmantes</a>
                 <a class="dropdown-item" href="/Parametros/CuitDestino/RecuperarCuitDestino.asp">CUIT destino</a>
                 <div class="dropdown-divider"></div>

@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area
+            dim tipoMovimiento
             set conexion=Server.CreateObject("ADODB.Connection")
-            set area = Server.CreateObject("ADODB.RecordSet")
+            set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select * from area where Area_Codigo='"&id&"'",conexion
-            if area.eof then
+            tipoMovimiento.open "select * from TipoMovimiento where TipoMov_Codigo='"&id&"'",conexion
+            if tipoMovimiento.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -22,28 +22,28 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <form action="ModificarArea.asp" method="post">
+        <form action="ModificarTipoMovimiento.asp" method="post">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
                 Modificar Área
             </h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre del Área:
-                            <input type="text" name="area_nombre" size="40" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü]{1,}" title="Indique el Nombre del Área" value="<%response.write(area("Area_Nombre"))%>"/>
+                    <td colspan="2">Tipo de Movimiento:
+                            <input type="text" name="tipoMov_nombre" size="40" required title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("TipoMov_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-7 col-md-6 py-2">
-                        <form action="ModificarArea.asp" method="post">
-                            <input type="submit" value="Modificar" title="Confirme la modificación" class="btn-agregar"/>
+                    <div class="col-sm-7 col-md-4 py-2">
+                        <form action="ModificarTipoMovimiento.asp" method="post">
+                            <input type="submit" value="Modificar" title="Confirme la modificación" />
                         </form>
                     </div>
-                    <div class="col-sm-7 col-md-6 py-2">
-                        <form action="../RecuperarAreas.asp" method="post">
-                            <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+                    <div class="col-sm-7 col-md-4 py-2">
+                        <form action="../RecuperarTipoMovimientos.asp" method="post">
+                            <input type="submit" value="Listado de Movimientos" title="Vuelva al listado de Movimientos">
                         </form>
                     </div>
                 </div>
@@ -53,6 +53,6 @@
             end if
             conexion.close
         %>
-    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
+   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>
