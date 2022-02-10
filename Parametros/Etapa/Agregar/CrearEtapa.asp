@@ -3,7 +3,7 @@
 dim conexion
 dim etapa
 set conexion=Server.CreateObject("ADODB.Connection")
-set area = Server.CreateObject("ADODB.RecordSet")
+set etapa = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
@@ -11,10 +11,10 @@ set area = Server.CreateObject("ADODB.RecordSet")
 conexion.open
 dim etapa_nombre
 dim id
-dim area_descripcion
-area_nombre=MayusculaTodas(Request.form("area_nombre"))
+
+etapa_nombre=MayusculaTodas(Request.form("etapa_nombre"))
 id=Request.form("id")
-if area_nombre="" Then
+if etapa_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -26,28 +26,28 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-area.open "select Area_Codigo from Area WHERE Area_Nombre = '"&area_nombre&"'",conexion
-if area.EOF then
-    conexion.execute("insert into Area (Area_Nombre) VALUES('"&area_nombre&"')")
-    area.Close
+etapa.open "select Etapa_Codigo from Etapa WHERE Etapa_Nombre = '"&etapa_nombre&"'",conexion
+if etapa.EOF then
+    conexion.execute("insert into Etapa (Etapa_Nombre) VALUES('"&etapa_nombre&"')")
+    etapa.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>
         <% Else%>
-        <h1>Este Área ya Existe</h1>
+        <h1>Este Etapa ya Existe</h1>
         <h2>Los datos no fueron Agregados</h2>
         <% End If
         conexion.close%>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="IngresoNuevoArea.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otra Área" class="btn-agregar">
+                    <form action="IngresoNuevoEtapa.asp" method="post">
+                        <input type="submit" value="Agregar Otra" title="Agregue otra Etapa" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarAreas.asp" method="post">
-                        <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+                    <form action="../RecuperarEtapas.asp" method="post">
+                        <input type="submit" value="Listado de Etapas" title="Vuelva al listado de Etapas">
                     </form>
                 </div>
             </div>
