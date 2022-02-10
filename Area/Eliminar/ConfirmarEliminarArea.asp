@@ -40,9 +40,6 @@
                 </td>
                 <td>Descripción:
                 </td>
-                <td>
-                    <%response.Write(area("Area_Descripcion"))%>
-                </td>
             </tr>
         </table>
         <div class="container">

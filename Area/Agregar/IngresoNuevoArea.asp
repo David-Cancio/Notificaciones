@@ -13,9 +13,6 @@
                     <td colspan="2">Nombre del Área:
                             <input type="text" name="area_nombre" size="40" placeholder="Nombre Área" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Área"/>
                     </td>
-                    <td>Descripcion:
-                            <input type="text" name="area_descripcion" size="40" placeholder="Descrpcion" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique una Descripción"/>
-                    </td>
                 </tr>
             </table>
             <div class="container">
