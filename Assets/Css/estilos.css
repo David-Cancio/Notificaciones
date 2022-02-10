@@ -41,6 +41,23 @@
     width: 40%;
 }
 
+.btn-agregar {
+    color: #08233e !important;
+    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
+    font-size: 110% !important;
+    border-radius: 5px !important;
+    background-color: #A7F92A !important;
+    padding: 5px !important;
+}
+.btn-agregar:hover {
+    color: #08233e !important;
+    font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
+    font-size: 110% !important;
+    border-radius: 5px !important;
+    background-color: #66E80D !important;
+    padding: 5px !important;
+}
+
 .btn-eliminar {
     color: #08233e !important;
     font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif !important;
