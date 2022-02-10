@@ -53,7 +53,7 @@
         <%
         else
         %>
-        <h3>Aún no hay ningun Área</h3>
+        <h3>Aún no hay ningún Área</h3>
         <%
         end if
         conexion.close

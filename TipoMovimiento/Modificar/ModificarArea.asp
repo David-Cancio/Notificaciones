@@ -1,15 +1,15 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area_nombre
+            dim tipoMov_nombre
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area_nombre=Request.form("Area_Nombre")
-            conexion.execute("UPDATE Area SET Area_Nombre='"&area_nombre&"' WHERE Area_Codigo='"&id&"' ")
+            tipoMov_nombre=Request.form("tipoMov_nombre")
+            conexion.execute("UPDATE TipoMovimiento SET TipoMov_Nombre='"&tipoMov_nombre&"' WHERE TipoMov_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>
@@ -22,8 +22,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarAreas.asp" method="post">
-                        <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+                    <form action="../RecuperarTipoMovimientos.asp" method="post">
+                        <input type="submit" value="Listado de Movimientos" title="Vuelva al listado de Movimientos">
                     </form>
                 </div>
             </div>
