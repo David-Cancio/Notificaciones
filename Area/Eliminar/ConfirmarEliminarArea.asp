@@ -56,6 +56,6 @@
             </div>
         </div>
     </div>
+    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
-   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>

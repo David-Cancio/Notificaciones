@@ -26,6 +26,6 @@
             <input type="submit" value="Listado de Áreas" title="Vuelva listado de Áreas">
         </form>
     </div>
+    <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
-   <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </html>
