@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="../RecuperarTipoEscritos.asp" method="post">
-                            <input type="submit" value="Listado de Escritos" title="Vuelva al listado de Tipos de Escritos">
+                            <input type="submit" value="Cancelar" title="Cancelar" class="btn-eliminar" >
                         </form>
                     </div>
                 </div>
