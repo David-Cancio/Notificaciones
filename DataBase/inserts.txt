@@ -1,0 +1,59 @@
+USE [notificacion]
+GO
+
+insert into Estado (Estado_Nombre) VALUES('ALLANAMIENTO' )
+insert into Estado (Estado_Nombre) VALUES('APELACION' )
+insert into Estado (Estado_Nombre) VALUES('DEMANDA RECHAZADA' )
+insert into Estado (Estado_Nombre) VALUES('EMBARGO PREVENTIVO-BANCO' )
+insert into Estado (Estado_Nombre) VALUES('INTERPONE REVOCATORIA' )
+insert into Estado (Estado_Nombre) VALUES('SENTENCIA 1 DESFAVORABLE' )
+insert into Estado (Estado_Nombre) VALUES('SENTENCIA 1 FAVORABLE' )
+
+
+insert into Area (Area_Nombre) VALUES('Multas SECLO' )
+insert into Area (Area_Nombre) VALUES('Multas ley 18695' )
+insert into Area (Area_Nombre) VALUES('Multas PNRT' )
+
+
+insert into Etapa (Etapa_Nombre) VALUES('DEMANDA TRABA DE LITIS' )
+insert into Etapa (Etapa_Nombre) VALUES('CONTESTACION DE DEMANDA' )
+insert into Etapa (Etapa_Nombre) VALUES('OPONE EXCEPCIONES' )
+insert into Etapa (Etapa_Nombre) VALUES('CONTESTACION DE EXCEPCION' )
+insert into Etapa (Etapa_Nombre) VALUES('PEDIDO DE CADUCIDAD' )
+insert into Etapa (Etapa_Nombre) VALUES('CONTESTACION DE CADUCIDAD' )
+insert into Etapa (Etapa_Nombre) VALUES('PARA DICTAR SENTENCIA' )
+insert into Etapa (Etapa_Nombre) VALUES('SENTENCIA 1RA INSTANCIA' )
+insert into Etapa (Etapa_Nombre) VALUES('SENTENCIA 1RA INST. APELADA' )
+insert into Etapa (Etapa_Nombre) VALUES('SENTENCIA 2DA INSTANCIA' )
+insert into Etapa (Etapa_Nombre) VALUES('SENTENCIA 2DA INST. APELADA' )
+insert into Etapa (Etapa_Nombre) VALUES('REX DENEGADO' )
+insert into Etapa (Etapa_Nombre) VALUES('CUMPLIMIENTO DE SENTENCIA' )
+insert into Etapa (Etapa_Nombre) VALUES('EN EJECUCION' )
+insert into Etapa (Etapa_Nombre) VALUES('CONCURSO Y/O QUIEBRA' )
+insert into Etapa (Etapa_Nombre) VALUES('SUSPENDIDO' )
+insert into Etapa (Etapa_Nombre) VALUES('TERMINADO' )
+insert into Etapa (Etapa_Nombre) VALUES('PAGO' )
+insert into Etapa (Etapa_Nombre) VALUES('ARCHIVADO' )
+
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('ACREDITA DILIGENCIAMIENTO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('BAJA DE CERTIFICADO DE AMPLIACION DE DEMANDA' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('CEDULA DE NOTIFICACION' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('CERTIFICADO DE AMPLIACION DE DEMANDA' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('CIERRE DEL PROCESO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('DEVOLUCION CERTIFICADO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('E.E GDE' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('EMBARGO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('EMBARGO AUTOMOTOR' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('ENVIO DE ESCRITOS' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('ENVIO DE ESCRITOS VIA WEB' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('ESCRITO DE PIDO SENTENCIA' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('INFORME BLANCO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('INICIO JUICIO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('LEVANTAMIENTO DE EMBARGO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('LIQUIDACION' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('MANDAMIENTO DE INTIMACION DE PAGO' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('MOVIMIENTO CONTABLE' )
+insert into TipoMovimiento (TipoMov_Nombre) VALUES('OFICIO' )
+
+
+
