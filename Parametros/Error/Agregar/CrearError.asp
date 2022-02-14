@@ -10,13 +10,14 @@ set error = Server.CreateObject("ADODB.RecordSet")
 <%
 conexion.open
 dim error_nombre
-dim error_
+dim error_descripcion
+dim error_codigo
 dim id
-error_nombre=MayusculaTodas(Request.form("tipoEscrito_nombre"))
-tipoEscrito_tipoArchivo=MayusculaPrimera(Request.form("tipoEscrito_tipoArchivo"))
-tipoEscrito_modelo=MayusculaTodas(Request.form("tipoEscrito_modelo"))
+error_nombre=MayusculaPrimera(Request.form("error_nombre"))
+error_descripcion=MayusculaPrimera(Request.form("error_descripcion"))
+error_codigo=Request.form("error_codigo")
 id=Request.form("id")
-if tipoEscrito_nombre="" Then
+if error_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -28,23 +29,23 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-tipoEscrito.open "select TipoEscrito_Nombre from TipoEscrito WHERE TipoEscrito_Nombre = '"&tipoEscrito_nombre&"'",conexion
-if tipoEscrito.EOF then
-    conexion.execute("insert into TipoEscrito (TipoEscrito_Nombre, TipoEscrito_tipoArchivo, TipoEscrito_Modelo) VALUES('"&tipoEscrito_nombre&"','"&tipoEscrito_tipoArchivo&"','"&tipoEscrito_modelo&"')")
-    tipoEscrito.Close
+error.open "select Error_Codigo from Error WHERE Error_Codigo = '"&error_codigo&"'",conexion
+if error.EOF then
+    conexion.execute("insert into Error (Error_Nombre, Error_Descripcion, Error_Codigo) VALUES('"&error_nombre&"','"&error_descripcion&"','"&error_codigo&"')")
+    error.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>
         <% Else%>
-        <h1>Este Tipo de Escrito ya Existe</h1>
+        <h1>Este Error ya Existe</h1>
         <h2>Los datos no fueron Agregados</h2>
         <% End If
         conexion.close%>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="IngresoNuevoTipoEscrito.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otro Tipo de Escrito" class="btn-agregar">
+                    <form action="IngresoNuevoError.asp" method="post">
+                        <input type="submit" value="Agregar Otro" title="Agregue otro Error" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">

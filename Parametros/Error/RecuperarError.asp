@@ -32,17 +32,17 @@
             %>
             <tr>
                 <th><%response.write(error("Error_Codigo"))%></th>
-                <th colspan="2"><%response.write(tipoEscrito("Error_Nombre"))%></th>
-                <th colspan="3"><%response.write(tipoEscrito("Error_Descripcion"))%></th>
+                <th colspan="2"><%response.write(error("Error_Nombre"))%></th>
+                <th colspan="3"><%response.write(error("Error_Descripcion"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarTipoEscrito.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(tipoEscrito("TipoEscrito_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(error("Error_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos de este Tipo de Escrito">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarTipoEscrito.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(tipoEscrito("TipoEscrito_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(error("Error_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine este Tipo de Escrito" class="btn-eliminar">
                     </form>
                 </th>
