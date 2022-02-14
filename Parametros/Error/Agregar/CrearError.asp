@@ -15,7 +15,7 @@ dim error_codigo
 dim id
 error_nombre=MayusculaPrimera(Request.form("error_nombre"))
 error_descripcion=MayusculaPrimera(Request.form("error_descripcion"))
-error_codigo=Request.form("error_descripcion")
+error_codigo=Request.form("error_codigo")
 id=Request.form("id")
 if error_nombre="" Then
 %>
@@ -29,7 +29,7 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-tipoEscrito.open "select TipoEscrito_Nombre from TipoEscrito WHERE TipoEscrito_Nombre = '"&tipoEscrito_nombre&"'",conexion
+error.open "select Error_Codigo from Error WHERE Error_Codigo = '"&error_codigo&"'",conexion
 if error.EOF then
     conexion.execute("insert into Error (Error_Nombre, Error_Descripcion, Error_Codigo) VALUES('"&error_nombre&"','"&error_descripcion&"','"&error_codigo&"')")
     error.Close
