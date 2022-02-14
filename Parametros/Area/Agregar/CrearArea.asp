@@ -11,7 +11,7 @@ set area = Server.CreateObject("ADODB.RecordSet")
 conexion.open
 dim area_nombre
 dim id
-area_nombre=MayusculaTodas(Request.form("area_nombre"))
+area_nombre=MayusculaTodas(Request.form("tipoMov_nombre"))
 id=Request.form("id")
 if area_nombre="" Then
 %>
@@ -46,7 +46,7 @@ if area.EOF then
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarAreas.asp" method="post">
-                        <input type="submit" value="Regresar" title="Regrese al listado de Áreas">
+                        <input type="submit" value="Regresar" title="Regresar">
                     </form>
                 </div>
             </div>

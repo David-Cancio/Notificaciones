@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="CrearTipoMovimiento.asp" method="post">
-                            <input type="submit" value="Agregar" title="Agregue el Tipo de Movimiento" />
+                            <input type="submit" value="Agregar" title="Agregue el Tipo de Movimiento" class="btn-agregar"/>
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">

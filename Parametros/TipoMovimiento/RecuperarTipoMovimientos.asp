@@ -59,7 +59,7 @@
         conexion.close
         %>
         <form action="./Agregar/IngresoNuevoTipoMovimiento.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue un nuevo Tipo de Movimiento">
+            <input type="submit" value="Agregar" title="Agregue un nuevo Tipo de Movimiento" class="btn-agregar">
         </form>
     </div>
 </body>
