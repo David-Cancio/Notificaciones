@@ -47,12 +47,17 @@
         <%
         else
         %>
-        <h3>Aún no hay ningúna Notificacion</h3>
+        <h3>Aún no hay ninguna Notificación</h3>
         <%
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevaNotificacion.asp" method="post">
+        <form action="./Agregar/CrearNotificacion.asp" method="post">
+            <input type="text" name="area_Codigo" value="1" hidden>
+            <input type="text" name="tipoMov_Codigo" value="1" hidden>
+            <input type="text" name="etapa_Codigo" value="1" hidden>
+            <input type="text" name="estado_Codigo" value="1" hidden>
+            <input type="text" name="rol_Codigo" value="1" hidden>
             <input type="submit" value="Agregar" title="Agregue una nueva Área" class="btn-agregar">
         </form>
     </div>

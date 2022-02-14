@@ -61,9 +61,9 @@ end function
 
 function ValidarNull(var)
 if IsNull(var) or IsEmpty(var) then
-ValidarNull="False"
+ValidarNull="1"
 else
-ValidarNull="True"
+ValidarNull=var
 end if
 end function
 %>

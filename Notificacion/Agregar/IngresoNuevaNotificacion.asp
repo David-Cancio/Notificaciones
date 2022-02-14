@@ -21,7 +21,7 @@ conexion.open
                 <tr>
                     <!--Esta parte del codigo se puede hacer con un while dentro de otro while pero no llego con el tiemepo-->
                     <td>Áreas: 
-                        <select name="area" title="Seleccione la area">
+                        <select name="area" title="Seleccione el Área">
                         <%
                             auxiliar.open "select * from Area'",conexion
                             if auxiliar.eof then
@@ -36,6 +36,7 @@ conexion.open
                             auxiliar.movenext
                             loop
                             auxiliar.close
+                            end if
                         %>
                         </select>
                     </td>
@@ -55,6 +56,7 @@ conexion.open
                             auxiliar.movenext
                             loop
                             auxiliar.close
+                            end if
                         %>
                         </select>
                         
@@ -77,6 +79,7 @@ conexion.open
                             auxiliar.movenext
                             loop
                             auxiliar.close
+                            end if
                         %>
                         </select>
                     </td>
@@ -96,6 +99,7 @@ conexion.open
                             auxiliar.movenext
                             loop
                             auxiliar.close
+                            end if
                         %>
                         </select>
                     </td>
@@ -117,6 +121,7 @@ conexion.open
                             auxiliar.movenext
                             loop
                             auxiliar.close
+                            end if
                         %>
                         </select>
                     </td>
