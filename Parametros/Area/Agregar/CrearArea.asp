@@ -46,7 +46,7 @@ if area.EOF then
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarAreas.asp" method="post">
-                        <input type="submit" value="Listado de Áreas" title="Vuelva al listado de Áreas">
+                        <input type="submit" value="Regresar" title="Regrese al listado de Áreas">
                     </form>
                 </div>
             </div>
