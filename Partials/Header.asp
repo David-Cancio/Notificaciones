@@ -23,6 +23,7 @@
                 <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritoHabilitados.asp">Escritos Habilitados</a>
                 <a class="dropdown-item" href="/Parametros/SectorFirmante/RecuperarSectorFirmante.asp">Sectores Firmantes</a>
                 <a class="dropdown-item" href="/Parametros/CuitDestino/RecuperarCuitDestino.asp">CUIT destino</a>
+                <a class="dropdown-item" href="/Parametros/Error/RecuperarError.asp">Error</a>
                 <div class="dropdown-divider"></div>
                 </div>
             </li>

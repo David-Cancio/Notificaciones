@@ -33,6 +33,15 @@
     padding: 5px;
     margin:auto;
 }
+.listado input[type=number] {
+    color: #08233e;
+    font: 2.2em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    font-size: 110%;
+    border-radius: 5px;
+    background-color: #EBEBEB;
+    width: 50%;
+}
+}
 .listado input[type=submit]:hover {
     background-color: #E3E2E2;
     padding: 4px;
