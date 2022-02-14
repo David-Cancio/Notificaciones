@@ -1,3 +1,4 @@
+<%@Language=VBScript%>
 <%option explicit
 Response.ContentType = "text/html"
 Response.AddHeader "Content-Type", "text/html;charset=UTF-8"
