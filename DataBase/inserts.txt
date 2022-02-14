@@ -57,3 +57,11 @@ insert into TipoMovimiento (TipoMov_Nombre) VALUES('OFICIO' )
 
 
 
+insert into Rol (Rol_Nombre) VALUES('ADMIN' )
+insert into Rol (Rol_Nombre) VALUES('USER' )
+insert into Rol (Rol_Nombre) VALUES('DEMANDADO' )
+insert into Rol (Rol_Nombre) VALUES('EMPRESA' )
+
+insert into Error (Error_Codigo, Error_Nombre, Error_Descripcion) VALUES('1100' ,'Error de coneccion', 'Falla de acceso al sistema' )
+insert into Error (Error_Codigo, Error_Nombre, Error_Descripcion) VALUES('1200' ,'Error de Validacion', 'Alguna validacion indispensable no permite realizar la accion' )
+insert into Error (Error_Codigo, Error_Nombre, Error_Descripcion) VALUES('1300' ,'Error de Permisos', 'No tiene permitido el ingreso' )
