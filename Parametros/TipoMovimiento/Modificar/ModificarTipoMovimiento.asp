@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarTipoMovimientos.asp" method="post">
-                        <input type="submit" value="Cancelar" title="Cancelar" class="btn-eliminar" >
+                        <input type="submit" value="Regresar" title="Regresar" />
                     </form>
                 </div>
             </div>

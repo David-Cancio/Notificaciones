@@ -21,7 +21,7 @@
     <div class="listado">
         <h1>Los datos fueron modificados</h1>
         <form action="../RecuperarRoles.asp" method="post">
-            <input type="submit" value="Listado de Roles" title="Vuelva al listado de Roles">
+            <input type="submit" value="Regresar" title="Regresar" />
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->

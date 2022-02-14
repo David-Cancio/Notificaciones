@@ -46,7 +46,7 @@ if rol.EOF then
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarRoles.asp" method="post">
-                        <input type="submit" value="Listado de Roles" title="Vuelva al listado de Roles">
+                        <input type="submit" value="Regresar" title="Regresar>
                     </form>
                 </div>
             </div>

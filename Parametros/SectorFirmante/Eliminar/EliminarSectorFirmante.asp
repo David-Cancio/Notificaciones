@@ -23,7 +23,7 @@
     <div class="listado">               
         <h1>Los datos fueron borrados exitosamente</h1>
         <form action="../RecuperarSectorFirmante.asp" method="post">
-            <input type="submit" value="Listado de Sector Firmante" title="Vuelva listado de Sector Firmante">
+            <input type="submit" value="Regresar" title="Regresar" />
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->

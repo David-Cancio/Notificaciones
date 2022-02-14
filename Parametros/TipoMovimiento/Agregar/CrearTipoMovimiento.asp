@@ -37,7 +37,7 @@ if tipoMovimiento.EOF then
                 </div>
                 <div class="col-sm-7 col-md-4 py-2">
                     <form action="../RecuperarTipoMovimientos.asp" method="post">
-                        <input type="submit" value="Listado de Movimientos" title="Vuelva al listado de Movimientos">
+                        <input type="submit" value="Regresar" title="Regresar" />
                     </form>
                 </div>
             </div>

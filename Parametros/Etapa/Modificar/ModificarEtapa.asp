@@ -21,7 +21,7 @@
     <div class="listado">
         <h1>Los datos fueron modificados</h1>
         <form action="../RecuperarEtapas.asp" method="post">
-            <input type="submit" value="Listado de Etapas" title="Vuelva al listado de Etapas">
+            <input type="submit" value="Regresar" title="Regresar" />
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
