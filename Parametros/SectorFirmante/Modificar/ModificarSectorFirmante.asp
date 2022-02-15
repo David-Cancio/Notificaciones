@@ -1,7 +1,7 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim SectorFirmante_nombre
+            dim prm_sectorFirmante_nombre
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
@@ -9,8 +9,8 @@
         <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            SectorFirmante_nombre=Mayusculatodas(Request.form("SectorFirmante_Nombre"))
-            conexion.execute("UPDATE SectorFirmante SET SectorFirmante_Nombre='"&sectorFirmante_nombre&"' WHERE SectorFirmante_Codigo='"&id&"' ")
+            prm_sectorFirmante_nombre=Mayusculatodas(Request.form("prm_sectorFirmante_Nombre"))
+            conexion.execute("UPDATE Prm_SectorFirmante SET Prm_SectorFirmante_Nombre='"&sectorFirmante_nombre&"' WHERE Prm_SectorFirmante_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>

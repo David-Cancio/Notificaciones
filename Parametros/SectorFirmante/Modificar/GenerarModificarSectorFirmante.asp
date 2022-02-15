@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim sectorFirmante
+            dim prm_sectorFirmante
             set conexion=Server.CreateObject("ADODB.Connection")
-            set sectorFirmante = Server.CreateObject("ADODB.RecordSet")
+            set prm_sectorFirmante = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            sectorFirmante.open "select * from sectorFirmante where SectorFirmante_Codigo='"&id&"'",conexion
-            if sectorFirmante.eof then
+            prm_sectorFirmante.open "select * from Prm_SectorFirmante where Prm_SectorFirmante_Codigo='"&id&"'",conexion
+            if prm_sectorFirmante.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre del Estado:
-                            <input type="text" name="sectorFirmante_nombre" size="40" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü]{1,}" title="Indique el Nombre del Sector Firmante" value="<%response.write(sectorFirmante("SectorFirmante_Nombre"))%>"/>
+                            <input type="text" name="prm_sectorFirmante_nombre" size="40" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü]{1,}" title="Indique el Nombre del Sector Firmante" value="<%response.write(prm_sectorFirmante("Prm_SectorFirmante_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>

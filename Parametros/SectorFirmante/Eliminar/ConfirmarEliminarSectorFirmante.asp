@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim sectorFirmante
+            dim prm_sectorFirmante
             set conexion=Server.CreateObject("ADODB.Connection")
-            set sectorFirmante = Server.CreateObject("ADODB.RecordSet")
+            set prm_sectorFirmante = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            sectorFirmante.open "select * from SectorFirmante where SectorFirmante_Codigo='"&id&"'",conexion
-            if sectorFirmante.eof then
+            prm_sectorFirmante.open "select * from Prm_SectorFirmante where Prm_SectorFirmante_Codigo='"&id&"'",conexion
+            if prm_sectorFirmante.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -24,14 +24,14 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Sector Firmante: <%response.Write(sectorFirmante("SectorFirmante_Nombre"))%>
+        <h1>Eliminar Sector Firmante: <%response.Write(prm_sectorFirmante("Prm_SectorFirmante_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td></td>
                 <td>Código:
                 <td>
-                    <%response.Write(sectorFirmante("SectorFirmante_Codigo"))%>
+                    <%response.Write(prm_sectorFirmante("Prm_SectorFirmante_Codigo"))%>
                 </td>
                 </td>
                 <td></td>
@@ -40,7 +40,7 @@
                 <td>Nombre:
                 </td>
                 <td colspan="3">
-                    <%response.Write(sectorFirmante("SectorFirmante_Nombre"))%>
+                    <%response.Write(sectorFirmante("Prm_SectorFirmante_Nombre"))%>
                 </td>
             </tr>
         </table>

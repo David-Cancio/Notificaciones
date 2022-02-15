@@ -1,14 +1,14 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
         dim conexion
-        dim sectorFirmante
+        dim prm_sectorFirmante
         set conexion=Server.CreateObject("ADODB.Connection")
-        set sectorFirmante = Server.CreateObject("ADODB.RecordSet")
+        set prm_sectorFirmante = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        sectorFirmante.open "select * from SectorFirmante",conexion
+        prm_sectorFirmante.open "select * from Prm_SectorFirmante",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -17,7 +17,7 @@
     <div class="listado">
         <h1>Sector Firmante</h1>
         <%
-        if not sectorFirmante.eof then
+        if not prm_sectorFirmante.eof then
         %>
         <table Class="tabla">
             <tr>
@@ -27,26 +27,26 @@
                 <th>Eliminar</th>
             </tr>
             <%
-            do while not sectorFirmante.eof
+            do while not prm_sectorFirmante.eof
             %>
             <tr>
-                <th><%response.write(sectorFirmante("SectorFirmante_Codigo"))%></th>
-                <th colspan="3"><%response.write(sectorFirmante("SectorFirmante_Nombre"))%></th>
+                <th><%response.write(prm_sectorFirmante("Prm_SectorFirmante_Codigo"))%></th>
+                <th colspan="3"><%response.write(sprm_ectorFirmante("Prm_SectorFirmante_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarSectorFirmante.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(sectorFirmante("SectorFirmante_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(prm_sectorFirmante("Prm_SectorFirmante_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos del Sector Firmante">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarSectorFirmante.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(sectorFirmante("SectorFirmante_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(prm_sectorFirmante("Prm_SectorFirmante_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine este Sector Firmante" class="btn-eliminar">
                     </form>
                 </th>
             </tr>
             <%
-            sectorFirmante.movenext
+            prm_sectorFirmante.movenext
             loop
             %>
         </table>

@@ -1,17 +1,17 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim sectorFirmante
+            dim prm_sectorFirmante
             set conexion = Server.CreateObject("ADODB.Connection")
-            set sectorFirmante = Server.CreateObject("ADODB.RecordSet") 
+            set prm_sectorFirmante = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            sectorFirmante.open "select SectorFirmante_Codigo from SectorFirmante Where SectorFirmante_Codigo='"&id&"'",conexion
-            if not sectorFirmante.EOF Then
-                conexion.execute("delete from SectorFirmante where SectorFirmante_Codigo='"&id&"'")
+            prm_sectorFirmante.open "select Prm_SectorFirmante_Codigo from Prm_SectorFirmante Where Prm_SectorFirmante_Codigo='"&id&"'",conexion
+            if not prm_sectorFirmante.EOF Then
+                conexion.execute("delete from Prm_SectorFirmante where Prm_SectorFirmante_Codigo='"&id&"'")
             End If
             conexion.close
         %>

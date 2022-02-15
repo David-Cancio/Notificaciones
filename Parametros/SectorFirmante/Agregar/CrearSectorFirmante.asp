@@ -1,19 +1,19 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim sectorFirmante
+dim prm_sectorFirmante
 set conexion=Server.CreateObject("ADODB.Connection")
-set sectorFirmante = Server.CreateObject("ADODB.RecordSet")
+set prm_sectorFirmante = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
-dim sectorFirmante_nombre
+dim prm_sectorFirmante_nombre
 dim id
-sectorFirmante_nombre=MayusculaTodas(Request.form("sectorFirmante_nombre"))
+prm_sectorFirmante_nombre=MayusculaTodas(Request.form("prm_sectorFirmante_nombre"))
 id=Request.form("id")
-if sectorFirmante_nombre="" Then
+if prm_sectorFirmante_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -25,10 +25,10 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-sectorFirmante.open "select SectorFirmante_Codigo from SectorFirmante WHERE SectorFirmante_Nombre = '"&sectorFirmante_nombre&"'",conexion
-if sectorFirmante.EOF then
-    conexion.execute("insert into SectorFirmante (SectorFirmante_Nombre) VALUES('"&sectorFirmante_nombre&"')")
-    sectorFirmante.Close
+prm_sectorFirmante.open "select Prm_SectorFirmante_Codigo from Prm_SectorFirmante WHERE Prm_SectorFirmante_Nombre = '"&prm_sectorFirmante_nombre&"'",conexion
+if prm_sectorFirmante.EOF then
+    conexion.execute("insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('"&prm_sectorFirmante_nombre&"')")
+    prm_sectorFirmante.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>
