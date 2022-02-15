@@ -66,4 +66,10 @@ else
 ValidarNull=var
 end if
 end function
+
+function SacarBarras(var)
+dim sacarBarra
+sacarBarra=replace(var,"/","")
+SacarBarras=sacarBarra
+end function
 %>
