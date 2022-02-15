@@ -1,44 +1,44 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim ve_Notificacion
+dim escritoHB
 set conexion=Server.CreateObject("ADODB.Connection")
 set ve_Notificacion = Server.CreateObject("ADODB.RecordSet")
-dim area, tipoMovimiento, etapa, estado, rol, tipoEscrito
+dim area, tipoMovimiento, etapa, estado, rol, tipoEscrito, sector
 set area = Server.CreateObject("ADODB.RecordSet")
 set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
 set etapa = Server.CreateObject("ADODB.RecordSet")
 set estado = Server.CreateObject("ADODB.RecordSet")
 set rol = Server.CreateObject("ADODB.RecordSet")
 set tipoEscrito = Server.CreateObject("ADODB.RecordSet")
-
 %>
 <!--#include virtual="/connectionSQL.asp"-->
-<!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
 dim area_Codigo
-area_Codigo=ValidarNull(Request.form("area_Codigo"))
+area_Codigo=Request.form("area_Codigo")
 dim tipoMov_Codigo
-tipoMov_Codigo=ValidarNull(Request.form("tipoMov_Codigo"))
+tipoMov_Codigo=Request.form("tipoMov_Codigo")
 dim etapa_Codigo
-etapa_Codigo=ValidarNull(Request.form("etapa_Codigo"))
+etapa_Codigo=Request.form("etapa_Codigo")
 dim estado_Codigo
-estado_Codigo=ValidarNull(Request.form("estado_Codigo"))
+estado_Codigo=Request.form("estado_Codigo")
 dim rol_Codigo
-rol_Codigo=ValidarNull(Request.form("rol_Codigo"))
-dim tipoEscrito_Codigo
-tipoEscrito_Codigo=ValidarNull(Request.form("tipoEscrito_Codigo"))
+rol_Codigo=Request.form("rol_Codigo")
+dim modeloEscrito_Codigo
+modeloEscrito_Codigo=Request.form("tipoEscrito_Codigo")
+dim obligatorio
+obligatorio=Request.form("obligatorio")
+dim sector_Codigo
+sector_Codigo=Request.form("sector_Codigo")
 area.open "select Area_Nombre from Prm_Area WHERE Area_Codigo = '"&area_Codigo&"'",conexion
 tipoMovimiento.open "select TipoMov_Nombre from Prm_TipoMovimiento WHERE TipoMov_Codigo = '"&tipoMov_Codigo&"'",conexion
 etapa.open "select Etapa_Nombre from Prm_Etapa WHERE Etapa_Codigo = '"&etapa_Codigo&"'",conexion
 estado.open "select Estado_Nombre from Prm_Estado WHERE Estado_Codigo = '"&estado_Codigo&"'",conexion
 rol.open "select Rol_Nombre from Prm_Rol WHERE Rol_Codigo = '"&rol_Codigo&"'",conexion
 tipoEscrito.open "select TipoEscrito_Nombre from Prm_TipoEscrito WHERE TipoEscrito_Codigo = '"&tipoEscrito_Codigo&"'",conexion
-dim fecha
-fecha=Date
-dim univoco
-univoco=""&(area_Codigo)&(tipoMov_Codigo)&(etapa_Codigo)&(estado_Codigo)&(rol_Codigo)&(tipoEscrito_Codigo)&(SacarBarras(fecha))
+sector.open "select TipoEscrito_Nombre from Prm_TipoEscrito WHERE TipoEscrito_Codigo = '"&sector_Codigo&"'",conexion
+
 if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or rol_Codigo="" or tipoEscrito_Codigo="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -94,7 +94,7 @@ conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotific
             <th><%response.write(estado("Estado_Nombre"))%></th>
             <th><%response.write(rol("Rol_Nombre"))%></th>
             <th><%response.write(tipoEscrito("TipoEscrito_Nombre"))%></th>
-            <th>1</th>
+            <th>1</th>  
         </tr>
     </table>
     end if
