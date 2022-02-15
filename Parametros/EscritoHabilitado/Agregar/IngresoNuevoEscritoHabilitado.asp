@@ -16,7 +16,7 @@ conexion.open
 
     <div class="listado">   
         <form action="CrearNotificacion.asp" method="post">
-            <h1>Ingrese los nuevos datos</h1>
+            <h1>Ingrese un Nuevo Escrito Hablitado</h1>
             <table Class="tabla">
                 <tr>
                     <!--Esta parte del codigo se puede hacer con un while dentro de otro while pero no llego con el tiemepo-->
@@ -31,7 +31,7 @@ conexion.open
                             else
                             do while not auxiliar.eof
                         %>
-                            <option value="<%response.write(auxiliar("Area_Codigo"))%>"><%response.write(auxiliar("Area_Codigo"))%>-<%response.write(auxiliar("Area_Nombre"))%></option>
+                            <option value="<%response.write(auxiliar("Prm_Area_Codigo"))%>"><%response.write(auxiliar("Prm_Area_Codigo"))%>-<%response.write(auxiliar("Prm_Area_Nombre"))%></option>
                         <%
                             auxiliar.movenext
                             loop
@@ -51,7 +51,7 @@ conexion.open
                             else
                             do while not auxiliar.eof
                         %>
-                            <option value="<%response.write(auxiliar("TipoMov_Codigo"))%>"><%response.write(auxiliar("TipoMov_Codigo"))%>-<%response.write(auxiliar("TipoMov_Nombre"))%></option>
+                            <option value="<%response.write(auxiliar("Prm_TipoMov_Codigo"))%>"><%response.write(auxiliar("Prm_TipoMov_Codigo"))%>-<%response.write(auxiliar("Prm_TipoMov_Nombre"))%></option>
                         <%
                             auxiliar.movenext
                             loop
@@ -74,7 +74,7 @@ conexion.open
                             else
                             do while not auxiliar.eof
                         %>
-                            <option value="<%response.write(auxiliar("Etapa_Codigo"))%>"><%response.write(auxiliar("Etapa_Codigo"))%>-<%response.write(auxiliar("Etapa_Nombre"))%></option>
+                            <option value="<%response.write(auxiliar("Prm_Etapa_Codigo"))%>"><%response.write(auxiliar("Prm_Etapa_Codigo"))%>-<%response.write(auxiliar("Prm_Etapa_Nombre"))%></option>
                         <%
                             auxiliar.movenext
                             loop
@@ -89,12 +89,12 @@ conexion.open
                             auxiliar.open "select * from Prm_Estado",conexion
                             if auxiliar.eof then
                         %>
-                            <option value="0">No hay Parametros de Etapa</option>
+                            <option value="0">No hay Parametros de Estado</option>
                         <% 
                             else
                             do while not auxiliar.eof
                         %>
-                            <option value="<%response.write(auxiliar("Estado_Codigo"))%>"><%response.write(auxiliar("Estado_Codigo"))%>-<%response.write(auxiliar("Estado_Nombre"))%></option>
+                            <option value="<%response.write(auxiliar("Prm_Estado_Codigo"))%>"><%response.write(auxiliar("Prm_Estado_Codigo"))%>-<%response.write(auxiliar("Prm_Estado_Nombre"))%></option>
                         <%
                             auxiliar.movenext
                             loop
@@ -111,12 +111,38 @@ conexion.open
                             auxiliar.open "select * from Prm_Rol",conexion
                             if auxiliar.eof then
                         %>
-                            <option value="0">No hay Parametros de Etapa</option>
+                            <option value="0">No hay Parametros de Rol</option>
+                        <% 
+                            else
+                            dim numeroRol
+                            do while not auxiliar.eof
+                        %>
+                            <option value="<%response.write(auxiliar("Prm_Rol_Codigo"))%>"><%response.write(auxiliar("Prm_Rol_Codigo"))%>-<%response.write(auxiliar("Prm_Rol_Nombre"))%></option>
+                        <%
+                            numeroRol=auxiliar("Prm_Rol_Codigo")
+                            auxiliar.movenext
+                            loop
+                            auxiliar.close
+                            numeroRol=numeroRol+1
+                        %>
+                            <option value="<%response.write(numeroRol)%>"><%response.write(numeroRol)%>-<%response.write("NO DEFINE")%></option>
+                        <%
+                            end if
+                        %>
+                        </select>
+                    </td>
+                    <td>Modelo de Escrito: 
+                        <select name="modeloEscrito_Codigo" title="Seleccione el Modelo de Escrito">
+                        <%
+                            auxiliar.open "select * from Prm_TipoEscrito",conexion
+                            if auxiliar.eof then
+                        %>
+                            <option value="0">No hay Parametros de Modelo de Escrito</option>
                         <% 
                             else
                             do while not auxiliar.eof
                         %>
-                            <option value="<%response.write(auxiliar("Rol_Codigo"))%>"><%response.write(auxiliar("Rol_Codigo"))%>-<%response.write(auxiliar("Rol_Nombre"))%></option>
+                            <option value="<%response.write(auxiliar("Prm_TipoEscrito_Codigo"))%>"><%response.write(auxiliar("Prm_TipoEscrito_Codigo"))%>-<%response.write(auxiliar("Prm_TipoEscrito_Nombre"))%></option>
                         <%
                             auxiliar.movenext
                             loop
@@ -125,7 +151,36 @@ conexion.open
                         %>
                         </select>
                     </td>
-                    <td>Cuit del Demandado
+                </tr>
+                <tr>
+                    <td>¿Es Obligatorio la firma de algun Sector?: 
+                        <select name="" title="Seleccione el Modelo de Escrito">
+                            <option value="0">No</option>
+                            <option value="1">Si</option>
+                        </select>
+                    </td>
+                    <td>Rol: 
+                        <select name="sector_Codigo" title="Seleccione el Sector Firmante">
+                        <%
+                            auxiliar.open "select * from Prm_SectorFirmante",conexion
+                            if auxiliar.eof then
+                        %>
+                            <option value="0">No hay Parametros de Sectores Firmantes</option>
+                        <% 
+                            else
+                        %>
+                            <option value="0" selected>-</option>
+                        <%
+                            do while not auxiliar.eof
+                        %>
+                            <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                        <%
+                            auxiliar.movenext
+                            loop
+                            auxiliar.close
+                            end if
+                        %>
+                        </select>
                     </td>
                 </tr>
             </table>
