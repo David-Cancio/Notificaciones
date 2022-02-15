@@ -11,13 +11,24 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre:
-                            <input type="text" name="tipoEscrito_nombre" size="40" placeholder="Nombre de Escrito" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Escrito"/>
+                            <input type="text" name="prm_tipoEscrito_nombre" size="40" placeholder="Nombre de Escrito" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Escrito"/>
                     </td>
                     <td colspan="2">Tipo de Archivo:
-                            <input type="text" name="tipoEscrito_tipoArchivo" size="40" placeholder="Tipo de Archivo" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Tipo de Archivo"/>
+                         <select name="prm_tipoEscrito_tipoArchivo" title="Seleccione el Tipo de Archivo">
+                            <option value="0">EXCEL</option>
+                            <option value="1">WORD</option>
+                            <option value="1">PDF</option>
+                        </select>
                     </td>
-                    <td colspan="2">Modelo:
-                            <input type="text" name="tipoEscrito_modelo" size="40" placeholder="Modelo de Escrito" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Modelo de Escrito"/>
+                    <td colspan="2">Extension:
+
+                         <select name="prm_tipoEscrito_extension" title="Seleccione el Extension">
+                            <option value="0">DOC</option>
+                            <option value="1">DOCX</option>
+                            <option value="2">XML</option>
+                            <option value="3">XMLS</option>
+                            <option value="4">PDF</option>
+                        </select>
                     </td>
                 </tr>
             </table>

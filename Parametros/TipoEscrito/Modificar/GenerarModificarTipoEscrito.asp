@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim tipoEscrito
+            dim prm_tipoEscrito
             set conexion=Server.CreateObject("ADODB.Connection")
-            set tipoEscrito = Server.CreateObject("ADODB.RecordSet")
+            set prm_tipoEscrito = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoEscrito.open "select * from TipoEscrito where TipoEscrito_Codigo='"&id&"'",conexion
-            if tipoEscrito.eof then
+            prm_tipoEscrito.open "select * from Prm_TipoEscrito where Prm_TipoEscrito_Codigo='"&id&"'",conexion
+            if prm_tipoEscrito.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -30,13 +30,13 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre del Tipo de Escrito:
-                            <input type="text" name="tipoEscrito_nombre" size="40" required title="Indique el Nombre del Tipo de Escrito" value="<%response.write(tipoEscrito("TipoEscrito_Nombre"))%>"/>
+                            <input type="text" name="prm_tipoEscrito_nombre" size="40" required title="Indique el Nombre del Tipo de Escrito" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>"/>
                     </td>
                     <td colspan="2">Tipo de Archivo:
-                            <input type="text" name="tipoEscrito_tipoArchivo" size="40" required title="Indique el Tipo de Archivo" value="<%response.write(tipoEscrito("TipoEscrito_tipoArchivo"))%>"/>
+                            <input type="text" name="prm_tipoEscrito_tipoArchivo" size="40" required title="Indique el Tipo de Archivo" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_tipoArchivo"))%>"/>
                     </td>
-                    <td colspan="2">Modelo:
-                            <input type="text" name="tipoEscrito_modelo" size="40" required title="Indique el Modelo del Tipo de Escrito" value="<%response.write(tipoEscrito("TipoEscrito_Modelo"))%>"/>
+                    <td colspan="2">Extension:
+                            <input type="text" name="prm_tipoEscrito_extension" size="40" required title="Indique el Modelo del Tipo de Extension" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Extension"))%>"/>
                     </td>
                 </tr>
             </table>

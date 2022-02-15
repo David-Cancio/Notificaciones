@@ -1,23 +1,23 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim tipoEscrito
+dim prm_tipoEscrito
 set conexion=Server.CreateObject("ADODB.Connection")
-set tipoEscrito = Server.CreateObject("ADODB.RecordSet")
+set prm_tipoEscrito = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
-dim tipoEscrito_nombre
-dim tipoEscrito_tipoArchivo
-dim tipoEscrito_modelo
+dim prm_tipoEscrito_nombre
+dim prm_tipoEscrito_tipoArchivo
+dim prm_tipoEscrito_extension
 dim id
-tipoEscrito_nombre=MayusculaTodas(Request.form("tipoEscrito_nombre"))
-tipoEscrito_tipoArchivo=MayusculaTodas(Request.form("tipoEscrito_tipoArchivo"))
-tipoEscrito_modelo=MayusculaTodas(Request.form("tipoEscrito_modelo"))
+prm_tipoEscrito_nombre=MayusculaTodas(Request.form("prm_tipoEscrito_nombre"))
+prm_tipoEscrito_tipoArchivo=MayusculaTodas(Request.form("prm_tipoEscrito_tipoArchivo"))
+prm_tipoEscrito_extension=MayusculaTodas(Request.form("prm_tipoEscrito_extension"))
 id=Request.form("id")
-if tipoEscrito_nombre="" Then
+if prm_tipoEscrito_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -29,10 +29,10 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-tipoEscrito.open "select TipoEscrito_Nombre from TipoEscrito WHERE TipoEscrito_Nombre = '"&tipoEscrito_nombre&"'",conexion
-if tipoEscrito.EOF then
-    conexion.execute("insert into TipoEscrito (TipoEscrito_Nombre, TipoEscrito_tipoArchivo, TipoEscrito_Modelo) VALUES('"&tipoEscrito_nombre&"','"&tipoEscrito_tipoArchivo&"','"&tipoEscrito_modelo&"')")
-    tipoEscrito.Close
+prm_tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
+if prm_tipoEscrito.EOF then
+    conexion.execute("insert into Prm_TipoEscrito (Prm_TipoEscrito_Nombre, Prm_TipoEscrito_TipoArchivo, Prm_TipoEscrito_Extension) VALUES('"&prm_tipoEscrito_nombre&"','"&prm_tipoEscrito_tipoArchivo&"','"&prm_tipoEscrito_extension&"')")
+    prm_tipoEscrito.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>

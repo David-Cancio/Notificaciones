@@ -1,17 +1,17 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim tipoEscrito
+            dim prm_tipoEscrito
             set conexion = Server.CreateObject("ADODB.Connection")
-            set tipoEscrito = Server.CreateObject("ADODB.RecordSet") 
+            set prm_tipoEscrito = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoEscrito.open "select TipoEscrito_Codigo from TipoEscrito Where TipoEscrito_Codigo='"&id&"'",conexion
-            if not tipoEscrito.EOF Then
-                conexion.execute("delete from TipoEscrito where TipoEscrito_Codigo='"&id&"'")
+            prm_tipoEscrito.open "select Prm_TipoEscrito_Codigo from Prm_TipoEscrito Where Prm_TipoEscrito_Codigo='"&id&"'",conexion
+            if not prm_tipoEscrito.EOF Then
+                conexion.execute("delete from Prm_TipoEscrito where Prm_TipoEscrito_Codigo='"&id&"'")
             End If
             conexion.close
         %>

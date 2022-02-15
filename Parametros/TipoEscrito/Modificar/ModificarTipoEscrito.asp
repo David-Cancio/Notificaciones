@@ -1,9 +1,9 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim tipoEscrito_nombre
-            dim tipoEscrito_tipoArchivo
-            dim tipoEscrito_modelo
+            dim prm_tipoEscrito_nombre
+            dim prm_tipoEscrito_tipoArchivo
+            dim prm_tipoEscrito_extension
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
@@ -11,10 +11,10 @@
         <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            tipoEscrito_nombre=Mayusculatodas(Request.form("tipoEscrito_nombre"))
-            tipoEscrito_tipoArchivo=Mayusculatodas(Request.form("tipoEscrito_tipoArchivo"))
-            tipoEscrito_modelo=Mayusculatodas(Request.form("tipoEscrito_modelo"))
-            conexion.execute("UPDATE TipoEscrito SET TipoEscrito_Nombre='"&tipoEscrito_nombre&"', TipoEscrito_TipoArchivo='"&tipoEscrito_tipoArchivo&"', TipoEscrito_Modelo='"&tipoEscrito_modelo&"' WHERE TipoEscrito_Codigo='"&id&"' ")
+            prm_tipoEscrito_nombre=Mayusculatodas(Request.form("prm_tipoEscrito_nombre"))
+            prm_tipoEscrito_tipoArchivo=Mayusculatodas(Request.form("prm_tipoEscrito_tipoArchivo"))
+            prm_tipoEscrito_extension=Mayusculatodas(Request.form("prm_tipoEscrito_extension"))
+            conexion.execute("UPDATE Prm_TipoEscrito SET Prm_TipoEscrito_Nombre='"&prm_tipoEscrito_nombre&"', Prm_TipoEscrito_TipoArchivo='"&prm_tipoEscrito_tipoArchivo&"', Prm_TipoEscrito_Extension='"&prm_tipoEscrito_extension&"' WHERE Prm_TipoEscrito_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>

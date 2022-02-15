@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim tipoEscrito
+            dim prm_tipoEscrito
             set conexion=Server.CreateObject("ADODB.Connection")
-            set tipoEscrito = Server.CreateObject("ADODB.RecordSet")
+            set prm_tipoEscrito = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoEscrito.open "select * from TipoEscrito where TipoEscrito_Codigo='"&id&"'",conexion
-            if tipoEscrito.eof then
+            prm_tipoEscrito.open "select * from Prm_TipoEscrito where Prm_TipoEscrito_Codigo='"&id&"'",conexion
+            if prm_tipoEscrito.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -24,21 +24,21 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Tipo de Escrito: <%response.Write(tipoEscrito("TipoEscrito_Nombre"))%>
+        <h1>Eliminar Tipo de Escrito: <%response.Write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td></td>
-                <td>Código: <%response.Write(tipoEscrito("TipoEscrito_Codigo"))%>
+                <td>Código: <%response.Write(prm_tipoEscrito("Prm_TipoEscrito_Codigo"))%>
                 </td>
                 <td></td>
             </tr>
             <tr>
-                <td>Nombre: <%response.Write(tipoEscrito("TipoEscrito_Nombre"))%>
+                <td>Nombre: <%response.Write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>
                 </td>
-                <td>Tipo de Archivo: <%response.Write(tipoEscrito("TipoEscrito_TipoArchivo"))%>
+                <td>Tipo de Archivo: <%response.Write(prm_tipoEscrito("Prm_TipoEscrito_TipoArchivo"))%>
                 </td>
-                <td>Modelo: <%response.Write(tipoEscrito("TipoEscrito_Modelo"))%>
+                <td>Modelo: <%response.Write(prm_tipoEscrito("Prm_TipoEscrito_Extension"))%>
                 </td>
             </tr>
         </table>
