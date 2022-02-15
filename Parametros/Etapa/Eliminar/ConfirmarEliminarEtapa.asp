@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim etapa
+            dim prm_etapa
             set conexion=Server.CreateObject("ADODB.Connection")
-            set etapa = Server.CreateObject("ADODB.RecordSet")
+            set prm_etapa = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            etapa.open "select * from Etapa where Etapa_Codigo='"&id&"'",conexion
-            if etapa.eof then
+            prm_etapa.open "select * from Prm_Etapa where Prm_Etapa_Codigo='"&id&"'",conexion
+            if prm_etapa.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -24,14 +24,14 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Etapa: <%response.Write(etapa("Etapa_Nombre"))%>
+        <h1>Eliminar Etapa: <%response.Write(prm_etapa("Prm_Etapa_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td></td>
                 <td>Código:
                 <td>
-                    <%response.Write(etapa("Etapa_Codigo"))%>
+                    <%response.Write(prm_etapa("Prm_Etapa_Codigo"))%>
                 </td>
                 </td>
                 <td></td>
@@ -40,7 +40,7 @@
                 <td>Nombre:
                 </td>
                 <td colspan="3">
-                    <%response.Write(etapa("Etapa_Nombre"))%>
+                    <%response.Write(prm_etapa("Prm_Etapa_Nombre"))%>
                 </td>
             </tr>
         </table>

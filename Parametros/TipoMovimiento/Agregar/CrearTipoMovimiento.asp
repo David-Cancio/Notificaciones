@@ -13,7 +13,7 @@ dim tipoMov_nombre
 dim id
 tipoMov_nombre=MayusculaTodas(Request.form("tipoMov_nombre"))
 id=Request.form("id")
-if area_nombre="" Then
+if tipoMov_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -25,9 +25,9 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-movimiento.open "select Area_Codigo from Area WHERE Area_Nombre = '"&area_nombre&"'",conexion
+movimiento.open "select Prm_TipoMov_Codigo from Prm_TipoMovimiento WHERE Prm_TipoMov_Nombre = '"&tipoMov_nombre&"'",conexion
 if movimiento.EOF then
-    conexion.execute("insert into TipoMovimiento (Tipo_Nombre) VALUES('"&tipoMov_nombre&"')")
+    conexion.execute("insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('"&tipoMov_nombre&"')")
     movimiento.Close
 %>
 
@@ -40,12 +40,12 @@ if movimiento.EOF then
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="IngresoNuevoArea.asp" method="post">
+                    <form action="IngresoNuevoTipoMovimiento.asp" method="post">
                         <input type="submit" value="Agregar Otro" title="Agregue otro Movimiento" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarAreas.asp" method="post">
+                    <form action="../RecuperarTipoMovimientos.asp" method="post">
                         <input type="submit" value="Regresar" title="Regresar">
                     </form>
                 </div>

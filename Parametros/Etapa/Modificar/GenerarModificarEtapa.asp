@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim etapa
+            dim prm_etapa
             set conexion=Server.CreateObject("ADODB.Connection")
-            set etapa = Server.CreateObject("ADODB.RecordSet")
+            set prm_etapa = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            etapa.open "select * from etapa where Etapa_Codigo='"&id&"'",conexion
-            if etapa.eof then
+            prm_etapa.open "select * from Prm_Etapa where Prm_Etapa_Codigo='"&id&"'",conexion
+            if prm_etapa.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre de Etapa:
-                            <input type="text" name="etapa_nombre" size="40" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü]{1,}" title="Indique el Nombre de Etapa" value="<%response.write(etapa("Etapa_Nombre"))%>"/>
+                            <input type="text" name="prm_etapa_nombre" size="40" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü]{1,}" title="Indique el Nombre de Etapa" value="<%response.write(prm_etapa("Prm_Etapa_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>

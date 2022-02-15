@@ -9,9 +9,9 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoMovimiento.open "select TipoMov_Codigo from TipoMovimiento Where TipoMov_Codigo='"&id&"'",conexion
+            tipoMovimiento.open "select Prm_TipoMov_Codigo from Prm_TipoMovimiento Where Prm_TipoMov_Codigo='"&id&"'",conexion
             if not tipoMovimiento.EOF Then
-                conexion.execute("delete from TipoMovimiento where TipoMov_Codigo='"&id&"'")
+                conexion.execute("delete from Prm_TipoMovimiento where Prm_TipoMov_Codigo='"&id&"'")
             End If
             conexion.close
         %>

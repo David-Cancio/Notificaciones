@@ -9,7 +9,7 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            rol.open "select * from Rol where Rol_Codigo='"&id&"'",conexion
+            rol.open "select * from Prm_Rol where Prm_Rol_Codigo='"&id&"'",conexion
             if rol.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Rol:
-                            <input type="text" name="rol_nombre" size="40" required title="Indique el Nombre del Rol" value="<%response.write(rol("Rol_Nombre"))%>"/>
+                            <input type="text" name="rol_nombre" size="40" required title="Indique el Nombre del Rol" value="<%response.write(rol("Prm_Rol_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>

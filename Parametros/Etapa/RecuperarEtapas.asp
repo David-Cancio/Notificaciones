@@ -1,14 +1,14 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
         dim conexion
-        dim etapa
+        dim prm_etapa
         set conexion=Server.CreateObject("ADODB.Connection")
-        set etapa = Server.CreateObject("ADODB.RecordSet")
+        set prm_etapa = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        etapa.open "select * from Etapa",conexion
+        prm_etapa.open "select * from Prm_Etapa",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -17,7 +17,7 @@
     <div class="listado">
         <h1>Etapa</h1>
         <%
-        if not etapa.eof then
+        if not prm_etapa.eof then
         %>
         <table Class="tabla">
             <tr>
@@ -27,26 +27,26 @@
                 <th>Eliminar</th>
             </tr>
             <%
-            do while not etapa.eof
+            do while not prm_etapa.eof
             %>
             <tr>
-                <th><%response.write(etapa("Etapa_Codigo"))%></th>
-                <th colspan="3"><%response.write(etapa("Etapa_Nombre"))%></th>
+                <th><%response.write(prm_etapa("Prm_Etapa_Codigo"))%></th>
+                <th colspan="3"><%response.write(prm_etapa("Prm_Etapa_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarEtapa.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(etapa("Etapa_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(prm_etapa("Prm_Etapa_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos de la Etapa">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarEtapa.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(etapa("Etapa_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(prm_etapa("Prm_Etapa_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine esta Etapa" class="btn-eliminar">
                     </form>
                 </th>
             </tr>
             <%
-            etapa.movenext
+            prm_etapa.movenext
             loop
             %>
         </table>

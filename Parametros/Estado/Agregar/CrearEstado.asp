@@ -1,19 +1,19 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim estado
+dim prm_estado
 set conexion=Server.CreateObject("ADODB.Connection")
-set estado = Server.CreateObject("ADODB.RecordSet")
+set prm_estado = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
-dim estado_nombre
+dim prm_estado_nombre
 dim id
-estado_nombre=MayusculaTodas(Request.form("estado_nombre"))
+prm_estado_nombre=MayusculaTodas(Request.form("prm_estado_nombre"))
 id=Request.form("id")
-if estado_nombre="" Then
+if prm_estado_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -25,10 +25,10 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-estado.open "select Estado_Codigo from Estado WHERE Estado_Nombre = '"&estado_nombre&"'",conexion
-if estado.EOF then
-    conexion.execute("insert into Estado (Estado_Nombre) VALUES('"&estado_nombre&"')")
-    estado.Close
+prm_estado.open "select Prm_Estado_Codigo from Prm_Estado WHERE Prm_Estado_Nombre = '"&prm_estado_nombre&"'",conexion
+if prm_estado.EOF then
+    conexion.execute("insert into Prm_Estado (Prm_Estado_Nombre) VALUES('"&prm_estado_nombre&"')")
+    prm_estado.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>

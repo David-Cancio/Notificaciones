@@ -9,8 +9,8 @@
         <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            rol_nombre=Mayusculatodas(Request.form("Rol_Nombre"))
-            conexion.execute("UPDATE Rol SET Rol_Nombre='"&rol_nombre&"' WHERE Rol_Codigo='"&id&"' ")
+            rol_nombre=Mayusculatodas(Request.form("rol_Nombre"))
+            conexion.execute("UPDATE Prm_Rol SET Prm_Rol_Nombre='"&rol_nombre&"' WHERE Prm_Rol_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>

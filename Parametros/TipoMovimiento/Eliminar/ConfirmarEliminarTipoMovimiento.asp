@@ -9,7 +9,7 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoMovimiento.open "select * from TipoMovimiento where TipoMov_Codigo='"&id&"'",conexion
+            tipoMovimiento.open "select * from Prm_TipoMovimiento where Prm_TipoMov_Codigo='"&id&"'",conexion
             if tipoMovimiento.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -24,19 +24,19 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Área: <%response.Write(tipoMovimiento("TipoMov_Nombre"))%>
+        <h1>Eliminar Área: <%response.Write(tipoMovimiento("Prm_TipoMov_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td>Código:
                 </td>
                 <td>
-                    <%response.Write(tipoMovimiento("TipoMov_Codigo"))%>
+                    <%response.Write(tipoMovimiento("Prm_TipoMov_Codigo"))%>
                 </td>
                 <td>Nombre:
                 </td>
                 <td>
-                    <%response.Write(tipoMovimiento("TipoMov_Nombre"))%>
+                    <%response.Write(tipoMovimiento("Prm_TipoMov_Nombre"))%>
                 </td>
             </tr>
         </table>

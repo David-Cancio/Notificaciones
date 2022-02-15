@@ -1,7 +1,7 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim estado_nombre
+            dim prm_estado_nombre
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
@@ -9,8 +9,8 @@
         <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            estado_nombre=Mayusculatodas(Request.form("Estado_Nombre"))
-            conexion.execute("UPDATE Estado SET Estado_Nombre='"&estado_nombre&"' WHERE Estado_Codigo='"&id&"' ")
+            prm_estado_nombre=Mayusculatodas(Request.form("Prm_Estado_Nombre"))
+            conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Nombre='"&prm_estado_nombre&"' WHERE Estado_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>

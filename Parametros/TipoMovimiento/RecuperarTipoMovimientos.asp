@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        tipoMovimiento.open "select * from TipoMovimiento",conexion
+        tipoMovimiento.open "select * from Prm_TipoMovimiento",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -30,17 +30,17 @@
             do while not tipoMovimiento.eof
             %>
             <tr>
-                <th><%response.write(tipoMovimiento("TipoMov_Codigo"))%></th>
-                <th colspan="2"><%response.write(tipoMovimiento("TipoMov_Nombre"))%></th>
+                <th><%response.write(tipoMovimiento("Prm_TipoMov_Codigo"))%></th>
+                <th colspan="2"><%response.write(tipoMovimiento("Prm_TipoMov_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarTipoMovimiento.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(tipoMovimiento("TipoMov_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(tipoMovimiento("Prm_TipoMov_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos de este Tipo de Movimiento">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarTipoMovimiento.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(tipoMovimiento("TipoMov_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(tipoMovimiento("Prm_TipoMov_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine este Tipo de Movimiento">
                     </form>
                 </th>

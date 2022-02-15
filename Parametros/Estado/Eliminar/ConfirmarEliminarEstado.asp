@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim estado
+            dim prm_estado
             set conexion=Server.CreateObject("ADODB.Connection")
-            set estado = Server.CreateObject("ADODB.RecordSet")
+            set prm_estado = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            estado.open "select * from Estado where Estado_Codigo='"&id&"'",conexion
-            if estado.eof then
+            prm_estado.open "select * from Prm_Estado where Prm_Estado_Codigo='"&id&"'",conexion
+            if prm_estado.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -24,14 +24,14 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Estado: <%response.Write(estado("Estado_Nombre"))%>
+        <h1>Eliminar Estado: <%response.Write(prm_estado("Prm_Estado_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td></td>
                 <td>Código:
                 <td>
-                    <%response.Write(estado("Estado_Codigo"))%>
+                    <%response.Write(prm_estado("Prm_Estado_Codigo"))%>
                 </td>
                 </td>
                 <td></td>
@@ -40,7 +40,7 @@
                 <td>Nombre:
                 </td>
                 <td colspan="3">
-                    <%response.Write(estado("Estado_Nombre"))%>
+                    <%response.Write(prm_estado("Prm_Estado_Nombre"))%>
                 </td>
             </tr>
         </table>

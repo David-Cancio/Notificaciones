@@ -11,7 +11,7 @@ set rol = Server.CreateObject("ADODB.RecordSet")
 conexion.open
 dim rol_nombre
 dim id
-rol_nombre=MayusculaTodas(Request.form("rol_nombre"))
+rol_nombre=MayusculaTodas(Request.form("Prm_rol_nombre"))
 id=Request.form("id")
 if rol_nombre="" Then
 %>
@@ -25,9 +25,9 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-rol.open "select Rol_Codigo from Rol WHERE Rol_Nombre = '"&rol_nombre&"'",conexion
+rol.open "select Prm_Rol_Codigo from Prm_Rol WHERE Prm_Rol_Nombre = '"&rol_nombre&"'",conexion
 if rol.EOF then
-    conexion.execute("insert into Rol (Rol_Nombre) VALUES('"&rol_nombre&"')")
+    conexion.execute("insert into Prm_Rol (Prm_Rol_Nombre) VALUES('"&rol_nombre&"')")
     rol.Close
 %>
 
@@ -46,7 +46,7 @@ if rol.EOF then
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarRoles.asp" method="post">
-                        <input type="submit" value="Regresar" title="Regresar>
+                        <input type="submit" value="Regresar" title="Regresar">
                     </form>
                 </div>
             </div>

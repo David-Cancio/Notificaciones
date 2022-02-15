@@ -10,7 +10,7 @@
         <%
             conexion.Open
             tipoMov_nombre=MayusculaTodas(Request.form("tipoMov_nombre"))
-            conexion.execute("UPDATE TipoMovimiento SET TipoMov_Nombre='"&tipoMov_nombre&"' WHERE TipoMov_Codigo='"&id&"' ")
+            conexion.execute("UPDATE Prm_TipoMovimiento SET Prm_TipoMov_Nombre='"&tipoMov_nombre&"' WHERE Prm_TipoMov_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>

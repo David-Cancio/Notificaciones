@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        rol.open "select * from Rol",conexion
+        rol.open "select * from Prm_Rol",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -30,17 +30,17 @@
             do while not rol.eof
             %>
             <tr>
-                <th><%response.write(rol("Rol_Codigo"))%></th>
-                <th colspan="3"><%response.write(rol("Rol_Nombre"))%></th>
+                <th><%response.write(rol("Prm_Rol_Codigo"))%></th>
+                <th colspan="3"><%response.write(rol("Prm_Rol_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarRol.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(rol("Rol_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(rol("Prm_Rol_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos del Rol">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarRol.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(rol("Rol_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(rol("Prm_Rol_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine este Rol" class="btn-eliminar">
                     </form>
                 </th>

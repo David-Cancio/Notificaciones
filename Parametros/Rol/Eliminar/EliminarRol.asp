@@ -9,9 +9,9 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            rol.open "select Rol_Codigo from Rol Where Rol_Codigo='"&id&"'",conexion
+            rol.open "select Prm_Rol_Codigo from Prm_Rol Where Prm_Rol_Codigo='"&id&"'",conexion
             if not rol.EOF Then
-                conexion.execute("delete from Rol where Rol_Codigo='"&id&"'")
+                conexion.execute("delete from Prm_Rol where Prm_Rol_Codigo='"&id&"'")
             End If
             conexion.close
         %>

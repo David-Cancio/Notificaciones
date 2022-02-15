@@ -9,7 +9,7 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoMovimiento.open "select * from TipoMovimiento where TipoMov_Codigo='"&id&"'",conexion
+            tipoMovimiento.open "select * from Prm_TipoMovimiento where Prm_TipoMov_Codigo='"&id&"'",conexion
             if tipoMovimiento.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Tipo de Movimiento:
-                            <input type="text" name="tipoMov_nombre" size="40" required title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("TipoMov_Nombre"))%>"/>
+                            <input type="text" name="tipoMov_nombre" size="40" required title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("Prm_TipoMov_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>

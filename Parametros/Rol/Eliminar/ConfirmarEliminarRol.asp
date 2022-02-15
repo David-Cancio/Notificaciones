@@ -9,7 +9,7 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            rol.open "select * from Rol where Rol_Codigo='"&id&"'",conexion
+            rol.open "select * from Prm_Rol where Prm_Rol_Codigo='"&id&"'",conexion
             if rol.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -24,14 +24,14 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Rol: <%response.Write(rol("Rol_Nombre"))%>
+        <h1>Eliminar Rol: <%response.Write(rol("Prm_Rol_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td></td>
                 <td>Código:
                 <td>
-                    <%response.Write(rol("Rol_Codigo"))%>
+                    <%response.Write(rol("Prm_Rol_Codigo"))%>
                 </td>
                 </td>
                 <td></td>
@@ -40,7 +40,7 @@
                 <td>Nombre:
                 </td>
                 <td colspan="3">
-                    <%response.Write(rol("Rol_Nombre"))%>
+                    <%response.Write(rol("Prm_Rol_Nombre"))%>
                 </td>
             </tr>
         </table>

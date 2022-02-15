@@ -1,17 +1,17 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim etapa
+            dim prm_etapa
             set conexion = Server.CreateObject("ADODB.Connection")
-            set etapa = Server.CreateObject("ADODB.RecordSet") 
+            set prm_etapa = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            etapa.open "select Etapa_Codigo from Etapa Where Etapa_Codigo='"&id&"'",conexion
-            if not etapa.EOF Then
-                conexion.execute("delete from Etapa where Etapa_Codigo='"&id&"'")
+            prm_etapa.open "select Prm_Etapa_Codigo from Etapa Where Prm_Etapa_Codigo='"&id&"'",conexion
+            if not prm_etapa.EOF Then
+                conexion.execute("delete from Prm_Etapa where Prm_Etapa_Codigo='"&id&"'")
             End If
             conexion.close
         %>

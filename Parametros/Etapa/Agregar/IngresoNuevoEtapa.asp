@@ -11,7 +11,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre de Etapa:
-                        <input type="text" name="etapa_nombre" size="40" placeholder="Nombre Etapa" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre de Etapa"/>
+                        <input type="text" name="prm_etapa_nombre" size="40" placeholder="Nombre Etapa" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre de Etapa"/>
                     </td>
                 </tr>
             </table>

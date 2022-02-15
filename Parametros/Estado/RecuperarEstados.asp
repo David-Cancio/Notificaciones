@@ -1,14 +1,14 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
         dim conexion
-        dim estado
+        dim prm_estado
         set conexion=Server.CreateObject("ADODB.Connection")
-        set estado = Server.CreateObject("ADODB.RecordSet")
+        set prm_estado = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        estado.open "select * from Estado",conexion
+        prm_estado.open "select * from Prm_Estado",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -17,7 +17,7 @@
     <div class="listado">
         <h1>Estado</h1>
         <%
-        if not estado.eof then
+        if not prm_estado.eof then
         %>
         <table Class="tabla">
             <tr>
@@ -27,26 +27,26 @@
                 <th>Eliminar</th>
             </tr>
             <%
-            do while not estado.eof
+            do while not prm_estado.eof
             %>
             <tr>
-                <th><%response.write(estado("Estado_Codigo"))%></th>
-                <th colspan="3"><%response.write(estado("Estado_Nombre"))%></th>
+                <th><%response.write(prm_estado("Prm_Estado_Codigo"))%></th>
+                <th colspan="3"><%response.write(prm_estado("Prm_Estado_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarEstado.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(estado("Estado_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(prm_estado("Prm_Estado_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos del Estado">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarEstado.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(estado("Estado_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(prm_estado("Prm_Estado_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine este Estado" class="btn-eliminar">
                     </form>
                 </th>
             </tr>
             <%
-            estado.movenext
+            prm_estado.movenext
             loop
             %>
         </table>

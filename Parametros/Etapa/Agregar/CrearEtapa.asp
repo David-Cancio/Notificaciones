@@ -1,20 +1,20 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim etapa
+dim prm_etapa
 set conexion=Server.CreateObject("ADODB.Connection")
-set etapa = Server.CreateObject("ADODB.RecordSet")
+set prm_etapa = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
-dim etapa_nombre
+dim prm_etapa_nombre
 dim id
 
-etapa_nombre=MayusculaTodas(Request.form("etapa_nombre"))
+prm_etapa_nombre=MayusculaTodas(Request.form("prm_etapa_nombre"))
 id=Request.form("id")
-if etapa_nombre="" Then
+if prm_etapa_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -26,10 +26,10 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-etapa.open "select Etapa_Codigo from Etapa WHERE Etapa_Nombre = '"&etapa_nombre&"'",conexion
-if etapa.EOF then
-    conexion.execute("insert into Etapa (Etapa_Nombre) VALUES('"&etapa_nombre&"')")
-    etapa.Close
+prm_etapa.open "select Prm_Etapa_Codigo from Prm_Etapa WHERE Prm_Etapa_Nombre = '"&prm_etapa_nombre&"'",conexion
+if prm_etapa.EOF then
+    conexion.execute("insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('"&prm_etapa_nombre&"')")
+    prm_etapa.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>
