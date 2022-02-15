@@ -52,7 +52,7 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/CrearNotificacion.asp" method="post">
+        <form action="./Agregar/IngresoNuevaNotificacion.asp" method="post">
             <input type="text" name="area_Codigo" value="1" hidden>
             <input type="text" name="tipoMov_Codigo" value="1" hidden>
             <input type="text" name="etapa_Codigo" value="1" hidden>

@@ -34,12 +34,13 @@ rol.open "select Rol_Nombre from Rol WHERE Rol_Codigo = '"&rol_Codigo&"'",conexi
 dim fecha
 fecha=Date
 dim univoco
-univoco=""&(area_Codigo)&"-"&(tipoMov_Codigo)&"-"&(etapa_Codigo)&"-"&(estado_Codigo)&"-"&(rol_Codigo)&"-"&(fecha)
+univoco="k"&(area_Codigo)&(tipoMov_Codigo)&(etapa_Codigo)&(estado_Codigo)&(rol_Codigo)&(SacarBarras(fecha))
 if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or rol_Codigo="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
 end if
+conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotificacion_Area, VeNotificacion_TipoMovimiento, VeNotificacion_Etapa, VeNotificacion_Estado, VeNotificacion_Rol, VeNotificacion_TipoEscrito, VeNotificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','1','2')")
 %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -67,7 +68,12 @@ end if
     </table>
         <div class="container">
             <div class="row">
-                <div class="col-sm-7 col-md-6 py-12">
+                <div class="col-sm-7 col-md-6 py-2">
+                    <form action="IngresoNuevaNotificacion.asp" method="post">
+                        <input type="submit" value="Agregar Otra" title="Agregue otra Notificación" class="btn-agregar">
+                    </form>
+                </div>
+                <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarNotificaciones.asp" method="post">
                         <input type="submit" value="Regresar" title="Vuelva al listado de Notificaciones">
                     </form>

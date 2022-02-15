@@ -21,9 +21,9 @@ conexion.open
                 <tr>
                     <!--Esta parte del codigo se puede hacer con un while dentro de otro while pero no llego con el tiemepo-->
                     <td>Áreas: 
-                        <select name="area" title="Seleccione el Área">
+                        <select name="area_Codigo" title="Seleccione el Área">
                         <%
-                            auxiliar.open "select * from Area'",conexion
+                            auxiliar.open "select * from Area",conexion
                             if auxiliar.eof then
                         %>
                             <option value="0">No hay Parametros de Area</option>
@@ -41,9 +41,9 @@ conexion.open
                         </select>
                     </td>
                     <td>Tipo Movimiento: 
-                        <select name="tipoMov" title="Seleccione el Tipo de Movimiento">
+                        <select name="tipoMov_codigo" title="Seleccione el Tipo de Movimiento">
                         <%
-                            auxiliar.open "select * from TipoMovimiento'",conexion
+                            auxiliar.open "select * from TipoMovimiento",conexion
                             if auxiliar.eof then
                         %>
                             <option value="0">No hay Parametros de Tipo de Movimiento</option>
@@ -64,9 +64,9 @@ conexion.open
                 </tr>
                 <tr>
                     <td>Etapa: 
-                        <select name="Etapa" title="Seleccione la Etapa">
+                        <select name="etapa_Codigo" title="Seleccione la Etapa">
                         <%
-                            auxiliar.open "select * from Etapa'",conexion
+                            auxiliar.open "select * from Etapa",conexion
                             if auxiliar.eof then
                         %>
                             <option value="0">No hay Parametros de Etapa</option>
@@ -84,9 +84,9 @@ conexion.open
                         </select>
                     </td>
                     <td>Estado
-                        <select name="Estado" title="Seleccione el Estado">
+                        <select name="estado_Codigo" title="Seleccione el Estado">
                         <%
-                            auxiliar.open "select * from Estado'",conexion
+                            auxiliar.open "select * from Estado",conexion
                             if auxiliar.eof then
                         %>
                             <option value="0">No hay Parametros de Etapa</option>
@@ -106,9 +106,9 @@ conexion.open
                 </tr>
                 <tr>
                     <td>Rol: 
-                        <select name="rol" title="Seleccione el Rol">
+                        <select name="rol_Codigo" title="Seleccione el Rol">
                         <%
-                            auxiliar.open "select * from Rol'",conexion
+                            auxiliar.open "select * from Rol",conexion
                             if auxiliar.eof then
                         %>
                             <option value="0">No hay Parametros de Etapa</option>
@@ -132,7 +132,7 @@ conexion.open
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
-                        <form action="CrearArea.asp" method="post">
+                        <form action="CrearNotificacion.asp" method="post">
                             <input type="submit" value="Crear" title="Crear Notificacion" class="btn-agregar" />
                         </form>
                     </div>
