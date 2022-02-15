@@ -178,7 +178,7 @@ CREATE TABLE [dbo].[Prm_Error](
 GO
 
 CREATE TABLE [dbo].[Ve_Notificacion](
-	[Ve_Notificacion_Univoco] [int] PRIMARY KEY NOT NULL,
+	[Ve_Notificacion_Univoco] [bigint] PRIMARY KEY NOT NULL,
 	[Ve_Notificacion_Area] [int] NOT NULL,
 	[Ve_Notificacion_TipoMovimiento] [int] NOT NULL,
 	[Ve_Notificacion_Etapa] [int] NOT NULL,
@@ -200,7 +200,7 @@ CREATE TABLE [dbo].[Ve_Notificacion](
 GO
 
 CREATE TABLE [dbo].[Ve_Control](
-	[Ve_Control_Univoco] [int] PRIMARY KEY NOT NULL,
+	[Ve_Control_Univoco] [bigint] PRIMARY KEY NOT NULL,
 	[Ve_Control_Fecha] [date] NOT NULL,
 	[Ve_Control_Hora] [int] NOT NULL,
 	[Ve_Control_MotivoUsuario] [nvarchar](max) NOT NULL,
@@ -213,7 +213,7 @@ CREATE TABLE [dbo].[Ve_Control](
 GO
 
 CREATE TABLE [dbo].[Ve_Escritos](
-	[Ve_Escritos_Univoco] [int] NOT NULL,
+	[Ve_Escritos_Univoco] [bigint] NOT NULL,
 	[Ve_Escritos_RutaDocumentos] [nvarchar](max) NOT NULL,
 	[Ve_Escritos_ModeloEscrito] [nvarchar](max) NOT NULL,
 	CONSTRAINT FK_VeEscritos_Ve_Control FOREIGN KEY (Ve_Escritos_Univoco)
@@ -222,7 +222,7 @@ CREATE TABLE [dbo].[Ve_Escritos](
 GO
 
 CREATE TABLE [dbo].[Ve_Destino](
-	[Ve_Destino_Univoco] [int] NOT NULL,
+	[Ve_Destino_Univoco] [bigint] NOT NULL,
 	[Ve_Destino_Cuit] [int] NOT NULL,
 	CONSTRAINT FK_VeDestino_VeControl FOREIGN KEY (Ve_Destino_Univoco)
     REFERENCES [dbo].[Ve_Control] ([Ve_Control_Univoco]),
