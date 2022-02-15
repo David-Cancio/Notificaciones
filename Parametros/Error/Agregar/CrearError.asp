@@ -1,23 +1,23 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim error
+dim prm_error
 set conexion=Server.CreateObject("ADODB.Connection")
-set error = Server.CreateObject("ADODB.RecordSet")
+set prm_error = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
-dim error_nombre
-dim error_descripcion
-dim error_codigo
+dim prm_error_nombre
+dim prm_error_descripcion
+dim prm_error_codigo
 dim id
-error_nombre=MayusculaPrimera(Request.form("error_nombre"))
-error_descripcion=MayusculaPrimera(Request.form("error_descripcion"))
-error_codigo=Request.form("error_codigo")
+prm_error_nombre=MayusculaPrimera(Request.form("prm_error_nombre"))
+prm_error_descripcion=MayusculaPrimera(Request.form("prm_error_descripcion"))
+prm_error_codigo=Request.form("prm_error_codigo")
 id=Request.form("id")
-if error_nombre="" Then
+if prm_error_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -29,15 +29,15 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-error.open "select Error_Codigo from Error WHERE Error_Codigo = '"&error_codigo&"'",conexion
-if error.EOF then
-    conexion.execute("insert into Error (Error_Nombre, Error_Descripcion, Error_Codigo) VALUES('"&error_nombre&"','"&error_descripcion&"','"&error_codigo&"')")
-    error.Close
+prm_error.open "select Prm_Error_Codigo from Prm_Error WHERE Prm_Error_Codigo = '"&prm_error_codigo&"'",conexion
+if prm_error.EOF then
+    conexion.execute("insert into Prm_Error (Prm_Error_Nombre, Prm_Error_Descripcion, Prm_Error_Codigo) VALUES('"&prm_error_nombre&"','"&prm_error_descripcion&"','"&prm_error_codigo&"')")
+    prm_error.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>
         <% Else%>
-        <h1>Este Error ya Existe</h1>
+        <h1>Este Codigo de Error ya Existe</h1>
         <h2>Los datos no fueron Agregados</h2>
         <% End If
         conexion.close%>
@@ -49,7 +49,7 @@ if error.EOF then
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarTipoEscritos.asp" method="post">
+                    <form action="../RecuperarError.asp" method="post">
                         <input type="submit" value="Regresar" title="Regresar" />
                     </form>
                 </div>

@@ -1,14 +1,14 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
         dim conexion
-        dim error
+        dim prm_error
         set conexion=Server.CreateObject("ADODB.Connection")
-        set error = Server.CreateObject("ADODB.RecordSet")
+        set prm_error = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        error.open "select * from Error",conexion
+        prm_error.open "select * from Prm_Error",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -17,7 +17,7 @@
     <div class="listado">
         <h1>Tipos de Errores</h1>
         <%
-        if not error.eof then
+        if not prm_error.eof then
         %>
         <table Class="tabla">
             <tr>
@@ -28,27 +28,27 @@
                 <th></th>
             </tr>
             <%
-            do while not error.eof
+            do while not prm_error.eof
             %>
             <tr>
-                <th><%response.write(error("Error_Codigo"))%></th>
-                <th colspan="2"><%response.write(error("Error_Nombre"))%></th>
-                <th colspan="3"><%response.write(error("Error_Descripcion"))%></th>
+                <th><%response.write(prm_error("Prm_Error_Codigo"))%></th>
+                <th colspan="2"><%response.write(prm_error("Prm_Error_Nombre"))%></th>
+                <th colspan="3"><%response.write(prm_error("Prm_Error_Descripcion"))%></th>
                 <th>
-                    <form action="Modificar/GenerarModificarTipoEscrito.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(error("Error_Codigo"))%>" hidden />
-                        <input type="submit" value="Modificar" title="Modifique los datos de este Tipo de Escrito">
+                    <form action="Modificar/GenerarModificarError.asp" method="post">
+                        <input type="text" name="id" value="<%response.write(prm_error("Prm_Error_Codigo"))%>" hidden />
+                        <input type="submit" value="Modificar" title="Modifique los datos de este Tipo de Error">
                     </form>
                 </th>
                 <th>
-                    <form action="Eliminar/ConfirmarEliminarTipoEscrito.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(error("Error_Codigo"))%>" hidden />
-                        <input type="submit" value="Eliminar" title="Elimine este Tipo de Escrito" class="btn-eliminar">
+                    <form action="Eliminar/ConfirmarEliminarError.asp" method="post">
+                        <input type="text" name="id" value="<%response.write(prm_error("Prm_Error_Codigo"))%>" hidden />
+                        <input type="submit" value="Eliminar" title="Elimine este Tipo de Error" class="btn-eliminar">
                     </form>
                 </th>
             </tr>
             <%
-            error.movenext
+            prm_error.movenext
             loop
             %>
         </table>

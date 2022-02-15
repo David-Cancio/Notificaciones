@@ -1,17 +1,17 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim tipoEscrito
+            dim prm_error
             set conexion = Server.CreateObject("ADODB.Connection")
-            set tipoEscrito = Server.CreateObject("ADODB.RecordSet") 
+            set prm_error = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            tipoEscrito.open "select TipoEscrito_Codigo from TipoEscrito Where TipoEscrito_Codigo='"&id&"'",conexion
-            if not tipoEscrito.EOF Then
-                conexion.execute("delete from TipoEscrito where TipoEscrito_Codigo='"&id&"'")
+            prm_error.open "select Prm_Error_Codigo from Prm_Error Where Prm_Error_Codigo='"&id&"'",conexion
+            if not prm_error.EOF Then
+                conexion.execute("delete from Prm_Error where Prm_Error_Codigo='"&id&"'")
             End If
             conexion.close
         %>
@@ -22,7 +22,7 @@
 
     <div class="listado">               
         <h1>Los datos fueron borrados exitosamente</h1>
-        <form action="../RecuperarTipoEscritos.asp" method="post">
+        <form action="../RecuperarError.asp" method="post">
             <input type="submit" value="Regresar" title="Regresar" />
         </form>
     </div>

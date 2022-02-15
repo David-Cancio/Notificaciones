@@ -1,9 +1,9 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim tipoEscrito_nombre
-            dim tipoEscrito_tipoArchivo
-            dim tipoEscrito_modelo
+            dim prm_error_codigo
+            dim prm_error_nombre
+            dim prm_error_descripcion
             set conexion = Server.CreateObject("ADODB.Connection")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
@@ -11,10 +11,10 @@
         <!--#include virtual="/Partials/Validations.asp"-->
         <%
             conexion.Open
-            tipoEscrito_nombre=Mayusculatodas(Request.form("tipoEscrito_nombre"))
-            tipoEscrito_tipoArchivo=Mayusculatodas(Request.form("tipoEscrito_tipoArchivo"))
-            tipoEscrito_modelo=Mayusculatodas(Request.form("tipoEscrito_modelo"))
-            conexion.execute("UPDATE TipoEscrito SET TipoEscrito_Nombre='"&tipoEscrito_nombre&"', TipoEscrito_TipoArchivo='"&tipoEscrito_tipoArchivo&"', TipoEscrito_Modelo='"&tipoEscrito_modelo&"' WHERE TipoEscrito_Codigo='"&id&"' ")
+            prm_error_codigo=Mayusculatodas(Request.form("prm_error_codigo"))
+            prm_error_nombre=Mayusculatodas(Request.form("prm_error_nombre"))
+            prm_error_descripcion=Mayusculatodas(Request.form("prm_error_descripcion"))
+            conexion.execute("UPDATE Prm_Error SET Prm_Error_Nombre='"&prm_error_nombre&"', Prm_Error_Codigo='"&prm_error_codigo&"', Prm_Error_Descripcion='"&prm_error_descripcion&"' WHERE Prm_Error_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>
@@ -24,7 +24,7 @@
 
     <div class="listado">
         <h1>Los datos fueron modificados</h1>
-        <form action="../RecuperarTipoEscritos.asp" method="post">
+        <form action="../RecuperarError.asp" method="post">
             <input type="submit" value="Regresar" title="Regresar" />
         </form>
     </div>

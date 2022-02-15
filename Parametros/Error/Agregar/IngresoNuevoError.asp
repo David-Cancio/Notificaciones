@@ -11,13 +11,13 @@
             <table Class="tabla">
                 <tr>
                     <td>Codigo:
-                            <input type="number" name="error_codigo" placeholder="Numero de Error" title="Indique el numero del error" min="0"/>
+                            <input type="number" name="prm_error_codigo" placeholder="Numero de Error" title="Indique el numero del error" min="0"/>
                     </td>
                     <td>Nombre:
-                            <input type="text" name="error_nombre" size="40" placeholder="Nombre del Error" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Error"/>
+                            <input type="text" name="prm_error_nombre" size="40" placeholder="Nombre del Error" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Error"/>
                     </td>
                     <td colspan="2">Tipo de Archivo:
-                            <input type="text" name="error_descripcion" size="40" placeholder="Descripción del Error" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique la Descripción del Error"/>
+                            <input type="text" name="prm_error_descripcion" size="40" placeholder="Descripción del Error" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique la Descripción del Error"/>
                     </td>
             </table>
             <div class="container">
