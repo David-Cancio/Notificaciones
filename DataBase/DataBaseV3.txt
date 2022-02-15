@@ -1,0 +1,226 @@
+USE [notificacion]
+GO
+
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_Area;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_TipoMovimiento;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_Etapa;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_Estado;
+GO
+ALTER TABLE Ve_Notificacion
+DROP CONSTRAINT FK_Notificacion_TipoEscrito;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_TipoEscrito;
+GO
+ALTER TABLE Prm_CuitDestino
+DROP CONSTRAINT FK_CuitDestino_EscritosHabilitados;
+GO
+ALTER TABLE Prm_FirmaPorSector
+DROP CONSTRAINT FK_FirmaPorSector_EscritosHabilitados;
+GO
+ALTER TABLE Prm_FirmaPorSector
+DROP CONSTRAINT FK_FirmaPorSector_SectorFirmante;
+GO
+ALTER TABLE Ve_Control
+DROP CONSTRAINT FK_VeControl_VeNotificacion;
+GO
+ALTER TABLE Ve_Escritos
+DROP CONSTRAINT FK_VeEscritos_Ve_Control;
+GO
+ALTER TABLE Ve_Destino
+DROP CONSTRAINT FK_VeDestino_VeControl;
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_TipoMovimiento]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_TipoMovimiento]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Area]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_Area]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Etapa]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_Etapa]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Estado]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_Estado]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Rol]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_Rol]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_TipoEscrito]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_TipoEscrito]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_EscritosHabilitados]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_EscritosHabilitados]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_SectorFirmante]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_SectorFirmante]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_CuitDestino]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_CuitDestino]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_FirmaPorSector]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_FirmaPorSector]
+GO 
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ve_Notificacion]') AND type in (N'U'))
+DROP TABLE [dbo].[Ve_Notificacion]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ve_Control]') AND type in (N'U'))
+DROP TABLE [dbo].[Ve_Control]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ve_Escritos]') AND type in (N'U'))
+DROP TABLE [dbo].[Ve_Escritos]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ve_Destino]') AND type in (N'U'))
+DROP TABLE [dbo].[Ve_Destino]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Error]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_Error]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Prm_TipoMovimiento](
+	[Prm_TipoMov_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_TipoMov_Nombre] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_Area](
+	[Prm_Area_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_Area_Nombre] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_Etapa](
+	[Prm_Etapa_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_Etapa_Nombre] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_Estado](
+	[Prm_Estado_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_Estado_Nombre] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_Rol](
+	[Prm_Rol_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_Rol_Nombre] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_TipoEscrito](
+	[Prm_TipoEscrito_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_TipoEscrito_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_TipoEscrito_TipoArchivo] [nvarchar](max) NOT NULL,
+	[Prm_TipoEscrito_Extension] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_EscritosHabilitados](
+	[Prm_EscritoHB_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_EscritoHB_Area] [int] NOT NULL,
+	[Prm_EscritoHB_Etapa] [int] NOT NULL,
+	[Prm_EscritoHB_Estado] [int] NOT NULL,
+	[Prm_EscritoHB_Rol] [int] NOT NULL,
+	[Prm_EscritoHB_ModeloEscrito] [int] NOT NULL,
+	[Prm_EscritoHB_Obligatorio] [bit] NOT NULL,
+	CONSTRAINT FK_EscritosHabilitados_TipoEscrito FOREIGN KEY (Prm_EscritoHB_ModeloEscrito)
+    REFERENCES [dbo].[Prm_TipoEscrito] ([Prm_TipoEscrito_Codigo]),
+)
+GO
+
+CREATE TABLE [dbo].[Prm_CuitDestino](
+	[Prm_CuitDestino_EscritoHabilitados] [int] NOT NULL,
+	[Prm_CuitDestino_TipoCuit] [nvarchar](max) NOT NULL,
+	[Prm_CuitDestino_Cuit] [int] NOT NULL,
+	CONSTRAINT FK_CuitDestino_EscritosHabilitados FOREIGN KEY (Prm_CuitDestino_EscritoHabilitados)
+    REFERENCES [dbo].[Prm_EscritosHabilitados] ([Prm_EscritoHB_Codigo]),
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_SectorFirmante](
+	[Prm_SectorFirmante_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
+	[Prm_SectorFirmante_Nombre] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Prm_FirmaPorSector](
+	[Prm_FirmaPorSector_EscritoHabilitados] [int] NOT NULL,
+	[Prm_FirmaPorSector_Firmante] [int] NOT NULL,
+	[Prm_FirmaPorSector_Estado] [int] NOT NULL,
+	CONSTRAINT FK_FirmaPorSector_EscritosHabilitados FOREIGN KEY (Prm_FirmaPorSector_EscritoHabilitados)
+    REFERENCES [dbo].[Prm_EscritosHabilitados] ([Prm_EscritoHB_Codigo]),
+	CONSTRAINT FK_FirmaPorSector_SectorFirmante FOREIGN KEY (Prm_FirmaPorSector_Firmante)
+    REFERENCES [dbo].[Prm_SectorFirmante] ([Prm_SectorFirmante_Codigo]),
+)
+GO
+
+CREATE TABLE [dbo].[Ve_Notificacion](
+	[Ve_Notificacion_Univoco] [int] PRIMARY KEY NOT NULL,
+	[Ve_Notificacion_Area] [int] NOT NULL,
+	[Ve_Notificacion_TipoMovimiento] [int] NOT NULL,
+	[Ve_Notificacion_Etapa] [int] NOT NULL,
+	[Ve_Notificacion_Estado] [int] NOT NULL,
+	[Ve_Notificacion_Rol] [int] NOT NULL,
+	[Ve_Notificacion_TipoEscrito] [int] NOT NULL,
+	[Ve_Notificacion_CuitDemandado] [int] NOT NULL,
+	CONSTRAINT FK_Notificacion_Area FOREIGN KEY (Ve_Notificacion_Area)
+    REFERENCES [dbo].[Prm_Area] ([Prm_Area_Codigo]),
+	CONSTRAINT FK_Notificacion_TipoMovimiento FOREIGN KEY (Ve_Notificacion_TipoMovimiento)
+    REFERENCES [dbo].[Prm_TipoMovimiento] ([Prm_TipoMov_Codigo]),
+	CONSTRAINT FK_Notificacion_Etapa FOREIGN KEY (Ve_Notificacion_Etapa)
+    REFERENCES [dbo].[Prm_Etapa] ([Prm_Etapa_Codigo]),
+	CONSTRAINT FK_Notificacion_Estado FOREIGN KEY (Ve_Notificacion_Estado)
+    REFERENCES [dbo].[Prm_Estado] ([Prm_Estado_Codigo]),
+	CONSTRAINT FK_Notificacion_TipoEscrito FOREIGN KEY (Ve_Notificacion_TipoEscrito)
+    REFERENCES [dbo].[Prm_TipoEscrito] ([Prm_TipoEscrito_Codigo]),
+	)
+GO
+
+CREATE TABLE [dbo].[Ve_Control](
+	[Ve_Control_Univoco] [int] PRIMARY KEY NOT NULL,
+	[Ve_Control_Fecha] [date] NOT NULL,
+	[Ve_Control_Hora] [int] NOT NULL,
+	[Ve_Control_Estado] [int] NOT NULL,
+	[Ve_Control_Motivo] [nvarchar](max) NOT NULL,
+	[Ve_Control_Codigo_Retorno] [int] NOT NULL,
+	CONSTRAINT FK_VeControl_VeNotificacion FOREIGN KEY (Ve_Control_Univoco)
+    REFERENCES [dbo].[Ve_Notificacion] ([Ve_Notificacion_Univoco]),
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Ve_Escritos](
+	[Ve_Escritos_Univoco] [int] NOT NULL,
+	[Ve_Escritos_RutaDocumentos] [nvarchar](max) NOT NULL,
+	[Ve_Escritos_ModeloEscrito] [nvarchar](max) NOT NULL,
+	CONSTRAINT FK_VeEscritos_Ve_Control FOREIGN KEY (Ve_Escritos_Univoco)
+    REFERENCES [dbo].[Ve_Control] ([Ve_Control_Univoco]),
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Ve_Destino](
+	[Ve_Destino_Univoco] [int] NOT NULL,
+	[Ve_Destino_Cuit] [int] NOT NULL,
+	CONSTRAINT FK_VeDestino_VeControl FOREIGN KEY (Ve_Destino_Univoco)
+    REFERENCES [dbo].[Ve_Control] ([Ve_Control_Univoco]),
+)
+GO
+
+CREATE TABLE [dbo].[Prm_Error](
+	[Prm_Error_Codigo] [int] PRIMARY KEY,
+	[Prm_Error_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_Error_Descripcion] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
