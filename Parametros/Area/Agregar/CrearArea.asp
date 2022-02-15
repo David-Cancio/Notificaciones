@@ -1,19 +1,19 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim area
+dim prm_area
 set conexion=Server.CreateObject("ADODB.Connection")
-set area = Server.CreateObject("ADODB.RecordSet")
+set prm_area = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
 <%
 conexion.open
-dim area_nombre
+dim prm_area_nombre
 dim id
-area_nombre=MayusculaTodas(Request.form("tipoMov_nombre"))
+prm_area_nombre=MayusculaTodas(Request.form("Prm_Area_nombre"))
 id=Request.form("id")
-if area_nombre="" Then
+if prm_area_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
@@ -25,10 +25,10 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-area.open "select Area_Codigo from Area WHERE Area_Nombre = '"&area_nombre&"'",conexion
-if area.EOF then
-    conexion.execute("insert into Area (Area_Nombre) VALUES('"&area_nombre&"')")
-    area.Close
+prm_area.open "select Prm_Area_Codigo from Prm_Area WHERE Prm_Area_Nombre = '"&prm_area_nombre&"'",conexion
+if prm_area.EOF then
+    conexion.execute("insert into Prm_Area (Prm_Area_Nombre) VALUES('"&prm_area_nombre&"')")
+    prm_area.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>

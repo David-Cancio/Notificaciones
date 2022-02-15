@@ -1,17 +1,17 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area
+            dim prm_area
             set conexion = Server.CreateObject("ADODB.Connection")
-            set area = Server.CreateObject("ADODB.RecordSet") 
+            set prm_area = Server.CreateObject("ADODB.RecordSet") 
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select Area_Codigo from Area Where Area_Codigo='"&id&"'",conexion
-            if not area.EOF Then
-                conexion.execute("delete from Area where Area_Codigo='"&id&"'")
+            prm_area.open "select Prm_Area_Codigo from Prm_Area Where Prm_Area_Codigo='"&id&"'",conexion
+            if not prm_area.EOF Then
+                conexion.execute("delete from Prm_Area where Prm_Area_Codigo='"&id&"'")
             End If
             conexion.close
         %>

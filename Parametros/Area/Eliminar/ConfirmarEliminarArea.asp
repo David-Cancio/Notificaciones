@@ -9,7 +9,7 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select * from Area where Area_Codigo='"&id&"'",conexion
+            area.open "select * from Prm_Area where Prm_Area_Codigo='"&id&"'",conexion
             if area.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -24,14 +24,14 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Área: <%response.Write(area("Area_Nombre"))%>
+        <h1>Eliminar Área: <%response.Write(area("Prm_Area_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>
                 <td></td>
                 <td>Código:
                 <td>
-                    <%response.Write(area("Area_Codigo"))%>
+                    <%response.Write(area("Prm_Area_Codigo"))%>
                 </td>
                 </td>
                 <td></td>
@@ -40,7 +40,7 @@
                 <td>Nombre:
                 </td>
                 <td colspan="3">
-                    <%response.Write(area("Area_Nombre"))%>
+                    <%response.Write(area("Prm_Area_Nombre"))%>
                 </td>
             </tr>
         </table>

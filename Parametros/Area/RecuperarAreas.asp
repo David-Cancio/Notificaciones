@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        area.open "select * from Area",conexion
+        area.open "select * from Prm_Area",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -30,17 +30,17 @@
             do while not area.eof
             %>
             <tr>
-                <th><%response.write(area("Area_Codigo"))%></th>
-                <th colspan="3"><%response.write(area("Area_Nombre"))%></th>
+                <th><%response.write(area("Prm_Area_Codigo"))%></th>
+                <th colspan="3"><%response.write(area("Prm_Area_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarArea.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(area("Prm_Area_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos del Área">
                     </form>
                 </th>
                 <th>
                     <form action="Eliminar/ConfirmarEliminarArea.asp" method="post">
-                        <input type="text" name="id" value="<%response.write(area("Area_Codigo"))%>" hidden />
+                        <input type="text" name="id" value="<%response.write(area("Prm_Area_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine esta Área" class="btn-eliminar">
                     </form>
                 </th>

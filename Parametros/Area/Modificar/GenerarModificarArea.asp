@@ -1,16 +1,16 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim area
+            dim prm_area
             set conexion=Server.CreateObject("ADODB.Connection")
-            set area = Server.CreateObject("ADODB.RecordSet")
+            set prm_area = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            area.open "select * from area where Area_Codigo='"&id&"'",conexion
-            if area.eof then
+            prm_area.open "select * from Prm_Area where Prm_Area_Codigo='"&id&"'",conexion
+            if prm_area.eof then
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre del Área:
-                            <input type="text" name="area_nombre" size="40" required title="Indique el Nombre del Área" value="<%response.write(area("Area_Nombre"))%>"/>
+                            <input type="text" name="prm_area_nombre" size="40" required title="Indique el Nombre del Área" value="<%response.write(prm_area("Prm_Area_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>
