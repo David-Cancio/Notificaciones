@@ -228,7 +228,7 @@ GO
 CREATE TABLE [dbo].[Ve_Control](
 	[Ve_Control_Univoco] [bigint] PRIMARY KEY NOT NULL,
 	[Ve_Control_Fecha] [date] NOT NULL,
-	[Ve_Control_Hora] [int] NOT NULL,
+	[Ve_Control_Hora] [nvarchar](max) NOT NULL,
 	[Ve_Control_MotivoUsuario] [nvarchar](max) NOT NULL,
 	[Ve_Control_Codigo_Retorno] [int] NOT NULL,
 	CONSTRAINT FK_VeControl_VeNotificacion FOREIGN KEY (Ve_Control_Univoco)
