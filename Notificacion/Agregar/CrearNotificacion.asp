@@ -44,7 +44,6 @@ if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
 end if
-conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotificacion_Area, VeNotificacion_TipoMovimiento, VeNotificacion_Etapa, VeNotificacion_Estado, VeNotificacion_Rol, VeNotificacion_TipoEscrito, VeNotificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
 %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -73,7 +72,10 @@ conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotific
                 </div>
             </div>
         </div>
-    <%else%>
+    <%
+    else
+    conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotificacion_Area, VeNotificacion_TipoMovimiento, VeNotificacion_Etapa, VeNotificacion_Estado, VeNotificacion_Rol, VeNotificacion_TipoEscrito, VeNotificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
+    %>
     <h1>Los datos fueron agregados exitosamente</h1>
     <table Class="tabla">
         <tr>
@@ -88,7 +90,7 @@ conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotific
         </tr>
         <tr>
             <th><%response.write(univoco)%></th>
-            <th><%response.write(area("Area_Nombre"))%></th>
+            <th><%response.write(area("Area_Codigo"))"-"(area("Area_Nombre"))%></th>
             <th><%response.write(tipoMovimiento("TipoMov_Nombre"))%></th>
             <th><%response.write(etapa("Etapa_Nombre"))%></th>
             <th><%response.write(estado("Estado_Nombre"))%></th>

@@ -44,7 +44,7 @@
                 <th><%response.write(notificacion("VeNotificacion_CuitDemandado"))%></th>
             </tr>
             <%
-            area.movenext
+            notificacion.movenext
             loop
             %>
         </table>

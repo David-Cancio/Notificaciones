@@ -211,7 +211,7 @@ CREATE TABLE [dbo].[Ve_Notificacion](
 	[Ve_Notificacion_Estado] [int] NOT NULL,
 	[Ve_Notificacion_Rol] [int] NOT NULL,
 	[Ve_Notificacion_TipoEscrito] [int] NOT NULL,
-	[Ve_Notificacion_CuitDemandado] [int] NOT NULL,
+	[Ve_Notificacion_CuitDemandado] [int],
 	CONSTRAINT FK_Notificacion_Area FOREIGN KEY (Ve_Notificacion_Area)
     REFERENCES [dbo].[Prm_Area] ([Prm_Area_Codigo]),
 	CONSTRAINT FK_Notificacion_TipoMovimiento FOREIGN KEY (Ve_Notificacion_TipoMovimiento)
