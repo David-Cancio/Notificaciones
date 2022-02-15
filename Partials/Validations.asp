@@ -61,7 +61,7 @@ end function
 
 function ValidarNull(var)
 if IsNull(var) or IsEmpty(var) then
-ValidarNull="1"
+ValidarNull=""
 else
 ValidarNull=var
 end if
