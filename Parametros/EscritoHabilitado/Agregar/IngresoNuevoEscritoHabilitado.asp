@@ -15,7 +15,7 @@ conexion.open
     <!--#include virtual="/Partials/header.asp"-->
 
     <div class="listado">   
-        <form action="CrearNotificacion.asp" method="post">
+        <form action="CrearEscritoHabilitado.asp" method="post">
             <h1>Ingrese un Nuevo Escrito Hablitado</h1>
             <table Class="tabla">
                 <tr>
@@ -35,8 +35,8 @@ conexion.open
                         <%
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             end if
+                            auxiliar.close
                         %>
                         </select>
                     </td>
@@ -55,11 +55,10 @@ conexion.open
                         <%
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             end if
+                            auxiliar.close
                         %>
                         </select>
-                        
                     </td>
                 </tr>
                 <tr>
@@ -78,8 +77,8 @@ conexion.open
                         <%
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             end if
+                            auxiliar.close
                         %>
                         </select>
                     </td>
@@ -98,8 +97,8 @@ conexion.open
                         <%
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             end if
+                            auxiliar.close
                         %>
                         </select>
                     </td>
@@ -146,20 +145,20 @@ conexion.open
                         <%
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             end if
+                            auxiliar.close
                         %>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>¿Es Obligatorio la firma de algun Sector?: 
-                        <select name="" title="Seleccione el Modelo de Escrito">
-                            <option value="0">No</option>
-                            <option value="1">Si</option>
+                        <select name="obligatorio" title="Seleccione el Modelo de Escrito">
+                            <option value="0">NO</option>
+                            <option value="1">SI</option>
                         </select>
                     </td>
-                    <td>Rol: 
+                    <td>Sector Firmante: 
                         <select name="sector_Codigo" title="Seleccione el Sector Firmante">
                         <%
                             auxiliar.open "select * from Prm_SectorFirmante",conexion
@@ -177,8 +176,8 @@ conexion.open
                         <%
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             end if
+                            auxiliar.close
                         %>
                         </select>
                     </td>
@@ -187,12 +186,12 @@ conexion.open
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
-                        <form action="CrearNotificacion.asp" method="post">
+                        <form action="CrearEscritoHabilitado.asp" method="post">
                             <input type="submit" value="Crear" title="Crear Notificacion" class="btn-agregar" />
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
-                        <form action="../RecuperarNotificaciones.asp" method="post">
+                        <form action="../RecuperarEscritosHabilitados.asp" method="post">
                             <input type="submit" value="Regresar" title="Regresar" class="btn-eliminar">
                         </form>
                     </div>
