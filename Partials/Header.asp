@@ -20,7 +20,7 @@
                 <a class="dropdown-item" href="/Parametros/Estado/RecuperarEstados.asp">Estados</a>
                 <a class="dropdown-item" href="/Parametros/Rol/RecuperarRoles.asp">Roles</a>
                 <a class="dropdown-item" href="/Parametros/TipoEscrito/RecuperarTipoEscritos.asp">Tipo Escritos</a>
-                <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritoHabilitados.asp">Escritos Habilitados</a>
+                <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritosHabilitados.asp">Escritos Habilitados</a>
                 <a class="dropdown-item" href="/Parametros/SectorFirmante/RecuperarSectorFirmante.asp">Sectores Firmantes</a>
                 <a class="dropdown-item" href="/Parametros/CuitDestino/RecuperarCuitDestino.asp">CUIT destino</a>
                 <a class="dropdown-item" href="/Parametros/Error/RecuperarError.asp">Error</a>
