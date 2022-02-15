@@ -1,0 +1,5 @@
+ERRORES
+Vamos a trabajar a partir del numero 1000, rango 1001 al 1100 es errores de parámetros
+
+Errores de parámetros[1001] 
+Título:"Error de parámetros" Descripción:"Algún parámetro obligatorio no ha sido completado correctamente"
