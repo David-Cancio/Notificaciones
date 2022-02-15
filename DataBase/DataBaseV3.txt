@@ -31,6 +31,9 @@ GO
 ALTER TABLE Ve_Control
 DROP CONSTRAINT FK_VeControl_VeNotificacion;
 GO
+ALTER TABLE Ve_Control
+DROP CONSTRAINT FK_VeControl_Error;
+GO
 ALTER TABLE Ve_Escritos
 DROP CONSTRAINT FK_VeEscritos_Ve_Control;
 GO
@@ -167,6 +170,13 @@ CREATE TABLE [dbo].[Prm_FirmaPorSector](
 )
 GO
 
+CREATE TABLE [dbo].[Prm_Error](
+	[Prm_Error_Codigo] [int] PRIMARY KEY,
+	[Prm_Error_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_Error_Descripcion] [nvarchar](max) NOT NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
 CREATE TABLE [dbo].[Ve_Notificacion](
 	[Ve_Notificacion_Univoco] [int] PRIMARY KEY NOT NULL,
 	[Ve_Notificacion_Area] [int] NOT NULL,
@@ -193,11 +203,12 @@ CREATE TABLE [dbo].[Ve_Control](
 	[Ve_Control_Univoco] [int] PRIMARY KEY NOT NULL,
 	[Ve_Control_Fecha] [date] NOT NULL,
 	[Ve_Control_Hora] [int] NOT NULL,
-	[Ve_Control_Estado] [int] NOT NULL,
-	[Ve_Control_Motivo] [nvarchar](max) NOT NULL,
+	[Ve_Control_MotivoUsuario] [nvarchar](max) NOT NULL,
 	[Ve_Control_Codigo_Retorno] [int] NOT NULL,
 	CONSTRAINT FK_VeControl_VeNotificacion FOREIGN KEY (Ve_Control_Univoco)
     REFERENCES [dbo].[Ve_Notificacion] ([Ve_Notificacion_Univoco]),
+	CONSTRAINT FK_VeControl_Error FOREIGN KEY (Ve_Control_Codigo_Retorno)
+    REFERENCES [dbo].[Prm_Error] ([Prm_Error_Codigo]),
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
@@ -216,11 +227,4 @@ CREATE TABLE [dbo].[Ve_Destino](
 	CONSTRAINT FK_VeDestino_VeControl FOREIGN KEY (Ve_Destino_Univoco)
     REFERENCES [dbo].[Ve_Control] ([Ve_Control_Univoco]),
 )
-GO
-
-CREATE TABLE [dbo].[Prm_Error](
-	[Prm_Error_Codigo] [int] PRIMARY KEY,
-	[Prm_Error_Nombre] [nvarchar](max) NOT NULL,
-	[Prm_Error_Descripcion] [nvarchar](max) NOT NULL,
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
