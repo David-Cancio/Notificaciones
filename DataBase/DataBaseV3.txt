@@ -19,6 +19,21 @@ GO
 ALTER TABLE Prm_EscritosHabilitados
 DROP CONSTRAINT FK_EscritosHabilitados_TipoEscrito;
 GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Area;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Etapa;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Estado;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_TipoMov;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Rol;
+GO
 ALTER TABLE Prm_CuitDestino
 DROP CONSTRAINT FK_CuitDestino_EscritosHabilitados;
 GO
@@ -136,12 +151,23 @@ CREATE TABLE [dbo].[Prm_EscritosHabilitados](
 	[Prm_EscritoHB_Area] [int] NOT NULL,
 	[Prm_EscritoHB_Etapa] [int] NOT NULL,
 	[Prm_EscritoHB_Estado] [int] NOT NULL,
+	[Prm_EscritoHB_TipoMov] [int] NOT NULL,
 	[Prm_EscritoHB_Rol] [int] NOT NULL,
 	[Prm_EscritoHB_ModeloEscrito] [int] NOT NULL,
 	[Prm_EscritoHB_Obligatorio] [bit] NOT NULL,
 	CONSTRAINT FK_EscritosHabilitados_TipoEscrito FOREIGN KEY (Prm_EscritoHB_ModeloEscrito)
     REFERENCES [dbo].[Prm_TipoEscrito] ([Prm_TipoEscrito_Codigo]),
-)
+	CONSTRAINT FK_EscritosHabilitados_Area FOREIGN KEY (Prm_EscritoHB_Area)
+    REFERENCES [dbo].[Prm_Area] ([Prm_Area_Codigo]),
+	CONSTRAINT FK_EscritosHabilitados_Etapa FOREIGN KEY (Prm_EscritoHB_Etapa)
+    REFERENCES [dbo].[Prm_Etapa] ([Prm_Etapa_Codigo]),
+	CONSTRAINT FK_EscritosHabilitados_Estado FOREIGN KEY (Prm_EscritoHB_Estado)
+    REFERENCES [dbo].[Prm_Estado] ([Prm_Estado_Codigo]),
+	CONSTRAINT FK_EscritosHabilitados_TipoMov FOREIGN KEY (Prm_EscritoHB_TipoMov)
+    REFERENCES [dbo].[Prm_TipoMovimiento] ([Prm_TipoMov_Codigo]),
+	CONSTRAINT FK_EscritosHabilitados_Rol FOREIGN KEY (Prm_EscritoHB_Rol)
+    REFERENCES [dbo].[Prm_Rol] ([Prm_Rol_Codigo]),
+	)
 GO
 
 CREATE TABLE [dbo].[Prm_CuitDestino](

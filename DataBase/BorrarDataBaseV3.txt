@@ -19,6 +19,21 @@ GO
 ALTER TABLE Prm_EscritosHabilitados
 DROP CONSTRAINT FK_EscritosHabilitados_TipoEscrito;
 GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Area;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Etapa;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Estado;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_TipoMov;
+GO
+ALTER TABLE Prm_EscritosHabilitados
+DROP CONSTRAINT FK_EscritosHabilitados_Rol;
+GO
 ALTER TABLE Prm_CuitDestino
 DROP CONSTRAINT FK_CuitDestino_EscritosHabilitados;
 GO
@@ -30,6 +45,9 @@ DROP CONSTRAINT FK_FirmaPorSector_SectorFirmante;
 GO
 ALTER TABLE Ve_Control
 DROP CONSTRAINT FK_VeControl_VeNotificacion;
+GO
+ALTER TABLE Ve_Control
+DROP CONSTRAINT FK_VeControl_Error;
 GO
 ALTER TABLE Ve_Escritos
 DROP CONSTRAINT FK_VeEscritos_Ve_Control;
