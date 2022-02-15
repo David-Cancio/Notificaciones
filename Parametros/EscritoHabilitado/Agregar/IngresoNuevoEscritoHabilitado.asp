@@ -121,12 +121,12 @@ conexion.open
                             numeroRol=auxiliar("Prm_Rol_Codigo")
                             auxiliar.movenext
                             loop
-                            auxiliar.close
                             numeroRol=numeroRol+1
                         %>
                             <option value="<%response.write(numeroRol)%>"><%response.write(numeroRol)%>-<%response.write("NO DEFINE")%></option>
                         <%
                             end if
+                            auxiliar.close
                         %>
                         </select>
                     </td>
