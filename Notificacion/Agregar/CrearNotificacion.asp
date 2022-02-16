@@ -53,20 +53,6 @@ end if
     %>
     <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
     <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7 col-md-6 py-2">
-                    <form action="IngresoNuevaNotificacion.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otra Notificación" class="btn-agregar">
-                    </form>
-                </div>
-                <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarNotificaciones.asp" method="post">
-                        <input type="submit" value="Regresar" title="Vuelva al listado de Notificaciones">
-                    </form>
-                </div>
-            </div>
-        </div>
     <%
     else
     %><!--
