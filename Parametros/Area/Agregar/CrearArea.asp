@@ -10,7 +10,7 @@ set prm_area = Server.CreateObject("ADODB.RecordSet")
 <%
 conexion.open
 dim prm_area_nombre
-dim id
+
 prm_area_nombre=MayusculaTodas(Request.form("Prm_Area_nombre"))
 
 if prm_area_nombre="" Then
@@ -31,13 +31,13 @@ if prm_area.EOF then
     prm_area.Close
 %>
 
-        <h1>Los datos fueron agregados exitosamente</h1>
+        <h1>Los datos fueron Agregados Exitosamente</h1>
         <%
          Else
          If prm_area("Prm_Area_Vigencia")=0 then
           conexion.execute("UPDATE Prm_Area SET Prm_Area_Vigencia=1 where Prm_Area_Codigo='"&prm_area("Prm_Area_Codigo")&"'")
         %>
-        <h1>Este Área ya Existia y se volvio a habilitar</h1>
+        <h1>Este Área ya Existia y se volvio a Habilitar</h1>
         <h2>Los datos fueron Agregados</h2>
         <%Else%>
             <h1>Este Área ya Existe</h1>

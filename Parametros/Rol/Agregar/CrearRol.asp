@@ -10,9 +10,9 @@ set rol = Server.CreateObject("ADODB.RecordSet")
 <%
 conexion.open
 dim rol_nombre
-dim id
+
 rol_nombre=MayusculaTodas(Request.form("Prm_rol_nombre"))
-id=Request.form("id")
+
 if rol_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -25,17 +25,24 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-rol.open "select Prm_Rol_Codigo from Prm_Rol WHERE Prm_Rol_Nombre = '"&rol_nombre&"'",conexion
+rol.open "select Prm_Rol_Codigo, Prm_Rol_Vigencia from Prm_Rol WHERE Prm_Rol_Nombre = '"&rol_nombre&"'",conexion
 if rol.EOF then
     conexion.execute("insert into Prm_Rol (Prm_Rol_Nombre) VALUES('"&rol_nombre&"')")
     rol.Close
 %>
 
-        <h1>Los datos fueron agregados exitosamente</h1>
-        <% Else%>
-        <h1>Este Rol ya Existe</h1>
-        <h2>Los datos no fueron Agregados</h2>
+        <h1>Los datos fueron Agregados Exitosamente</h1>
+        <% Else
+        If rol("Prm_Rol_Vigencia")=0 then
+          conexion.execute("UPDATE Prm_Rol SET Prm_Rol_Vigencia=1 where Prm_Rol_Codigo='"&rol("Prm_Rol_Codigo")&"'")
+        %>
+         <h1>Este Rol ya Existia y se volvio a Habilitar</h1>
+        <h2>Los datos fueron Agregados</h2>
+        <%Else%>
+            <h1>Este Rol ya Existe</h1>
+            <h2>Los datos no fueron Agregados</h2>
         <% End If
+           End If
         conexion.close%>
         <div class="container">
             <div class="row">

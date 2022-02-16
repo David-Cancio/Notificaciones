@@ -11,7 +11,7 @@
             conexion.Open
             prm_estado.open "select Prm_Estado_Codigo from Estado Where Prm_Estado_Codigo='"&id&"'",conexion
             if not prm_estado.EOF Then
-                conexion.execute("delete from Prm_Estado where Prm_Estado_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Vigencia=0 where Prm_Estado_Codigo='"&id&"'")
             End If
             conexion.close
         %>
