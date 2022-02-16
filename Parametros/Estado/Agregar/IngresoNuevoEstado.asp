@@ -11,7 +11,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre del Estado:
-                        <input type="text" name="prm_estado_nombre" size="40" placeholder="Nombre Estado" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Estado"/>
+                        <input type="text" name="prm_estado_nombre" size="40" placeholder="Nombre Estado" required title="Indique el Nombre del Estado"/>
                     </td>
                 </tr>
             </table>

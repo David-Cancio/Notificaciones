@@ -11,7 +11,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Rol:
-                            <input type="text" name="Prm_rol_nombre" size="40" placeholder="Nombre Rol" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Rol"/>
+                            <input type="text" name="Prm_rol_nombre" size="40" placeholder="Nombre Rol" required title="Indique el Nombre del Rol"/>
                     </td>
                 </tr>
             </table>
