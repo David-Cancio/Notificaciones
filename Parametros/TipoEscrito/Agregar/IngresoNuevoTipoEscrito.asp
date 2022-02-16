@@ -15,19 +15,19 @@
                     </td>
                     <td colspan="2">Tipo de Archivo:
                          <select name="prm_tipoEscrito_tipoArchivo" title="Seleccione el Tipo de Archivo">
-                            <option value="0">EXCEL</option>
-                            <option value="1">WORD</option>
-                            <option value="1">PDF</option>
+                            <option value="EXCEL">EXCEL</option>
+                            <option value="WORD">WORD</option>
+                            <option value="PDF">PDF</option>
                         </select>
                     </td>
                     <td colspan="2">Extension:
 
                          <select name="prm_tipoEscrito_extension" title="Seleccione el Extension">
-                            <option value="0">DOC</option>
-                            <option value="1">DOCX</option>
-                            <option value="2">XML</option>
-                            <option value="3">XMLS</option>
-                            <option value="4">PDF</option>
+                            <option value="DOC">DOC</option>
+                            <option value="DOCX">DOCX</option>
+                            <option value="XML">XML</option>
+                            <option value="XMLS">XMLS</option>
+                            <option value="PDF">PDF</option>
                         </select>
                     </td>
                 </tr>
