@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        tipoMovimiento.open "select * from Prm_TipoMovimiento",conexion
+        tipoMovimiento.open "select * from Prm_TipoMovimiento Where Prm_TipoMov_Vigencia='1'",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
