@@ -11,7 +11,7 @@
             conexion.Open
             prm_area.open "select Prm_Area_Codigo from Prm_Area Where Prm_Area_Codigo='"&id&"'",conexion
             if not prm_area.EOF Then
-                conexion.execute("delete from Prm_Area where Prm_Area_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_Area SET Prm_Area_Vigencia=0 where Prm_Area_Codigo='"&id&"'")
             End If
             conexion.close
         %>

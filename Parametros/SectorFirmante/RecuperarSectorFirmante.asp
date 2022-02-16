@@ -31,7 +31,7 @@
             %>
             <tr>
                 <th><%response.write(prm_sectorFirmante("Prm_SectorFirmante_Codigo"))%></th>
-                <th colspan="3"><%response.write(sprm_ectorFirmante("Prm_SectorFirmante_Nombre"))%></th>
+                <th colspan="3"><%response.write(prm_sectorFirmante("Prm_SectorFirmante_Nombre"))%></th>
                 <th>
                     <form action="Modificar/GenerarModificarSectorFirmante.asp" method="post">
                         <input type="text" name="id" value="<%response.write(prm_sectorFirmante("Prm_SectorFirmante_Codigo"))%>" hidden />
