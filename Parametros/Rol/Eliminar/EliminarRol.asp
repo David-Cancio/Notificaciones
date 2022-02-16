@@ -11,7 +11,7 @@
             conexion.Open
             rol.open "select Prm_Rol_Codigo from Prm_Rol Where Prm_Rol_Codigo='"&id&"'",conexion
             if not rol.EOF Then
-                conexion.execute("delete from Prm_Rol where Prm_Rol_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_Rol SET Prm_Rol_Vigencia=0 where Prm_Rol_Codigo='"&id&"'")
             End If
             conexion.close
         %>

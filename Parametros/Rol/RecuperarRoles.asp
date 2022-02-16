@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        rol.open "select * from Prm_Rol",conexion
+        rol.open "select * from Prm_Rol WHERE Prm_Rol_Vigencia = 1",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->

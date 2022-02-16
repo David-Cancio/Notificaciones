@@ -12,7 +12,7 @@ conexion.open
 dim prm_area_nombre
 dim id
 prm_area_nombre=MayusculaTodas(Request.form("Prm_Area_nombre"))
-id=Request.form("id")
+
 if prm_area_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -25,17 +25,25 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-prm_area.open "select Prm_Area_Codigo from Prm_Area WHERE Prm_Area_Nombre = '"&prm_area_nombre&"'",conexion
+prm_area.open "select Prm_Area_Codigo, Prm_Area_Vigencia from Prm_Area WHERE Prm_Area_Nombre = '"&prm_area_nombre&"'",conexion
 if prm_area.EOF then
     conexion.execute("insert into Prm_Area (Prm_Area_Nombre) VALUES('"&prm_area_nombre&"')")
     prm_area.Close
 %>
 
         <h1>Los datos fueron agregados exitosamente</h1>
-        <% Else%>
-        <h1>Este Área ya Existe</h1>
-        <h2>Los datos no fueron Agregados</h2>
+        <%
+         Else
+         If prm_area("Prm_Area_Vigencia")=0 then
+          conexion.execute("UPDATE Prm_Area SET Prm_Area_Vigencia=1 where Prm_Area_Codigo='"&prm_area("Prm_Area_Codigo")&"'")
+        %>
+        <h1>Este Área ya Existia y se volvio a habilitar</h1>
+        <h2>Los datos fueron Agregados</h2>
+        <%Else%>
+            <h1>Este Área ya Existe</h1>
+            <h2>Los datos no fueron Agregados</h2>
         <% End If
+            End If
         conexion.close%>
         <div class="container">
             <div class="row">

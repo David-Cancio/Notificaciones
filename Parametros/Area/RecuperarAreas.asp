@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        area.open "select * from Prm_Area WHERE Prm_Area_Vigencia = 0",conexion
+        area.open "select * from Prm_Area WHERE Prm_Area_Vigencia = 1",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
