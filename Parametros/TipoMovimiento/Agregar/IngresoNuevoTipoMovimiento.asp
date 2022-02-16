@@ -7,7 +7,7 @@
 
     <div class="listado">
         <form action="CrearTipoMovimiento.asp" method="post">
-            <h1>Ingrese los nuevo Tipo Movimiento</h1>
+            <h1>Ingrese un nuevo Tipo Movimiento</h1>
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Tipo de Movimiento:

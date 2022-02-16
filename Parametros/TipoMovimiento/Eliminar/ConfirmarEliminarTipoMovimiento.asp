@@ -24,7 +24,7 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Eliminar Área: <%response.Write(tipoMovimiento("Prm_TipoMov_Nombre"))%>
+        <h1>Eliminar Tipo de Movimiento: <%response.Write(tipoMovimiento("Prm_TipoMov_Nombre"))%>
         </h1>
         <table Class="tabla">
             <tr>

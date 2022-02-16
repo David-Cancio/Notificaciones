@@ -25,7 +25,7 @@
         <form action="ModificarTipoMovimiento.asp" method="post">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
-                Modificar Área
+                Modificar Tipo de Movimiento
             </h1>
             <table Class="tabla">
                 <tr>
