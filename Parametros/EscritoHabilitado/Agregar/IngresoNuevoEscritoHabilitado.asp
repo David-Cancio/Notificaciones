@@ -131,7 +131,7 @@ conexion.open
                         </select>
                     </td>
                     <td>Modelo de Escrito: 
-                        <select name="modeloEscrito_Codigo" title="Seleccione el Modelo de Escrito">
+                        <select name="tipoEscrito_Codigo" title="Seleccione el Modelo de Escrito">
                         <%
                             auxiliar.open "select * from Prm_TipoEscrito",conexion
                             if auxiliar.eof then
@@ -152,7 +152,7 @@ conexion.open
                     </td>
                 </tr>
                 <tr>
-                    <td>¿Es Obligatorio la firma de algun Sector?: 
+                    <td>¿Es Obligatoria la firma de algún Sector?: 
                         <select name="obligatorio" title="Seleccione el Modelo de Escrito">
                             <option value="0">NO</option>
                             <option value="1">SI</option>

@@ -19,15 +19,6 @@
             <input type="submit" value="Recargar Base de Datos">
         </form>
     </div>   
-        <!--#include file="Partials/Validations.js"-->
-
-    <%
-    dim numero
-    numero=1
-    numero="javascript: return sumar('"&numero&"')"
-    response.write(numero)
-    %>
-    
     <!--#include file="Partials/ScriptBootstrap.asp"-->
 </body>
 </html>

@@ -182,7 +182,7 @@ conexion.open
                     <td colspan="2">Escrito: 
                         <select name="tipoEscrito_Codigo" title="Seleccione el Tipo de Escrito">
                         <%
-                            auxiliar.open "select * from Prm_TipoEscrito",conexion
+                            auxiliar.open "select Prm_TipoEscrito_Codigo,Prm_TipoEscrito_Nombre from Prm_TipoEscrito",conexion
                             if auxiliar.eof then
                         %>
                             <option value="0">No hay Parámetros de Escrito</option>
