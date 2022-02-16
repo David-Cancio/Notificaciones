@@ -42,13 +42,13 @@
         </table>
         <div class="container">
             <div class="row">
-                <div class="col-sm-7 col-md-4 py-2">
+                <div class="col-sm-7 col-md-6 py-2">
                     <form action="EliminarTipoMovimiento.asp" method="post">
                         <input type="text" name="id" value="<%response.write(id)%>" hidden />
-                        <input type="submit" value="Confirmar" title="Elimine el Movimiento"><br>
+                        <input type="submit" value="Confirmar" title="Elimine el Movimiento" class="btn-eliminar">
                     </form>
                 </div>
-                <div class="col-sm-7 col-md-4 py-2">
+                <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarTipoMovimientos.asp" method="post">
                         <input type="submit" value="Cancelar" title="Cancele la Eliminación">
                     </form>

@@ -36,12 +36,12 @@
             </table>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-7 col-md-4 py-2">
+                    <div class="col-sm-7 col-md-6 py-2">
                         <form action="ModificarTipoMovimiento.asp" method="post">
                             <input type="submit" value="Modificar" title="Confirme la modificación" class="btn-agregar"/>
                         </form>
                     </div>
-                    <div class="col-sm-7 col-md-4 py-2">
+                    <div class="col-sm-7 col-md-6 py-2">
                         <form action="../RecuperarTipoMovimientos.asp" method="post">
                             <input type="submit" value="Cancelar" title="Cancelar" class="btn-eliminar">
                         </form>

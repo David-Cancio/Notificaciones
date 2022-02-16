@@ -41,7 +41,7 @@
                 <th>
                     <form action="Eliminar/ConfirmarEliminarTipoMovimiento.asp" method="post">
                         <input type="text" name="id" value="<%response.write(tipoMovimiento("Prm_TipoMov_Codigo"))%>" hidden />
-                        <input type="submit" value="Eliminar" title="Elimine este Tipo de Movimiento">
+                        <input type="submit" value="Eliminar" title="Elimine este Tipo de Movimiento" class="btn-eliminar">
                     </form>
                 </th>
             </tr>

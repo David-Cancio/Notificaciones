@@ -11,7 +11,7 @@
             conexion.Open
             tipoMovimiento.open "select Prm_TipoMov_Codigo from Prm_TipoMovimiento Where Prm_TipoMov_Codigo='"&id&"'",conexion
             if not tipoMovimiento.EOF Then
-                conexion.execute("delete from Prm_TipoMovimiento where Prm_TipoMov_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_TipoMovimiento SET Prm_TipoMov_Vigencia=0 where Prm_TipoMov_Codigo='"&id&"'")
             End If
             conexion.close
         %>

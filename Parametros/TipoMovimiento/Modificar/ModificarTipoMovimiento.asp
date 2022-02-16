@@ -22,7 +22,7 @@
         <h1>Los datos fueron modificados</h1>
         <div class="container">
             <div class="row">
-                <div class="col-sm-7 col-md-6 py-2">
+                <div class="col-sm-7 col-md-12 py-2">
                     <form action="../RecuperarTipoMovimientos.asp" method="post">
                         <input type="submit" value="Regresar" title="Regresar" />
                     </form>
