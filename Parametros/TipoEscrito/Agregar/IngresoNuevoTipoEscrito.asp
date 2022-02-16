@@ -10,26 +10,50 @@
             <h1>Ingrese los nuevos datos</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre:
-                            <input type="text" name="prm_tipoEscrito_nombre" size="40" placeholder="Nombre de Escrito" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Escrito"/>
+                    <td colspan="3">Nombre:
+                        <input type="text" name="prm_tipoEscrito_nombre" size="40" placeholder="Nombre de Escrito" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Escrito"/>
                     </td>
-                    <td colspan="2">Tipo de Archivo:
-                         <select name="prm_tipoEscrito_tipoArchivo" title="Seleccione el Tipo de Archivo">
-                            <option value="0">EXCEL</option>
-                            <option value="1">WORD</option>
-                            <option value="1">PDF</option>
-                        </select>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        Tipos de Archivos Aceptados:
                     </td>
-                    <td colspan="2">Extension:
-
-                         <select name="prm_tipoEscrito_extension" title="Seleccione el Extension">
-                            <option value="0">DOC</option>
-                            <option value="1">DOCX</option>
-                            <option value="2">XML</option>
-                            <option value="3">XMLS</option>
-                            <option value="4">PDF</option>
-                        </select>
+                </tr>
+                <tr>
+                    <td>
+                        Word:
                     </td>
+                    <td>
+                        .doc
+                        <input type="checkbox" name="doc"/>
+                    </td>
+                     <td>
+                        .docx
+                        <input type="checkbox" name="docx"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Excel:
+                    </td>
+                    <td>
+                        .xml
+                        <input type="checkbox" name="xml"/>
+                    </td>
+                     <td>
+                        .xmls
+                        <input type="checkbox" name="xmls"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        PDF:
+                    </td>
+                    <td>
+                        .pdf
+                        <input type="checkbox" name="pdf"/>
+                    </td>
+                    <td></td>
                 </tr>
             </table>
             <div class="container">
