@@ -10,13 +10,34 @@ set prm_tipoEscrito = Server.CreateObject("ADODB.RecordSet")
 <%
 conexion.open
 dim prm_tipoEscrito_nombre
-dim prm_tipoEscrito_tipoArchivo
-dim prm_tipoEscrito_extension
-dim id
 prm_tipoEscrito_nombre=MayusculaTodas(Request.form("prm_tipoEscrito_nombre"))
-prm_tipoEscrito_tipoArchivo=MayusculaTodas(Request.form("prm_tipoEscrito_tipoArchivo"))
-prm_tipoEscrito_extension=MayusculaTodas(Request.form("prm_tipoEscrito_extension"))
-id=Request.form("id")
+dim doc, docx, xml, xmls, pdf
+doc=Request.form("doc")
+if doc="on" Then
+    doc=".doc"
+else
+    doc=""
+End if
+if docx="on" Then
+    docx=".docx"
+else
+    docx=""
+End if
+if xml="on" Then
+    xml=".xml"
+else
+    xml=""
+End if
+if xmls="on" Then
+    xmls=".xmls"
+else
+    xmls=""
+End if
+if pdf="on" Then
+    pdf=".pdf"
+else
+    pdf=""
+End if
 if prm_tipoEscrito_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -29,18 +50,32 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-prm_tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
-if prm_tipoEscrito.EOF then
-    conexion.execute("insert into Prm_TipoEscrito (Prm_TipoEscrito_Nombre, Prm_TipoEscrito_TipoArchivo, Prm_TipoEscrito_Extension) VALUES('"&prm_tipoEscrito_nombre&"','"&prm_tipoEscrito_tipoArchivo&"','"&prm_tipoEscrito_extension&"')")
-    prm_tipoEscrito.Close
+if IsEmpty(doc) or IsEmpty(docx) or IsEmpty(xml) or IsEmpty(xmls) or IsEmpty(pdf) Then
 %>
-
+    <h1>Error al Generar</h1>
+    <h2>No hay Tipo de Archivos Selecionados</h2>
+    <%
+else
+    prm_tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
+    if prm_tipoEscrito.EOF then
+        conexion.execute "insert into Prm_TipoEscrito (Prm_TipoEscrito_Nombre) VALUES ('"&prm_tipoEscrito_nombre&"')"
+        prm_tipoEscrito.close
+        prm_tipoEscrito.open "select Prm_TipoEscrito_Codigo from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
+        if doc=".doc" then
+            conexion.execute "insert into Prm_Extenciones (Prm_Extenciones_TipoEscrito,Prm_TipoEscrito_TipoArchivo,Prm_TipoEscrito_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','WORD','"&doc&"')"
+        end if
+%>
         <h1>Los datos fueron agregados exitosamente</h1>
-        <% Else%>
+        <% 
+            Else
+        %>
         <h1>Este Tipo de Escrito ya Existe</h1>
         <h2>Los datos no fueron Agregados</h2>
-        <% End If
-        conexion.close%>
+        <% 
+            End If
+        end if
+    conexion.close
+    %>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">

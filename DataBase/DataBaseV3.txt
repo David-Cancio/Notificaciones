@@ -55,7 +55,7 @@ GO
 ALTER TABLE Ve_Destino
 DROP CONSTRAINT FK_VeDestino_VeControl;
 GO
-ALTER TABLE Prm_Extenciones
+ALTER TABLE Prm_Extensiones
 DROP CONSTRAINT FK_Prm_Extenciones_TipoEscrito;
 GO
 
@@ -104,8 +104,8 @@ GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Error]') AND type in (N'U'))
 DROP TABLE [dbo].[Prm_Error]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Extenciones]') AND type in (N'U'))
-DROP TABLE [dbo].[Prm_Extenciones]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prm_Extensiones]') AND type in (N'U'))
+DROP TABLE [dbo].[Prm_Extensiones]
 GO
 
 SET ANSI_NULLS ON
@@ -156,11 +156,11 @@ CREATE TABLE [dbo].[Prm_TipoEscrito](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[Prm_Extenciones](
-	[Prm_Extenciones_TipoEscrito] [int],
-	[Prm_TipoEscrito_TipoArchivo] [nvarchar](max) NOT NULL,
-	[Prm_TipoEscrito_Extension] [nvarchar](max) NOT NULL,
-	CONSTRAINT FK_Prm_Extenciones_TipoEscrito FOREIGN KEY (Prm_Extenciones_TipoEscrito)
+CREATE TABLE [dbo].[Prm_Extensiones](
+	[Prm_Extensiones_TipoEscrito] [int],
+	[Prm_Extensiones_TipoArchivo] [nvarchar](max) NOT NULL,
+	[Prm_Extensiones_Extension] [nvarchar](max) NOT NULL,
+	CONSTRAINT FK_Prm_Extenciones_TipoEscrito FOREIGN KEY (Prm_Extensiones_TipoEscrito)
     REFERENCES [dbo].[Prm_TipoEscrito] ([Prm_TipoEscrito_Codigo]),
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO

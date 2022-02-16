@@ -9,6 +9,10 @@
         <%
         conexion.Open
         prm_tipoEscrito.open "select * from Prm_TipoEscrito",conexion
+        dim word, excel, pdf
+        word=0
+        excel=0
+        pdf=0
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -22,27 +26,45 @@
         <table Class="tabla">
             <tr>
                 <th>Código</th>
-                <th colspan="3">Nombre</th>
-                <th colspan="3">Tipo de Archivo</th>
-                <th colspan="3">Extención</th>
-                <th colspan="3">Modificar</th>
-                <th colspan="3">Eliminar</th>
+                <th colspan="2">Nombre</th>
+                <th>Tipo de Archivo</th>
+                <th colspan="2">Extención</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
             </tr>
             <%
-            do while not prm_tipoEscrito.eof
+                dim extenciones
+                set extenciones = Server.CreateObject("ADODB.RecordSet")
+                do while not prm_tipoEscrito.eof
+                extenciones.open "select * from Prm_TipoEscrito where Prm_Extensiones_TipoEscrito='"&prm_tipoEscrito("prm_tipoEscrito_Codigo")&"'", conexion
             %>
             <tr>
                 <th><%response.write(prm_tipoEscrito("Prm_TipoEscrito_Codigo"))%></th>
-                <th colspan="3"><%response.write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%></th>
-                <th colspan="3"><%response.write(prm_tipoEscrito("Prm_TipoEscrito_TipoArchivo"))%></th>
-                <th colspan="3"><%response.write(prm_tipoEscrito("Prm_TipoEscrito_Extension"))%></th>
-                <th colspan="3">
+                <th colspan="2"><%response.write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%></th>
+                <th>
+                    <%
+                        do while extenciones.eof
+                        
+
+                        extenciones.movenext
+                        loop
+                    %>
+                </th>
+                <th colspan="2">
+                    <%
+                        do while extenciones.eof
+                        response.write(extenciones("Prm_TipoEscrito_Extension"))
+                        extenciones.movenext
+                        loop
+                    %>
+                </th>
+                <th>
                     <form action="Modificar/GenerarModificarTipoEscrito.asp" method="post">
                         <input type="text" name="id" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos de este Tipo de Escrito">
                     </form>
                 </th>
-                <th colspan="3">
+                <th>
                     <form action="Eliminar/ConfirmarEliminarTipoEscrito.asp" method="post">
                         <input type="text" name="id" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Codigo"))%>" hidden />
                         <input type="submit" value="Eliminar" title="Elimine este Tipo de Escrito" class="btn-eliminar">
