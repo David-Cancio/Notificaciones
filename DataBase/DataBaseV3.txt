@@ -111,30 +111,35 @@ GO
 CREATE TABLE [dbo].[Prm_TipoMovimiento](
 	[Prm_TipoMov_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_TipoMov_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_TipoMov_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 CREATE TABLE [dbo].[Prm_Area](
 	[Prm_Area_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_Area_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_Area_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 CREATE TABLE [dbo].[Prm_Etapa](
 	[Prm_Etapa_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_Etapa_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_Etapa_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 CREATE TABLE [dbo].[Prm_Estado](
 	[Prm_Estado_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_Estado_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_Etapa_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 CREATE TABLE [dbo].[Prm_Rol](
 	[Prm_Rol_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_Rol_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_Rol_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
@@ -143,6 +148,7 @@ CREATE TABLE [dbo].[Prm_TipoEscrito](
 	[Prm_TipoEscrito_Nombre] [nvarchar](max) NOT NULL,
 	[Prm_TipoEscrito_TipoArchivo] [nvarchar](max) NOT NULL,
 	[Prm_TipoEscrito_Extension] [nvarchar](max) NOT NULL,
+	[Prm_TipoEscrito_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
@@ -155,6 +161,7 @@ CREATE TABLE [dbo].[Prm_EscritosHabilitados](
 	[Prm_EscritoHB_Rol] [int] NOT NULL,
 	[Prm_EscritoHB_ModeloEscrito] [int] NOT NULL,
 	[Prm_EscritoHB_Obligatorio] [bit] NOT NULL,
+	[Prm_EscritoHB_Vigencia] [bit] NOT NULL DEFAULT 1,
 	CONSTRAINT FK_EscritosHabilitados_TipoEscrito FOREIGN KEY (Prm_EscritoHB_ModeloEscrito)
     REFERENCES [dbo].[Prm_TipoEscrito] ([Prm_TipoEscrito_Codigo]),
 	CONSTRAINT FK_EscritosHabilitados_Area FOREIGN KEY (Prm_EscritoHB_Area)
@@ -182,6 +189,7 @@ GO
 CREATE TABLE [dbo].[Prm_SectorFirmante](
 	[Prm_SectorFirmante_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_SectorFirmante_Nombre] [nvarchar](max) NOT NULL,
+	[Prm_SectorFirmante_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 

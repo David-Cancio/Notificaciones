@@ -69,3 +69,29 @@ insert into Prm_Rol (Prm_Rol_Nombre) VALUES('3° INTERESADO DEMANDADO' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1100' ,'Error de coneccion', 'Falla de acceso al sistema' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1200' ,'Error de Validacion', 'Alguna validacion indispensable no permite realizar la accion' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1300' ,'Error de Permisos', 'No tiene permitido el ingreso' )
+
+
+
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ABOGADO' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('TESTIGO' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('JUEZ DE PAZ' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('FISCALIA' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('TESORERIA' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('PERITAJE' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ADMINISTRACION' )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
