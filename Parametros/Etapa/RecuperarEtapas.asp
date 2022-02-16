@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        prm_etapa.open "select * from Prm_Etapa",conexion
+        prm_etapa.open "select * from Prm_Etapa WHERE Prm_Etapa_Vigencia = 1",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->

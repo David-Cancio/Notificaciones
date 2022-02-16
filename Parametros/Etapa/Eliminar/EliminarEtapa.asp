@@ -9,9 +9,9 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            prm_etapa.open "select Prm_Etapa_Codigo from Etapa Where Prm_Etapa_Codigo='"&id&"'",conexion
+            prm_etapa.open "select Prm_Etapa_Codigo from Prm_Etapa Where Prm_Etapa_Codigo='"&id&"'",conexion
             if not prm_etapa.EOF Then
-                conexion.execute("delete from Prm_Etapa where Prm_Etapa_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_Etapa SET Prm_Etapa_Vigencia=0 where Prm_Etapa_Codigo='"&id&"'")
             End If
             conexion.close
         %>

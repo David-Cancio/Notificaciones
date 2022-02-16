@@ -10,10 +10,7 @@ set prm_etapa = Server.CreateObject("ADODB.RecordSet")
 <%
 conexion.open
 dim prm_etapa_nombre
-dim id
-
 prm_etapa_nombre=MayusculaTodas(Request.form("prm_etapa_nombre"))
-id=Request.form("id")
 if prm_etapa_nombre="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -26,18 +23,29 @@ end if
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
 <%
-prm_etapa.open "select Prm_Etapa_Codigo from Prm_Etapa WHERE Prm_Etapa_Nombre = '"&prm_etapa_nombre&"'",conexion
+prm_etapa.open "select Prm_Etapa_Codigo,Prm_Etapa_Vigencia from Prm_Etapa WHERE Prm_Etapa_Nombre = '"&prm_etapa_nombre&"'",conexion
 if prm_etapa.EOF then
     conexion.execute("insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('"&prm_etapa_nombre&"')")
     prm_etapa.Close
 %>
-
-        <h1>Los datos fueron agregados exitosamente</h1>
-        <% Else%>
-        <h1>Este Etapa ya Existe</h1>
-        <h2>Los datos no fueron Agregados</h2>
-        <% End If
-        conexion.close%>
+        <h1>Los datos fueron Agregados Exitosamente</h1>
+        <%
+         Else
+         If prm_etapa("Prm_Etapa_Vigencia")=0 then
+          conexion.execute("UPDATE Prm_Etapa SET Prm_Etapa_Vigencia=1 where Prm_Etapa_Codigo='"&prm_etapa("Prm_Etapa_Codigo")&"'")
+        %>
+            <h1>Esta Etapa ya Existia y se volvio a Habilitar</h1>
+            <h2>Los datos fueron Agregados</h2>
+        <%
+            Else
+        %>
+            <h1>Este Etapa ya Existe</h1>
+            <h2>Los datos no fueron Agregados</h2>
+        <% 
+            End If
+            End If
+            conexion.close
+        %>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">

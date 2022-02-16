@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Tipo de Movimiento:
-                            <input type="text" name="tipoMov_nombre" size="40" required title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("Prm_TipoMov_Nombre"))%>"/>
+                        <input type="text" name="tipoMov_nombre" size="40" required title="Indique el Tipo de Movimiento" value="<%response.write(tipoMovimiento("Prm_TipoMov_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>
