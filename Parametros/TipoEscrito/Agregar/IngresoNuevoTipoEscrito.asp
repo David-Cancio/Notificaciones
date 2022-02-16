@@ -1,5 +1,4 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
-<%%>
 <html>
     <!--#include virtual="/Partials/head.asp"-->
 <body>
@@ -7,7 +6,7 @@
 
     <div class="listado">   
         <form action="CrearTipoEscrito.asp" method="post">
-            <h1>Ingrese los nuevos datos</h1>
+            <h1>Ingrese nuevo Tipo de Escrito</h1>
             <table Class="tabla">
                 <tr>
                     <td colspan="3">Nombre:

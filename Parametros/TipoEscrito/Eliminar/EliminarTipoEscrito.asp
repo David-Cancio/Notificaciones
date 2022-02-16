@@ -11,7 +11,7 @@
             conexion.Open
             prm_tipoEscrito.open "select Prm_TipoEscrito_Codigo from Prm_TipoEscrito Where Prm_TipoEscrito_Codigo='"&id&"'",conexion
             if not prm_tipoEscrito.EOF Then
-                conexion.execute("delete from Prm_TipoEscrito where Prm_TipoEscrito_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_TipoEscrito SET Prm_TipoEscrito_Vigencia=0 where Prm_TipoEscrito_Codigo='"&id&"'")
             End If
             conexion.close
         %>

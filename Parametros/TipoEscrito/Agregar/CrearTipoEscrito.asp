@@ -13,6 +13,10 @@ dim prm_tipoEscrito_nombre
 prm_tipoEscrito_nombre=MayusculaTodas(Request.form("prm_tipoEscrito_nombre"))
 dim doc, docx, xml, xmls, pdf
 doc=Request.form("doc")
+docx=Request.form("docx")
+xml=Request.form("xml")
+xmls=Request.form("xmls")
+pdf=Request.form("pdf")
 if doc="on" Then
     doc=".doc"
 else
@@ -56,23 +60,44 @@ if IsEmpty(doc) or IsEmpty(docx) or IsEmpty(xml) or IsEmpty(xmls) or IsEmpty(pdf
     <h2>No hay Tipo de Archivos Selecionados</h2>
     <%
 else
-    prm_tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
+    prm_tipoEscrito.open "select Prm_TipoEscrito_Codigo,Prm_TipoEscrito_Vigencia from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
     if prm_tipoEscrito.EOF then
         conexion.execute "insert into Prm_TipoEscrito (Prm_TipoEscrito_Nombre) VALUES ('"&prm_tipoEscrito_nombre&"')"
         prm_tipoEscrito.close
         prm_tipoEscrito.open "select Prm_TipoEscrito_Codigo from Prm_TipoEscrito WHERE Prm_TipoEscrito_Nombre = '"&prm_tipoEscrito_nombre&"'",conexion
         if doc=".doc" then
-            conexion.execute "insert into Prm_Extenciones (Prm_Extenciones_TipoEscrito,Prm_TipoEscrito_TipoArchivo,Prm_TipoEscrito_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','WORD','"&doc&"')"
+            conexion.execute "insert into Prm_Extensiones (Prm_Extensiones_TipoEscrito,Prm_Extensiones_TipoArchivo,Prm_Extensiones_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','WORD','"&doc&"')"
+        end if
+        if docx=".docx" then
+            conexion.execute "insert into Prm_Extensiones (Prm_Extensiones_TipoEscrito,Prm_Extensiones_TipoArchivo,Prm_Extensiones_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','WORD','"&docx&"')"
+        end if
+        if xml=".xml" then
+            conexion.execute "insert into Prm_Extensiones (Prm_Extensiones_TipoEscrito,Prm_Extensiones_TipoArchivo,Prm_Extensiones_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','EXCEL','"&xml&"')"
+        end if
+        if xmls=".xmls" then
+            conexion.execute "insert into Prm_Extensiones (Prm_Extensiones_TipoEscrito,Prm_Extensiones_TipoArchivo,Prm_Extensiones_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','EXCEL','"&xmls&"')"
+        end if
+        if pdf=".pdf" then
+            conexion.execute "insert into Prm_Extensiones (Prm_Extensiones_TipoEscrito,Prm_Extensiones_TipoArchivo,Prm_Extensiones_Extension) VALUES ('"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"','PDF','"&pdf&"')"
         end if
 %>
-        <h1>Los datos fueron agregados exitosamente</h1>
+        <h1>Los datos fueron Agregados Exitosamente</h1>
         <% 
             Else
+            If prm_tipoEscrito("Prm_TipoEscrito_Vigencia")=0 then
+            conexion.execute("UPDATE Prm_TipoEscrito SET Prm_TipoEscrito_Vigencia=1 where Prm_TipoEscrito_Codigo='"&prm_tipoEscrito("Prm_TipoEscrito_Codigo")&"'")
         %>
-        <h1>Este Tipo de Escrito ya Existe</h1>
-        <h2>Los datos no fueron Agregados</h2>
+            <h1>Este Tipo de Escrito ya Existia y se volvio a Habilitar</h1>
+            <h2>Los datos fueron Agregados</h2>
+        <%
+            Else    
+        %>
+            <h1>Este Tipo de Escrito ya Existe</h1>
+            <h2>Los datos no fueron Agregados</h2>
         <% 
-            End If
+        
+        End If
+        End If
         end if
     conexion.close
     %>

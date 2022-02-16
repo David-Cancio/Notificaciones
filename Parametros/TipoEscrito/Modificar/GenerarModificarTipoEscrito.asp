@@ -2,8 +2,10 @@
 <%
             dim conexion
             dim prm_tipoEscrito
+            dim extensiones
             set conexion=Server.CreateObject("ADODB.Connection")
             set prm_tipoEscrito = Server.CreateObject("ADODB.RecordSet")
+            set extensiones = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
         <!--#include virtual="/Partials/RecuperarId.asp"-->
@@ -14,37 +16,130 @@
         %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
-            Else
+            End if
         %>
 <html>
-    <!--#include virtual="/Partials/Head.asp"-->
+    <!--#include virtual="/Partials/head.asp"-->
 <body>
-    <!--#include virtual="/Partials/Header.asp"-->
+    <!--#include virtual="/Partials/header.asp"-->
 
-    <div class="listado">
+    <div class="listado">   
         <form action="ModificarTipoEscrito.asp" method="post">
-            <input type="text" name="id" value="<%response.write(id) %>" hidden />
-            <h1>
-                Modificar Tipo de Escrito
-            </h1>
+            <h1>Modificar Tipo de Escrito</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre del Tipo de Escrito:
-                            <input type="text" name="prm_tipoEscrito_nombre" size="40" required title="Indique el Nombre del Tipo de Escrito" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>"/>
+                    <td colspan="3">Nombre:
+                        <input type="text" name="prm_tipoEscrito_nombre" size="40" required title="Indique el Nombre del Tipo de Escrito" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>"/>
                     </td>
-                    <td colspan="2">Tipo de Archivo:
-                            <input type="text" name="prm_tipoEscrito_tipoArchivo" size="40" required title="Indique el Tipo de Archivo" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_tipoArchivo"))%>"/>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        Tipos de Archivos Aceptados:
                     </td>
-                    <td colspan="2">Extension:
-                            <input type="text" name="prm_tipoEscrito_extension" size="40" required title="Indique el Modelo del Tipo de Extension" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Extension"))%>"/>
+                </tr>
+                <tr>
+                    <td>
+                        Word:
                     </td>
+                    <td>
+                        .doc
+                        <%
+                            extensiones.open "select * from Prm_Extensiones where Prm_Extensiones_TipoEscrito='"&prm_tipoEscrito("prm_tipoEscrito_Codigo")&"' and Prm_Extensiones_Extension='.doc'", conexion
+                            if extensiones.EOF then
+                        %>
+                            <input type="checkbox" name="doc"/>
+                        <%
+                            else    
+                        %>
+                            <input type="checkbox" name="doc" checked/>
+                        <%
+                            end if 
+                            extensiones.close
+                        %>
+                    </td>
+                     <td>
+                        .docx
+                         <%
+                            extensiones.open "select * from Prm_Extensiones where Prm_Extensiones_TipoEscrito='"&prm_tipoEscrito("prm_tipoEscrito_Codigo")&"' and Prm_Extensiones_Extension='.docx'", conexion
+                            if extensiones.EOF then
+                        %>
+                            <input type="checkbox" name="docx"/>
+                        <%
+                            else    
+                        %>
+                            <input type="checkbox" name="docx" checked/>
+                        <%
+                            end if
+                            extensiones.close
+                        %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Excel:
+                    </td>
+                    <td>
+                        .xml
+                        <%
+                            extensiones.open "select * from Prm_Extensiones where Prm_Extensiones_TipoEscrito='"&prm_tipoEscrito("prm_tipoEscrito_Codigo")&"' and Prm_Extensiones_Extension='.xml'", conexion
+                            if extensiones.EOF then
+                        %>
+                            <input type="checkbox" name="xml"/>
+                        <%
+                            else    
+                        %>
+                            <input type="checkbox" name="xml" checked/>
+                        <%
+                            end if 
+                            extensiones.close
+                        %>
+                    </td>
+                     <td>
+                        .xmls
+                        <%
+                            extensiones.open "select * from Prm_Extensiones where Prm_Extensiones_TipoEscrito='"&prm_tipoEscrito("prm_tipoEscrito_Codigo")&"' and Prm_Extensiones_Extension='.xmls'", conexion
+                            if extensiones.EOF then
+                        %>
+                            <input type="checkbox" name="xmls"/>
+                        <%
+                            else    
+                        %>
+                            <input type="checkbox" name="xmls" checked/>
+                        <%
+                            end if
+                            extensiones.close
+                        %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        PDF:
+                    </td>
+                    <td>
+                        .pdf
+                        <%
+                            extensiones.open "select * from Prm_Extensiones where Prm_Extensiones_TipoEscrito='"&prm_tipoEscrito("prm_tipoEscrito_Codigo")&"' and Prm_Extensiones_Extension='.pdf'", conexion
+                            if extensiones.EOF then
+                        %>
+                            <input type="checkbox" name="pdf"/>
+                        <%
+                            else    
+                        %>
+                            <input type="checkbox" name="pdf" checked/>
+                        <%
+                            end if
+                            extensiones.close
+                        %>
+                    </td>
+                    <td></td>
                 </tr>
             </table>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="ModificarTipoEscrito.asp" method="post">
-                            <input type="submit" value="Modificar" title="Confirme la modificación" class="btn-agregar"/>
+                            <input type="text" name="id" value="<%response.write(id)%>" hidden />
+                            <input type="submit" value="Agregar" title="Agregue el Tipo de Escrito" class="btn-agregar" />
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
@@ -54,11 +149,8 @@
                     </div>
                 </div>
             </div>
+        </form>
     </div>
-        <%
-            end if
-            conexion.close
-        %>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
 </html>
