@@ -72,4 +72,10 @@ dim sacarBarra
 sacarBarra=replace(var,"/","")
 SacarBarras=sacarBarra
 end function
+
+function SacarPuntos(var)
+dim sacarPunto
+sacarPunto=replace(var,":","")
+SacarPuntos=sacarPunto
+end function
 %>

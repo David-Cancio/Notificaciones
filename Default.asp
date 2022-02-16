@@ -18,8 +18,7 @@
         <form action="Partials/Desarrollador/RecargarBaseDeDatos.asp" method="post">
             <input type="submit" value="Recargar Base de Datos">
         </form>
-    </div>
-    
+    </div>   
         <!--#include file="Partials/Validations.js"-->
 
     <%
