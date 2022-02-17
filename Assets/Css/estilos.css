@@ -102,9 +102,7 @@
 .tabla tbody tr:nth-child(even) {
     background-color: #EAECEC;
 }
-#img-inicio{
-    max-width: 80%;
-    max-height: 80%;
-    height: 10px;
-    width: 10px;
+.img-inicio{
+    max-width: 20%;
+    max-height: 20%;
 }
