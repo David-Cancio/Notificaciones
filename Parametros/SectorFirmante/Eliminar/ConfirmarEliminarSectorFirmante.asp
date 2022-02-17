@@ -40,7 +40,7 @@
                 <td>Nombre:
                 </td>
                 <td colspan="3">
-                    <%response.Write(sectorFirmante("Prm_SectorFirmante_Nombre"))%>
+                    <%response.Write(prm_sectorFirmante("Prm_SectorFirmante_Nombre"))%>
                 </td>
             </tr>
         </table>

@@ -65,11 +65,10 @@
 	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('DENUNCIANTE' )
 	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('3° INTERESADO DEMANDADO' )
 
-<<<<<<< HEAD
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1100' ,'Error de coneccion', 'Falla de acceso al sistema' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1200' ,'Error de Validacion', 'Alguna validacion indispensable no permite realizar la accion' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1300' ,'Error de Permisos', 'No tiene permitido el ingreso' )
-
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1001' ,'Error de Parametros', 'Los Parametros del sistema son Insuficientes como para Operar' )
 
 
 insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ABOGADO' )
@@ -95,6 +94,5 @@ insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ADMINISTRACIO
 
 
 
-=======
-	insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1001' ,'Error de Parametros', 'Los Parametros del sistema son Insuficientes como para Operar' )
->>>>>>> dd5953623b694c8b8cf034dc94f5c7bfeebe5638
+
+	

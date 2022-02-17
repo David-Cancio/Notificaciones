@@ -11,7 +11,7 @@
             conexion.Open
             prm_sectorFirmante.open "select Prm_SectorFirmante_Codigo from Prm_SectorFirmante Where Prm_SectorFirmante_Codigo='"&id&"'",conexion
             if not prm_sectorFirmante.EOF Then
-                conexion.execute("delete from Prm_SectorFirmante where Prm_SectorFirmante_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_SectorFirmante SET Prm_SectorFirmante_Vigencia=0 where Prm_SectorFirmante_Codigo='"&id&"'")
             End If
             conexion.close
         %>
@@ -21,7 +21,7 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">               
-        <h1>Los datos fueron borrados exitosamente</h1>
+        <h1>Los datos fueron Borrados Exitosamente</h1>
         <form action="../RecuperarSectorFirmante.asp" method="post">
             <input type="submit" value="Regresar" title="Regresar" />
         </form>

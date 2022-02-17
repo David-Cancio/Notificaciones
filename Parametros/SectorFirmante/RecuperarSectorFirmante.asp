@@ -8,7 +8,7 @@
         <!--#include virtual="/connectionSQL.asp"-->
         <%
         conexion.Open
-        prm_sectorFirmante.open "select * from Prm_SectorFirmante",conexion
+        prm_sectorFirmante.open "select * from Prm_SectorFirmante WHERE Prm_SectorFirmante_Vigencia = 1",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
