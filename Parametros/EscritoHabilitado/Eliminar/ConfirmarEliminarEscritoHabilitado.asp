@@ -15,7 +15,7 @@
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
             End if
-            dim area_Codigo, etapa_Codigo, estado_Codigo, tipoMov_Codigo, rol_Codigo, modeloEscrito_Codigo, obligatorio, sector_Codigo
+            dim area_Codigo, etapa_Codigo, estado_Codigo, tipoMov_Codigo, rol_Codigo, modeloEscrito_Codigo, obligatorio
             area_Codigo=escritoHb("Prm_EscritoHB_Area")
             etapa_Codigo=escritoHb("Prm_EscritoHB_Etapa")
             estado_Codigo=escritoHb("Prm_EscritoHB_Estado")
@@ -24,13 +24,14 @@
             modeloEscrito_Codigo=escritoHb("Prm_EscritoHB_ModeloEscrito")
             obligatorio=escritoHb("Prm_EscritoHB_Obligatorio")
             
-            dim area, tipoMovimiento, etapa, estado, rol, modeloEscrito, sector, ve_Notificacion
+            dim area, tipoMovimiento, etapa, estado, rol, modeloEscrito, sector, sector_Codigo
             set area = Server.CreateObject("ADODB.RecordSet")
             set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
             set etapa = Server.CreateObject("ADODB.RecordSet")
             set estado = Server.CreateObject("ADODB.RecordSet")
             set rol = Server.CreateObject("ADODB.RecordSet")
             set modeloEscrito = Server.CreateObject("ADODB.RecordSet")
+            set sector_Codigo = Server.CreateObject("ADODB.RecordSet")
             set sector = Server.CreateObject("ADODB.RecordSet")
             area.open "select Prm_Area_Nombre from Prm_Area WHERE Prm_Area_Codigo = '"&area_Codigo&"'",conexion
             tipoMovimiento.open "select Prm_TipoMov_Nombre from Prm_TipoMovimiento WHERE Prm_TipoMov_Codigo = '"&tipoMov_Codigo&"'",conexion
@@ -38,7 +39,10 @@
             estado.open "select Prm_Estado_Nombre from Prm_Estado WHERE Prm_Estado_Codigo = '"&estado_Codigo&"'",conexion
             rol.open "select Prm_Rol_Nombre from Prm_Rol WHERE Prm_Rol_Codigo = '"&rol_Codigo&"'",conexion
             modeloEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Codigo = '"&modeloEscrito_Codigo&"'",conexion
-            sector.open "select Prm_SectorFirmante_Nombre from Prm_SectorFirmante WHERE Prm_SectorFirmante_Codigo = '"&sector_Codigo&"'",conexion
+            sector_Codigo.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector WHERE Prm_FirmaPorSector_EscritoHabilitados = '"&id&"'",conexion
+            if not sector_Codigo.eof then
+            sector.open "select Prm_SectorFirmante_Nombre from Prm_SectorFirmante WHERE Prm_SectorFirmante_Codigo = '"&sector_Codigo("Prm_FirmaPorSector_Firmante")&"'",conexion
+            end if
         %>
 <html>
 
@@ -85,14 +89,14 @@
                 </th>
                 <th>
                     <%
-                        if escritoHb("Prm_EscritoHB_Obligatorio")=0 then
+                        if escritoHb("Prm_EscritoHB_Obligatorio")=False then
                     %>
-                    NO
+                            NO
                     <%
                         else
-                    %>
-                    SI
-                    <%
+                    
+                            response.write(sector("Prm_SectorFirmante_Nombre"))
+
                         end if
                     %>
                 </th>
@@ -101,13 +105,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="EliminarArea.asp" method="post">
+                    <form action="EliminarEscritoHabilitado.asp" method="post">
                         <input type="text" name="id" value="<%response.write(id)%>" hidden />
-                        <input type="submit" value="Confirmar" title="Elimine la Área" class="btn-eliminar">
+                        <input type="submit" value="Confirmar" title="Elimine el EscritoHabilitado" class="btn-eliminar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarAreas.asp" method="post">
+                    <form action="../RecuperarEscritosHabilitados.asp" method="post">
                         <input type="submit" value="Cancelar" title="Cancelar">
                     </form>
                 </div>

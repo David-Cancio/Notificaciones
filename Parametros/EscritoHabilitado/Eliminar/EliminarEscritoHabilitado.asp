@@ -9,9 +9,9 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            escritoHb.open "select Prm_EscritoHB_Codigo from Prm_EscritosHabilitados Where Prm_EscritosHabilitados_Codigo='"&id&"'",conexion
+            escritoHb.open "select Prm_EscritoHB_Codigo from Prm_EscritosHabilitados Where Prm_EscritoHB_Codigo='"&id&"'",conexion
             if not escritoHb.EOF Then
-                conexion.execute("UPDATE Prm_EscritosHabilitados SET Prm_EscritoHB_Vigencia=0 where Prm_EscritosHB_Codigo='"&id&"'")
+                conexion.execute("UPDATE Prm_EscritosHabilitados SET Prm_EscritoHB_Vigencia=0 where Prm_EscritoHB_Codigo='"&id&"'")
             End If
             conexion.close
         %>
@@ -22,8 +22,8 @@
 
     <div class="listado">               
         <h1>Los datos fueron borrados exitosamente</h1>
-        <form action="../RecuperarAreas.asp" method="post">
-            <input type="submit" value="Listado de Áreas" title="Vuelva listado de Áreas">
+        <form action="../RecuperarEscritosHabilitados.asp" method="post">
+            <input type="submit" value="Regresar" title="Regresar">
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
