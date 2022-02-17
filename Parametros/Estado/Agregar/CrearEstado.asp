@@ -41,6 +41,7 @@ if prm_estado.EOF then
             <h2>Los datos no fueron Agregados</h2>
         </div>
         <% End If
+        end if
         conexion.close%>
         <div class="container">
             <div class="row">

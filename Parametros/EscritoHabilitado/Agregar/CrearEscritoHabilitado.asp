@@ -1,10 +1,8 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
 dim conexion
-dim escritoHB
 set conexion=Server.CreateObject("ADODB.Connection")
-dim area, tipoMovimiento, etapa, estado, rol, modeloEscrito, sector, ve_Notificacion
-set ve_Notificacion = Server.CreateObject("ADODB.RecordSet")
+dim area, tipoMovimiento, etapa, estado, rol, modeloEscrito, sector, escritoHb
 set area = Server.CreateObject("ADODB.RecordSet")
 set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
 set etapa = Server.CreateObject("ADODB.RecordSet")
@@ -12,6 +10,7 @@ set estado = Server.CreateObject("ADODB.RecordSet")
 set rol = Server.CreateObject("ADODB.RecordSet")
 set modeloEscrito = Server.CreateObject("ADODB.RecordSet")
 set sector = Server.CreateObject("ADODB.RecordSet")
+set escritoHb = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <%
@@ -29,7 +28,8 @@ rol_Codigo=Request.form("rol_Codigo")
 dim modeloEscrito_Codigo
 modeloEscrito_Codigo=Request.form("tipoEscrito_Codigo")
 dim obligatorio
-obligatorio=Request.form("obligatorio")
+obligatorio=Request.QueryString("obligatorio")
+response.write(obligatorio)
 dim sector_Codigo
 sector_Codigo=Request.form("sector_Codigo")
 area.open "select Prm_Area_Nombre from Prm_Area WHERE Prm_Area_Codigo = '"&area_Codigo&"'",conexion
@@ -39,13 +39,26 @@ estado.open "select Prm_Estado_Nombre from Prm_Estado WHERE Prm_Estado_Codigo = 
 rol.open "select Prm_Rol_Nombre from Prm_Rol WHERE Prm_Rol_Codigo = '"&rol_Codigo&"'",conexion
 modeloEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Codigo = '"&modeloEscrito_Codigo&"'",conexion
 sector.open "select Prm_SectorFirmante_Nombre from Prm_SectorFirmante WHERE Prm_SectorFirmante_Codigo = '"&sector_Codigo&"'",conexion
+dim sector_Nombre
+if sector.eof then
+sector_Nombre="-"
+else
+sector_Nombre=(sector("Prm_SectorFirmante_Nombre"))
+end if
 
-if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or rol_Codigo="" or modeloEscrito_Codigo="" Then
+if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or rol_Codigo="" or modeloEscrito_Codigo="" or sector_Codigo="" Then
 %>
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
 end if
-conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_EscritoHB_TipoMov, Prm_EscritoHB_Etapa, Prm_EscritoHB_Estado, Prm_EscritoHB_Rol, Prm_EscritoHB_ModeloEscrito, Prm_EscritoHB_Obligatorio) VALUES('"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&modeloEscrito_Codigo&"','1')")
+conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_EscritoHB_TipoMov, Prm_EscritoHB_Etapa, Prm_EscritoHB_Estado, Prm_EscritoHB_Rol, Prm_EscritoHB_ModeloEscrito, Prm_EscritoHB_Obligatorio) VALUES('"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&modeloEscrito_Codigo&"','"&obligatorio&"')")
+escritoHb.open "select Prm_EscritoHB_Codigo from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
+dim escritoHb_Codigo
+do while not escritoHb.eof
+escritoHb_Codigo=escritoHb("Prm_EscritoHB_Codigo")
+escritoHb.movenext
+loop
+conexion.execute("insert into Prm_FirmaPorSector (Prm_FirmaPorSector_EscritoHabilitados, Prm_FirmaPorSector_Firmante, Prm_FirmaPorSector_Estado) VALUES('"&escritoHb_Codigo&"','"&sector_Codigo&"',1)")
 %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -83,15 +96,17 @@ conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_E
             <th>Estado</th>
             <th>Rol</th>
             <th>Modelo de Escrito</th>
+            <th>Sector</th>
             <th>Cuit del Demandado</th>
         </tr>
         <tr>
-            <th><%response.write(area("Area_Nombre"))%></th>
-            <th><%response.write(tipoMovimiento("TipoMov_Nombre"))%></th>
-            <th><%response.write(etapa("Etapa_Nombre"))%></th>
-            <th><%response.write(estado("Estado_Nombre"))%></th>
-            <th><%response.write(rol("Rol_Nombre"))%></th>
-            <th><%response.write(modeloEscrito("ModeloEscrito_Nombre"))%></th>
+            <th><%response.write(area("Prm_Area_Nombre"))%></th>
+            <th><%response.write(tipoMovimiento("Prm_TipoMov_Nombre"))%></th>
+            <th><%response.write(etapa("Prm_Etapa_Nombre"))%></th>
+            <th><%response.write(estado("Prm_Estado_Nombre"))%></th>
+            <th><%response.write(rol("Prm_Rol_Nombre"))%></th>
+            <th><%response.write(modeloEscrito("Prm_TipoEscrito_Nombre"))%></th>
+            <th><%response.write(sector_Nombre)%></th>
             <th>1</th>  
         </tr>
     </table>
@@ -101,12 +116,12 @@ conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_E
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="IngresoNuevaNotificacion.asp" method="post">
+                    <form action="IngresoNuevoEscritoHabilitado.asp" method="post">
                         <input type="submit" value="Agregar Otra" title="Agregue otra Notificación" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
-                    <form action="../RecuperarNotificaciones.asp" method="post">
+                    <form action="../RecuperarEscritosHabilitados.asp" method="post">
                         <input type="submit" value="Regresar" title="Vuelva al listado de Notificaciones">
                     </form>
                 </div>
