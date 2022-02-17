@@ -8,6 +8,8 @@
         dim tipoMovimiento
         dim rol
         dim modeloEscrito
+        dim sector
+        dim sector_Nombre
         set conexion=Server.CreateObject("ADODB.Connection")
         set escritosHb = Server.CreateObject("ADODB.RecordSet")
         set area = Server.CreateObject("ADODB.RecordSet")
@@ -16,6 +18,8 @@
         set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
         set rol = Server.CreateObject("ADODB.RecordSet")
         set modeloEscrito = Server.CreateObject("ADODB.RecordSet")
+        set sector = Server.CreateObject("ADODB.RecordSet")
+        set sector_Nombre = Server.CreateObject("ADODB.RecordSet")
         %>
         <!--#include virtual="/connectionSQL.asp"-->
         <%
@@ -55,6 +59,10 @@
                 tipoMovimiento.open "select * from Prm_TipoMovimiento where Prm_TipoMov_Codigo='"&escritosHb("Prm_EscritoHB_TipoMov")&"'",conexion
                 rol.open "select * from Prm_Rol where Prm_Rol_Codigo='"&escritosHb("Prm_EscritoHB_Rol")&"'",conexion
                 modeloEscrito.open "select * from Prm_TipoEscrito where Prm_TipoEscrito_Codigo='"&escritosHb("Prm_EscritoHB_ModeloEscrito")&"'",conexion
+                if escritosHb("Prm_EscritoHB_Obligatorio")=True then
+                    sector.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&escritosHb("Prm_EscritoHB_Codigo")&"'",conexion
+                    sector_Nombre.open "select Prm_SectorFirmante_Nombre from Prm_SectorFirmante where Prm_SectorFirmante_Codigo='"&sector("Prm_FirmaPorSector_Firmante")&"'",conexion
+                end if
             %>
                 <th><%response.write(escritosHb("Prm_EscritoHB_Codigo"))%></th>
                 <th><%response.write(area("Prm_Area_Nombre"))%></th>
@@ -65,15 +73,15 @@
                 <th><%response.write(modeloEscrito("Prm_TipoEscrito_Nombre"))%></th>
                 <th>
                     <% 
-                    if escritosHb("Prm_EscritoHB_Obligatorio")=0 then
-                        response.write("No")
+                    if escritosHb("Prm_EscritoHB_Obligatorio")=True then
+                        response.write(sector_Nombre("Prm_SectorFirmante_Nombre"))
                     else
-                        response.write("Si")
+                        response.write("No")
                     end if
                     %>
                 </th>
                 <th>
-                    <form action="Modificar/GenerarModificarEscritoHabilitado.asp" method="post">
+                    <form action="Modificar/GenerarModificarEscritoHabilitado.asp?obligatorio=<%response.write(escritosHb("Prm_EscritoHB_Obligatorio"))%>" method="post">
                         <input type="text" name="id" value="<%response.write(escritosHb("Prm_EscritoHB_Codigo"))%>" hidden />
                         <input type="submit" value="Modificar" title="Modifique los datos del Escrito Habilitado">
                     </form>
@@ -92,6 +100,10 @@
             tipoMovimiento.close
             rol.close
             modeloEscrito.close
+            if escritosHb("Prm_EscritoHB_Obligatorio")=True then
+                sector.close
+                sector_Nombre.close
+            end if
             escritosHb.movenext
             loop
             %>

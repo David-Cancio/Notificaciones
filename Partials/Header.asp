@@ -22,7 +22,7 @@
                     <a class="dropdown-item" href="/Parametros/Rol/RecuperarRoles.asp">Roles</a>
                     <a class="dropdown-item" href="/Parametros/SectorFirmante/RecuperarSectorFirmante.asp">Sectores Firmantes</a>
                     <a class="dropdown-item" href="/Parametros/TipoEscrito/RecuperarTipoEscritos.asp">Tipo de Escritos</a>
-                    <a class="dropdown-item" href="/Parametros/TipoMovi miento/RecuperarTipoMovimientos.asp">Tipo de Movimientos</a>
+                    <a class="dropdown-item" href="/Parametros/TipoMovimiento/RecuperarTipoMovimientos.asp">Tipo de Movimientos</a>
                 <div class="dropdown-divider"></div>
                 </div>
             </li>

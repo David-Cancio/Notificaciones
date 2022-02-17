@@ -25,7 +25,11 @@
         <%
             conexion.Open
             conexion.execute("UPDATE Prm_EscritosHabilitados SET Prm_EscritoHB_Area='"&area_codigo&"', Prm_EscritoHB_Etapa='"&etapa_Codigo&"', Prm_EscritoHB_Estado='"&estado_Codigo&"', Prm_EscritoHB_TipoMov='"&tipoMov_Codigo&"', Prm_EscritoHB_Rol='"&rol_Codigo&"', Prm_EscritoHB_ModeloEscrito='"&modeloEscrito_Codigo&"', Prm_EscritoHB_Obligatorio='"&obligatorio&"' WHERE Prm_EscritoHB_Codigo='"&id&"' ")
-            conexion.execute("UPDATE Prm_FirmaPorSector SET Prm_FirmaPorSector_Firmante='"&sector_Codigo&"', Prm_FirmaPorSector_Estado=1 WHERE  Prm_FirmaPorSector_EscritoHabilitados='"&id&"' ")
+            conexion.execute("DELETE Prm_FirmaPorSector WHERE Prm_FirmaPorSector_EscritoHabilitados='"&id&"' ")
+
+            if obligatorio=1 then
+            conexion.execute("insert into Prm_FirmaPorSector (Prm_FirmaPorSector_EscritoHabilitados, Prm_FirmaPorSector_Firmante, Prm_FirmaPorSector_Estado) VALUES('"&id&"','"&sector_Codigo&"',1)")
+            end if
             conexion.close
         %>
 <html>

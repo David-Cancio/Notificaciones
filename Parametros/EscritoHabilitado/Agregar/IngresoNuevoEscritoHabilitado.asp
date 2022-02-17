@@ -4,7 +4,6 @@ dim conexion
 dim auxiliar
 set conexion=Server.CreateObject("ADODB.Connection")
 set auxiliar = Server.CreateObject("ADODB.RecordSet")
-dim obligatorio
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <%
@@ -155,39 +154,39 @@ conexion.open
                     <td>
                         Firma Obligatoria:
                         <%
-                        obligatorio=Request.QueryString("obligatorio")
+                        dim obligatorioQuery
+                        obligatorioQuery=Request.QueryString("obligatorio")
+                        if obligatorioQuery="SI" then
                         %>
-                        <select name="obligatorio" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
-                            <%
-                            if obligatorio="SI" then
-                            %>
+                        <input type="text" name="obligatorio" value="1" hidden/>
+                        <select name="obligatorioQuery" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
                             <option selected value="/Parametros/EscritoHabilitado/Agregar/IngresoNuevoEscritoHabilitado.asp?obligatorio=SI">SI</option>
                             <option value="/Parametros/EscritoHabilitado/Agregar/IngresoNuevoEscritoHabilitado.asp?obligatorio=NO">NO</option> 
-                            <%
-                            else
-                            %>
+                        </select>
+                        <%
+                        else
+                        %>
+                        <input type="text" name="obligatorio" value="0" hidden/>
+                        <select name="obligatorioQuery" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
                             <option selected value="/Parametros/EscritoHabilitado/Agregar/IngresoNuevoEscritoHabilitado.asp?obligatorio=NO">NO</option> 
                             <option value="/Parametros/EscritoHabilitado/Agregar/IngresoNuevoEscritoHabilitado.asp?obligatorio=SI">SI</option>
-                            <%
-                            end if
-                            %>
                         </select>
+                        <%
+                        end if
+                        %>
                     </td>
                     <td>Sector Firmante:
                         <%
-                            if obligatorio="SI" then
+                            if obligatorioQuery="SI" then
                         %>
-                        <select name="sector_Codigo" title="Seleccione el Sector Firmante">
+                            <select name="sector_Codigo" title="Seleccione el Sector Firmante">
                         <%
                             auxiliar.open "select * from Prm_SectorFirmante where Prm_SectorFirmante_Vigencia=1",conexion
                             if auxiliar.eof then
                         %>
-                            <option value="0">No hay Parametros de Sectores Firmantes</option>
+                            <option value="0">No hay Parámetros de Sectores Firmantes</option>
                         <% 
                             else
-                        %>
-                            <option value="0" selected>-</option>
-                        <%
                             do while not auxiliar.eof
                         %>
                             <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>

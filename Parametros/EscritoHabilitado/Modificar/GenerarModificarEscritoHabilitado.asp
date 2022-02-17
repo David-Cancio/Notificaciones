@@ -29,7 +29,6 @@
             sector_EscritoHb=escritoHb("Prm_EscritoHB_Codigo")
             obligatorio=escritoHb("Prm_EscritoHB_obligatorio")
             sector_Firmante.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&sector_EscritoHb&"'",conexion
-
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -179,45 +178,57 @@
                 <tr>
                     <td>Firma Obligatoria: 
                         <%
-                        dim obligatorio2
-                        obligatorio2=Request.QueryString("obligatorio")
-                        response.write(obligatorio2)
+                        dim obligatorioQuery
+                        obligatorioQuery=Request.QueryString("obligatorio")
+                        response.write(obligatorioQuery)
+                        response.write(obligatorio)
+                        if obligatorioQuery="True" then
                         %>
-                        <select name="obligatorio2" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
-                            <%
-                            if obligatorio="SI" then
-                            %>
-                            <option selected value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=SI">SI</option>
-                            <option value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>obligatorio=NO">NO</option> 
-                            <%
-                            else
-                            %>
-                            <option selected value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=NO">NO</option> 
-                            <option value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=SI">SI</option>
-                            <%
-                            end if
-                            %>
+                        <input type="text" name="obligatorio" value="1" hidden/>
+                        <select name="obligatorioQuery" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
+                            <option selected value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=True">SI</option>
+                            <option value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=False">NO</option> 
                         </select>
+                        <%
+                        elseIf obligatorioQuery="False" then
+                        %>
+                        <input type="text" name="obligatorio" value="0" hidden/>
+                        <select name="obligatorioQuery" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
+                            <option selected value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=False">NO</option> 
+                            <option value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=True">SI</option>
+                        </select>
+                        <%
+                        end if
+                        %>
                     </td>
                     <td>Sector Firmante: 
                         <%
-                            if obligatorio2="SI" then
+                            If obligatorioQuery="True" then
                         %>
                         <select name="sector_Codigo" title="Seleccione el Sector Firmante">
                         <%
                             auxiliar.open "select * from Prm_SectorFirmante where Prm_SectorFirmante_Vigencia=1",conexion
                             if auxiliar.eof then
                         %>
-                            <option value="0">No hay Parametros de Sectores Firmantes</option>
+                            <option value="0">No hay Parámetros de Sectores Firmantes</option>
                         <% 
                             else
-                        %>
-                            <option value="0" selected>-</option>
-                        <%
                             do while not auxiliar.eof
+                            if not sector_Firmante.eof then
+                                if auxiliar("Prm_SectorFirmante_Codigo")=sector_Firmante("Prm_FirmaPorSector_Firmante") then
+                            %>
+                                <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                            <%
+                                else
+                            %>
+                                <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                            <%
+                                end if
+                            else
                         %>
                             <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
                         <%
+                            end if
                             auxiliar.movenext
                             loop
                             end if
@@ -227,7 +238,7 @@
                         <%
                             else
                         %>
-                            <select disabled name="sector_Codigo" title="Seleccione el Sector Firmante">
+                        <select disabled name="sector_Codigo" title="Seleccione el Sector Firmante">
                         <%
                             end if
                         %>
