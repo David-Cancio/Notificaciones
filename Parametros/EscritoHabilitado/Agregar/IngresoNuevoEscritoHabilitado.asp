@@ -112,18 +112,12 @@ conexion.open
                             <option value="0">No hay Parametros de Rol</option>
                         <% 
                             else
-                            dim numeroRol
                             do while not auxiliar.eof
                         %>
                             <option value="<%response.write(auxiliar("Prm_Rol_Codigo"))%>"><%response.write(auxiliar("Prm_Rol_Codigo"))%>-<%response.write(auxiliar("Prm_Rol_Nombre"))%></option>
                         <%
-                            numeroRol=auxiliar("Prm_Rol_Codigo")
                             auxiliar.movenext
                             loop
-                            numeroRol=numeroRol+1
-                        %>
-                            <option value="<%response.write(numeroRol)%>"><%response.write(numeroRol)%>-<%response.write("NO DEFINE")%></option>
-                        <%
                             end if
                             auxiliar.close
                         %>
@@ -216,7 +210,7 @@ conexion.open
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="../RecuperarEscritosHabilitados.asp" method="post">
-                            <input type="submit" value="Regresar" title="Regresar" class="btn-eliminar">
+                            <input type="submit" value="Cancelar" title="Cancelar" class="btn-eliminar">
                         </form>
                     </div>
                 </div>

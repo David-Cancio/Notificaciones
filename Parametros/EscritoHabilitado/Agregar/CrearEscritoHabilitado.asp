@@ -2,7 +2,7 @@
 <%
 dim conexion
 set conexion=Server.CreateObject("ADODB.Connection")
-dim area, tipoMovimiento, etapa, estado, rol, modeloEscrito, sector, escritoHb
+dim area, tipoMovimiento, etapa, estado, rol, modeloEscrito, sector, escritoHb, prm_EscritoHb
 set area = Server.CreateObject("ADODB.RecordSet")
 set tipoMovimiento = Server.CreateObject("ADODB.RecordSet")
 set etapa = Server.CreateObject("ADODB.RecordSet")
@@ -11,6 +11,7 @@ set rol = Server.CreateObject("ADODB.RecordSet")
 set modeloEscrito = Server.CreateObject("ADODB.RecordSet")
 set sector = Server.CreateObject("ADODB.RecordSet")
 set escritoHb = Server.CreateObject("ADODB.RecordSet")
+set prm_EscritoHb = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <%
@@ -31,8 +32,6 @@ dim obligatorio
 obligatorio=Request.form("obligatorio")
 dim sector_Codigo
 sector_Codigo=Request.form("sector_Codigo")
-dim prm_EscritoHb
-prm_EscritoHb=Request.form("sector_Codigo")
 area.open "select Prm_Area_Nombre from Prm_Area WHERE Prm_Area_Codigo = '"&area_Codigo&"'",conexion
 tipoMovimiento.open "select Prm_TipoMov_Nombre from Prm_TipoMovimiento WHERE Prm_TipoMov_Codigo = '"&tipoMov_Codigo&"'",conexion
 etapa.open "select Prm_Etapa_Nombre from Prm_Etapa WHERE Prm_Etapa_Codigo = '"&etapa_Codigo&"'",conexion
@@ -51,24 +50,26 @@ if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or
     <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
 <%
 end if
-prm_EscritoHb.open "select Prm_EscritoHB_Codigo from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
-
-conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_EscritoHB_TipoMov, Prm_EscritoHB_Etapa, Prm_EscritoHB_Estado, Prm_EscritoHB_Rol, Prm_EscritoHB_ModeloEscrito, Prm_EscritoHB_Obligatorio) VALUES('"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&modeloEscrito_Codigo&"','"&obligatorio&"')")
-if obligatorio=1 then
-escritoHb.open "select Prm_EscritoHB_Codigo from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
-dim escritoHb_Codigo
-do while not escritoHb.eof
-escritoHb_Codigo=escritoHb("Prm_EscritoHB_Codigo")
-escritoHb.movenext
-loop
-conexion.execute("insert into Prm_FirmaPorSector (Prm_FirmaPorSector_EscritoHabilitados, Prm_FirmaPorSector_Firmante, Prm_FirmaPorSector_Estado) VALUES('"&escritoHb_Codigo&"','"&sector_Codigo&"',1)")
-end if
 %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
+<%
+    prm_EscritoHb.open "select Prm_EscritoHB_Codigo, Prm_EscritoHB_Vigencia from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
+if prm_EscritoHb.EOF then
+    conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_EscritoHB_TipoMov, Prm_EscritoHB_Etapa, Prm_EscritoHB_Estado, Prm_EscritoHB_Rol, Prm_EscritoHB_ModeloEscrito, Prm_EscritoHB_Obligatorio) VALUES('"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&modeloEscrito_Codigo&"','"&obligatorio&"')")
+    if obligatorio=1 then
+    escritoHb.open "select Prm_EscritoHB_Codigo from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
+    dim escritoHb_Codigo
+    do while not escritoHb.eof
+    escritoHb_Codigo=escritoHb("Prm_EscritoHB_Codigo")
+    escritoHb.movenext
+    loop
+    conexion.execute("insert into Prm_FirmaPorSector (Prm_FirmaPorSector_EscritoHabilitados, Prm_FirmaPorSector_Firmante, Prm_FirmaPorSector_Estado) VALUES('"&escritoHb_Codigo&"','"&sector_Codigo&"',1)")
+    end if
+%>
     <%
     if area_Codigo="0" or tipoMov_Codigo="0" or etapa_Codigo="0" or estado_Codigo="0" or rol_Codigo="0" or modeloEscrito_Codigo="0" Then
     dim error
@@ -116,7 +117,17 @@ end if
     </table>
     <%
     end if
-    %>
+else
+If prm_EscritoHb("Prm_EscritoHB_Vigencia")=0 then
+conexion.execute("UPDATE Prm_EscritosHabilitados SET Prm_EscritoHB_Vigencia=1 WHERE Prm_EscritoHB_Codigo='"&prm_EscritoHb("Prm_EscritoHB_Codigo")&"'")
+        %>
+        <h1>Este Escrito ya Existía y se volvió a Habilitar</h1>
+        <%Else%>
+            <h1>Este Escrito ya Existe</h1>
+            <h2>Los datos no fueron Agregados</h2>
+        <% End If
+            End If
+        %>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">

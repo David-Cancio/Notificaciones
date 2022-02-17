@@ -40,7 +40,9 @@
             rol.open "select Prm_Rol_Nombre from Prm_Rol WHERE Prm_Rol_Codigo = '"&rol_Codigo&"'",conexion
             modeloEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Codigo = '"&modeloEscrito_Codigo&"'",conexion
             sector_Codigo.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector WHERE Prm_FirmaPorSector_EscritoHabilitados = '"&id&"'",conexion
+            if not sector_Codigo.eof then
             sector.open "select Prm_SectorFirmante_Nombre from Prm_SectorFirmante WHERE Prm_SectorFirmante_Codigo = '"&sector_Codigo("Prm_FirmaPorSector_Firmante")&"'",conexion
+            end if
         %>
 <html>
 
