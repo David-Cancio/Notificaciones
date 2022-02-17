@@ -30,8 +30,8 @@
                 <th colspan="2">Nombre</th>
                 <th>Tipo de Archivo</th>
                 <th colspan="2">Extención</th>
-                <th>Modificar</th>
-                <th>Eliminar</th>
+                <th></th>
+                <th></th>
             </tr>
             <%
                 dim extensiones

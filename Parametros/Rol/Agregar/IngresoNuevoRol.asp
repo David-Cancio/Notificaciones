@@ -7,7 +7,7 @@
 
     <div class="listado">   
         <form action="CrearRol.asp" method="post">
-            <h1>Ingrese los nuevos datos</h1>
+            <h1>Ingrese un nuevo Rol</h1>
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Rol:

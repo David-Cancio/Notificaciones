@@ -36,7 +36,7 @@
             <tr>
                 <td>Nombre: <%response.Write(prm_error("Prm_Error_Nombre"))%>
                 </td>
-                <td>Descricion: <%response.Write(prm_error("Prm_Error_Descripcion"))%>
+                <td colspan="2">Descripción: <%response.Write(prm_error("Prm_Error_Descripcion"))%>
                 </td>
             </tr>
         </table>

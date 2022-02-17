@@ -20,7 +20,6 @@
     <!--#include virtual="/Partials/Head.asp"-->
 <body>
     <!--#include virtual="/Partials/Header.asp"-->
-
     <div class="listado">
         <form action="ModificarRol.asp" method="post">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
@@ -48,6 +47,7 @@
                     </div>
                 </div>
             </div>
+        </form>
     </div>
         <%
             end if

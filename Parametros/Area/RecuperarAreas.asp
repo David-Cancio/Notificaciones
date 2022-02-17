@@ -23,8 +23,8 @@
             <tr>
                 <th>Código</th>
                 <th colspan="3">Nombre</th>
-                <th>Modificar</th>
-                <th>Eliminar</th>
+                <th></th>
+                <th></th>
             </tr>
             <%
             do while not area.eof

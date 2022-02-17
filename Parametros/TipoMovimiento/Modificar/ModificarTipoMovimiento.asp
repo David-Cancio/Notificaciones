@@ -19,7 +19,7 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Los datos fueron modificados</h1>
+        <h1>Los datos fueron Modificados</h1>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-12 py-2">
