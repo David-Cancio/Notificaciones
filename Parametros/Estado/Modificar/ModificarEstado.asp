@@ -10,7 +10,7 @@
         <%
             conexion.Open
             prm_estado_nombre=Mayusculatodas(Request.form("Prm_Estado_Nombre"))
-            conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Nombre='"&prm_estado_nombre&"' WHERE Estado_Codigo='"&id&"' ")
+            conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Nombre='"&prm_estado_nombre&"' WHERE Prm_Estado_Codigo='"&id&"' ")
             conexion.close
         %>
 <html>
@@ -19,7 +19,7 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Los datos fueron modificados</h1>
+        <h1>Los datos fueron Modificados</h1>
         <form action="../RecuperarEstados.asp" method="post">
             <input type="submit" value="Regresar" title="Regresar" />
         </form>

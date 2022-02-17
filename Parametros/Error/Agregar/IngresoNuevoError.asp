@@ -7,7 +7,7 @@
 
     <div class="listado">   
         <form action="CrearError.asp" method="post">
-            <h1>Ingrese los nuevos datos</h1>
+            <h1>Ingresar nuevo Error</h1>
             <table Class="tabla">
                 <tr>
                     <td>Codigo:
@@ -16,7 +16,7 @@
                     <td>Nombre:
                             <input type="text" name="prm_error_nombre" size="40" placeholder="Nombre del Error" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Error"/>
                     </td>
-                    <td colspan="2">Tipo de Archivo:
+                    <td colspan="2">Descripción:
                             <input type="text" name="prm_error_descripcion" size="40" placeholder="Descripción del Error" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique la Descripción del Error"/>
                     </td>
             </table>

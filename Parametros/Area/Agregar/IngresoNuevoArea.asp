@@ -7,7 +7,7 @@
 
     <div class="listado">   
         <form action="CrearArea.asp" method="post">
-            <h1>Ingrese los nuevos datos</h1>
+            <h1>Ingrese una nueva Área</h1>
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre del Área:

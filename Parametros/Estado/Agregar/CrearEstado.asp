@@ -31,15 +31,18 @@ if prm_estado.EOF then
     prm_estado.Close
 %>
 
-        <h1>Los datos fueron agregados exitosamente</h1>
+        <h1>Los datos fueron Agregados Exitosamente</h1>
         <% Else
             If prm_estado("Prm_Estado_Vigencia")=0 then
-          conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Vigencia=1 where Prm_Estado_Codigo='"&prm_estado("Prm_Estado_Codigo")&"'")
+            conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Vigencia=1 where Prm_Estado_Codigo='"&prm_estado("Prm_Estado_Codigo")&"'")
         %>
-        <div class="center">
+            <h1>Este Estado ya Existia y se volvio a Habilitar</h1>
+            <h2>Los datos fueron Agregados</h2>
+        <%
+            else    
+        %>
             <h1>Este Estado ya Existe</h1>
             <h2>Los datos no fueron Agregados</h2>
-        </div>
         <% End If
         end if
         conexion.close%>
@@ -52,7 +55,7 @@ if prm_estado.EOF then
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarEstados.asp" method="post">
-                        <input type="submit" value="Cancelar" title="Cancelar" class="btn-eliminar" >
+                        <input type="submit" value="Regresar" title="Regresar">
                     </form>
                 </div>
             </div>

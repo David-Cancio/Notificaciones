@@ -30,7 +30,7 @@
             <table Class="tabla">
                 <tr>
                     <td colspan="2">Nombre del Estado:
-                            <input type="text" name="prm_estado_nombre" size="40" required title="Indique el Nombre del Estado" value="<%response.write(estado("Prm_Estado_Nombre"))%>"/>
+                        <input type="text" name="prm_estado_nombre" size="40" required title="Indique el Nombre del Estado" value="<%response.write(prm_estado("Prm_Estado_Nombre"))%>"/>
                     </td>
                 </tr>
             </table>

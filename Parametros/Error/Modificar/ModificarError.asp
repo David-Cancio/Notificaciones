@@ -23,7 +23,7 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <h1>Los datos fueron modificados</h1>
+        <h1>Los datos fueron Modificados</h1>
         <form action="../RecuperarError.asp" method="post">
             <input type="submit" value="Regresar" title="Regresar" />
         </form>

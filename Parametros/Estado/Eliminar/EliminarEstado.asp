@@ -9,7 +9,7 @@
         <!--#include virtual="/Partials/RecuperarId.asp"-->
         <%
             conexion.Open
-            prm_estado.open "select Prm_Estado_Codigo from Estado Where Prm_Estado_Codigo='"&id&"'",conexion
+            prm_estado.open "select Prm_Estado_Codigo from Prm_Estado Where Prm_Estado_Codigo='"&id&"'",conexion
             if not prm_estado.EOF Then
                 conexion.execute("UPDATE Prm_Estado SET Prm_Estado_Vigencia=0 where Prm_Estado_Codigo='"&id&"'")
             End If

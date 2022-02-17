@@ -138,7 +138,7 @@ GO
 CREATE TABLE [dbo].[Prm_Estado](
 	[Prm_Estado_Codigo] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Prm_Estado_Nombre] [nvarchar](max) NOT NULL,
-	[Prm_Etapa_Vigencia] [bit] NOT NULL DEFAULT 1,
+	[Prm_Estado_Vigencia] [bit] NOT NULL DEFAULT 1,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 

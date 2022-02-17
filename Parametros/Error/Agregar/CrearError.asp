@@ -35,7 +35,7 @@ if prm_error.EOF then
     prm_error.Close
 %>
 
-        <h1>Los datos fueron agregados exitosamente</h1>
+        <h1>Los datos fueron Agregados Exitosamente</h1>
         <% Else%>
         <h1>Este Codigo de Error ya Existe</h1>
         <h2>Los datos no fueron Agregados</h2>

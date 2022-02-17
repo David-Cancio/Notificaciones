@@ -25,11 +25,11 @@
         <form action="ModificarError.asp" method="post">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
-                Modificar Tipo de Error
+                Modificar Error
             </h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Codigo del Tipo de Error:
+                    <td colspan="2">Codigo del Error:
                             <input type="text" name="prm_error_codigo" size="40" required title="Indique el Código del Tipo de Error" value="<%response.write(prm_error("Prm_Error_Codigo"))%>"/>
                     </td>
                     <td colspan="2">Nombre:
