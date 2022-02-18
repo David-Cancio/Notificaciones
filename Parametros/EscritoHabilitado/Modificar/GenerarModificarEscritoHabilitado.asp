@@ -74,7 +74,7 @@
                 end if
             end if
             
-            sector_Firmante.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&sector_EscritoHb&"'",conexion
+            sector_Firmante.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&id&"'",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -249,21 +249,15 @@
                         <% 
                                 else
                                 do while not auxiliar.eof
-                                    if sector_Firmante.eof Then 
                                         if auxiliar("Prm_SectorFirmante_Codigo")=sector_EscritoHb then
                                     %>
-                                        <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%>-<%response.write("Entre")%></option>
+                                        <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
                                     <%
                                         else
                                     %>
                                         <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
                                     <%
                                         end if
-                                    else
-                                    %>
-                                        <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
-                                    <%
-                                    end if
                                 auxiliar.movenext
                                 loop
                                 end if
