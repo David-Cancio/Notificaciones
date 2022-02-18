@@ -19,16 +19,68 @@
             <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
             Else
-            dim area_Codigo, etapa_Codigo, estado_Codigo, tipoMov_Codigo, rol_Codigo, modeloEscrito_Codigo, obligatorio, sector_escritoHb
+            dim area_Codigo, etapa_Codigo, estado_Codigo, tipoMov_Codigo, rol_Codigo, modeloEscrito_Codigo, obligatorio, sector_escritoHb, firmante
+            
+            if isNull(Request.QueryString("area_Codigo")) or isEmpty (Request.QueryString("area_Codigo")) then
             area_Codigo=escritoHb("Prm_EscritoHB_Area")
+            else
+            area_Codigo=Cint(Request.QueryString("area_Codigo"))
+            end if
+
+            if isNull(Request.QueryString("etapa_Codigo")) or isEmpty (Request.QueryString("etapa_Codigo")) then
             etapa_Codigo=escritoHb("Prm_EscritoHB_Etapa")
+            else
+            etapa_Codigo=Cint(Request.QueryString("etapa_Codigo"))
+            end if
+
+            if isNull(Request.QueryString("estado_Codigo")) or isEmpty (Request.QueryString("estado_Codigo")) then
             estado_Codigo=escritoHb("Prm_EscritoHB_Estado")
+            else
+            estado_Codigo=Cint(Request.QueryString("estado_Codigo"))
+            end if
+
+            if isNull(Request.QueryString("tipoMov_Codigo")) or isEmpty (Request.QueryString("tipoMov_Codigo")) then
             tipoMov_Codigo=escritoHb("Prm_EscritoHB_TipoMov")
+            else
+            tipoMov_Codigo=Cint(Request.QueryString("tipoMov_Codigo"))
+            end if
+
+            if isNull(Request.QueryString("rol_Codigo")) or isEmpty (Request.QueryString("rol_Codigo")) then
             rol_Codigo=escritoHb("Prm_EscritoHB_Rol")
+            else
+            rol_Codigo=Cint(Request.QueryString("rol_Codigo"))
+            end if
+            
+            if isNull(Request.QueryString("tipoEscrito_Codigo")) or isEmpty (Request.QueryString("tipoEscrito_Codigo")) then
             modeloEscrito_Codigo=escritoHb("Prm_EscritoHB_ModeloEscrito")
+            else
+            modeloEscrito_Codigo=Cint(Request.QueryString("tipoEscrito_Codigo"))
+            end if
+            
+            if isNull(Request.QueryString("sector_Codigo")) or isEmpty (Request.QueryString("sector_Codigo")) then
             sector_EscritoHb=escritoHb("Prm_EscritoHB_Codigo")
-            obligatorio=escritoHb("Prm_EscritoHB_obligatorio")
+            else
+            sector_EscritoHb=Cint(Request.QueryString("sector_Codigo"))
+            end if
+            
+            if isNull(Request.QueryString("obligatorio")) or isEmpty (Request.QueryString("obligatorio")) then
+            obligatorio=escritoHb("Prm_EscritoHB_Obligatorio")
+            else
+            obligatorio=Request.QueryString("obligatorio")
+                if obligatorio="True" then
+                    obligatorio=1
+                elseIf obligatorio="False" then
+                    obligatorio=0
+                end if
+            end if
+
             sector_Firmante.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&sector_EscritoHb&"'",conexion
+            if isNull(sector_Firmante("Prm_FirmaPorSector_Firmante")) then
+                firmante=0
+            else
+                firmante=sector_Firmante("Prm_FirmaPorSector_Firmante")
+            end if 
+
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -36,7 +88,7 @@
     <!--#include virtual="/Partials/Header.asp"-->
 
     <div class="listado">
-        <form action="ModificarEscritoHabilitado.asp" method="post">
+        <form action="GenerarModificarEscritoHabilitado.asp" method="get">
             <input type="text" name="id" value="<%response.write(id) %>" hidden />
             <h1>
                 Modificar Escrito Habilitado
@@ -44,8 +96,8 @@
             <table Class="tabla">
                 <tr>
                     <!--Esta parte del codigo se puede hacer con un while dentro de otro while pero no llego con el tiemepo-->
-                    <td>Áreas: 
-                        <select name="area_Codigo" title="Seleccione el Área">
+                    <td>Áreas: <%response.write(area_Codigo)%>
+                        <select name="area_Codigo" title="Seleccione el Área" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_Area where Prm_Area_Vigencia=1",conexion
                             do while not auxiliar.eof
@@ -65,7 +117,7 @@
                         </select>
                     </td>
                     <td>Tipo Movimiento: 
-                        <select name="tipoMov_codigo" title="Seleccione el Tipo de Movimiento">
+                        <select name="tipoMov_codigo" title="Seleccione el Tipo de Movimiento" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_TipoMovimiento where Prm_TipoMov_Vigencia=1",conexion
                             do while not auxiliar.eof
@@ -87,7 +139,7 @@
                 </tr>
                 <tr>
                     <td>Etapa: 
-                        <select name="etapa_Codigo" title="Seleccione la Etapa">
+                        <select name="etapa_Codigo" title="Seleccione la Etapa" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_Etapa where Prm_Etapa_Vigencia=1",conexion
                             do while not auxiliar.eof
@@ -107,7 +159,7 @@
                         </select>
                     </td>
                     <td>Estado
-                        <select name="estado_Codigo" title="Seleccione el Estado">
+                        <select name="estado_Codigo" title="Seleccione el Estado" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_Estado where Prm_Estado_Vigencia=1",conexion
                             do while not auxiliar.eof
@@ -129,7 +181,7 @@
                 </tr>
                 <tr>
                     <td>Rol: 
-                        <select name="rol_Codigo" title="Seleccione el Rol">
+                        <select name="rol_Codigo" title="Seleccione el Rol" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_Rol where Prm_Rol_Vigencia=1",conexion
                             do while not auxiliar.eof
@@ -149,7 +201,7 @@
                         </select>
                     </td>
                     <td>Modelo de Escrito: 
-                        <select name="tipoEscrito_Codigo" title="Seleccione el Modelo de Escrito">
+                        <select name="tipoEscrito_Codigo" title="Seleccione el Modelo de Escrito" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_TipoEscrito where Prm_TipoEscrito_Vigencia=1",conexion
                             do while not auxiliar.eof
@@ -172,68 +224,63 @@
                 <tr>
                     <td>Firma Obligatoria: 
                         <%
-                        dim obligatorioQuery
-                        obligatorioQuery=Request.QueryString("obligatorio")
-                        response.write(obligatorioQuery)
                         response.write(obligatorio)
-                        if obligatorioQuery="True" then
+                        if obligatorio=1 then
                         %>
-                        <input type="text" name="obligatorio" value="1" hidden/>
-                        <select name="obligatorioQuery" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
-                            <option selected value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=True">SI</option>
-                            <option value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=False">NO</option> 
-                        </select>
+                            <select name="obligatorio" title="Seleccione el Modelo de Escrito" onchange="this.form.submit()">
+                                <option selected value="1">SI</option>
+                                <option value="0">NO</option> 
+                            </select>
                         <%
-                        elseIf obligatorioQuery="False" then
+                        elseIf obligatorio=0 then
                         %>
-                        <input type="text" name="obligatorio" value="0" hidden/>
-                        <select name="obligatorioQuery" title="Seleccione el Modelo de Escrito" onchange="location = this.value">
-                            <option selected value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=False">NO</option> 
-                            <option value="/Parametros/EscritoHabilitado/Modificar/GenerarModificarEscritoHabilitado.asp?id=<%response.write(id)%>&obligatorio=True">SI</option>
-                        </select>
+                            <select name="obligatorio" title="Seleccione el Modelo de Escrito" onchange="this.form.submit()">
+                                <option selected value="0">NO</option> 
+                                <option value="1">SI</option>
+                            </select>
                         <%
                         end if
                         %>
                     </td>
-                    <td>Sector Firmante: 
+                    <td>Sector Firmante:
                         <%
-                            If obligatorioQuery="True" then
+                            If obligatorio=1 then
                         %>
-                        <select name="sector_Codigo" title="Seleccione el Sector Firmante">
+                                <select name="sector_Codigo" title="Seleccione el Sector Firmante" onchange="this.form.submit()">
                         <%
-                            auxiliar.open "select * from Prm_SectorFirmante where Prm_SectorFirmante_Vigencia=1",conexion
-                            if auxiliar.eof then
+                                auxiliar.open "select * from Prm_SectorFirmante where Prm_SectorFirmante_Vigencia=1",conexion
+                                if auxiliar.eof then
                         %>
-                            <option value="0">No hay Parámetros de Sectores Firmantes</option>
+                                <option value="0">No hay Parámetros de Sectores Firmantes</option>
                         <% 
-                            else
-                            do while not auxiliar.eof
-                            if not sector_Firmante.eof then
-                                if auxiliar("Prm_SectorFirmante_Codigo")=sector_Firmante("Prm_FirmaPorSector_Firmante") then
-                            %>
-                                <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
-                            <%
                                 else
-                            %>
-                                <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
-                            <%
+                                do while not auxiliar.eof
+                                    if not sector_Firmante.eof then
+                                        if auxiliar("Prm_SectorFirmante_Codigo")=firmante then
+                                    %>
+                                        <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(sector_Firmante("Prm_FirmaPorSector_Firmante"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                                    <%
+                                        else
+                                    %>
+                                        <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                                    <%
+                                        end if
+                                    else
+                                    %>
+                                        <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                                    <%
+                                    end if
+                                auxiliar.movenext
+                                loop
                                 end if
+                                auxiliar.close
+                            %>
+                                </select>
+                            <%
                             else
-                        %>
-                            <option value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
-                        <%
-                            end if
-                            auxiliar.movenext
-                            loop
-                            end if
-                            auxiliar.close
-                        %>
-                        </select>
-                        <%
-                            else
-                        %>
-                        <select disabled name="sector_Codigo" title="Seleccione el Sector Firmante">
-                        <%
+                            %>
+                                <select disabled name="sector_Codigo" title="Seleccione el Sector Firmante">
+                            <%
                             end if
                         %>
                     </td>
