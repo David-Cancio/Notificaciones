@@ -1,12 +1,12 @@
 <!--#include virtual="/Partials/Utf8Asp.asp"-->
 <%
             dim conexion
-            dim escritoHb
-            dim sector_Firmante
             dim auxiliar
+            dim escritoHb
+            dim sector_EscritoHb
             set conexion=Server.CreateObject("ADODB.Connection")
             set escritoHb = Server.CreateObject("ADODB.RecordSet")
-            set sector_Firmante = Server.CreateObject("ADODB.RecordSet")
+            set sector_EscritoHb = Server.CreateObject("ADODB.RecordSet")
             set auxiliar = Server.CreateObject("ADODB.RecordSet")
         %> 
         <!--#include virtual="/connectionSQL.asp"-->
@@ -14,12 +14,14 @@
         <%
             conexion.Open
             escritoHb.open "select * from Prm_EscritosHabilitados where Prm_EscritoHB_Codigo='"&id&"'",conexion
+            sector_EscritoHb.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&id&"'",conexion
             if escritoHb.eof then
         %>
             <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
         <%
             Else
-            dim area_Codigo, etapa_Codigo, estado_Codigo, tipoMov_Codigo, rol_Codigo, modeloEscrito_Codigo, obligatorio, sector_escritoHb, firmante
+            dim area_Codigo, etapa_Codigo, estado_Codigo, tipoMov_Codigo, rol_Codigo, modeloEscrito_Codigo, obligatorio, firmante_Codigo
+            
             
             if isNull(Request.QueryString("area_Codigo")) or isEmpty (Request.QueryString("area_Codigo")) then
             area_Codigo=escritoHb("Prm_EscritoHB_Area")
@@ -58,9 +60,9 @@
             end if
             
             if isNull(Request.QueryString("sector_Codigo")) or isEmpty (Request.QueryString("sector_Codigo")) then
-            sector_EscritoHb=escritoHb("Prm_EscritoHB_Codigo")
+            firmante_Codigo=Cint(sector_EscritoHb("Prm_FirmaPorSector_Firmante"))
             else
-            sector_EscritoHb=Cint(Request.QueryString("sector_Codigo"))
+            firmante_Codigo=Cint(Request.QueryString("sector_Codigo"))
             end if
             
             if isNull(Request.QueryString("obligatorio")) or isEmpty (Request.QueryString("obligatorio")) then
@@ -74,7 +76,6 @@
                 end if
             end if
             
-            sector_Firmante.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&id&"'",conexion
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -218,7 +219,6 @@
                 <tr>
                     <td>Firma Obligatoria: 
                         <%
-                        response.write(obligatorio)
                         if obligatorio=1 then
                         %>
                             <select name="obligatorio" title="Seleccione el Modelo de Escrito" onchange="this.form.submit()">
@@ -236,7 +236,7 @@
                         end if
                         %>
                     </td>
-                    <td>Sector Firmante: <%response.Write(sector_EscritoHb) %>
+                    <td>Sector Firmante:
                         <%
                             If obligatorio=1 then
                         %>
@@ -249,7 +249,7 @@
                         <% 
                                 else
                                 do while not auxiliar.eof
-                                        if auxiliar("Prm_SectorFirmante_Codigo")=sector_EscritoHb then
+                                        if auxiliar("Prm_SectorFirmante_Codigo")=firmante_Codigo then
                                     %>
                                         <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
                                     <%
@@ -274,10 +274,20 @@
                     </td>
                 </tr>
             </table>
+            </form>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="ModificarEscritoHabilitado.asp" method="post">
+                            <input type="text" name="id" value="<%response.write(id) %>" hidden />
+                            <input type="text" name="area_Codigo" value="<%response.write(area_Codigo)%>" hidden/>
+                            <input type="text" name="etapa_Codigo" value="<%response.write(etapa_Codigo)%>" hidden/>
+                            <input type="text" name="estado_Codigo" value="<%response.write(estado_Codigo)%>" hidden/>
+                            <input type="text" name="tipoMov_Codigo" value="<%response.write(tipoMov_Codigo)%>" hidden/>
+                            <input type="text" name="rol_Codigo" value="<%response.write(rol_Codigo)%>" hidden/>
+                            <input type="text" name="tipoEscrito_Codigo" value="<%response.write(modeloEscrito_Codigo)%>" hidden/>
+                            <input type="text" name="obligatorio" value="<%response.write(obligatorio)%>" hidden/>
+                            <input type="text" name="sector_Codigo" value="<%response.write(firmante_Codigo)%>" hidden/>
                             <input type="submit" value="Modificar" title="Confirme la modificación" class="btn-agregar"/>
                         </form>
                     </div>
