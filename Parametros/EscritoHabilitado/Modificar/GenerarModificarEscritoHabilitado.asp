@@ -73,14 +73,8 @@
                     obligatorio=0
                 end if
             end if
-
+            
             sector_Firmante.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector where Prm_FirmaPorSector_EscritoHabilitados='"&sector_EscritoHb&"'",conexion
-            if isNull(sector_Firmante("Prm_FirmaPorSector_Firmante")) then
-                firmante=0
-            else
-                firmante=sector_Firmante("Prm_FirmaPorSector_Firmante")
-            end if 
-
         %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
@@ -242,7 +236,7 @@
                         end if
                         %>
                     </td>
-                    <td>Sector Firmante:
+                    <td>Sector Firmante: <%response.Write(sector_EscritoHb) %>
                         <%
                             If obligatorio=1 then
                         %>
@@ -255,10 +249,10 @@
                         <% 
                                 else
                                 do while not auxiliar.eof
-                                    if not sector_Firmante.eof then
-                                        if auxiliar("Prm_SectorFirmante_Codigo")=firmante then
+                                    if sector_Firmante.eof Then 
+                                        if auxiliar("Prm_SectorFirmante_Codigo")=sector_EscritoHb then
                                     %>
-                                        <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(sector_Firmante("Prm_FirmaPorSector_Firmante"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%></option>
+                                        <option selected value="<%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>"><%response.write(auxiliar("Prm_SectorFirmante_Codigo"))%>-<%response.write(auxiliar("Prm_SectorFirmante_Nombre"))%>-<%response.write("Entre")%></option>
                                     <%
                                         else
                                     %>
