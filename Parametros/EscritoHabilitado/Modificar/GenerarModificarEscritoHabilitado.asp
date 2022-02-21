@@ -59,20 +59,23 @@
             modeloEscrito_Codigo=Cint(Request.QueryString("tipoEscrito_Codigo"))
             end if
             
-            if isNull(Request.QueryString("sector_Codigo")) or isEmpty (Request.QueryString("sector_Codigo")) then
-            firmante_Codigo=Cint(sector_EscritoHb("Prm_FirmaPorSector_Firmante"))
-            else
-            firmante_Codigo=Cint(Request.QueryString("sector_Codigo"))
-            end if
-            
             if isNull(Request.QueryString("obligatorio")) or isEmpty (Request.QueryString("obligatorio")) then
             obligatorio=escritoHb("Prm_EscritoHB_Obligatorio")
             else
             obligatorio=Request.QueryString("obligatorio")
                 if obligatorio="True" then
+                    firmante_Codigo=Cint(sector_EscritoHb("Prm_FirmaPorSector_Firmante"))
                     obligatorio=1
                 elseIf obligatorio="False" then
+                    firmante_Codigo=0
                     obligatorio=0
+                elseIf Cint(obligatorio)=1 then
+                    firmante_Codigo=Request.QueryString("sector_Codigo")
+                    if isNull(firmante_Codigo) or isEmpty(firmante_Codigo) then
+                        firmante_Codigo=1
+                    end if
+                elseIf Cint(obligatorio)=0 then
+                    firmante_Codigo=0
                 end if
             end if
             
@@ -268,6 +271,8 @@
                             else
                             %>
                                 <select disabled name="sector_Codigo" title="Seleccione el Sector Firmante">
+                                    <option selected value="0"></option>
+                                </select>
                             <%
                             end if
                         %>

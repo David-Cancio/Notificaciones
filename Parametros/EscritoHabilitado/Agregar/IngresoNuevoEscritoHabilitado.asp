@@ -4,22 +4,33 @@ dim conexion
 dim auxiliar
 set conexion=Server.CreateObject("ADODB.Connection")
 set auxiliar = Server.CreateObject("ADODB.RecordSet")
-dim area
-area=Request.QueryString("area_Codigo")
-dim tipoMov
-tipoMov=Request.QueryString("tipoMov_Codigo")
-dim etapa
-etapa=Request.QueryString("etapa_Codigo")
-dim estado
-estado=Request.QueryString("estado_Codigo")
-dim rol
-rol=Request.QueryString("rol_Codigo")
-dim modeloEscrito
-modeloEscrito=Request.QueryString("tipoEscrito_Codigo")
-dim obligatorio
-obligatorio=Request.QueryString("obligatorio")
-dim sector
-sector=Request.QueryString("sector_Codigo")
+dim area, tipoMov, etapa, estado, rol, modeloEscrito, obligatorio, sector
+if isNull(Request.QueryString("area_Codigo")) or isEmpty (Request.QueryString("area_Codigo")) then
+    area=1
+    tipoMov=1
+    etapa=1
+    estado=1
+    rol=1
+    modeloEscrito=1
+    obligatorio=0
+    sector=0
+else
+    area=Request.QueryString("area_Codigo")
+    tipoMov=Request.QueryString("tipoMov_Codigo")
+    etapa=Request.QueryString("etapa_Codigo")
+    estado=Request.QueryString("estado_Codigo")
+    rol=Request.QueryString("rol_Codigo")
+    modeloEscrito=Request.QueryString("tipoEscrito_Codigo")
+    obligatorio=Request.QueryString("obligatorio")
+    if obligatorio=1 then
+        sector=Request.QueryString("sector_Codigo")
+        if isNull(sector) or isEmpty(sector) then
+            sector=1
+        end if
+    elseIf obligatorio=0 then
+        sector=0
+    end if
+end if
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <%

@@ -45,11 +45,6 @@ sector_Nombre="-"
 else
 sector_Nombre=(sector("Prm_SectorFirmante_Nombre"))
 end if
-if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or rol_Codigo="" or modeloEscrito_Codigo="" Then
-%>
-    <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
-<%
-end if
 %>
 <html>
     <!--#include virtual="/Partials/Head.asp"-->
