@@ -2,6 +2,7 @@
 <%
 dim conexion
 dim auxiliar
+dim cuits= Array(10)
 set conexion=Server.CreateObject("ADODB.Connection")
 set auxiliar = Server.CreateObject("ADODB.RecordSet")
 dim tipoEscrito_Codigo, area_Codigo, tipoMov_Codigo, etapa_Codigo, estado_Codigo, rol_Codigo, cantidadCuit, SectorFirmante_Codigo
@@ -172,7 +173,7 @@ conexion.open
                         %>
                         </select>
                     </td>
-                    <td>Cantidad de Cuits:<input type="number" min="0" title="Seleccione la Cantidad de Demandados" placeholder="Cantidad de Demandados" required value="<%response.write(cantidadCuit)%>" name="cantidadCuit"/>
+                    <td>Cantidad de Cuits:<input type="number" min="0" title="Seleccione la Cantidad de Demandados" placeholder="Cantidad de Demandados" required value="<%response.write(cuits(0))%>" name="cantidadCuit"/>
                     </td>
                 </tr>
             </table>
@@ -251,6 +252,22 @@ conexion.open
                     </td>
                 </tr>
             </table>
+             <h2>Cuits</h2>
+             <div class="container">
+                <div class="row">
+                <table Class="tabla" id="tablaprueba">
+                    <tr>
+                        <td colspan="2">Cuit: 
+                            <input type="text" min="0" title="" placeholder="Ingrese CUIT" required value="" name="cantidadCuit"/>
+                        </td>
+                    </tr>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary d-flex justify-content-start" onclick="agregarFila()">Agregar Cuit</button>
+                    </div>
+                </table>
+            </div>
+            </div>
+            
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
@@ -272,7 +289,7 @@ conexion.open
         var ext_1 = new Array("XML", "XMLS")
         var ext_2 = new Array("DOC", "DOCX")
         var ext_3 = new Array("PDF")
-
+        var cont = 0
         function cambiaTipoArchivo() {
             var tipoArchivo;
             tipoArchivo = document.formulario.tipoEscrito_tipoArchivo[document.formulario.tipoEscrito_tipoArchivo.selectedIndex].value;
@@ -285,6 +302,24 @@ conexion.open
                     document.formulario.ext.options[i].text = mis_ext[i];
                 }
             }
+        }
+        function agregarFila(){
+            document.getElementById("tablaprueba").insertRow(-1).innerHTML = "<td colspan='2'>Cuit: <input type='text' min='0' placeholder='Ingrese CUIT' required value='<%response.write(cantidadCuit)%>' name='cantidadCuit'/><button type='button' class='btn btn-danger' onclick='eliminarFila()'>Eliminar Cuit</button></td>";
+            cont++
+        }
+
+        function eliminarFila(){
+            var table = document.getElementById("tablaprueba");
+            var rowCount = table.rows.length;
+            //console.log(rowCount);
+            
+            if(rowCount <= 1)
+                alert('No se puede eliminar el encabezado');
+            else{
+                table.deleteRow(rowCount -1);
+                cont--
+            }
+              
         }
     </script>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
