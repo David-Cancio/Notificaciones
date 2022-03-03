@@ -247,7 +247,7 @@ conexion.open
                             <option value="0">No</option>
                         </select>
                     </td>
-                    <td colspan="2">Sector Firmante: 
+                    <td>Sector Firmante: 
                         <select name="sectorFirmante_Codigo" title="Seleccione el Sector Firmante">
                         <%
                             auxiliar.open "select * from Prm_SectorFirmante",conexion

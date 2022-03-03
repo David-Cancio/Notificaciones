@@ -46,7 +46,8 @@ rol.open "select Prm_Rol_Nombre from Prm_Rol WHERE Prm_Rol_Codigo = '"&rol_Codig
 tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Codigo = '"&tipoEscrito_Codigo&"'",conexion
 fecha=Date
 hora=time 
-univoco=""&(area_Codigo)&(tipoMov_Codigo)&(etapa_Codigo)&(estado_Codigo)&(rol_Codigo)&(tipoEscrito_Codigo)&(SacarBarras(fecha))&(SacarPuntos(hora))
+'univoco=""&(area_Codigo)&(tipoMov_Codigo)&(etapa_Codigo)&(estado_Codigo)&(rol_Codigo)&(tipoEscrito_Codigo)&(SacarBarras(fecha))&(SacarPuntos(hora))
+univoco=""&(SacarBarras(fecha))&(SacarPuntos(hora))
 dim error, numeroError
 set error = Server.CreateObject("ADODB.RecordSet")
 %>
@@ -60,33 +61,33 @@ set error = Server.CreateObject("ADODB.RecordSet")
     numeroError=1001
     error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
     %>
-    <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
-    <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
+    <h1><%response.write(error("Prm_Error_Nombre"))%></h1>
+    <h2><%response.write(error("Prm_Error_Descripcion"))%></h2>
     <%
     else
         dim verificacion
         set verificacion = Server.CreateObject("ADODB.RecordSet")
         verificacion.open "select * from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area='"&area_Codigo&"' and Prm_EscritoHB_Etapa='"&etapa_Codigo&"' and Prm_EscritoHB_Estado='"&estado_Codigo&"' and Prm_EscritoHB_TipoMov='"&tipoMov_Codigo&"' and Prm_EscritoHB_Rol='"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito='"&tipoEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio='"&firma_Codigo&"'",conexion
-        if verificacion.eof Then
+        if not verificacion.eof Then
             if firma_Codigo=1 Then
                 dim firma
                 set firma = Server.CreateObject("ADODB.RecordSet")
-                firma.open "select Prm_FirmaPorSector_Firmante from Prm_FirmasPorSector WHERE Prm_FirmaPorSector_EscritoHabilitados = '"&verificacion("Prm_EscritoHB_Codigo")&"'",conexion
+                firma.open "select Prm_FirmaPorSector_Firmante from Prm_FirmaPorSector WHERE Prm_FirmaPorSector_EscritoHabilitados = '"&verificacion("Prm_EscritoHB_Codigo")&"'",conexion
                 if firma("Prm_FirmaPorSector_Firmante") = sectorFirmante_Codigo Then
                     numeroError=2001
                     error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
                     crearTabla=1
                     %>
-                    <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
-                    <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
+                    <h1><%response.write(error("Prm_Error_Nombre"))%></h1>
+                    <h2><%response.write(error("Prm_Error_Descripcion"))%></h2>
                     <%
                 else
                     numeroError=1002
                     error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
                     crearTabla=1
                     %>
-                    <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
-                    <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
+                    <h1><%response.write(error("Prm_Error_Nombre"))%></h1>
+                    <h2><%response.write(error("Prm_Error_Descripcion"))%></h2>
                     <%
                 End if
             else
@@ -94,8 +95,8 @@ set error = Server.CreateObject("ADODB.RecordSet")
                 error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
                 crearTabla=1
                 %>
-                <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
-                <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
+                <h1><%response.write(error("Prm_Error_Nombre"))%></h1>
+                <h2><%response.write(error("Prm_Error_Descripcion"))%></h2>
                 <%  
             End if
         Else 
@@ -103,23 +104,30 @@ set error = Server.CreateObject("ADODB.RecordSet")
             error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
             crearTabla=1
             %>
-            <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
-            <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
+            <h1><%response.write(error("Prm_Error_Nombre"))%></h1>
+            <h2><%response.write(error("Prm_Error_Descripcion"))%></h2>
             <%
     End if
+    End if
     if crearTabla=1 Then
-        conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotificacion_Area, VeNotificacion_TipoMovimiento, VeNotificacion_Etapa, VeNotificacion_Estado, VeNotificacion_Rol, VeNotificacion_TipoEscrito, VeNotificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
+        conexion.execute("insert into Ve_Notificacion (Ve_Notificacion_Univoco, Ve_Notificacion_Area, Ve_Notificacion_TipoMovimiento, Ve_Notificacion_Etapa, Ve_Notificacion_Estado, Ve_Notificacion_Rol, Ve_Notificacion_TipoEscrito, Ve_Notificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
         conexion.execute("insert into Ve_Control (Ve_Control_Univoco, Ve_Control_Fecha, Ve_Control_Hora, Ve_Control_Codigo_Retorno, Ve_Control_MotivoUsuario) values ('"&univoco&"', '"&fecha&"', '"&hora&"', '"&numeroError&"','-')")
         conexion.execute("insert into Ve_Escritos (Ve_Escritos_Univoco, Ve_Escritos_RutaDocumentos, Ve_Escritos_ModeloEscrito) values ('"&univoco&"','-', '"&tipoEscrito_Codigo&"')")
         conexion.execute("insert into Ve_Destino (Ve_Destino_Univoco, Ve_Destino_Cuit) values ('"&univoco&"','"&cuit&"')")
     %>
     <table Class="tabla">
         <tr>
-            <th colspan="2">
+            <th>
                 Unívoco:
             </th>
-            <th colspan="4">
+            <th colspan="2">
                 <%response.write(univoco)%>
+            </th>
+            <th>
+                Cuit: 
+            </th>
+            <th colspan="2">
+                <%response.write(cuit)%>
             </th>
         </tr>
         <tr>
@@ -165,14 +173,6 @@ set error = Server.CreateObject("ADODB.RecordSet")
                 <%response.write(tipoEscrito_Codigo+"-"+tipoEscrito("Prm_TipoEscrito_Nombre"))%>
             </th>
             
-        </tr>
-        <tr>
-            <th colspan="2">
-                Cuit: 
-            </th>
-            <th colspan="4">
-                <%response.write(cuit)%>
-            </th>
         </tr>
     </table>
     <%end if %>

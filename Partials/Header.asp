@@ -1,13 +1,25 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light-blue pb-lg-3">
-        <a href="/Default.asp"><img class="img-inicio" src="/Images/Notificaciones.png"/></a>
+        <a href="/Default.asp"><img class="img-inicio" src="/Assets/Images/Notificaciones.png"/></a>
         <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/default.asp">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/Notificacion/recuperarNotificaciones.asp">Notificaciones</a>
+                <a class="nav-link">/</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/Notificacion/Agregar/IngresoNuevaNotificacion.asp">Crear Notificación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">/</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/Notificacion/recuperarNotificaciones.asp"> Registros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">/</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

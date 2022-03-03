@@ -271,7 +271,7 @@ GO
 CREATE TABLE [dbo].[Ve_Destino](
 	[Prm_Destino_NumeroTransaccion] [int] IDENTITY(1,1) PRIMARY KEY,
 	[Ve_Destino_Univoco] [bigint] NOT NULL,
-	[Ve_Destino_Cuit] [int] NOT NULL,
+	[Ve_Destino_Cuit] [nvarchar](max) NOT NULL,
 	CONSTRAINT FK_VeDestino_VeControl FOREIGN KEY (Ve_Destino_Univoco)
     REFERENCES [dbo].[Ve_Control] ([Ve_Control_Univoco]),
 )
