@@ -1,0 +1,98 @@
+	USE [notificacion]
+	GO
+
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('ALLANAMIENTO' )
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('APELACION' )
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('DEMANDA RECHAZADA' )
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('EMBARGO PREVENTIVO-BANCO' )
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('INTERPONE REVOCATORIA' )
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('SENTENCIA 1 DESFAVORABLE' )
+	insert into Prm_Estado (Prm_Estado_Nombre) VALUES('SENTENCIA 1 FAVORABLE' )
+
+
+	insert into Prm_Area (Prm_Area_Nombre) VALUES('MULTAS SECLO' )
+	insert into Prm_Area (Prm_Area_Nombre) VALUES('MULTAS LEY 18695' )
+	insert into Prm_Area (Prm_Area_Nombre) VALUES('MULTAS PNRT' )
+	insert into Prm_Area (Prm_Area_Nombre) VALUES('DIF OBS' )
+	insert into Prm_Area (Prm_Area_Nombre) VALUES('SENTENCIAS' )
+
+
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('DEMANDA TRABA DE LITIS' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('CONTESTACION DE DEMANDA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('OPONE EXCEPCIONES' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('CONTESTACION DE EXCEPCION' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('PEDIDO DE CADUCIDAD' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('CONTESTACION DE CADUCIDAD' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('PARA DICTAR SENTENCIA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('SENTENCIA 1RA INSTANCIA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('SENTENCIA 1RA INST. APELADA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('SENTENCIA 2DA INSTANCIA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('SENTENCIA 2DA INST. APELADA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('REX DENEGADO' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('CUMPLIMIENTO DE SENTENCIA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('EN EJECUCION' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('CONCURSO Y/O QUIEBRA' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('SUSPENDIDO' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('TERMINADO' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('PAGO' )
+	insert into Prm_Etapa (Prm_Etapa_Nombre) VALUES('ARCHIVADO' )
+
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('ACREDITA DILIGENCIAMIENTO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('BAJA DE CERTIFICADO DE AMPLIACION DE DEMANDA' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('CEDULA DE NOTIFICACION' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('CERTIFICADO DE AMPLIACION DE DEMANDA' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('CIERRE DEL PROCESO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('DEVOLUCION CERTIFICADO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('E.E GDE' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('EMBARGO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('EMBARGO AUTOMOTOR' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('ENVIO DE ESCRITOS' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('ENVIO DE ESCRITOS VIA WEB' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('ESCRITO DE PIDO SENTENCIA' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('INFORME BLANCO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('INICIO JUICIO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('LEVANTAMIENTO DE EMBARGO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('LIQUIDACION' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('MANDAMIENTO DE INTIMACION DE PAGO' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('MOVIMIENTO CONTABLE' )
+	insert into Prm_TipoMovimiento (Prm_TipoMov_Nombre) VALUES('OFICIO' )
+
+
+
+	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('ACTOR' )
+	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('DEMANDADO' )
+	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('CO-DEMANDADO' )
+	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('DENUNCIANTE' )
+	insert into Prm_Rol (Prm_Rol_Nombre) VALUES('3° INTERESADO DEMANDADO' )
+
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1001' ,'Error de Parametros', 'Los Parametros del sistema son Insuficientes como para Operar' )
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1002' ,'Error Firma Sectores', 'La Firma de este sector no esta Habilitada' )
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1003' ,'Error Escrito no Habilitado', 'El Escrito insertado no Corresponde con un Escrito Actualmente Habilitado' )
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('2001' ,'Notificacion Enviada', 'Se ha Generado la Notificacion Correctamente' )
+
+
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ABOGADO' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('TESTIGO' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('JUEZ DE PAZ' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('FISCALIA' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('TESORERIA' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('PERITAJE' )
+insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ADMINISTRACION' )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
