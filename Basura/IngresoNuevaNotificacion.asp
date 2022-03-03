@@ -2,6 +2,7 @@
 <%
 dim conexion
 dim auxiliar
+dim cuits= Array(10)
 set conexion=Server.CreateObject("ADODB.Connection")
 set auxiliar = Server.CreateObject("ADODB.RecordSet")
 dim tipoEscrito_Codigo, area_Codigo, tipoMov_Codigo, etapa_Codigo, estado_Codigo, rol_Codigo, cantidadCuit, SectorFirmante_Codigo
@@ -13,6 +14,9 @@ estado_Codigo=Request.form("estado_Codigo")
 rol_Codigo=Request.form("rol_Codigo")
 cantidadCuit=Request.form("cantidadCuit")
 SectorFirmante_Codigo=Request.form("SectorFirmante_Codigo")
+if IsNull(cantidadCuit) or IsEmpty(cantidadCuit) Then
+    cantidadCuit=0
+end if
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <%	
@@ -22,6 +26,7 @@ conexion.open
     <!--#include virtual="/Partials/head.asp"-->
 <body>
     <!--#include virtual="/Partials/header.asp"-->
+	
     <div class="listado">   
         <form action="CrearNotificacion.asp" name="formulario" method="post">
             <h1>Ingrese una nueva Notificación</h1>
@@ -168,29 +173,7 @@ conexion.open
                         %>
                         </select>
                     </td>
-                    <td>
-                        Cuit:
-                        <select name="inicioCuit" title="Seleccione el Cuit" style="width:45px">
-                            <option value="20">20</option>
-                            <option value="27">27</option>
-                            <option value="30">30</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                        </select>
-                        <input type="number" min="1000000" max="9999999" title="Seleccione el Cuit" placeholder="Seleccione el Cuit" name="cuit" style="width:200px"/>
-                        <select name="finalCuit" title="Seleccione el Cuit" style="width:35px">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
+                    <td>Cantidad de Cuits:<input type="number" min="0" title="Seleccione la Cantidad de Demandados" placeholder="Cantidad de Demandados" required value="<%response.write(cuits(0))%>" name="cantidadCuit"/>
                     </td>
                 </tr>
             </table>
@@ -241,12 +224,6 @@ conexion.open
                     </td>
                 </tr>
                 <tr>
-                    <td>¿Tiene Firma?: 
-                        <select name="firma_Codigo" title="¿El Documento Ingresado tiene una Firma?">
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                        </select>
-                    </td>
                     <td colspan="2">Sector Firmante: 
                         <select name="sectorFirmante_Codigo" title="Seleccione el Sector Firmante">
                         <%
@@ -275,6 +252,22 @@ conexion.open
                     </td>
                 </tr>
             </table>
+             <h2>Cuits</h2>
+             <div class="container">
+                <div class="row">
+                <table Class="tabla" id="tablaprueba">
+                    <tr>
+                        <td colspan="2">Cuit: 
+                            <input type="text" min="0" title="" placeholder="Ingrese CUIT" required value="" name="cantidadCuit"/>
+                        </td>
+                    </tr>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary d-flex justify-content-start" onclick="agregarFila()">Agregar Cuit</button>
+                    </div>
+                </table>
+            </div>
+            </div>
+            
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
@@ -309,6 +302,24 @@ conexion.open
                     document.formulario.ext.options[i].text = mis_ext[i];
                 }
             }
+        }
+        function agregarFila(){
+            document.getElementById("tablaprueba").insertRow(-1).innerHTML = "<td colspan='2'>Cuit: <input type='text' min='0' placeholder='Ingrese CUIT' required value='<%response.write(cantidadCuit)%>' name='cantidadCuit'/><button type='button' class='btn btn-danger' onclick='eliminarFila()'>Eliminar Cuit</button></td>";
+            cont++
+        }
+
+        function eliminarFila(){
+            var table = document.getElementById("tablaprueba");
+            var rowCount = table.rows.length;
+            //console.log(rowCount);
+            
+            if(rowCount <= 1)
+                alert('No se puede eliminar el encabezado');
+            else{
+                table.deleteRow(rowCount -1);
+                cont--
+            }
+              
         }
     </script>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->

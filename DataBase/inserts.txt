@@ -69,6 +69,8 @@ insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1200' ,'Error de Validacion', 'Alguna validacion indispensable no permite realizar la accion' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1300' ,'Error de Permisos', 'No tiene permitido el ingreso' )
 insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1001' ,'Error de Parametros', 'Los Parametros del sistema son Insuficientes como para Operar' )
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1002' ,'Error Firma Sectores', 'La Firma de este sector no esta Habilitada' )
+insert into Prm_Error (Prm_Error_Codigo, Prm_Error_Nombre, Prm_Error_Descripcion) VALUES('1003' ,'Error Escrito no Habilitado', 'El Escrito insertado no Corresponde con un Escrito Actualmente Habilitado' )
 
 
 insert into Prm_SectorFirmante (Prm_SectorFirmante_Nombre) VALUES('ABOGADO' )
