@@ -279,11 +279,11 @@ conexion.open
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
                         <form action="CrearNotificacion.asp" method="post">
-                            <input type="submit" value="Continuar" title="Continuar" class="btn-agregar" />
+                            <input type="submit" value="Generar Notificacion" title="Continuar" class="btn-agregar" />
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
-                        <form action="../RecuperarNotificaciones.asp" method="post">
+                        <form action="../RecuperarNotificaciones.asp    " method="post">
                             <input type="submit" value="Regresar" title="Regresar" class="btn-eliminar">
                         </form>
                     </div>

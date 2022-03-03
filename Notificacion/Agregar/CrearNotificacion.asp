@@ -47,7 +47,7 @@ tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_T
 fecha=Date
 hora=time 
 univoco=""&(area_Codigo)&(tipoMov_Codigo)&(etapa_Codigo)&(estado_Codigo)&(rol_Codigo)&(tipoEscrito_Codigo)&(SacarBarras(fecha))&(SacarPuntos(hora))
-dim error
+dim error, numeroError
 set error = Server.CreateObject("ADODB.RecordSet")
 %>
 <html>
@@ -57,7 +57,8 @@ set error = Server.CreateObject("ADODB.RecordSet")
     <div class="listado">
     <%
     if area_Codigo="0" or tipoMov_Codigo="0" or etapa_Codigo="0" or estado_Codigo="0" or rol_Codigo="0" or tipoEscrito_Codigo="0" Then
-    error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '1001'",conexion
+    numeroError=1001
+    error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
     %>
     <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
     <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
@@ -72,12 +73,16 @@ set error = Server.CreateObject("ADODB.RecordSet")
                 set firma = Server.CreateObject("ADODB.RecordSet")
                 firma.open "select Prm_FirmaPorSector_Firmante from Prm_FirmasPorSector WHERE Prm_FirmaPorSector_EscritoHabilitados = '"&verificacion("Prm_EscritoHB_Codigo")&"'",conexion
                 if firma("Prm_FirmaPorSector_Firmante") = sectorFirmante_Codigo Then
+                    numeroError=2001
+                    error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
                     crearTabla=1
-                %>
-                    <h1>El Movimiento fue agregados exitosamente</h1>
-                <%
+                    %>
+                    <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
+                    <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
+                    <%
                 else
-                    error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '1002'",conexion
+                    numeroError=1002
+                    error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
                     crearTabla=1
                     %>
                     <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
@@ -85,24 +90,28 @@ set error = Server.CreateObject("ADODB.RecordSet")
                     <%
                 End if
             else
+                numeroError=2001
+                error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
                 crearTabla=1
                 %>
-                    <h1>El Movimiento fue agregados exitosamente</h1>
+                <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
+                <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
                 <%  
             End if
         Else 
-            error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '1003'",conexion
+            numeroError=1003
+            error.open "select * from Prm_Error WHERE Prm_Error_Codigo = '"&numeroError&"'",conexion
             crearTabla=1
             %>
             <h1><%response.write(error("Prm_Error_Nombre"))%><h1>
             <h2><%response.write(error("Prm_Error_Descripcion"))%><h2>
             <%
     End if
-    %><!--
-    conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotificacion_Area, VeNotificacion_TipoMovimiento, VeNotificacion_Etapa, VeNotificacion_Estado, VeNotificacion_Rol, VeNotificacion_TipoEscrito, VeNotificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
-    -->
-    <%
-        if crearTabla=1 Then
+    if crearTabla=1 Then
+        conexion.execute("insert into Ve_Notificacion (VeNotificacion_Univoco, VeNotificacion_Area, VeNotificacion_TipoMovimiento, VeNotificacion_Etapa, VeNotificacion_Estado, VeNotificacion_Rol, VeNotificacion_TipoEscrito, VeNotificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
+        conexion.execute("insert into Ve_Control (Ve_Control_Univoco, Ve_Control_Fecha, Ve_Control_Hora, Ve_Control_Codigo_Retorno, Ve_Control_MotivoUsuario) values ('"&univoco&"', '"&fecha&"', '"&hora&"', '"&numeroError&"','-')")
+        conexion.execute("insert into Ve_Escritos (Ve_Escritos_Univoco, Ve_Escritos_RutaDocumentos, Ve_Escritos_ModeloEscrito) values ('"&univoco&"','-', '"&tipoEscrito_Codigo&"')")
+        conexion.execute("insert into Ve_Destino (Ve_Destino_Univoco, Ve_Destino_Cuit) values ('"&univoco&"','"&cuit&"')")
     %>
     <table Class="tabla">
         <tr>
