@@ -5,13 +5,17 @@ dim auxiliar
 set conexion=Server.CreateObject("ADODB.Connection")
 set auxiliar = Server.CreateObject("ADODB.RecordSet")
 dim area, tipoMov, etapa, estado, rol, modeloEscrito, obligatorio, sector
+%>
+<!--#include virtual="/connectionSQL.asp"-->
+<%
+conexion.open
 if isNull(Request.QueryString("area_Codigo")) or isEmpty (Request.QueryString("area_Codigo")) then
-    area=1
-    tipoMov=1
-    etapa=1
-    estado=1
-    rol=1
-    modeloEscrito=1
+    area=0
+    tipoMov=0
+    etapa=0
+    estado=0
+    rol=0
+    modeloEscrito=0
     obligatorio=0
     sector=0
 else
@@ -32,10 +36,6 @@ else
     end if
 end if
 %>
-<!--#include virtual="/connectionSQL.asp"-->
-<%
-conexion.open
-%>
 <html>
     <!--#include virtual="/Partials/head.asp"-->
 <body>
@@ -55,6 +55,9 @@ conexion.open
                             <option value="0">No hay Parametros de Área</option>
                         <% 
                             else
+                        %>
+                            <option value="0">Seleccione</option>
+                        <%
                             do while not auxiliar.eof
                             if Cint(auxiliar("Prm_Area_Codigo"))=Cint(area) then
                         %>
@@ -81,6 +84,9 @@ conexion.open
                             <option value="0">No hay Parametros de Tipo de Movimiento</option>
                         <% 
                             else
+                        %>
+                            <option value="0">Seleccione</option>
+                        <%
                             do while not auxiliar.eof
                             if Cint(auxiliar("Prm_TipoMov_Codigo"))=Cint(tipoMov) then
                         %>
@@ -109,6 +115,9 @@ conexion.open
                             <option value="0">No hay Parametros de Etapa</option>
                         <% 
                             else
+                        %>
+                            <option value="0">Seleccione</option>
+                        <%
                             do while not auxiliar.eof
                             if Cint(auxiliar("Prm_Etapa_Codigo"))=Cint(etapa) then
                         %>
@@ -135,6 +144,9 @@ conexion.open
                             <option value="0">No hay Parametros de Estado</option>
                         <% 
                             else
+                        %>
+                            <option value="0">Seleccione</option>
+                        <%
                             do while not auxiliar.eof
                             if Cint(auxiliar("Prm_Estado_Codigo"))=Cint(estado) then
                         %>
@@ -163,6 +175,9 @@ conexion.open
                             <option value="0">No hay Parametros de Rol</option>
                         <% 
                             else
+                        %>
+                            <option value="0">Seleccione</option>
+                        <%
                             do while not auxiliar.eof
                             if Cint(auxiliar("Prm_Rol_Codigo"))=Cint(rol) then
                         %>
@@ -189,6 +204,9 @@ conexion.open
                             <option value="0">No hay Parametros de Modelo de Escrito</option>
                         <% 
                             else
+                        %>
+                            <option value="0">Seleccione</option>
+                        <%
                             do while not auxiliar.eof
                             if Cint(auxiliar("Prm_TipoEscrito_Codigo"))=Cint(modeloEscrito) then
                         %>
@@ -279,7 +297,7 @@ conexion.open
                             <input type="text" name="tipoEscrito_Codigo" value="<%response.write(modeloEscrito)%>" hidden/>
                             <input type="text" name="obligatorio" value="<%response.write(obligatorio)%>" hidden/>
                             <input type="text" name="sector_Codigo" value="<%response.write(sector)%>" hidden/>
-                            <input type="submit" value="Crear" title="Crear Notificacion" class="btn-agregar" />
+                            <input type="submit" value="Crear" title="Crear Escrito Habilitado" class="btn-agregar" />
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">

@@ -117,7 +117,7 @@
         conexion.close
         %>
         <form action="./Agregar/IngresoNuevoEscritoHabilitado.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue una nueva Notificación" class="btn-agregar">
+            <input type="submit" value="Agregar" title="Agregue un nuevo Escrito Habilitado" class="btn-agregar">
         </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->

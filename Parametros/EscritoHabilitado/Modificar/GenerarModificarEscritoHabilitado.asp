@@ -94,7 +94,7 @@
             <table Class="tabla">
                 <tr>
                     <!--Esta parte del codigo se puede hacer con un while dentro de otro while pero no llego con el tiemepo-->
-                    <td>Áreas: <%response.write(area_Codigo)%>
+                    <td>Áreas:
                         <select name="area_Codigo" title="Seleccione el Área" onchange="this.form.submit()">
                         <%
                             auxiliar.open "select * from Prm_Area where Prm_Area_Vigencia=1",conexion

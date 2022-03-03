@@ -14,6 +14,12 @@ set escritoHb = Server.CreateObject("ADODB.RecordSet")
 set prm_EscritoHb = Server.CreateObject("ADODB.RecordSet")
 %>
 <!--#include virtual="/connectionSQL.asp"-->
+<html>
+    <!--#include virtual="/Partials/Head.asp"-->
+<body>
+    <!--#include virtual="/Partials/Header.asp"-->
+    <div class="listado">
+
 <%
 conexion.open
 dim area_Codigo
@@ -32,6 +38,13 @@ dim obligatorio
 obligatorio=Request.form("obligatorio")
 dim sector_Codigo
 sector_Codigo=Request.form("sector_Codigo")
+
+if area_Codigo=0 or tipoMov_Codigo=0 or etapa_Codigo=0 or estado_Codigo=0 or rol_Codigo=0 or modeloEscrito_Codigo=0 then
+%>
+<h1>No hay parámetros válidos</h1>
+        <h2>Los datos no fueron Agregados</h2>
+<%
+Else
 area.open "select Prm_Area_Nombre from Prm_Area WHERE Prm_Area_Codigo = '"&area_Codigo&"'",conexion
 tipoMovimiento.open "select Prm_TipoMov_Nombre from Prm_TipoMovimiento WHERE Prm_TipoMov_Codigo = '"&tipoMov_Codigo&"'",conexion
 etapa.open "select Prm_Etapa_Nombre from Prm_Etapa WHERE Prm_Etapa_Codigo = '"&etapa_Codigo&"'",conexion
@@ -45,14 +58,7 @@ sector_Nombre="-"
 else
 sector_Nombre=(sector("Prm_SectorFirmante_Nombre"))
 end if
-%>
-<html>
-    <!--#include virtual="/Partials/Head.asp"-->
-<body>
-    <!--#include virtual="/Partials/Header.asp"-->
-    <div class="listado">
-<%
-    prm_EscritoHb.open "select Prm_EscritoHB_Codigo, Prm_EscritoHB_Vigencia from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
+prm_EscritoHb.open "select Prm_EscritoHB_Codigo, Prm_EscritoHB_Vigencia from Prm_EscritosHabilitados WHERE Prm_EscritoHB_Area = '"&area_Codigo&"' and Prm_EscritoHB_Etapa = '"&etapa_Codigo&"' and Prm_EscritoHB_Estado = '"&estado_Codigo&"' and Prm_EscritoHB_TipoMov = '"&tipoMov_Codigo&"' and Prm_EscritoHB_Rol = '"&rol_Codigo&"' and Prm_EscritoHB_ModeloEscrito = '"&modeloEscrito_Codigo&"' and Prm_EscritoHB_Obligatorio = '"&obligatorio&"'",conexion
 if prm_EscritoHb.EOF then
     conexion.execute("insert into Prm_EscritosHabilitados (Prm_EscritoHB_Area, Prm_EscritoHB_TipoMov, Prm_EscritoHB_Etapa, Prm_EscritoHB_Estado, Prm_EscritoHB_Rol, Prm_EscritoHB_ModeloEscrito, Prm_EscritoHB_Obligatorio) VALUES('"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&modeloEscrito_Codigo&"','"&obligatorio&"')")
     if obligatorio=1 then
@@ -76,12 +82,12 @@ if prm_EscritoHb.EOF then
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="IngresoNuevaNotificacion.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otra Notificación" class="btn-agregar">
+                        <input type="submit" value="Agregar Otro" title="Agregue otro Escrito Habilitado" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarNotificaciones.asp" method="post">
-                        <input type="submit" value="Regresar" title="Vuelva al listado de Notificaciones">
+                        <input type="submit" value="Regresar" title="Vuelva al listado de Escritos Habilitados">
                     </form>
                 </div>
             </div>
@@ -113,26 +119,27 @@ if prm_EscritoHb.EOF then
     <%
     end if
 else
-If prm_EscritoHb("Prm_EscritoHB_Vigencia")=0 then
-conexion.execute("UPDATE Prm_EscritosHabilitados SET Prm_EscritoHB_Vigencia=1 WHERE Prm_EscritoHB_Codigo='"&prm_EscritoHb("Prm_EscritoHB_Codigo")&"'")
-        %>
-        <h1>Este Escrito ya Existía y se volvió a Habilitar</h1>
-        <%Else%>
-            <h1>Este Escrito ya Existe</h1>
-            <h2>Los datos no fueron Agregados</h2>
-        <% End If
-            End If
-        %>
+    If prm_EscritoHb("Prm_EscritoHB_Vigencia")=0 then
+    conexion.execute("UPDATE Prm_EscritosHabilitados SET Prm_EscritoHB_Vigencia=1 WHERE Prm_EscritoHB_Codigo='"&prm_EscritoHb("Prm_EscritoHB_Codigo")&"'")
+    %>
+    <h1>Este Escrito ya Existía y se volvió a Habilitar</h1>
+    <%Else%>
+        <h1>Este Escrito ya Existe</h1>
+        <h2>Los datos no fueron Agregados</h2>
+    <% End If
+End If
+End if
+    %>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="IngresoNuevoEscritoHabilitado.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otra Notificación" class="btn-agregar">
+                        <input type="submit" value="Agregar Otra" title="Agregue otro Escrito Habilitado" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarEscritosHabilitados.asp" method="post">
-                        <input type="submit" value="Regresar" title="Vuelva al listado de Notificaciones">
+                        <input type="submit" value="Regresar" title="Vuelva al listado de Escritos Habilitados">
                     </form>
                 </div>
             </div>
