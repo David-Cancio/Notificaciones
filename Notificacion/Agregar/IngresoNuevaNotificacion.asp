@@ -14,8 +14,13 @@ rol_Codigo=Request.form("rol_Codigo")
 cantidadCuit=Request.form("cantidadCuit")
 SectorFirmante_Codigo=Request.form("SectorFirmante_Codigo")
 %>
+<!--#include virtual="/Partials/Validations.asp"-->
 <!--#include virtual="/connectionSQL.asp"-->
 <%	
+dim univoco, fecha, hora
+fecha=Date
+hora=time 
+univoco=""&(SacarBarras(fecha))&(SacarPuntos(hora))&second(Now)
 conexion.open
 %>
 <html>
@@ -24,6 +29,7 @@ conexion.open
     <!--#include virtual="/Partials/header.asp"-->
     <div class="listado">   
         <form action="CrearNotificacion.asp" name="formulario" method="post">
+            <input type="text" name="univoco" value="<%response.write(univoco)%>" hidden/>
             <h1>Ingrese una nueva Notificación</h1>
             <table Class="tabla">
                 <tr>
@@ -178,7 +184,7 @@ conexion.open
                             <option value="25">25</option>
                             <option value="26">26</option>
                         </select>
-                        <input type="number" min="1000000" max="9999999" title="Seleccione el Cuit" placeholder="Seleccione el Cuit" name="cuit" style="width:200px"/>
+                        <input type="number" min="1000000" max="9999999" title="Seleccione el Cuit" placeholder="Seleccione el Cuit" name="cuit" style="width:200px" required/>
                         <select name="finalCuit" title="Seleccione el Cuit" style="width:35px">
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -291,6 +297,22 @@ conexion.open
             </div>
         </form>
     </div>
+    <div style="margin-left:240px">
+        <h4>
+            &#9888;     Para que la Notificacion salga Exitosa se requiere que los siguientes campos sean los permitidos:
+        </h4>
+        <ul>
+            <li type="square">El Area debe ser Multas SECLO</li>
+            <li type="square">El Estado debe ser Embargo Preventivo-Banco o Sentencia Favorable.</li>
+            <li type="square">La Etapa debe estar Apelada.</li>
+            <li type="square">El Rol debe ser Demandado o Co-Demandado.</li>
+            <li type="square">Todos los Tipos de Escritos estan permitidos</li>
+            <li type="square">El Tipo de Movimiento debe ser Cedula de Embargo o Embargo.</li>
+            <li type="square">Solo en caso de que el Tipo de Movimiento es "EMBARGO" se tiene que seleccionar que tiene una Firma</li>
+            <li type="square">Los Sectores que pueden Firmar un Documento son la Fiscalia o la Tesoreria.</li>
+        </ul>
+    </div>
+    
     <script type="text/javascript">
         //Esto es un HardCode :)
         var ext_1 = new Array("XML", "XMLS")

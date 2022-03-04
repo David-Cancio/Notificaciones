@@ -11,7 +11,6 @@ set etapa = Server.CreateObject("ADODB.RecordSet")
 set estado = Server.CreateObject("ADODB.RecordSet")
 set rol = Server.CreateObject("ADODB.RecordSet")
 set tipoEscrito = Server.CreateObject("ADODB.RecordSet")
-
 %>
 <!--#include virtual="/connectionSQL.asp"-->
 <!--#include virtual="/Partials/Validations.asp"-->
@@ -26,12 +25,14 @@ estado_Codigo=ValidarNull(Request.form("estado_Codigo"))
 rol_Codigo=ValidarNull(Request.form("rol_Codigo"))
 tipoEscrito_Codigo=ValidarNull(Request.form("tipoEscrito_Codigo"))
 firma_Codigo=ValidarNull(Request.form("firma_Codigo"))
+
 if IsNull(Request.form("inicioCuit")) or IsEmpty(Request.form("inicioCuit")) or IsNull(Request.form("cuit")) or IsEmpty(Request.form("cuit")) or IsNull(Request.form("finalCuit")) or IsEmpty(Request.form("finalCuit")) then
     %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
     <%
     else 
         cuit=Request.form("inicioCuit")+"-"+Request.form("cuit")+"-"+Request.form("finalCuit")
+        univoco=""&Request.form("univoco")&Request.form("inicioCuit")&Request.form("finalCuit")
 end if
 if area_Codigo="" or tipoMov_Codigo="" or etapa_Codigo="" or estado_Codigo="" or rol_Codigo="" or tipoEscrito_Codigo="" or firma_Codigo="" Then
 %>
@@ -46,8 +47,6 @@ rol.open "select Prm_Rol_Nombre from Prm_Rol WHERE Prm_Rol_Codigo = '"&rol_Codig
 tipoEscrito.open "select Prm_TipoEscrito_Nombre from Prm_TipoEscrito WHERE Prm_TipoEscrito_Codigo = '"&tipoEscrito_Codigo&"'",conexion
 fecha=Date
 hora=time 
-'univoco=""&(area_Codigo)&(tipoMov_Codigo)&(etapa_Codigo)&(estado_Codigo)&(rol_Codigo)&(tipoEscrito_Codigo)&(SacarBarras(fecha))&(SacarPuntos(hora))
-univoco=""&(SacarBarras(fecha))&(SacarPuntos(hora))
 dim error, numeroError
 set error = Server.CreateObject("ADODB.RecordSet")
 %>
@@ -110,10 +109,13 @@ set error = Server.CreateObject("ADODB.RecordSet")
     End if
     End if
     if crearTabla=1 Then
-        conexion.execute("insert into Ve_Notificacion (Ve_Notificacion_Univoco, Ve_Notificacion_Area, Ve_Notificacion_TipoMovimiento, Ve_Notificacion_Etapa, Ve_Notificacion_Estado, Ve_Notificacion_Rol, Ve_Notificacion_TipoEscrito, Ve_Notificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
-        conexion.execute("insert into Ve_Control (Ve_Control_Univoco, Ve_Control_Fecha, Ve_Control_Hora, Ve_Control_Codigo_Retorno, Ve_Control_MotivoUsuario) values ('"&univoco&"', '"&fecha&"', '"&hora&"', '"&numeroError&"','-')")
-        conexion.execute("insert into Ve_Escritos (Ve_Escritos_Univoco, Ve_Escritos_RutaDocumentos, Ve_Escritos_ModeloEscrito) values ('"&univoco&"','-', '"&tipoEscrito_Codigo&"')")
-        conexion.execute("insert into Ve_Destino (Ve_Destino_Univoco, Ve_Destino_Cuit) values ('"&univoco&"','"&cuit&"')")
+        ve_Notificacion.open "select * from Ve_Notificacion WHERE Ve_Notificacion_Univoco = '"&univoco&"'",conexion
+        if ve_Notificacion.EOF then
+            conexion.execute("insert into Ve_Notificacion (Ve_Notificacion_Univoco, Ve_Notificacion_Area, Ve_Notificacion_TipoMovimiento, Ve_Notificacion_Etapa, Ve_Notificacion_Estado, Ve_Notificacion_Rol, Ve_Notificacion_TipoEscrito, Ve_Notificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")
+            conexion.execute("insert into Ve_Control (Ve_Control_Univoco, Ve_Control_Fecha, Ve_Control_Hora, Ve_Control_Codigo_Retorno, Ve_Control_MotivoUsuario) values ('"&univoco&"', '"&fecha&"', '"&hora&"', '"&numeroError&"','-')")
+            conexion.execute("insert into Ve_Escritos (Ve_Escritos_Univoco, Ve_Escritos_RutaDocumentos, Ve_Escritos_ModeloEscrito) values ('"&univoco&"','-', '"&tipoEscrito_Codigo&"')")
+            conexion.execute("insert into Ve_Destino (Ve_Destino_Univoco, Ve_Destino_Cuit) values ('"&univoco&"','"&cuit&"')")
+        end if
     %>
     <table Class="tabla">
         <tr>
