@@ -3,21 +3,25 @@
 <!--#include file="Partials/Head.asp"-->
 <body>
        <!--#include file="Partials/Header.asp"-->
-    <div class="fondo">
-        <h1>Bienvenido a la Universidad de Mataderos</h1>
-        <h1>¡Agregue Datos Nuevos!</h1>
-        <form action="Partials/Desarrollador/EjemploEstudiante.asp" method="post">
-            <input type="submit" value="Ejemplo de Estudiante">
-        </form>
-        <form action="Partials/Desarrollador/EjemploProfesor.asp" method="post">
-            <input type="submit" value="Ejemplo de Profesor">
-        </form>
-        <form action="Partials/Desarrollador/EjemploMateria.asp" method="post">
-            <input type="submit" value="Ejemplo de Materia">
-        </form>
-        <form action="Partials/Desarrollador/RecargarBaseDeDatos.asp" method="post">
-            <input type="submit" value="Recargar Base de Datos">
-        </form>
+    <div class="listado">
+        <h1>SIAJ</h1>
+        <h2>Notificaciones</h2>
+        <div style="padding-left:600px;padding-right:600px;">
+            <a class="dropdown-item" href="/Notificacion/Agregar/IngresoNuevaNotificacion.asp">Generar Notificacón</a>
+            <a class="dropdown-item" href="/Notificacion/RecuperarNotificaciones.asp">Registros de Notificaciones</a>
+        </div>
+        <h2>Parametros</h2>
+        <div style="padding-left:600px;padding-right:600px;">
+            <a class="dropdown-item" href="/Parametros/Area/RecuperarAreas.asp">Áreas</a>
+            <a class="dropdown-item" href="/Parametros/Error/RecuperarError.asp">Errores</a>
+            <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritosHabilitados.asp">Escritos Habilitados</a>
+            <a class="dropdown-item" href="/Parametros/Estado/RecuperarEstados.asp">Estados</a>
+            <a class="dropdown-item" href="/Parametros/Etapa/RecuperarEtapas.asp">Etapas</a>
+            <a class="dropdown-item" href="/Parametros/Rol/RecuperarRoles.asp">Roles</a>
+            <a class="dropdown-item" href="/Parametros/SectorFirmante/RecuperarSectorFirmante.asp">Sectores Firmantes</a>
+            <a class="dropdown-item" href="/Parametros/TipoEscrito/RecuperarTipoEscritos.asp">Tipo de Escritos</a>
+            <a class="dropdown-item" href="/Parametros/TipoMovimiento/RecuperarTipoMovimientos.asp">Tipo de Movimientos</a>
+        </div>
     </div>   
     <!--#include file="Partials/ScriptBootstrap.asp"-->
 </body>

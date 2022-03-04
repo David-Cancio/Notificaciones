@@ -184,7 +184,7 @@ conexion.open
                             <option value="25">25</option>
                             <option value="26">26</option>
                         </select>
-                        <input type="number" min="1000000" max="9999999" title="Seleccione el Cuit" placeholder="Seleccione el Cuit" name="cuit" style="width:200px" required/>
+                        <input type="number" min="1000000" max="99999999" title="Seleccione el Cuit" name="cuit" style="width:120px" required/>
                         <select name="finalCuit" title="Seleccione el Cuit" style="width:35px">
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -233,14 +233,14 @@ conexion.open
                 <tr>
                     <td>Tipo de Archivo: 
                         <!--Esto es un hardcode-->
-                        <select name="tipoEscrito_tipoArchivo" title="Seleccione el Tipo de Archivo" onchange="cambiaTipoArchivo()">
+                        <select name="tipoEscrito_tipoArchivo" title="Seleccione el Tipo de Archivo" onchange="cambiaTipoArchivo()" style="width:80px">
                             <option value="1">EXCEL</option>
                             <option value="2">WORD</option>
                             <option value="3">PDF</option>
                         </select>
                     </td>
                     <td>Extensión: 
-                        <select name="ext" title="Seleccione la Extencion">
+                        <select name="ext" title="Seleccione la Extencion" style="width:80px">
                             <option value="XML">XML</option>
                             <option value="XMLS">XMLS</option>
                         </select>
@@ -248,13 +248,13 @@ conexion.open
                 </tr>
                 <tr>
                     <td>¿Tiene Firma?: 
-                        <select name="firma_Codigo" title="¿El Documento Ingresado tiene una Firma?">
+                        <select name="firma_Codigo" title="¿El Documento Ingresado tiene una Firma?" onchange="disable()" style="width:48px">
                             <option value="1">Si</option>
-                            <option value="0">No</option>
+                            <option value="0" selected>No</option>
                         </select>
                     </td>
                     <td>Sector Firmante: 
-                        <select name="sectorFirmante_Codigo" title="Seleccione el Sector Firmante">
+                        <select name="sectorFirmante_Codigo" title="Seleccione el Sector Firmante" id="sectorFirmante_Codigo" disabled>
                         <%
                             auxiliar.open "select * from Prm_SectorFirmante",conexion
                             if auxiliar.eof then
@@ -289,7 +289,7 @@ conexion.open
                         </form>
                     </div>
                     <div class="col-sm-7 col-md-6 py-2">
-                        <form action="../RecuperarNotificaciones.asp    " method="post">
+                        <form action="../RecuperarNotificaciones.asp" method="post">
                             <input type="submit" value="Regresar" title="Regresar" class="btn-eliminar">
                         </form>
                     </div>
@@ -332,6 +332,18 @@ conexion.open
                 }
             }
         }
+        function disable() {
+            var firma_Codigo;
+            firma_Codigo = document.formulario.firma_Codigo[document.formulario.firma_Codigo.selectedIndex].value;
+            if (firma_Codigo != 0) {
+                document.getElementById('sectorFirmante_Codigo').disabled = false
+            }
+            else
+            {
+                document.getElementById('sectorFirmante_Codigo').disabled = true
+            }
+        }
+
     </script>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

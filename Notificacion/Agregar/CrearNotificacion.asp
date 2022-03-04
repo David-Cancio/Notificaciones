@@ -182,7 +182,7 @@ set error = Server.CreateObject("ADODB.RecordSet")
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="IngresoNuevaNotificacion.asp" method="post">
-                        <input type="submit" value="Agregar Otra" title="Agregue otra Notificación" class="btn-agregar">
+                        <input type="submit" value="Generar Otra" title="Generar otra Notificación" class="btn-agregar">
                     </form>
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
