@@ -25,9 +25,7 @@
         %>
         <div class="container">
             <div class="row">
-                <div class="col-sm-7 col-md-11 py-2">
-                </div>
-                <div class="col-sm-7 col-md-1 py-2">
+                <div class="col-sm-7 col-md-12 py-2">
                     <form action="./Agregar/IngresoNuevaNotificacion.asp" method="post">
                         <input type="submit" value="Generar Notificación" title="Generar una nueva Notificación" class="btn-agregar">
                     </form>
@@ -90,9 +88,6 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevaNotificacion.asp" method="post">
-            <input type="submit" value="Generar Notificación" title="Generar una nueva Notificación" class="btn-agregar">
-        </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

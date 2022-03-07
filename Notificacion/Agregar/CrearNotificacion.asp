@@ -25,7 +25,6 @@ estado_Codigo=ValidarNull(Request.form("estado_Codigo"))
 rol_Codigo=ValidarNull(Request.form("rol_Codigo"))
 tipoEscrito_Codigo=ValidarNull(Request.form("tipoEscrito_Codigo"))
 firma_Codigo=ValidarNull(Request.form("firma_Codigo"))
-
 if IsNull(Request.form("inicioCuit")) or IsEmpty(Request.form("inicioCuit")) or IsNull(Request.form("cuit")) or IsEmpty(Request.form("cuit")) or IsNull(Request.form("finalCuit")) or IsEmpty(Request.form("finalCuit")) then
     %>
         <meta http-equiv="<%response.write("refresh")%>" content="<%response.write("0; url=/./Default.asp")%>" />
@@ -109,6 +108,8 @@ set error = Server.CreateObject("ADODB.RecordSet")
     End if
     End if
     if crearTabla=1 Then
+        response.write(univoco)
+        response.write("-------")
         ve_Notificacion.open "select * from Ve_Notificacion WHERE Ve_Notificacion_Univoco = '"&univoco&"'",conexion
         if ve_Notificacion.EOF then
             conexion.execute("insert into Ve_Notificacion (Ve_Notificacion_Univoco, Ve_Notificacion_Area, Ve_Notificacion_TipoMovimiento, Ve_Notificacion_Etapa, Ve_Notificacion_Estado, Ve_Notificacion_Rol, Ve_Notificacion_TipoEscrito, Ve_Notificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")

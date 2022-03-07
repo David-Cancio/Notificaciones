@@ -31,7 +31,7 @@ conexion.open
 <body>
     <!--#include virtual="/Partials/header.asp"-->
     <div class="listado">   
-        <form action="CrearNotificacion.asp" name="formulario" method="post">
+        <form action="ConfirmarCrearNotificacion.asp" name="formulario" method="post">
             <input type="text" name="univoco" value="<%response.write(univoco)%>" hidden/>
             <h1>Ingrese una nueva Notificación</h1>
             <table Class="tabla">
@@ -287,7 +287,7 @@ conexion.open
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-6 py-2">
-                        <form action="CrearNotificacion.asp" method="post">
+                        <form action="ConfirmarCrearNotificacion.asp" method="post">
                             <input type="submit" value="Generar Notificacion" title="Continuar" class="btn-agregar" />
                         </form>
                     </div>
