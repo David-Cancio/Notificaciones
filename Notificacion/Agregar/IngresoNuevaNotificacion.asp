@@ -4,7 +4,7 @@ dim conexion
 dim auxiliar
 set conexion=Server.CreateObject("ADODB.Connection")
 set auxiliar = Server.CreateObject("ADODB.RecordSet")
-dim tipoEscrito_Codigo, area_Codigo, tipoMov_Codigo, etapa_Codigo, estado_Codigo, rol_Codigo, cantidadCuit, SectorFirmante_Codigo
+dim tipoEscrito_Codigo, area_Codigo, tipoMov_Codigo, etapa_Codigo, estado_Codigo, rol_Codigo, cantidadCuit, SectorFirmante_Codigo, crearUnivoco, sacarAM, sacarPM
 tipoEscrito_Codigo=Request.form("tipoEscrito_Codigo")
 area_Codigo=Request.form("area_Codigo")
 tipoMov_Codigo=Request.form("tipoMov_Codigo")
@@ -20,7 +20,10 @@ SectorFirmante_Codigo=Request.form("SectorFirmante_Codigo")
 dim univoco, fecha, hora
 fecha=Date
 hora=time 
-univoco=""&(SacarBarras(fecha))&(SacarPuntos(hora))&second(Now)
+crearUnivoco=""&(SacarBarras(fecha))&(SacarPuntos(hora))&second(Now)
+sacarAM=replace(crearUnivoco," a. m.","0")
+sacarPM=replace(sacarAM," p. m.","0")
+univoco=sacarPM
 conexion.open
 %>
 <html>

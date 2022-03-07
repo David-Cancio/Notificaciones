@@ -6,12 +6,12 @@
     <div class="listado">
         <h1>SIAJ</h1>
         <h2>Notificaciones</h2>
-        <div style="padding-left:600px;padding-right:600px;">
+        <div style="padding-left:35%;padding-right:35%;">
             <a class="dropdown-item" href="/Notificacion/Agregar/IngresoNuevaNotificacion.asp">Generar Notificacón</a>
             <a class="dropdown-item" href="/Notificacion/RecuperarNotificaciones.asp">Registros de Notificaciones</a>
         </div>
         <h2>Parametros</h2>
-        <div style="padding-left:600px;padding-right:600px;">
+        <div style="padding-left:35%;padding-right:35%;">
             <a class="dropdown-item" href="/Parametros/Area/RecuperarAreas.asp">Áreas</a>
             <a class="dropdown-item" href="/Parametros/Error/RecuperarError.asp">Errores</a>
             <a class="dropdown-item" href="/Parametros/EscritoHabilitado/RecuperarEscritosHabilitados.asp">Escritos Habilitados</a>
