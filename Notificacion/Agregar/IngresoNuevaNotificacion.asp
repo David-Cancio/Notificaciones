@@ -302,15 +302,16 @@ conexion.open
     </div>
     <div style="margin-left:20%; margin-right:20%">
         <h4>
-            &#9888;     Para que la Notificacion salga Exitosa se requiere que los siguientes campos sean los permitidos:
+            &#9888; Para que la Notificacion salga Exitosa se requiere que los siguientes campos sean los permitidos:
         </h4>
         <ul>
             <li type="square">El Area debe ser Multas SECLO</li>
-            <li type="square">El Estado debe ser Embargo Preventivo-Banco o Sentencia Favorable.</li>
+            <li type="square">El Tipo de Movimiento debe ser Cedula de Notificación o Embargo.</li>
             <li type="square">La Etapa debe estar Apelada.</li>
+            <li type="square">El Estado debe ser Embargo Preventivo-Banco o Sentencia Favorable.</li>
             <li type="square">El Rol debe ser Demandado o Co-Demandado.</li>
             <li type="square">Todos los Tipos de Escritos estan permitidos</li>
-            <li type="square">El Tipo de Movimiento debe ser Cedula de Embargo o Embargo.</li>
+            <li type="square">Solo se permiten Archivos PDF y WORD con extensión .doc</li>
             <li type="square">Solo en caso de que el Tipo de Movimiento es "EMBARGO" se tiene que seleccionar que tiene una Firma</li>
             <li type="square">Los Sectores que pueden Firmar un Documento son la Fiscalia o la Tesoreria.</li>
         </ul>
