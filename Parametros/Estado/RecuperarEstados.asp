@@ -16,10 +16,13 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Estado</h1>
+        <form action="./Agregar/IngresoNuevoEstado.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue una nuevo Estado" class="btn-agregar">
+        </form>
         <%
         if not prm_estado.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th colspan="3">Nombre</th>
@@ -58,9 +61,6 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoEstado.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue una nuevo Estado" class="btn-agregar">
-        </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

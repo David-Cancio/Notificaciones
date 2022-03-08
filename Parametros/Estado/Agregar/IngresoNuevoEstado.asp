@@ -10,7 +10,7 @@
             <h1>Ingresar un nuevo Estado</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre del Estado:
+                    <td colspan="2" class="medio">Nombre del Estado:
                         <input type="text" name="prm_estado_nombre" size="40" placeholder="Nombre Estado" required title="Indique el Nombre del Estado"/>
                     </td>
                 </tr>

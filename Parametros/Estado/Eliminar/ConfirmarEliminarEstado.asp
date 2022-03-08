@@ -26,20 +26,14 @@
     <div class="listado">
         <h1>Eliminar Estado: <%response.Write(prm_estado("Prm_Estado_Nombre"))%>
         </h1>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
-                <td></td>
                 <td>Código:
-                <td>
                     <%response.Write(prm_estado("Prm_Estado_Codigo"))%>
                 </td>
-                </td>
-                <td></td>
             </tr>
             <tr>
                 <td>Nombre:
-                </td>
-                <td colspan="3">
                     <%response.Write(prm_estado("Prm_Estado_Nombre"))%>
                 </td>
             </tr>

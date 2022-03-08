@@ -9,12 +9,12 @@
             <h1>Ingrese nuevo Tipo de Escrito</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="3">Nombre:
+                    <td colspan="3" class="medio">Nombre:
                         <input type="text" name="prm_tipoEscrito_nombre" size="40" placeholder="Nombre de Escrito" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Escrito"/>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="3" class="medio">
                         Tipos de Archivos Aceptados:
                     </td>
                 </tr>

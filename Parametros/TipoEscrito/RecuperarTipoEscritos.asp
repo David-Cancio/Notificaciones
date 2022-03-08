@@ -21,10 +21,13 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Tipos de Escritos</h1>
+        <form action="./Agregar/IngresoNuevoTipoEscrito.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue un nuevo Tipo de Escrito" class="btn-agregar">
+        </form>
         <%
         if not prm_tipoEscrito.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th colspan="2">Nombre</th>
@@ -120,9 +123,6 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoTipoEscrito.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue un nuevo Tipo de Escrito" class="btn-agregar">
-        </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

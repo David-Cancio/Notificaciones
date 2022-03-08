@@ -32,10 +32,13 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Escritos Habilitados</h1>
+        <form action="./Agregar/IngresoNuevoEscritoHabilitado.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue un nuevo Escrito Habilitado" class="btn-agregar">
+        </form>
         <%
         if not escritosHb.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th>Area</th>
@@ -116,9 +119,6 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoEscritoHabilitado.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue un nuevo Escrito Habilitado" class="btn-agregar">
-        </form>
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

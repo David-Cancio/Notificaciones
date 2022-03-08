@@ -28,12 +28,12 @@
             <h1>Modificar Tipo de Escrito</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="3">Nombre:
+                    <td colspan="3" class="medio">Nombre:
                         <input type="text" name="prm_tipoEscrito_nombre" size="40" required title="Indique el Nombre del Tipo de Escrito" value="<%response.write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>"/>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="3" class="medio">
                         Tipos de Archivos Aceptados:
                     </td>
                 </tr>

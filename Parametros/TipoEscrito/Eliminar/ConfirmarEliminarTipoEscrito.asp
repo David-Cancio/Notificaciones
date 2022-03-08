@@ -33,7 +33,7 @@
     <div class="listado">
         <h1>Eliminar Tipo de Escrito: <%response.Write(prm_tipoEscrito("Prm_TipoEscrito_Nombre"))%>
         </h1>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <td>
                     Código: 

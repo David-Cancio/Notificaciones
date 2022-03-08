@@ -54,7 +54,7 @@
     <div class="listado">
         <h1>Eliminar Escrito Habilitado: <%response.Write(escritoHb("Prm_EscritoHB_Codigo"))%>
         </h1>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th>Área</th>
