@@ -300,7 +300,7 @@ conexion.open
             </div>
         </form>
     </div>
-    <div style="margin-left:240px">
+    <div style="margin-left:20%; margin-right:20%">
         <h4>
             &#9888;     Para que la Notificacion salga Exitosa se requiere que los siguientes campos sean los permitidos:
         </h4>

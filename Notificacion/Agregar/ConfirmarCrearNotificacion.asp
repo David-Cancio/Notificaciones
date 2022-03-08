@@ -113,27 +113,6 @@ hora=time
             
         </tr>
     </table>
-    <%response.write(area_Codigo)%>
-        <%response.write("area")%>
-    
-    <%response.write(tipoMov_Codigo)%>
-        <%response.write("tipomov")%>
-
-    <%response.write(etapa_Codigo)%>
-        <%response.write("etapa")%>
-
-    <%response.write(estado_Codigo)%>
-        <%response.write("estado")%>
-
-    <%response.write(rol_Codigo)%>
-        <%response.write("rol")%>
-
-    <%response.write(tipoEscrito_Codigo)%>
-        <%response.write("tipoescrito")%>
-
-    <%response.write(firma_Codigo)%>
-        <%response.write("firma")%>
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6 py-2">
@@ -154,7 +133,7 @@ hora=time
                 </div>
                 <div class="col-sm-7 col-md-6 py-2">
                     <form action="../RecuperarNotificaciones.asp" method="post">
-                        <input type="submit" value="Regresar" title="Vuelva al listado de Notificaciones">
+                        <input type="submit" value="Cancelar" title="Cancelar la creacion de esta Notificación  " class="btn-eliminar">
                     </form>
                 </div>
             </div>

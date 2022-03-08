@@ -10,7 +10,7 @@
             <h1>Ingrese un nuevo Tipo Movimiento</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Tipo de Movimiento:
+                    <td colspan="2" class="medio">Tipo de Movimiento:
                             <input type="text" name="tipoMov_nombre" size="40" placeholder="Tipo Movimiento" required title="Indique el Tipo de Movimiento"/>
                     </td>
                 </tr>

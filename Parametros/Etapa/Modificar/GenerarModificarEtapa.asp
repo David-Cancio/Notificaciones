@@ -27,9 +27,9 @@
             <h1>
                 Modificar Etapa
             </h1>
-            <table Class="tabla">
+            <table Class="tabla" >
                 <tr>
-                    <td colspan="2">Nombre de Etapa:
+                    <td colspan="2" class="medio">Nombre de Etapa:
                             <input type="text" name="prm_etapa_nombre" size="40" required title="Indique el Nombre de Etapa" value="<%response.write(prm_etapa("Prm_Etapa_Nombre"))%>"/>
                     </td>
                 </tr>

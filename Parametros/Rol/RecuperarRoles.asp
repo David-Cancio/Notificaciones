@@ -16,10 +16,13 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Roles</h1>
+        <form action="./Agregar/IngresoNuevoRol.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue un nuevo Rol" class="btn-agregar">
+        </form>
         <%
         if not rol.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th colspan="3">Nombre</th>
@@ -58,9 +61,7 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoRol.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue un nuevo Rol" class="btn-agregar">
-        </form>
+        
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

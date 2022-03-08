@@ -10,7 +10,7 @@
             <h1>Ingrese una nueva Etapa</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre de Etapa:
+                    <td colspan="2" class="medio">Nombre de Etapa:
                         <input type="text" name="prm_etapa_nombre" size="40" placeholder="Nombre Etapa" required title="Indique el Nombre de Etapa"/>
                     </td>
                 </tr>

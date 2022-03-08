@@ -16,10 +16,13 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Tipo de Movimiento</h1>
+        <form action="./Agregar/IngresoNuevoTipoMovimiento.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue un nuevo Tipo de Movimiento" class="btn-agregar">
+        </form>
         <%
         if not tipoMovimiento.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th colspan="2">Nombre</th>
@@ -58,9 +61,7 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoTipoMovimiento.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue un nuevo Tipo de Movimiento" class="btn-agregar">
-        </form>
+        
     </div>
 </body>
    <!--#include virtual="Partials/ScriptBootstrap.asp"-->

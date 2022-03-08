@@ -108,8 +108,6 @@ set error = Server.CreateObject("ADODB.RecordSet")
     End if
     End if
     if crearTabla=1 Then
-        response.write(univoco)
-        response.write("-------")
         ve_Notificacion.open "select * from Ve_Notificacion WHERE Ve_Notificacion_Univoco = '"&univoco&"'",conexion
         if ve_Notificacion.EOF then
             conexion.execute("insert into Ve_Notificacion (Ve_Notificacion_Univoco, Ve_Notificacion_Area, Ve_Notificacion_TipoMovimiento, Ve_Notificacion_Etapa, Ve_Notificacion_Estado, Ve_Notificacion_Rol, Ve_Notificacion_TipoEscrito, Ve_Notificacion_CuitDemandado) VALUES('"&univoco&"','"&area_Codigo&"','"&tipoMov_Codigo&"','"&etapa_Codigo&"','"&estado_Codigo&"','"&rol_Codigo&"','"&tipoEscrito_Codigo&"','2')")

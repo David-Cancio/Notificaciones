@@ -10,7 +10,7 @@
             <h1>Ingrese un nuevo Rol</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Rol:
+                    <td colspan="2" class="medio">Rol:
                             <input type="text" name="Prm_rol_nombre" size="40" placeholder="Nombre Rol" required title="Indique el Nombre del Rol"/>
                     </td>
                 </tr>

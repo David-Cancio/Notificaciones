@@ -26,20 +26,14 @@
     <div class="listado">
         <h1>Eliminar Rol: <%response.Write(rol("Prm_Rol_Nombre"))%>
         </h1>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
-                <td></td>
                 <td>Código:
-                <td>
                     <%response.Write(rol("Prm_Rol_Codigo"))%>
                 </td>
-                </td>
-                <td></td>
             </tr>
             <tr>
                 <td>Nombre:
-                </td>
-                <td colspan="3">
                     <%response.Write(rol("Prm_Rol_Nombre"))%>
                 </td>
             </tr>

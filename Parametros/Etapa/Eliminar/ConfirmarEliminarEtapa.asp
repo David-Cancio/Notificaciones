@@ -26,20 +26,14 @@
     <div class="listado">
         <h1>Eliminar Etapa: <%response.Write(prm_etapa("Prm_Etapa_Nombre"))%>
         </h1>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
-                <td></td>
                 <td>Código:
-                <td>
                     <%response.Write(prm_etapa("Prm_Etapa_Codigo"))%>
                 </td>
-                </td>
-                <td></td>
             </tr>
             <tr>
                 <td>Nombre:
-                </td>
-                <td colspan="3">
                     <%response.Write(prm_etapa("Prm_Etapa_Nombre"))%>
                 </td>
             </tr>

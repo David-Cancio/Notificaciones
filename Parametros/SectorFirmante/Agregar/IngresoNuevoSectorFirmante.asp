@@ -10,7 +10,7 @@
             <h1>Ingrese un nuevo Sector Firmante</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre del Sector Firmante:
+                    <td colspan="2" class="medio">Nombre del Sector Firmante:
                         <input type="text" name="prm_sectorFirmante_nombre" size="40" placeholder="Nombre Sector Firmante" required pattern="[A-ZÑ,Á,É,Í,Ó,Ú]{1}[a-zA-Z\sñ,á,é,í,ó,ú,ü{1,}" title="Indique el Nombre del Sector Firmante"/>
                     </td>
                 </tr>

@@ -16,9 +16,12 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Área</h1>
+        <form action="./Agregar/IngresoNuevoArea.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue una nueva Área" class="btn-agregar">
+        </form>
         <%
         if not area.eof then
-        %>
+        %>  
         <table Class="registro">
             <tr>
                 <th>Código</th>
@@ -58,9 +61,7 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoArea.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue una nueva Área" class="btn-agregar">
-        </form>
+        
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>

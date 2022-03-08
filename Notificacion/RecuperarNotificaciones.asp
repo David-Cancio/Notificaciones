@@ -20,18 +20,13 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Registro de Notificaciones</h1>
+        <form action="./Agregar/IngresoNuevaNotificacion.asp" method="post">
+            <input type="submit" value="Generar Notificación" title="Generar una nueva Notificación" class="btn-agregar">
+        </form>
         <%
         if not notificacion.eof then
         %>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7 col-md-12 py-2">
-                    <form action="./Agregar/IngresoNuevaNotificacion.asp" method="post">
-                        <input type="submit" value="Generar Notificación" title="Generar una nueva Notificación" class="btn-agregar">
-                    </form>
-                </div>
-            </div>
-        </div>
+        
         <table Class="registro">
             <tr>
                 <th colspan="2">Código Univoco</th>
