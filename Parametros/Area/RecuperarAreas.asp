@@ -19,7 +19,7 @@
         <%
         if not area.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Código</th>
                 <th colspan="3">Nombre</th>

@@ -10,7 +10,7 @@
             <h1>Ingrese una nueva Área</h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre del Área:
+                    <td colspan="2" class="medio">Nombre del Área:
                             <input type="text" name="prm_area_nombre" size="40" placeholder="Nombre Área" required title="Indique el Nombre del Área"/>
                     </td>
                 </tr>

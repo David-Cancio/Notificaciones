@@ -29,7 +29,7 @@
             </h1>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Nombre del Área:
+                    <td colspan="2" class="medio">Nombre del Área:
                             <input type="text" name="prm_area_nombre" size="40" required title="Indique el Nombre del Área" value="<%response.write(prm_area("Prm_Area_Nombre"))%>"/>
                     </td>
                 </tr>

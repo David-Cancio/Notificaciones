@@ -26,20 +26,14 @@
     <div class="listado">
         <h1>Eliminar Área: <%response.Write(area("Prm_Area_Nombre"))%>
         </h1>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
-                <td></td>
                 <td>Código:
-                <td>
                     <%response.Write(area("Prm_Area_Codigo"))%>
                 </td>
-                </td>
-                <td></td>
             </tr>
             <tr>
                 <td>Nombre:
-                </td>
-                <td colspan="3">
                     <%response.Write(area("Prm_Area_Nombre"))%>
                 </td>
             </tr>
