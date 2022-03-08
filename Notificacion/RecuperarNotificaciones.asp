@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th colspan="2">Código Univoco</th>
                 <th colspan="2">Fecha y Hora</th>

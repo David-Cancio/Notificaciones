@@ -19,7 +19,7 @@
         <%
         if not prm_error.eof then
         %>
-        <table Class="tabla">
+        <table Class="registro">
             <tr>
                 <th>Error</th>
                 <th colspan="2">Nombre</th>

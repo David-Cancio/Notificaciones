@@ -10,7 +10,7 @@
             <h1>Ingresar nuevo Error</h1>
             <table Class="tabla">
                 <tr>
-                    <td>Codigo:
+                    <td>Codigo:</br>
                             <input type="number" name="prm_error_codigo" placeholder="Numero de Error" title="Indique el numero del error" min="0"/>
                     </td>
                     <td>Nombre:
