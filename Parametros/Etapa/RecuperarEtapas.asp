@@ -16,6 +16,9 @@
     <!--#include virtual="/Partials/Header.asp"-->
     <div class="listado">
         <h1>Etapa</h1>
+        <form action="./Agregar/IngresoNuevoEtapa.asp" method="post">
+            <input type="submit" value="Agregar" title="Agregue una nueva Etapa" class="btn-agregar">
+        </form>
         <%
         if not prm_etapa.eof then
         %>
@@ -58,9 +61,7 @@
         end if
         conexion.close
         %>
-        <form action="./Agregar/IngresoNuevoEtapa.asp" method="post">
-            <input type="submit" value="Agregar" title="Agregue una nueva Etapa" class="btn-agregar">
-        </form>
+        
     </div>
     <!--#include virtual="Partials/ScriptBootstrap.asp"-->
 </body>
