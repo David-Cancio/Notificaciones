@@ -22,7 +22,6 @@
     font-size: 110%;
     border-radius: 5px;
     background-color: #EBEBEB;
-    width: 50%;
 }
 .listado input[type=submit] {
     border-radius: 5px;
@@ -37,7 +36,6 @@
     font-size: 110%;
     border-radius: 5px;
     background-color: #EBEBEB;
-    width: 50%;
 }
 
 .listado input[type=submit]:hover {
@@ -50,7 +48,6 @@
     font-size: 110%;
     border-radius: 5px;
     background-color: #EBEBEB;
-    width: 40%;
 }
 
 .btn-agregar {
@@ -73,7 +70,6 @@
     border-collapse: collapse;
     border: 3px solid black;
     border-radius: 5px;
-    text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
     font-weight: 900;
@@ -93,6 +89,8 @@
 }
 .tabla th, td {
     padding: 10px;
+    padding-left: 10%;
+    padding-right: 5%;
 }
 .tabla tbody tr:nth-child(odd) { 
     background-color: #C3CACA;
@@ -103,4 +101,49 @@
 .img-inicio{
     max-width: 20%;
     max-height: 20%;
+}
+
+.medio {
+    text-align: center;
+}
+
+.registro {
+table-layout: fixed;
+width: 100%;
+border-collapse: collapse;
+border: 3px solid black;
+border-radius: 5px;
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+font-weight: 900;
+line-height: 2;
+}
+
+.registro thead th:nth-child(1) {
+    width: 30%;
+}
+
+.registro thead th:nth-child(2) {
+    width: 20%;
+}
+
+.registro thead th:nth-child(3) {
+    width: 15%;
+}
+
+.registro thead th:nth-child(4) {
+    width: 35%;
+}
+
+.registro th, td {
+    padding: 10px;
+}
+
+.registro tbody tr:nth-child(odd) {
+    background-color: #C3CACA;
+}
+
+.registro tbody tr:nth-child(even) {
+    background-color: #EAECEC;
 }

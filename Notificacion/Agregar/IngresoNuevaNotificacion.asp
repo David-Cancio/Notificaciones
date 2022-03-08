@@ -206,7 +206,7 @@ conexion.open
             <h2>Escritos</h2>
             <table Class="tabla">
                 <tr>
-                    <td colspan="2">Escrito: 
+                    <td colspan="2" class="medio">Escrito: 
                         <select name="tipoEscrito_Codigo" title="Seleccione el Tipo de Escrito">
                         <%
                             auxiliar.open "select Prm_TipoEscrito_Codigo,Prm_TipoEscrito_Nombre from Prm_TipoEscrito",conexion
