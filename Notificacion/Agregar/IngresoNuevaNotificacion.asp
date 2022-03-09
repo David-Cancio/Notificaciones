@@ -313,7 +313,7 @@ conexion.open
             <li type="square">Todos los Tipos de Escritos estan permitidos</li>
             <li type="square">Solo se permiten Archivos PDF y WORD con extensión .doc</li>
             <li type="square">Solo en caso de que el Tipo de Movimiento es "EMBARGO" se tiene que seleccionar que tiene una Firma</li>
-            <li type="square">Los Sectores que pueden Firmar un Documento son la Fiscalia o la Tesoreria.</li>
+            <li type="square">El Sector que puede Firmar un Documento es la Fiscalia.</li>
         </ul>
     </div>
     
