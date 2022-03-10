@@ -1,0 +1,442 @@
+<!-- Header.asp
+No funciona... :o(
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <title>Acciones Judiciales</title>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta content="Acciones Judiciales" name="keywords">
+    <meta content="Ministerio de trabajo, empleo y seguridad social" name="description">
+    <meta content="INDEX,FOLLOW" name="robots">
+    <link href="../Style/style.css" type="text/css" rel="stylesheet">
+    <!-- Menu -->
+    <link rel="stylesheet" href="../Style/menu.css" type="text/css">
+
+    <!--<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="../include/infobox.js"></SCRIPT>-->
+
+
+</head>
+<body>
+
+
+    <!-- COMIENZO - Ayuda dinamica
+        <DIV ID="infodiv" STYLE="position:absolute; visibility:hidden; z-index:20; top:0px; left:0px;"></DIV>
+        <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+            maketip('linux','Ayuda','Die Japanische KNOPPIX Version wird weiterentwickelt vom National Institute of Advanced Industrial Science and Technology (AIST), Japan');
+        </SCRIPT>
+
+        <DIV id="TipLayer" style="visibility:hidden;position:absolute;z-index:1000;top:-100;"></DIV>
+    FIN - Ayuda dinamica -->
+    <!-- Encabezamiento, escudo ministerio y banner aplicaciï¿½n -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
+        <tr>
+            <td width="5%" height="79">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/Titulo.gif" align="absmiddle"></td>
+            <td width="50%">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/escudoMTEySS.gif" width="160" height="50" align="absmiddle"></td>
+            <td width="5%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5" height="1" bgcolor="#E8E8E8"></td>
+        </tr>
+    </table>
+
+
+    <!-- Menu -->
+    <link rel="stylesheet" href="../Style/develmenu.css" type="text/css">
+
+    <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
+    <script type="text/javascript" src="../scripts/menu/theme.js"></script>
+
+
+    <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
+        <tr>
+            <td width="70%" class="menuBackgr"><div id="mainMenuID"></div></td>
+            <td width="5%" class="menuBackgr">
+                <a href="http://Agenda.trabajo.gob.ar/Consultas/AbmAlerta.asp?Servicio=Juicios" style="color:red" target="_blank" title="Alertas"><b><img width="16px" height="18px" src="../images/menu/alerta.png" align="absmiddle" border="0">(0)</b></a>&nbsp;
+            </td>
+            <td width="10%" class="menuBackgr"></td>
+            <td width="20%" class="menuUsuarioDisplay" align="right">
+                <div ondblclick="window.open( '..\\seguridad\\entorno.asp', 'entorno', 'width=700, height=350, toolbar=0, menubar=0, directories=0, scrollbars=0, location=0, status=0' ); return false;">
+                    usuario: &nbsp;TRABAJO\CAUSLENDER&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script language="JavaScript" type="text/javascript">
+var mainMenu =
+[
+  _cmSplit,
+  [null,'Home','../default.asp',null,'Home page'],
+  _cmSplit,
+  [null,'Casos','#',null,'Casos',
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas SECLO','#',null,'Multas SECLO',
+      ['<img src="../images/menu/edit.png"/>','Bandeja de Entrada','../Certificados/AbmCertificadosSECLOIngreso.asp?Area=SECLO',null,'Ingreso de Certificados de Multas del Seclo'],
+      ['<img src="../images/menu/edit.png"/>','Ingreso de Certificados','../Casos/AbmCertificadoSeclo.asp?Area=SECLO',null,'Ingreso de Certificados de Multas del Seclo'],
+      ['<img src="../images/menu/edit.png"/>','Casos','../Casos/AbmCaso.asp?TipoJuicio=MULTAS SECLO',null,'Casos del Seclo'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Bandeja de Pagos SECLO','../Certificados/PagosLeySECLO.asp',null,'Bandeja de Pagos'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Pago de Boletas Judiciales en BNA (Archivo)  Conv. 4643','../Pagos/AbmPagoArchivo.asp?Convenio=4643&Area=SECLO',null,'Bandeja de Pagos de Seclo por Archivo'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Supervisión de Casos','../Casos/CasoSupervision.asp?TipoJuicio=MULTAS SECLO',null,'Supervisión de casos']
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas Ley 18695','#',null,'Multas Ley 18695',
+      ['<img src="../images/menu/edit.png"/>','Competencia Plena','#',null,'Competencia Plena',
+        ['<img src="../images/menu/edit.png"/>','Bandeja de Entrada CPL','../ExpedientesCPL/ExpedienteCPLIngreso.asp',null,'Bandeja de Entrada de Multas de CPL'],
+        ['<img src="../images/menu/edit.png"/>','Carga del Expediente','../ExpedientesCPL/AbmExpedienteCPL.Asp?Area=DIF&Tipo=CP',null,'Carga de ExpedienteCPL'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Carga de Sumarios','../Sumarios/AbmSumario.Asp?Area=DIF&Tipo=CP',null,'Carga de Sumario'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Casos','../Casos/AbmCaso.asp?TipoJuicio=DIF CP CASO',null,'Casos'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Bandeja de Pagos CPL','../ExpedientesCPL/PagosLey18695.asp',null,'Bandeja de Pagos'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Pago de Boletas Judiciales en BNA (Archivo) Conv. 4587','../Pagos/AbmPagoArchivo.asp?Convenio=4587&Area=DIF CP',null,'Bandeja de Pagos de Competencia Plena por Archivo'],
+        ['<img src="../images/menu/edit.png"/>','Pago de Boletas Judiciales en BNA (Archivo) Conv. 5468','../Pagos/AbmPagoArchivo.asp?Convenio=5468&Area=DIF CP',null,'Bandeja de Pagos de Competencia Plena por Archivo'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Supervisión de Casos','../Casos/CasoSupervision.asp?TipoJuicio=DIF CP CASO',null,'Supervisión de casos']
+      ],
+      ['<img src="../images/menu/edit.png"/>','Obstrucción PNRT','#',null,'Obstrucción PNRT',
+        ['<img src="../images/menu/edit.png"/>','Carga de Sumario','../Sumarios/AbmSumario.Asp?Area=DIF&Tipo=OBS',null,'Carga de Sumario'],
+        ['<img src="../images/menu/edit.png"/>','Casos','../Casos/AbmCaso.asp?TipoJuicio=DIF OBS CASO',null,'Casos'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Supervisión de Casos','../Casos/CasoSupervision.asp?TipoJuicio=DIF OBS CASO',null,'Supervisión de casos']
+      ]
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas PNRT','#',null,'Multas pnrt',
+      ['<img src="../images/menu/edit.png"/>','Bandeja de Entrada PNRT','../Certificados/CertificadosPNRTIngreso.asp',null,'Bandeja de Entrada de Multas del PNRT'],
+      ['<img src="../images/menu/edit.png"/>','Multas PNRT','../Casos/AbmCaso.asp?TipoJuicio=MULTAS PNRT',null,'Alta baja y modificación de Multas del PNRT'],
+      ['<img src="../images/menu/edit.png"/>','Bandeja de Pagos PNRT','../Certificados/PagosPNRT.asp',null,'Bandeja de Pagos del PNRT'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Boletas Judiciales (por Archivo) Conv. 3278','../Pagos/AbmPagoArchivo.asp?Convenio=3278&Area=PNRT',null,'Bandeja de Pagos del PNRT por Archivo'],
+      ['<img src="../images/menu/edit.png"/>','Boletas Judiciales (por Archivo) Conv. 5469','../Pagos/AbmPagoArchivo.asp?Convenio=5469&Area=PNRT',null,'Bandeja de Pagos del PNRT por Archivo'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Supervisión de Casos','../Casos/CasoSupervision.asp?TipoJuicio=MULTAS PNRT',null,'Supervisión de casos']
+    ],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Otros Casos','../casos/AbmCaso.asp?TipoJuicio=OTROS JUICIOS',null,'Alta baja y modificación de Casos'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Todos los casos','../casos/AbmCaso.asp?TipoJuicio=',null,'Alta baja y modificación de Casos']
+  ],
+  _cmSplit,
+  [null,'Sentencias','#',null,'Sentencias',
+    ['<img src="../images/menu/search_text.png"/>','Sentencias','../Sentencias/Sentencias.asp?Area=SENTENCIAS',null,'Alta baja y modificación de Sentencias']
+  ],
+  _cmSplit,
+  [null,'Tablas','#',null,'Tablas',
+    ['<img src="../images/menu/edit.png"/>','Tipo de caso','../Tablas/AbmTipoCaso.asp',null,'Tipos de casos'],
+    ['<img src="../images/menu/language.png"/>','Areas','../Tablas/AbmArea.asp',null,'Areas'],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Infractores','#',null,'Infractores',
+      ['<img src="../images/menu/users_002.png"/>','Infractores','../Tablas/AbmPersona.asp',null,'Personas'],
+      ['<img src="../images/menu/media.png"/>','Provincias','../Tablas/AbmProvincia.asp',null,'Provincias'],
+      ['<img src="../images/menu/edit.png"/>','Tipos de Documento','../Tablas/AbmTipoDocumento.asp',null,'Tipos de Documentos'],
+      ['<img src="../images/menu/edit.png"/>','Tipo Personeria','../Tablas/AbmTipoPersoneria.asp',null,'Tipos de Personerias']
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Procesales','#',null,'Procesales',
+      ['<img src="../images/menu/users_002.png"/>','Abogados','../Tablas/AbmAbogado.asp',null,'Abogados'],
+      ['<img src="../images/menu/language.png"/>','Oficiales ad hoc','../Tablas/AbmOficialAdHoc.asp',null,'Oficial Ad-Hoc'],
+      _cmSplit,
+      ['<img src="../images/menu/language.png"/>','Oficinas','../Tablas/AbmOficina.asp',null,'Oficinas'],
+      ['<img src="../images/menu/language.png"/>','Tipo Oficina','../Tablas/AbmTipoOficina.asp',null,'Tipo Oficina'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Tipo de Juicio','../Tablas/AbmTipoJuicio.asp',null,'Tipo del Juicio'],
+      ['<img src="../images/menu/edit.png"/>','Etapa','../Tablas/AbmEtapa.asp',null,'Etapas'],
+      ['<img src="../images/menu/edit.png"/>','Estado','../Tablas/AbmEstado.asp',null,'Estado'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Rol Procesal','../Tablas/AbmTabla.asp?Tabla=RolProcesal&TablaDescripcion=Roles procesales',null,'Roles procesales'],
+      ['<img src="../images/menu/document.png"/>','Materia','../Tablas/AbmMateria.asp',null,'Roles procesales'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Tipo Certificado','../Tablas/AbmTipoCertificado.asp',null,'Tipo Certificado'],
+      ['<img src="../images/menu/users_002.png"/>','Infracción (PNRT)','../Tablas/AbmInfraccionPNRT.asp',null,'Infracciones del PNRT']
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Juzgados','#',null,'Juzgados',
+      ['<img src="../images/menu/edit.png"/>','Jurisdicciones','../Tablas/AbmTabla.asp?Tabla=Jurisdiccion&TablaDescripcion=Jurisdicciones',null,'Jurisidicciones'],
+      ['<img src="../images/menu/edit.png"/>','Fueros','../Tablas/AbmFuero.asp',null,'Fueros'],
+      ['<img src="../images/menu/edit.png"/>','Juzgados','../Tablas/AbmJuzgado.asp',null,'Juzgados'],
+      ['<img src="../images/menu/edit.png"/>','Secretarías','../Tablas/AbmSecretaria.asp',null,'Secretarías']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Modelos','#',null,'Modelos',
+      ['<img src="../images/menu/edit.png"/>','Origen de Datos','../TablasModelos/AbmOrigenDato.asp',null,'Origenes de Datos'],
+      ['<img src="../images/menu/edit.png"/>','Campos de Datos','../TablasModelos/AbmTag.asp',null,'Tags'],
+      ['<img src="../images/menu/edit.png"/>','Campos de Origen de Datos','../TablasModelos/AbmOrigenDatoTag.asp',null,'Campos de Orígenes de Datos'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Plantillas','../TablasModelos/AbmPlantilla.asp',null,'Campos de Plantilla'],
+      ['<img src="../images/menu/edit.png"/>','Tipo de Plantillas','../Tablas/AbmTipoPlantilla.asp',null,'Campos de Tipo de Plantillas'],
+      _cmSplit,
+      ['<img src="../images/menu/document.png"/>','Modelos','../TablasModelos/AbmModelo.asp',null,'Modelos'],
+      _cmSplit,
+      ['<img src="../images/menu/document.png"/>','Modelos Oficinas','../TablasModelos/AbmModeloOficina.asp',null,'Modelos Oficinas']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Movimientos','#',null,'Movimientos',
+      ['<img src="../images/menu/edit.png"/>','Tipos de Movimientos','../Tablas/AbmTabla.asp?Tabla=TipoMovimiento&TablaDescripcion=Tipos de movimiento',null,'Tipos de movimientos'],
+      ['<img src="../images/menu/edit.png"/>','Tipos de Movimientos Contables','../Tablas/AbmTipoMovContable.asp',null,'Tipos de movimientos contables'],
+      ['<img src="../images/menu/edit.png"/>','Tipos de Oficio','../Tablas/AbmTipoOficio.asp',null,'Tipos de  Oficios']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Bancos','#',null,'Bancos',
+      ['<img src="../images/menu/edit.png"/>','Ctas. Rec. Bancos','../Tablas/AbmBanco.asp',null,'Bancos'],
+      ['<img src="../images/menu/edit.png"/>','Ctas. Rec. Sucursales','../Tablas/AbmBancoSucursal.asp',null,'Sucursales'],
+      ['<img src="../images/menu/edit.png"/>','Ctas. Rec. Cuentas','../Tablas/AbmBancoCuenta.asp',null,'Cuentas'],
+      _cmSplit,
+      ['<img src="../images/menu/document.png"/>','Tipos de Pagos','../Tablas/AbmTipoPago.asp',null,'Tipos de Pagos'],
+      _cmSplit,
+      ['<img src="../images/menu/edit.png"/>','Tipos de Cuentas Bancarias','../Tablas/AbmTabla.asp?Tabla=TipoCuentaBCRA&TablaDescripcion=Tipos de Cuentas del BCRA',null,'Tipos de Cuentas Bancarias']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Liquidaciones','#',null,'Liquidaciones',
+      ['<img src="../images/menu/edit.png"/>','Tipos de Liquidación','../Tablas/AbmTipoLiquidacion.asp',null,'Tipo Liquidacion'],
+      ['<img src="../images/menu/edit.png"/>','Tipo de Liquidación por Area','../Tablas/AbmAreaTipoLiquidacion.asp',null,'Area Tipo Liquidacion'],
+      ['<img src="../images/menu/edit.png"/>','Tipos de Boletas','../Tablas/AbmTipoBoleta.asp',null,'Tipo Boleta'],
+      ['<img src="../images/menu/edit.png"/>','Tipo de Calculo','../Tablas/AbmTipoCalculo.asp',null,'Tipo de Calculo']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Convenios con el BNA','#',null,'Intereses',
+      ['<img src="../images/menu/edit.png"/>','Convenios BNA','../Tablas/AbmConvenioBNA.asp',null,'Convenio BNA'],
+      ['<img src="../images/menu/edit.png"/>','Formato del Convenio BNA','../Tablas/AbmConvenioBNACampos.asp',null,'Convenio BNA Campos']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Intereses','#',null,'Intereses',
+      ['<img src="../images/menu/install.png"/>','Tipos de Intereses','../Tablas/AbmInteres.asp',null,'Tipos de Intereses'],
+      ['<img src="../images/menu/language.png"/>','Tablas de Intereses','../Tablas/AbmInteresItem.asp',null,'Tabla de Intereses'],
+      ['<img src="../images/menu/edit.png"/>','Feriados','../Tablas/AbmFeriado.asp',null,'Feriado']
+    ],
+    _cmSplit,
+    ['<img src="../images/menu/document.png"/>','Información','../Tablas/AbmInformacion.asp',null,'Sitios de interés'],
+    ['<img src="../images/menu/edit.png"/>','Tipos de Información','../Tablas/AbmTipoInformacion.asp',null,'Tipos de información'],
+    _cmSplit,
+    ['<img src="../images/menu/users_002.png"/>','Usuarios','../Tablas/AbmUsuario.asp',null,'Usuarios'],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Permisos','#',null,'Permisos',
+      ['<img src="../images/menu/document.png"/>','Objetos','../Seguridad/AbmObjeto.asp',null,'Objetos'],
+      ['<img src="../images/menu/users.png"/>','Grupos','../Seguridad/AbmGrupo.asp',null,'Grupos'],
+      ['<img src="../images/menu/install.png"/>','Permisos','../Seguridad/AbmPermiso.asp',null,'Permisos']
+    ],
+    _cmSplit,
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','WebService','#',null,'WebService',
+      ['<img src="../images/menu/install.png"/>','WS Agenda','../ws/wsrest.asp?_Servicio=Juicios&_Recurso=AlertaProceso&_Accion=Alta',null,'Web Service de alertas']
+    ]
+  ],
+  _cmSplit,
+  [null,'Consultas','#',null,'Consultas',
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas SECLO','#',null,'Consultas Multas SECLO',
+      ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Pagos','#',null,'Consultas Pagos',
+        ['<img src="../images/menu/search_text.png"/>','Pagos por Oficina','../Consultas/ConsultaPagos.asp?Area=SECLO',null,'Consulta de pagos por Oficina'],
+        ['<img src="../images/menu/search_text.png"/>','Pagos por Abogado','../Consultas/ConsultaPagosPorAbogado.asp?Area=SECLO',null,'Consulta de pagos por Abogado'],
+        _cmSplit,
+        ['<img src="../images/menu/search_text.png"/>','Recaudacion Diaria','../Consultas/ConsultaRecaudacion.asp?Area=SECLO',null,'Consulta de Recaudacion Diaria']
+      ],
+      ['<img src="../images/menu/search_text.png"/>','Liquidaciones','../Consultas/ConsultaLiquidaciones.asp?Area=SECLO',null,'Consulta de liquidaciones efectuadas'],
+      ['<img src="../images/menu/search_text.png"/>','Saldo de Casos a fecha','../Consultas/ConsultaCapitalAdeudado.asp?Area=SECLO',null,'Consulta de saldos de casos activos anteriores a fecha'],
+      ['<img src="../images/menu/search_text.png"/>','Casos sin movimientos a fecha','../Consultas/ConsultaMovimientoCaso.asp?Area=SECLO',null,'Consulta de casos sin movimientos posteriores a fecha'],
+      ['<img src="../images/menu/search_text.png"/>','Estado de Casos','../Consultas/ConsultaPorEstado.asp?Area=SECLO',null,'Consulta de casos por estado'],
+      ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Boletas','#',null,'Consulta Boletas',
+        ['<img src="../images/menu/search_text.png"/>','Boletas por Oficina','../Consultas/ConsultaBoletas.asp?Area=SECLO',null,'Consulta de Boletas Emitidas'],
+        ['<img src="../images/menu/search_text.png"/>','Boletas por Abogado','../Consultas/ConsultaBoletasPorAbogado.asp?Area=SECLO',null,'Consulta de Boletas Emitidas'],
+        ['<img src="../images/menu/search_text.png"/>','Boletas Vencidas','../Consultas/ConsultaBoletasVencidas.asp?Area=SECLO',null,'Consulta de Boletas Vencidas'],
+        ['<img src="../images/menu/search_text.png"/>','Boletas a Vencer','../Consultas/ConsultaBoletasAVencer.asp?Area=SECLO',null,'Consulta de Boletas a Vencer']
+      ]
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas Ley 18695','#',null,'Multas Ley 18695',
+      ['<img src="../images/menu/edit.png"/>','Competencia Plena','#',null,'Competencia Plena',
+        ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Pagos','#',null,'Consultas Pagos',
+          ['<img src="../images/menu/search_text.png"/>','Pagos por Oficina','../Consultas/ConsultaPagos.asp?Area=DIF&Tipo=CP',null,'Consulta de pagos por Oficina'],
+          ['<img src="../images/menu/search_text.png"/>','Pagos por Abogado','../Consultas/ConsultaPagosPorAbogado.asp?Area=DIF&Tipo=CP',null,'Consulta de pagos por Abogado'],
+          _cmSplit,
+          ['<img src="../images/menu/search_text.png"/>','Recaudacion Diaria','../Consultas/ConsultaRecaudacion.asp?Area=DIF&Tipo=CP',null,'Consulta de Recaudacion Diaria']
+        ],
+        ['<img src="../images/menu/search_text.png"/>','Liquidaciones','../Consultas/ConsultaLiquidaciones.asp?Area=DIF&Tipo=CP',null,'Consulta de liquidaciones efectuadas'],
+        ['<img src="../images/menu/search_text.png"/>','Casos por Juzgado','../Consultas/ConsultaCasosPorJuzgado.asp?Area=DIF&Tipo=CP',null,'Consulta de casos por juzgado'],
+        ['<img src="../images/menu/search_text.png"/>','Saldo de Casos a fecha','../Consultas/ConsultaCapitalAdeudado.asp?Area=DIF&Tipo=CP',null,'Consulta de saldos de casos activos anteriores a fecha'],
+        ['<img src="../images/menu/search_text.png"/>','Casos sin movimientos a fecha','../Consultas/ConsultaMovimientoCaso.asp?Area=DIF&Tipo=CP',null,'Consulta de casos sin movimientos posteriores a fecha'],
+        ['<img src="../images/menu/search_text.png"/>','Estado de Casos','../Consultas/ConsultaPorEstado.asp?Area=DIF&Tipo=CP',null,'Consulta de casos por estado'],
+        ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Boletas','#',null,'Consulta Boletas',
+          ['<img src="../images/menu/search_text.png"/>','Boletas por Oficina','../Consultas/ConsultaBoletas.asp?Area=DIF&Tipo=CP',null,'Consulta de Boletas Emitidas'],
+          ['<img src="../images/menu/search_text.png"/>','Boletas por Abogado','../Consultas/ConsultaBoletasPorAbogado.asp?Area=DIF&Tipo=CP',null,'Consulta de Boletas Emitidas'],
+          ['<img src="../images/menu/search_text.png"/>','Boletas Vencidas','../Consultas/ConsultaBoletasVencidas.asp?Area=DIF&Tipo=CP',null,'Consulta de Boletas Vencidas'],
+          ['<img src="../images/menu/search_text.png"/>','Boletas a Vencer','../Consultas/ConsultaBoletasAVencer.asp?Area=DIF&Tipo=CP',null,'Consulta de Boletas a Vencer']
+        ]
+      ],
+      ['<img src="../images/menu/edit.png"/>','Obstrucción PNRT','#',null,'Obstrucción PNRT',
+        ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Pagos','#',null,'Consultas Pagos',
+          ['<img src="../images/menu/search_text.png"/>','Pagos por Oficina','../Consultas/ConsultaPagos.asp?Area=DIF&Tipo=OBS',null,'Consulta de pagos por Oficina'],
+          ['<img src="../images/menu/search_text.png"/>','Pagos por Abogado','../Consultas/ConsultaPagosPorAbogado.asp?Area=DIF&Tipo=OBS',null,'Consulta de pagos por Abogado'],
+          _cmSplit,
+          ['<img src="../images/menu/search_text.png"/>','Recaudacion Diaria','../Consultas/ConsultaRecaudacion.asp?Area=DIF&Tipo=OBS',null,'Consulta de Recaudacion Diaria']
+        ],
+        ['<img src="../images/menu/search_text.png"/>','Liquidaciones','../Consultas/ConsultaLiquidaciones.asp?Area=DIF&Tipo=OBS',null,'Consulta de liquidaciones efectuadas'],
+        ['<img src="../images/menu/search_text.png"/>','Casos por Juzgado','../Consultas/ConsultaCasosPorJuzgado.asp?Area=DIF&Tipo=OBS',null,'Consulta de casos por juzgado'],
+        ['<img src="../images/menu/search_text.png"/>','Saldo de Casos a fecha','../Consultas/ConsultaCapitalAdeudado.asp?Area=DIF&Tipo=OBS',null,'Consulta de saldos de casos activos anteriores a fecha'],
+        ['<img src="../images/menu/search_text.png"/>','Casos sin movimientos a fecha','../Consultas/ConsultaMovimientoCaso.asp?Area=DIF&Tipo=OBS',null,'Consulta de casos sin movimientos posteriores a fecha'],
+        ['<img src="../images/menu/search_text.png"/>','Estado de Casos','../Consultas/ConsultaPorEstado.asp?Area=DIF&Tipo=OBS',null,'Consulta de casos por estado'],
+        ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Boletas','#',null,'Consulta Boletas',
+          ['<img src="../images/menu/search_text.png"/>','Boletas por Oficina','../Consultas/ConsultaBoletas.asp?Area=DIF&Tipo=OBS',null,'Consulta de Boletas Emitidas'],
+          ['<img src="../images/menu/search_text.png"/>','Boletas por Abogado','../Consultas/ConsultaBoletasPorAbogado.asp?Area=DIF&Tipo=OBS',null,'Consulta de Boletas Emitidas'],
+          ['<img src="../images/menu/search_text.png"/>','Boletas Vencidas','../Consultas/ConsultaBoletasVencidas.asp?Area=DIF&Tipo=OBS',null,'Consulta de Boletas Vencidas'],
+          ['<img src="../images/menu/search_text.png"/>','Boletas a Vencer','../Consultas/ConsultaBoletasAVencer.asp?Area=DIF&Tipo=OBS',null,'Consulta de Boletas a Vencer']
+        ]
+      ]
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas PNRT','#',null,'Consultas Multas PNRT',
+      ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Pagos','#',null,'Consultas Pagos',
+        ['<img src="../images/menu/search_text.png"/>','Pagos por Oficina','../Consultas/ConsultaPagos.asp?Area=PNRT',null,'Consulta de pagos por Oficina'],
+        ['<img src="../images/menu/search_text.png"/>','Pagos por Abogado','../Consultas/ConsultaPagosPorAbogado.asp?Area=PNRT',null,'Consulta de pagos por Abogado'],
+        _cmSplit,
+        ['<img src="../images/menu/search_text.png"/>','Recaudacion Diaria','../Consultas/ConsultaRecaudacion.asp?Area=PNRT',null,'Consulta de Recaudacion Diaria']
+      ],
+      ['<img src="../images/menu/search_text.png"/>','Liquidaciones','../Consultas/ConsultaLiquidaciones.asp?Area=PNRT',null,'Consulta de liquidaciones efectuadas'],
+      ['<img src="../images/menu/search_text.png"/>','Casos por Juzgado','../Consultas/ConsultaCasosPorJuzgado.asp?Area=PNRT',null,'Consulta de casos por juzgado'],
+      ['<img src="../images/menu/search_text.png"/>','Saldo de Casos a fecha','../Consultas/ConsultaCapitalAdeudado.asp?Area=PNRT',null,'Consulta de saldos de casos activos anteriores a fecha'],
+      ['<img src="../images/menu/search_text.png"/>','Casos sin movimientos a fecha','../Consultas/ConsultaMovimientoCaso.asp?Area=PNRT',null,'Consulta de casos sin movimientos posteriores a fecha'],
+      ['<img src="../images/menu/search_text.png"/>','Estado de Casos','../Consultas/ConsultaPorEstado.asp?Area=PNRT',null,'Consulta de casos por estado'],
+      ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Boletas','#',null,'Consulta Boletas',
+        ['<img src="../images/menu/search_text.png"/>','Boletas por Oficina','../Consultas/ConsultaBoletas.asp?Area=PNRT',null,'Consulta de Boletas Emitidas'],
+        ['<img src="../images/menu/search_text.png"/>','Boletas por Abogado','../Consultas/ConsultaBoletasPorAbogado.asp?Area=PNRT',null,'Consulta de Boletas Emitidas'],
+        ['<img src="../images/menu/search_text.png"/>','Boletas Vencidas','../Consultas/ConsultaBoletasVencidas.asp?Area=PNRT',null,'Consulta de Boletas Vencidas'],
+        ['<img src="../images/menu/search_text.png"/>','Boletas a Vencer','../Consultas/ConsultaBoletasAVencer.asp?Area=PNRT',null,'Consulta de Boletas a Vencer']
+      ],
+      _cmSplit,
+      ['<img src="../images/menu/search_text.png"/>','Oficios BCRA','../Consultas/ConsultaOficiosBCRA.asp',null,'Consultas']
+    ],
+    ['<img src="../images/menu/search_text.png"/>','Casos de Abogados por Juzgado','../Consultas/ConsultaCasosDeAbogadosPorJuzgado.asp',null,'Consultas'],
+    _cmSplit,
+    ['<img src="../images/menu/search_text.png"/>','Sentencias','../Consultas/ConsultaSentencias.asp?Area=SENTENCIAS',null,'Consultas'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Auditoría','../Seguridad/AbmAudit.asp?permiso=consulta de auditoria',null,'Auditoría'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Auditoría Casos P.T.N.','../Consultas/ConsultaCasosAdvocatus.asp',null,'Auditoría de Causas P.T.N.']
+  ],
+  [null,'Información','../Informacion/Informacion.asp',null,'Sitios de interés'],
+  _cmSplit,
+  [null,'Estadísticas','#',null,'Estadisticas',
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas SECLO','#',null,'Multas SECLO',
+      ['<img src="../images/menu/search_text.png"/>','Casos por Oficina','../Estadisticas/JuiciosPorPeriodo.asp?Area=SECLO&Consulta=TipoOficina',null,'Estadística de Casos por Oficina'],
+      ['<img src="../images/menu/search_text.png"/>','Casos por Etapa','../Estadisticas/PorEtapa.asp?Area=SECLO',null,'Estadística de Casos por Etapa'],
+      ['<img src="../images/menu/search_text.png"/>','Casos por Abogado','../Estadisticas/PorAbogado.asp?Area=SECLO',null,'Estadística de Casos por Abogado']
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas Ley 18695','#',null,'Multas Ley 18695',
+      ['<img src="../images/menu/edit.png"/>','Competencia Plena','#',null,'Competencia Plena',
+        ['<img src="../images/menu/search_text.png"/>','Casos por Oficina','../Estadisticas/JuiciosPorPeriodo.asp?Area=DIF&Tipo=CP&Consulta=TipoOficina',null,'Estadística de Casos por Oficina'],
+        ['<img src="../images/menu/search_text.png"/>','Casos por Etapa','../Estadisticas/PorEtapa.asp?Area=DIF&Tipo=CP',null,'Estadística de Casos por Etapa'],
+        ['<img src="../images/menu/search_text.png"/>','Casos por Abogado','../Estadisticas/PorAbogado.asp?Area=DIF&Tipo=CP',null,'Estadística de Casos por Abogado']
+      ],
+      ['<img src="../images/menu/edit.png"/>','Obstrucción PNRT','#',null,'Obstrucción PNRT',
+        ['<img src="../images/menu/search_text.png"/>','Casos por Oficina','../Estadisticas/JuiciosPorPeriodo.asp?Area=DIF&Tipo=OBS&Consulta=TipoOficina',null,'Estadística de Casos por Oficina'],
+        ['<img src="../images/menu/search_text.png"/>','Casos por Etapa','../Estadisticas/PorEtapa.asp?Area=DIF&Tipo=OBS',null,'Estadística de Casos por Etapa'],
+        ['<img src="../images/menu/search_text.png"/>','Casos por Abogado','../Estadisticas/PorAbogado.asp?Area=DIF&Tipo=OBS',null,'Estadística de Casos por Abogado']
+      ]
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas PNRT','#',null,'Estadisticas de Multas PNRT',
+      ['<img src="../images/menu/search_text.png"/>','Casos por Oficina','../Estadisticas/JuiciosPorPeriodo.asp?Area=PNRT&Consulta=TipoOficina',null,'Estadística de Casos por Oficina'],
+      ['<img src="../images/menu/search_text.png"/>','Casos por Etapa','../Estadisticas/PorEtapa.asp?Area=PNRT',null,'Estadística de Casos por Etapa'],
+      ['<img src="../images/menu/search_text.png"/>','Casos por Abogado','../Estadisticas/PorAbogado.asp?Area=PNRT',null,'Estadística de Casos por Abogado']
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Sentencias','#',null,'Estadisticas de Sentencias',
+      ['<img src="../images/menu/search_text.png"/>','Sentencias por Tipo','../Estadisticas/PorTipo.asp?Area=SENTENCIAS',null,'Estadística por Tipo de Caso']
+    ]
+  ],
+  [null,'Procesos','#',null,'Procesos',
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Multas PNRT','#',null,'Multas pnrt',
+      ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Oficios BCRA','#',null,'Oficios BCRA',
+        ['<img src="../images/menu/edit.png"/>','Envio de Oficios a AFIP','../Procesos/OficiosBCRA.asp?Area=PNRT',null,'Oficios a transferir a BCRA'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Oficios pendientes de Confirmacion AFIP','../Procesos/OficiosBCRAEnviadosAFIP.asp?Area=PNRT',null,'Oficios sin respuesta del AFIP'],
+        ['<img src="../images/menu/edit.png"/>','Oficios confirmados por AFIP','../Procesos/OficiosBCRAConfirmadosAFIP.asp?Area=PNRT',null,'Oficios con respuesta del AFIP'],
+        ['<img src="../images/menu/edit.png"/>','Oficios con Respuesta del BCRA','../Procesos/OficiosBCRARespuestasBCRA.asp?Area=PNRT',null,'Oficios con respuesta del BCRA'],
+        _cmSplit,
+        ['<img src="../images/menu/search_text.png"/>','Ingreso de confirmacion de AFIP','../Procesos/OficiosBCRAArchivoRecepcion.asp?Area=PNRT',null,'Proceso de archivo que carga las respuesta de AFIP'],
+        ['<img src="../images/menu/search_text.png"/>','Ingreso de respuestas del BCRA','../Procesos/OficiosBCRAArchivoRespuesta.asp?Area=PNRT',null,'Proceso de archivo con respuestas BCRA'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Lotes Enviados a AFIP','../Procesos/OficiosBCRALotes.asp',null,'Lotes enviados a AFIP'],
+        ['<img src="../images/menu/edit.png"/>','Lotes Respuesta AFIP','../Procesos/OficiosBCRALotesConfirmacion.asp',null,'Lotes de respuesta de confirmación de AFIP'],
+        ['<img src="../images/menu/edit.png"/>','Lotes Respuesta BCRA','../Procesos/OficiosBCRALotesRespuesta.asp',null,'Lotes de respuesta de BCRA']
+      ]
+    ],
+    ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Radicación de Causas','#',null,'Radicación de Causas',
+      ['<img width="16px" height="16px" src="../images/menu/blank.png"/>','Radicación On Line CFSS','#',null,'',
+        ['<img src="../images/menu/edit.png"/>','Casos a Iniciar','../Procesos/CasoRadicacion.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Generación de Lote','../Procesos/RadCasos.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        ['<img src="../images/menu/edit.png"/>','Resultado del Sorteo','../Procesos/ResSorteo.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Consulta de Casos Radicados','../Procesos/ConsultaDeCasosRadicados.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        ['<img src="../images/menu/edit.png"/>','Consulta de Casos Sorteados','../Procesos/ConsultaDeResultados.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        ['<img src="../images/menu/edit.png"/>','Consulta de Casos con Error','../Procesos/ConsultaCasosConError.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Consulta de Lotes Radicados (s/Sorteo)','../Procesos/ConsultarLotesRadicados.asp?radica=CFSS',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+        ['<img src="../images/menu/edit.png"/>','Consulta de Lotes Sorteados','../Procesos/ConsultaLotesSorteados.asp?radica=CFSS',null,'Consulta de Casos Sorteados de la Camara Federal Seguridad Social'],
+        _cmSplit,
+        ['<img src="../images/menu/edit.png"/>','Ir al sitio de la Camara de Seg. Soc.','../Procesos/ConsultarSitioCFSS.asp',null,'Casos sin Radicar de la Camara Federal Seguridad Social'],
+
+      ]
+    ]
+  ],
+  [null,'Configuración','#',null,'Administracion',
+    ['<img src="../images/menu/edit.png"/>','Cache','../Main/Cache.asp',null,'Administrar Cache'],
+    ['<img src="../images/menu/edit.png"/>','Variables','../Seguridad/AbmVariable.asp',null,'Variables'],
+    ['<img src="../images/menu/edit.png"/>','Diccionario','../Seguridad/AbmDiccionario.asp',null,'Diccionario'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Database info','../Seguridad/AbmDatabaseInfo.asp',null,'Entorno'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Contadores','../Tablas/AbmContador.asp',null,'Contadores'],
+    ['<img src="../images/menu/edit.png"/>','Tipos de contador','../Tablas/AbmTipoContador.asp',null,'Tipos de contador'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Archivos','../Tablas/AbmArchivo.asp',null,'Archivos'],
+    ['<img src="../images/menu/edit.png"/>','Tipos de archivo','../Tablas/AbmTipoArchivo.asp',null,'Tipos de archivo'],
+    ['<img src="../images/menu/edit.png"/>','Tipos de formato','../Tablas/AbmTipoFormato.asp',null,'Tipos de formato'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Alertas','../Alertas/AbmAlerta.asp',null,'Alertas'],
+    ['<img src="../images/menu/edit.png"/>','Definición de Alertas','../Alertas/AbmAlertaDefinicion.asp',null,'Definición de Alertas'],
+    _cmSplit,
+    ['<img src="../images/menu/edit.png"/>','Auditoría','../Seguridad/AbmAudit.asp?permiso=tablas audit',null,'Auditoría'],
+    ['<img src="../images/menu/edit.png"/>','Reglas de auditoría','../Seguridad/AbmAuditRegla.asp',null,'Reglas de auditoría'],
+    _cmSplit,
+    ['<img src="../images/menu/language.png"/>','Tipo de selección de abogados','../Tablas/AbmConfSeleccionAbogado.asp',null,'Configuración de Selección de Abogados'],
+    ['<img src="../images/menu/language.png"/>','Jerarquia de las oficinas','../Tablas/AbmOficinaAcceso.asp',null,'Configuración de la Jerarquia de las Oficinas']
+  ],
+  _cmSplit,
+  [null,'Oficina Activa','../Tablas/SeleccionOficina.asp',null,'Selección de Oficina Activa'],
+  [null,'Salir','../Salir/Salir.asp',null,'Salir']
+];
+
+cmDraw ('mainMenuID', mainMenu, 'hbr', cmThemeOffice, 'ThemeOffice');
+
+    </script>
+    <!-- Fin Menu -->
+    <!-- Fin OpenLayout.asp -->
+
+    <table align="center" width="100%" height="75%" border="0">
+        <tr valign="bottom">
+            <td align="center">
+                <span class="version">
+                    <b>4.30.0.2</b>
+                </span>
+                <br /><br />
+                <span class="PiePagina">
+                    Copyright © 1996-2022 - Todos los derechos reservados.<br />
+                    <b>Ministerio de Trabajo, Empleo y Seguridad Social de la Nación</b><br />
+                    Sitio desarrollado por la Direcci&oacute;n de Sistemas Inform&aacute;ticos
+                </span>
+            </td>
+        </tr>
+    </table>
+</body>
+<!--
+    Esto es para que no cachee las paginas
+    VER http://support.microsoft.com/kb/222064
+-->
+<HEAD>
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+</HEAD>
+
+</html>
+<script type="text/javascript" src="../include/ayuda.js"></script>
+
+
+
+<!-- Fin CloseLayout -->
