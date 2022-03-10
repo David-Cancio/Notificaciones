@@ -1476,13 +1476,13 @@ var Options
                 <td class="ContentLeftLinks" align="right" width="98%" height="40" nowrap>
 
 
-                    &nbsp;<a href="javascript:FireEvent('Agregar')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/AltaOn.gif" align="absmiddle" border=0> Alta</a>
+                    &nbsp;<IMG src="../images/menus/AltaOff.gif" align="absmiddle" border=0><font style="COLOR: gray"> Alta</font>
 
 
-                    &nbsp;<a href="javascript:FireEvent('Eliminar')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/BajaOn.gif" align="absmiddle" border=0> Baja</a>
+                    &nbsp;<IMG src="../images/menus/BajaOff.gif" align="absmiddle" border=0><font style="COLOR: gray"> Baja</font>
 
 
-                    &nbsp;<a href="javascript:FireEvent('Modificar')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/ModificarOn.gif" align="absmiddle" border=0> Editar</a>
+                    &nbsp;<IMG src="../images/menus/ModificarOff.gif" align="absmiddle" border=0><font style="COLOR: gray"> Editar</font>
 
 
                     &nbsp;<a href="javascript:FireEvent('Consultar')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/ConsultarOn.gif" align="absmiddle" border=0> Consulta</a>
@@ -1491,7 +1491,7 @@ var Options
                     &nbsp;<a href="javascript:FireEvent('ConsultarFicha')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/FichaOn.gif" align="absmiddle" border=0> Ver Ficha</a>
 
 
-                    &nbsp;<a href="javascript:FireEvent('Exportar')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/ExportarOn.gif" align="absmiddle" border=0> Exportar</a>
+                    &nbsp;<IMG src="../images/menus/ExportarOff.gif" align="absmiddle" border=0><font style="COLOR: gray"> Exportar</font>
 
 
                     &nbsp;<a href="#" onclick="window.open('AbmCaso.asp?TipoJuicio=MULTAS PNRT&Id=' + document.Formulario.Id.value + '&amp;Modo=ConsultaFicha&amp;Imprimir=SI&amp;Tabla=Caso&amp;Objeto=MULTAS PNRT&amp;Descripcion=Caso','Ficha','height=450,width=700,menubar=1,top=0,left=10,scrollbars=yes,resizable=1');return false;" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/ImprimirOn.gif" align="absmiddle" border=0> Imprimir</a>
@@ -1524,52 +1524,52 @@ var Options
                             </td>
                             <td width="84" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
-                                    <font class="tabTextDisabled">Certificados</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Certificados</font></a>
                                 </div>
                             </td>
                             <td width="84" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
-                                    <font class="tabTextDisabled">Expedientes</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoExpedientes.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Expedientes</font></a>
                                 </div>
                             </td>
                             <td width="55" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
-                                    <font class="tabTextDisabled">Letrados</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoAbogado.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Letrados</font></a>
                                 </div>
                             </td>
                             <td width="55" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
-                                    <font class="tabTextDisabled">Partes</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoParte.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Partes</font></a>
                                 </div>
                             </td>
                             <td width="84" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
-                                    <font class="tabTextDisabled">Movimientos</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovimiento.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Movimientos</font></a>
                                 </div>
                             </td>
                             <td width="55" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
-                                    <font class="tabTextDisabled">Contable</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovContable.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Contable</font></a>
                                 </div>
                             </td>
                             <td width="84" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
-                                    <font class="tabTextDisabled">Liquidaciones</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoLiquidacion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Liquidaciones</font></a>
                                 </div>
                             </td>
                             <td width="55" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
-                                    <font class="tabTextDisabled">Pagos</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoPagos.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Pagos</font></a>
                                 </div>
                             </td>
                             <td width="55" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
-                                    <font class="tabTextDisabled">Boletas</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoBoleta.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Boletas</font></a>
                                 </div>
                             </td>
                             <td width="84" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
-                                    <font class="tabTextDisabled">Oficios BCRA</font>
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoOficioBCRA.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Oficios BCRA</font></a>
                                 </div>
                             </td>
                             <td width="800">&nbsp;</td>
@@ -1629,15 +1629,15 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>AntModo</td>
-                                                            <td></td>
+                                                            <td>Consulta</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Accion</td>
-                                                            <td>Buscar</td>
+                                                            <td>Modificar</td>
                                                         </tr>
                                                         <tr>
                                                             <td>AtEof</td>
-                                                            <td>0</td>
+                                                            <td>-1</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Observaciones</td>
@@ -1645,7 +1645,7 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>Modo</td>
-                                                            <td>Consulta</td>
+                                                            <td>Browse</td>
                                                         </tr>
                                                         <tr>
                                                             <td>FechaIngreso</td>
@@ -1665,7 +1665,7 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>Id</td>
-                                                            <td>0</td>
+                                                            <td>208548</td>
                                                         </tr>
                                                         <tr>
                                                             <td>AreaId</td>
@@ -1681,7 +1681,7 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>AntAccion</td>
-                                                            <td></td>
+                                                            <td>Buscar</td>
                                                         </tr>
                                                         <tr>
                                                             <td>PreviousTab</td>
@@ -1709,7 +1709,7 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>Pagina</td>
-                                                            <td>0</td>
+                                                            <td>1</td>
                                                         </tr>
                                                         <tr>
                                                             <td>CambiosPendientes</td>
@@ -1730,6 +1730,10 @@ var Options
                                                         <tr>
                                                             <td>FechaSentencia</td>
                                                             <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ComboPagina</td>
+                                                            <td>1</td>
                                                         </tr>
                                                         <tr>
                                                             <td>EsAbmCombo</td>
@@ -1776,6 +1780,10 @@ var Options
                                                             <td></td>
                                                         </tr>
                                                         <tr>
+                                                            <td>ComboCantFilas</td>
+                                                            <td>50</td>
+                                                        </tr>
+                                                        <tr>
                                                             <td>ExpedienteMTSS</td>
                                                             <td></td>
                                                         </tr>
@@ -1785,10 +1793,6 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>Juicios</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Buscar</td>
                                                             <td></td>
                                                         </tr>
                                                     </table>
@@ -1814,7 +1818,7 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>Modo</td>
-                                                            <td><input class="formobj" id="Modo" name="Modo" value="Browse"></td>
+                                                            <td><input class="formobj" id="Modo" name="Modo" value="Modificacion"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Id</td>
@@ -1822,19 +1826,19 @@ var Options
                                                         </tr>
                                                         <tr>
                                                             <td>AntModo</td>
-                                                            <td><input class="formobj" id="AntModo" name="AntModo" value="Consulta"></td>
+                                                            <td><input class="formobj" id="AntModo" name="AntModo" value="Browse"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Accion</td>
-                                                            <td><input class="formobj" id="Accion" name="Accion" value="Buscar"></td>
+                                                            <td><input class="formobj" id="Accion" name="Accion" value="Modificar"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>AntAccion</td>
-                                                            <td><input class="formobj" id="AntAccion" name="AntAccion" value="Buscar"></td>
+                                                            <td><input class="formobj" id="AntAccion" name="AntAccion" value="Modificar"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>AtEof</td>
-                                                            <td><input class="formobj" id="AtEof" name="AtEof" value="-1"></td>
+                                                            <td><input class="formobj" id="AtEof" name="AtEof" value="0"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Pagina</td>
@@ -1903,23 +1907,10 @@ var Options
                                     <tr>
                                         <td width="25%" align="left">
                                             <!-- MODO -->
-                                            <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Consulta</b>
+                                            <IMG src="../images/menus/Editar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Editar</b>
 
                                         </td>
                                         <td width="45%" align="center">
-                                            <div id="labelShowdivAbmForm" class="camposDestacados"
-                                                 onmouseover="this.style.cursor='pointer';imglabelShowdivAbmForm.src='../images/navegacion/expandirOn.gif';window.status='Refinar búsqueda';return true;"
-                                                 onmouseout="this.style.cursor='default';imglabelShowdivAbmForm.src='../images/navegacion/expandir.gif';window.status='';return true;"
-                                                 onclick="javascript:HideControl('labelShowdivAbmForm');ShowControl('labelHidedivAbmForm');ShowControl('divAbmForm');"><b>Refinar búsqueda</b>&nbsp;<img alt="Refinar búsqueda" src="../images/navegacion/expandir.gif" border="0" name="imglabelShowdivAbmForm" align="absmiddle">&nbsp;&nbsp;</div>
-
-
-                                            <div id="labelHidedivAbmForm" class="camposDestacados" style="display:none"
-                                                 onmouseover="this.style.cursor='pointer';imglabelHidedivAbmForm.src='../images/navegacion/contraerOn.gif';window.status='Ocultar búsqueda';return true;"
-                                                 onmouseout="this.style.cursor='default';imglabelHidedivAbmForm.src='../images/navegacion/contraer.gif';window.status='';return true;"
-                                                 onclick="javascript:ShowControl('labelShowdivAbmForm');HideControl('labelHidedivAbmForm');HideControl('divAbmForm');"><b>Ocultar búsqueda</b>&nbsp;<img alt="Ocultar búsqueda" src="../images/navegacion/contraer.gif" border="0" name="imglabelHidedivAbmForm" align="absmiddle">&nbsp;&nbsp;</div>
-
-
-
                                         </td>
                                         <td width="30%" align="right">
                                         </td>
@@ -1927,7 +1918,7 @@ var Options
                                 </table>
                                 <table border="0"><tr><td height="3px"></td></tr></table>
 
-                                <div id="divAbmForm" style="display:none">
+                                <div id="divAbmForm">
                                     <!-- TABLA TITULO -->
                                     <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
                                         <tbody>
@@ -1957,7 +1948,7 @@ var Options
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="TDatos1">
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
-                                                            <td width="10%" align="right"><b>Área</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Área</b></td>
                                                             <td width="1%"></td>
                                                             <td width="15%">
                                                                 <select id="AreaId" name="AreaId" class="formobjDisabled" contenteditable="false">
@@ -1966,7 +1957,7 @@ var Options
 
                                                             </td>
                                                             <td width="1%"></td>
-                                                            <td width="10%" align="right"><b>Tipo Juicio</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Tipo Juicio</b></td>
                                                             <td width="1%"></td>
                                                             <td width="14%">
                                                                 <select id="TipoJuicioId" name="TipoJuicioId" class="formobjDisabled" contenteditable="false">
@@ -1975,17 +1966,17 @@ var Options
 
                                                             </td>
                                                             <td width="1%"></td>
-                                                            <td width="14%" align="right"><b>Fecha Recepción</b></td>
+                                                            <td width="14%" align="right"><b><font color="red">*</font>Fecha Recepción</b></td>
                                                             <td width="1%"></td>
                                                             <td width="10%">
-                                                                <input type="text" id="FechaIngreso" name="FechaIngreso" class="formobjConsulta" maxlength="102" onkeypress="javascript: return validKeyEvent(event, 'FechaIngreso', 'DATETIME')" value="">
+                                                                <input type="text" id="FechaIngreso" name="FechaIngreso" class="formobj" maxlength="50" onkeypress="javascript: return validKeyEvent(event, 'FechaIngreso', 'DATETIME')" value="9/1/2015">
                                                             </td>
                                                             <td width="5%"></td>
                                                             <td width="8%" align="right"><font color="red"><b>N° Interno</b></font></td>
                                                             <td width="1%"></td>
                                                             <td width="6%">
                                                                 <font color="red">
-                                                                    <input type="text" id="NumeroInterno" name="NumeroInterno" class="formobjConsulta" maxlength="12" onkeypress="javascript:return validKeyEvent(event, 'NumeroInterno', 'INTEGER')" value="202010">
+                                                                    <input type="text" id="NumeroInterno" name="NumeroInterno" class="formobjDisabled" maxlength="5" onkeypress="javascript:return validKeyEvent(event, 'NumeroInterno', 'INTEGER')" contenteditable="false" READONLY TABINDEX="-1" valign="middle" value="202010">
                                                                 </font>
                                                             </td>
                                                             <td width="1%"></td>
@@ -1996,15 +1987,15 @@ var Options
                                                     <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table6">
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
-                                                            <td width="10%" align="right"><b>Carpeta</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Carpeta</b></td>
                                                             <td width="1%"></td>
                                                             <td width="10%">
-                                                                <input class="formobjConsulta" Id="Carpeta" Name="Carpeta" Value="" maxlength="50">
+                                                                <input class="formobj" Id="Carpeta" Name="Carpeta" Value="48997" maxlength="50">
                                                             </td>
                                                             <td width="1%"></td>
-                                                            <td width="7%" align="right"><b>Autos</b></td>
+                                                            <td width="7%" align="right"><b><font color="red">*</font>Autos</b></td>
                                                             <td width="1%"></td>
-                                                            <td width="68%"><input class="formobjConsulta" Id="Autos" Name="Autos" Value="">
+                                                            <td width="68%"><input class="formobj" Id="Autos" Name="Autos" Value="MINISTERIO DE TRABAJO, EMPLEO Y SEGURIDAD SOCIAL c/ GARDIEN DE SECURITE SRL S/EJECUCION FISCAL">
 
                                                             <td width="1%"></td>
                                                         </tr>
@@ -2016,20 +2007,21 @@ var Options
                                                             <td width="1%" height="30"></td>
 
 
+
                                                             <td width="10%" align="right"><b>Expte. MTSS</b></td>
                                                             <td width="1%"></td>
                                                             <td width="13%" align="right">
-                                                                <input class="formobjConsulta" Id="ExpedienteMTSS" Name="ExpedienteMTSS" Value="">
+                                                                <input class="formobj" Id="ExpedienteMTSS" Name="ExpedienteMTSS" Value="7-51-97341-2014" ReadOnly>
                                                             </td>
                                                             <td width="1%"></td>
 
 
-                                                            <td width="7%" align="right"><b>Etapa</b></td>
+                                                            <td width="7%" align="right"><b><font color="red">*</font>Etapa</b></td>
                                                             <td width="1%"></td>
                                                             <td width="25%">
-                                                                <select id="EtapaId" name="EtapaId" class="formobjConsulta" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
-                                                                    <option value="" selected> --Seleccione--</option>
-                                                                    <option value="2">02 - DEMANDA TRABA DE LITIS</option>
+                                                                <select id="EtapaId" name="EtapaId" class="formobj" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="2" selected>02 - DEMANDA TRABA DE LITIS</option>
                                                                     <option value="31">03 - CONTESTACION DE DEMANDA</option>
                                                                     <option value="29">05 - CONTESTACION DE EXCEPCION</option>
                                                                     <option value="39">06 - PEDIDO DE CADUCIDAD</option>
@@ -2046,16 +2038,26 @@ var Options
                                                                     <option value="11">31 - TERMINADO</option>
                                                                     <option value="32">32 - PAGO</option>
                                                                     <option value="28">34 - ARCHIVADO</option>
-                                                                    <option value="18">MIGRACION - No especificado en migraci&#243;n</option>
                                                                 </select>
 
                                                             </td>
                                                             <td width="1%"></td>
-                                                            <td width="12%" align="right"><b>Estado</b></td>
+                                                            <td width="12%" align="right"><b><font color="red">*</font>Estado</b></td>
                                                             <td width="1%"></td>
                                                             <td width="26%">
-                                                                <select id="EstadoId" name="EstadoId" class="formobjDisabled" contenteditable="false">
+                                                                <select id="EstadoId" name="EstadoId" class="formobj">
                                                                     <option value=""> --Seleccione--</option>
+                                                                    <option value="14" selected>ALLANAMIENTO</option>
+                                                                    <option value="262">BUSQUEDA</option>
+                                                                    <option value="170">CONTESTACI&#211;N DE EXCEPCI&#211;N</option>
+                                                                    <option value="10">DEMANDA INTERPUESTA</option>
+                                                                    <option value="95">EMBARGO PREVENTIVO-BANCO</option>
+                                                                    <option value="12">EN PLAZO P/ INICIAR DEMANDA</option>
+                                                                    <option value="19">INTIMADO DE PAGO</option>
+                                                                    <option value="20">MANDAMIENTO NEGATIVO</option>
+                                                                    <option value="201">MANDAMIENTO POSITIVO</option>
+                                                                    <option value="67">OFICIO INDAGACI&#211;N DATOS</option>
+                                                                    <option value="106">RECURSO POR PROCEDIMIENTO</option>
                                                                 </select>
 
                                                             </td>
@@ -2067,12 +2069,12 @@ var Options
                                                     <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table7">
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
-                                                            <td width="10%" align="right"><b>Tipo Oficina</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Tipo Oficina</b></td>
                                                             <td width="1%"></td>
 
                                                             <td width="38%">
-                                                                <select id="TipoOficinaId" name="TipoOficinaId" class="formobjConsulta" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="TipoOficinaId" name="TipoOficinaId" class="formobj" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
+                                                                    <option value=""> --Seleccione--</option>
                                                                     <option value="8">DR-AUSTRAL - DIRECCION REGIONAL AUSTRAL</option>
                                                                     <option value="5">DR-CENTRO - DIRECCION REGIONAL CENTRO</option>
                                                                     <option value="6">DR-CONURBANO BONAERENSE - DIRECCION REGIONAL CONURBANO BONAERENSE</option>
@@ -2081,18 +2083,19 @@ var Options
                                                                     <option value="2">DR-NOA - DIRECCION REGIONAL NOA</option>
                                                                     <option value="7">DR-PAMPEANA - DIRECCION REGIONAL PAMPEANA</option>
                                                                     <option value="3">PROCURACION - PROCURACION DEL TESORO DE LA NACION</option>
-                                                                    <option value="1">SEDE CENTRAL - Agencia Territorial CABA</option>
+                                                                    <option value="1" selected>SEDE CENTRAL - Agencia Territorial CABA</option>
                                                                 </select>
 
                                                             </td>
 
                                                             <td width="1%"></td>
-                                                            <td width="8%" align="right"><b>Oficina</b></td>
+                                                            <td width="8%" align="right"><b><font color="red">*</font>Oficina</b></td>
                                                             <td width="1%"></td>
 
-                                                            <td width="38%">
-                                                                <select id="OficinaId" name="OficinaId" class="formobjDisabled" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');" contenteditable="false">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                            <td width="39%">
+                                                                <select id="OficinaId" name="OficinaId" class="formobj" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="1" selected>DEPARTAMENTO EJECUCION PNRT - Departamente de Ejecuci&#243;n del PNRT</option>
                                                                 </select>
 
                                                             </td>
@@ -2105,24 +2108,24 @@ var Options
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table5">
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
-                                                            <td width="10%" align="right"><b>Tipo de Caso</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Tipo de Caso</b></td>
                                                             <td width="1%"></td>
                                                             <td width="38%">
-                                                                <select id="TipoCasoId" name="TipoCasoId" class="formobjConsulta">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="TipoCasoId" name="TipoCasoId" class="formobj">
+                                                                    <option value=""> --Seleccione--</option>
                                                                     <option value="129">CONCURSO PREVENTIVO</option>
                                                                     <option value="57">EJECUCI&#211;N DE MULTA</option>
-                                                                    <option value="59">EJECUCI&#211;N FISCAL</option>
+                                                                    <option value="59" selected>EJECUCI&#211;N FISCAL</option>
                                                                 </select>
 
                                                             </td>
                                                             <td width="1%"></td>
-                                                            <td width="8%" align="right"><b>Materia</b></td>
+                                                            <td width="8%" align="right"><b><font color="red">*</font>Materia</b></td>
                                                             <td width="1%"></td>
                                                             <td width="39%">
-                                                                <select id="MateriaId" name="MateriaId" class="formobjConsulta">
-                                                                    <option value="" selected> --Seleccione--</option>
-                                                                    <option value="33">EJECUCI&#211;N FISCAL</option>
+                                                                <select id="MateriaId" name="MateriaId" class="formobj">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="33" selected>EJECUCI&#211;N FISCAL</option>
                                                                     <option value="39">JEFES Y JEFAS DE HOGAR - AMPARO DCTO. 565/02</option>
                                                                 </select>
 
@@ -2135,13 +2138,13 @@ var Options
                                                     <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table9">
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
-                                                            <td width="10%" align="right"><b>Rol Procesal</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Rol Procesal</b></td>
                                                             <td width="1%"></td>
                                                             <td width="38%">
-                                                                <select id="RolProcesalId" name="RolProcesalId" class="formobjConsulta">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="RolProcesalId" name="RolProcesalId" class="formobj">
+                                                                    <option value=""> --Seleccione--</option>
                                                                     <option value="6">3&#176; INTERESADO DEMANDADO</option>
-                                                                    <option value="1">ACTOR</option>
+                                                                    <option value="1" selected>ACTOR</option>
                                                                     <option value="3">CO-DEMANDADO</option>
                                                                     <option value="2">DEMANDADO</option>
                                                                     <option value="4">DENUNCIANTE</option>
@@ -2157,25 +2160,21 @@ var Options
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table16">
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
-                                                            <td width="10%" align="right"><b>Activo</b></td>
+                                                            <td width="10%" align="right"><b><font color="red">*</font>Activo</b></td>
                                                             <td width="1%"></td>
 
                                                             <td width="6%">
-                                                                <select id="Activo" name="Activo" class="formobjConsulta" width="100%">
-                                                                    <option value="" selected>--Seleccione--</option>
-                                                                    <option value="0">No</option>
-                                                                    <option value="1">S&#237;</option>
+                                                                <select id="Activo" name="Activo" class="formobjDisabled" width="100%" contenteditable="false">
+                                                                    <option value="0" selected>No</option>
                                                                 </select>
 
                                                             </td>
                                                             <td width="9%"></td>
-                                                            <td width="8%" align="right"><b>Archivado</b></td>
+                                                            <td width="8%" align="right"><b><font color="red">*</font>Archivado</b></td>
                                                             <td width="1%"></td>
                                                             <td width="6%">
-                                                                <select id="Archivado" name="Archivado" class="formobjConsulta" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
-                                                                    <option value="" selected>--Seleccione--</option>
-                                                                    <option value="0">No</option>
-                                                                    <option value="1">S&#237;</option>
+                                                                <select id="Archivado" name="Archivado" class="formobjDisabled" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');" contenteditable="false">
+                                                                    <option value="0" selected>No</option>
                                                                 </select>
 
                                                             </td>
@@ -2204,13 +2203,13 @@ var Options
                                                             <td width="10%" align="right"><b>Fecha Inicio</b></td>
                                                             <td width="1%"></td>
                                                             <td width="10%">
-                                                                <input type="text" id="FechaInicio" name="FechaInicio" class="formobjConsulta" maxlength="102" onkeypress="javascript: return validKeyEvent(event, 'FechaInicio', 'DATETIME')" value="">
+                                                                <input type="text" id="FechaInicio" name="FechaInicio" class="formobj" maxlength="50" onkeypress="javascript: return validKeyEvent(event, 'FechaInicio', 'DATETIME')" value="8/3/2022">
                                                             </td>
                                                             <td width="25%"><span class="HelpText">&nbsp;Fecha de promoción de la demanda</span></td>
                                                             <td width="12%" align="right"><b>Expte. Judicial</b></td>
                                                             <td width="1%"></td>
                                                             <td width="13%" align="right">
-                                                                <input class="formobjConsulta" Id="ExpedienteJudicial" Name="ExpedienteJudicial" Value="" maxlength="50">
+                                                                <input class="formobj" Id="ExpedienteJudicial" Name="ExpedienteJudicial" Value="123/2017" maxlength="50">
                                                             </td>
                                                             <td width="27%"></td>
                                                         </tr>
@@ -2222,11 +2221,11 @@ var Options
                                                             <td width="10%" align="right"><b>Jurisdicción</b></td>
                                                             <td width="1%"></td>
                                                             <td width="38%">
-                                                                <select id="JurisdiccionId" name="JurisdiccionId" class="formobjConsulta" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="JurisdiccionId" name="JurisdiccionId" class="formobj" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
+                                                                    <option value=""> --Seleccione--</option>
                                                                     <option value="19">NACIONAL(CAPITAL FEDERAL)</option>
                                                                     <option value="2">BAHIA BLANCA</option>
-                                                                    <option value="3">CIUDAD AUTONOMA DE BUENOS AIRES</option>
+                                                                    <option value="3" selected>CIUDAD AUTONOMA DE BUENOS AIRES</option>
                                                                     <option value="4">CORDOBA</option>
                                                                     <option value="5">CORRIENTES</option>
                                                                     <option value="6">COMODORO RIVADAVIA</option>
@@ -2295,8 +2294,9 @@ var Options
                                                             <td width="8%" align="right"><b>Fuero</b></td>
                                                             <td width="1%"></td>
                                                             <td width="39%">
-                                                                <select id="FueroId" name="FueroId" class="formobjDisabled" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');" contenteditable="false">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="FueroId" name="FueroId" class="formobj" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="11" selected>FEDERAL-SEGURIDAD SOCIAL</option>
                                                                 </select>
 
                                                             </td>
@@ -2311,8 +2311,22 @@ var Options
                                                             <td width="10%" align="right"><b>Juzgado</b></td>
                                                             <td width="1%"></td>
                                                             <td width="38%">
-                                                                <select id="JuzgadoId" name="JuzgadoId" class="formobjDisabled" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');" contenteditable="false">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="JuzgadoId" name="JuzgadoId" class="formobj" onchange="javascript:savePageState(this,null);FireEvent('Refrescar');">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="484">CAM. NAC.DE APEL.DE LA SEG. SOCIAL SALA I</option>
+                                                                    <option value="485">CAM. NAC.DE APEL.DE LA SEG. SOCIAL SALA II</option>
+                                                                    <option value="486">CAM. NAC.DE APEL.DE LA SEG. SOCIAL SALA III</option>
+                                                                    <option value="563">CORTE SUPREMA DE JUSTICIA DE LA NACION</option>
+                                                                    <option value="1232">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 1</option>
+                                                                    <option value="1233">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 2</option>
+                                                                    <option value="1234">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 3</option>
+                                                                    <option value="1235">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 4</option>
+                                                                    <option value="1236">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 5</option>
+                                                                    <option value="1237">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 6</option>
+                                                                    <option value="1238">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 7</option>
+                                                                    <option value="1239">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 8</option>
+                                                                    <option value="1240">JUZ. FEDERAL DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 9</option>
+                                                                    <option value="1241" selected>JUZ. FED. DE 1&#176; INST. DE LA SEG. SOCIAL N&#186; 10</option>
                                                                 </select>
 
                                                             </td>
@@ -2320,8 +2334,11 @@ var Options
                                                             <td width="8%" align="right"><b>Secretaría</b></td>
                                                             <td width="1%"></td>
                                                             <td width="39%">
-                                                                <select id="SecretariaId" name="SecretariaId" class="formobjDisabled" contenteditable="false">
-                                                                    <option value="" selected> --Seleccione--</option>
+                                                                <select id="SecretariaId" name="SecretariaId" class="formobj">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="1497">A cargo de la Dra. POSTOLOVKA, Mar&#237;a Emilia</option>
+                                                                    <option value="3052">Secretar&#237;a N&#176; 1 a cargo del Dr. ZENOBI, Germ&#225;n</option>
+                                                                    <option value="3475" selected>Secretar&#237;a N&#176; 2 a cargo del Dr. Brea, Alejandro</option>
                                                                 </select>
 
                                                             </td>
@@ -2338,151 +2355,35 @@ var Options
                                                             <td width="1%"></td>
 
                                                             <td width="38%">
-                                                                <select id="AbogadoId" name="AbogadoId" class="formobjConsulta">
-                                                                    <option value="" selected> --Seleccione--</option>
-                                                                    <option value="186">Abran, Diego Carlos</option>
-                                                                    <option value="264">Adaro, Javier Jose</option>
-                                                                    <option value="246">Aguirre, Mar&#237;a Isabel</option>
-                                                                    <option value="296">Aguirre, Patricia del Carmen</option>
-                                                                    <option value="214">Alfonso, Noelia Isabel</option>
-                                                                    <option value="233">Alvarado, Johanna</option>
-                                                                    <option value="115">Andrade, Rosa Mandina</option>
-                                                                    <option value="248">Arrudi, Lisandro Adrian</option>
-                                                                    <option value="272">Azar, Lucas Daniel</option>
-                                                                    <option value="275">Azconzabal, Lorna Claudia</option>
-                                                                    <option value="226">Azcuaga, Dario C&#233;sar</option>
-                                                                    <option value="224">Barrera, Roxana Esther</option>
-                                                                    <option value="215">Bedini, Betiana Raquel</option>
-                                                                    <option value="111">Beierbach, Claudia Fabiana</option>
-                                                                    <option value="280">Bello, Carolina Ximena</option>
-                                                                    <option value="182">Bianchini, Ignacio Federico</option>
-                                                                    <option value="259">Bilbao, Bel&#233;n</option>
-                                                                    <option value="266">Bossi, Laureano</option>
-                                                                    <option value="258">Bucci, Adrian Alejandro</option>
-                                                                    <option value="297">Bustos Jaime, Ana Paula</option>
-                                                                    <option value="166">Cabrera, Patricia Andrea</option>
-                                                                    <option value="44">C&#225;ceres Moreno, Javier</option>
-                                                                    <option value="177">Cantero, Anal&#237;a Mabel</option>
-                                                                    <option value="140">Caprio, Mar&#237;a Soledad</option>
-                                                                    <option value="103">Carabajal, Julio Jos&#233;</option>
-                                                                    <option value="98">Carest&#237;a Esteban, Mar&#237;a Constanza</option>
-                                                                    <option value="193">Carnaval, Diego Sebasti&#225;n</option>
-                                                                    <option value="218">Caruso, Anal&#237;a Ver&#243;nica</option>
-                                                                    <option value="243">Casajuana, Mar&#237;a Cecilia</option>
-                                                                    <option value="209">Casetti, Ricardo Guillermo</option>
-                                                                    <option value="45">Castro Blanco, Mar&#237;a Florencia</option>
-                                                                    <option value="109">Castro, Natalia Lorena</option>
-                                                                    <option value="22">Cerutti, Miguel Eduardo</option>
+                                                                <select id="AbogadoResponsableId" name="AbogadoResponsableId" class="formobj">
+                                                                    <option value=""> --Seleccione--</option>
+                                                                    <option value="183">Aguero Lavigne, Mar&#237;a Florencia</option>
+                                                                    <option value="6">Bregazzi, Octavio</option>
+                                                                    <option value="4">Briggs, Jorgelina Ariadna</option>
+                                                                    <option value="294">Carlos, Roxana Mariel</option>
                                                                     <option value="236">Chas, Cecilia Adelfa</option>
-                                                                    <option value="273">Chaves Mariana Alejandra</option>
-                                                                    <option value="164">Coda, Santiago Luis</option>
-                                                                    <option value="262">Contartese, Mar&#237;a Laura</option>
                                                                     <option value="293">Cosentino, Mayra Rafaela</option>
-                                                                    <option value="199">Cuendias, German Andres</option>
-                                                                    <option value="81">D agnillo, Sergio Carlos</option>
-                                                                    <option value="94">da Ponte Guerreiro, Guillermo</option>
-                                                                    <option value="181">De Giovannini, Horacio Atilio</option>
-                                                                    <option value="251">Debernardi, Erica</option>
-                                                                    <option value="144">Declerk, Rosana Gabriela</option>
-                                                                    <option value="174">Delucchi, Graciela Vanina</option>
-                                                                    <option value="229">Destefano, Iv&#225;n Gabriel</option>
-                                                                    <option value="99">Diego, Mar&#237;a del Valle</option>
+                                                                    <option value="239">Cruz Devoto, Gabriela Susana</option>
                                                                     <option value="1">Do Campo, M&#243;nica</option>
-                                                                    <option value="227">Eiras, Pablo Alberto</option>
-                                                                    <option value="244">Favorito, Constanza</option>
-                                                                    <option value="86">Fern&#225;ndez, Andrea Valeria</option>
-                                                                    <option value="250">Fernandez, Cinthya Soledad</option>
-                                                                    <option value="292">Ferreira, Jorge Alberto Segundo</option>
-                                                                    <option value="260">Festa, Alexis</option>
-                                                                    <option value="263">Forastiero Lachalde, Patricio</option>
-                                                                    <option value="286">Forte, Valeria Soledad</option>
-                                                                    <option value="206">Frias, Gustavo Ernesto</option>
+                                                                    <option value="3">Falcone Mena, Isabel</option>
                                                                     <option value="77">Fusco, Christian Sebastian</option>
-                                                                    <option value="178">Garcia, Jose Alberto</option>
-                                                                    <option value="189">Gauna, Julio C&#233;sar</option>
-                                                                    <option value="148">Germani, Gabriela Beatriz</option>
+                                                                    <option value="78">Gandman, Osvaldo H&#233;ctor</option>
                                                                     <option value="101">Giglio, Constanza Gabriela</option>
-                                                                    <option value="84">G&#243;mez San Pablo, Karina Daniela</option>
                                                                     <option value="149">Guadagnino, Andrea Fabiana</option>
-                                                                    <option value="114">Guastavino, Andr&#233;s</option>
-                                                                    <option value="198">Gudi&#241;o, Lucas Matias</option>
-                                                                    <option value="267">Gutierrez Verdolino, Rosana</option>
-                                                                    <option value="256">Heredia, Sergio Gabriel</option>
-                                                                    <option value="202">Herrera, Rodrigo Oscar</option>
-                                                                    <option value="142">Iba&#241;ez, Estela Karina</option>
-                                                                    <option value="217">Iraeta, Daniela</option>
-                                                                    <option value="74">Juri, Amina Cecilia</option>
-                                                                    <option value="153">Kapetinich, Mariela Beatriz</option>
-                                                                    <option value="197">Lamarque, Marcela Mariel</option>
-                                                                    <option value="165">Lavarra, Pablo Leandro</option>
-                                                                    <option value="60">L&#243;pez, C&#233;sar Augusto</option>
-                                                                    <option value="253">Lopez, Claudia</option>
-                                                                    <option value="175">LORENTE, Adriana Beatriz</option>
-                                                                    <option value="187">Lozano Bosch, Mirna Valeria</option>
-                                                                    <option value="161">Maciel, Mariano</option>
-                                                                    <option value="252">Macovaz, Debora Maria</option>
-                                                                    <option value="231">Manes, Andr&#233;s</option>
-                                                                    <option value="269">Manfredi, Lorena Betiana</option>
-                                                                    <option value="268">Manfredi, Natalia</option>
-                                                                    <option value="207">Mangialavori, Pablo</option>
-                                                                    <option value="285">Martinez, Damian Alberto</option>
-                                                                    <option value="210">Martinez, Natalia Anabella</option>
-                                                                    <option value="281">Martinoli, Marianela</option>
-                                                                    <option value="18">Mattioni, Mario Roberto</option>
-                                                                    <option value="242">Medina, Ernesto Javier</option>
+                                                                    <option value="133">Guazzetti, Mirta Mar&#237;a de Luj&#225;n</option>
+                                                                    <option value="276">Guerscovich, Adriana Judith</option>
+                                                                    <option value="7">Lambardi, Ra&#250;l Horacio</option>
+                                                                    <option value="242" selected>Medina, Ernesto Javier</option>
                                                                     <option value="76">Meli, Antonio Matias</option>
-                                                                    <option value="168">Mencia, Susana Ines</option>
-                                                                    <option value="120">Mendez, Mar&#237;a Florencia</option>
-                                                                    <option value="278">Miguel, Jos&#233; Ismael</option>
-                                                                    <option value="184">Miranda Calder&#243;n, Juan Pablo</option>
-                                                                    <option value="208">Molina, Paola Lucrecia</option>
                                                                     <option value="90">Monteforte, Eliana</option>
-                                                                    <option value="79">Montoya, Enrique Ignacio del Coraz&#243;n de Jes&#250;s</option>
-                                                                    <option value="279">Monz&#243;n, Maximiliano Sebasti&#225;n</option>
-                                                                    <option value="163">MORENO FRANCK, Pedro Jose</option>
-                                                                    <option value="191">Moyano, Mat&#237;as</option>
-                                                                    <option value="100">Navarro, Mar&#237;a Alejandra</option>
                                                                     <option value="277">Necvetailenko, Natalia</option>
-                                                                    <option value="113">Nykotyszak, Iv&#225;n Adolfo</option>
-                                                                    <option value="223">Ocampo, Alicia Claudia</option>
-                                                                    <option value="222">Olmedo, Flavia Natalia</option>
-                                                                    <option value="195">Ovejero, Lucas Germ&#225;n</option>
-                                                                    <option value="141">Oviedo, Ramon Osvaldo</option>
-                                                                    <option value="240">PANSERI, Ignacio Alejandro</option>
-                                                                    <option value="289">Pelinski, Shuliano Ezequiel</option>
-                                                                    <option value="241">Pellerano, Federico</option>
                                                                     <option value="172">Penas, Maria Fernanda</option>
-                                                                    <option value="230">Penno, Gabriela Fernanda</option>
-                                                                    <option value="23">Perez Hualde, Miguel</option>
-                                                                    <option value="157">PEREZ, Leonardo Heriberto Horacio</option>
-                                                                    <option value="265">Pierini, Ramiro Alejandro</option>
-                                                                    <option value="232">Pissinis, Jorgelina Silvia</option>
-                                                                    <option value="162">Porfiri, Lucas</option>
-                                                                    <option value="282">Poteraychke, Mariela Lorena</option>
-                                                                    <option value="88">Prieri, Silvana Leandra</option>
-                                                                    <option value="155">Puygros, Maria Belen</option>
-                                                                    <option value="216">Rocchietti, Ra&#250;l Alberto</option>
-                                                                    <option value="34">Rodaro, Melina Daniela</option>
-                                                                    <option value="200">Rodriguez Frank, Julio Damian</option>
-                                                                    <option value="158">ROSIELLO, Luis Antonio</option>
-                                                                    <option value="254">Rubio, Anah&#237;</option>
                                                                     <option value="91">Ruiz, Fernando C&#233;sar</option>
-                                                                    <option value="211">Sanchez, Adriana Itat&#237;</option>
-                                                                    <option value="194">SANTANDER, Maria Soledad</option>
-                                                                    <option value="139">Satalia Mendez, Guillermo Agust&#237;n</option>
-                                                                    <option value="147">Schiaffino, Mar&#237;a Silvina</option>
-                                                                    <option value="234">Silva, Vanina Adriana</option>
+                                                                    <option value="92">Silveira, Esther Marina</option>
                                                                     <option value="154">Sonzogno, Jorgelina</option>
-                                                                    <option value="270">Soricillo, Federico Hugo</option>
-                                                                    <option value="150">Suarez, Leandro Alfredo</option>
-                                                                    <option value="257">Theaux, C&#233;sar Roberto</option>
-                                                                    <option value="171">Tocci, Maria Gabriela</option>
-                                                                    <option value="225">Torressi, Laura Graciela</option>
-                                                                    <option value="104">Valdez, Hector Walter</option>
-                                                                    <option value="261">Valente, Carlos</option>
-                                                                    <option value="38">Varela Carlomagno, Mar&#237;a Ver&#243;nica</option>
-                                                                    <option value="291">Wall, Alejandro Javier</option>
-                                                                    <option value="192">Zarlenga, Bruna Ver&#243;nica</option>
+                                                                    <option value="8">Torres, Silvina</option>
+                                                                    <option value="93">Viana, Laura Irene</option>
+                                                                    <option value="89">Waimberg, Guido</option>
                                                                 </select>
 
                                                             </td>
@@ -2498,7 +2399,7 @@ var Options
                                                             <td width="10%" align="right"><b>Monto Inicial</b></td>
                                                             <td width="1%"></td>
                                                             <td width="13%" align="right">
-                                                                <input type="text" id="TotalInicialDemandado" name="TotalInicialDemandado" class="formobjConsulta" style="text-align:Right" onkeypress="javascript: return validKeyEvent(event, 'TotalInicialDemandado', 'DECIMAL')" value="">
+                                                                <input type="text" id="TotalInicialDemandado" name="TotalInicialDemandado" class="formobj" style="text-align:right" onkeypress="javascript: return validKeyEvent(event, 'TotalInicialDemandado', 'DECIMAL')" value="112406.00">
                                                             </td>
 
 
@@ -2506,14 +2407,14 @@ var Options
                                                             <td width="20%" align="right"><b>Monto Interés Provisorio</b></td>
                                                             <td width="1%"></td>
                                                             <td width="13%" align="right">
-                                                                <input type="text" id="TotalInicialInteres" name="TotalInicialInteres" class="formobjConsulta" style="text-align:Right" onkeypress="javascript: return validKeyEvent(event, 'TotalInicialInteres', 'DECIMAL')" value="">
+                                                                <input type="text" id="TotalInicialInteres" name="TotalInicialInteres" class="formobj" style="text-align:right" onkeypress="javascript: return validKeyEvent(event, 'TotalInicialInteres', 'DECIMAL')" value="16860.90">
                                                             </td>
                                                             <td width="1%"></td>
 
                                                             <td width="23%" align="right"><b>Fecha Intimación de Pago</b></td>
                                                             <td width="1%"></td>
                                                             <td width="10%" align="right">
-                                                                <input type="text" id="FechaIntimacionPago" name="FechaIntimacionPago" class="formobjConsulta" maxlength="102" onkeypress="javascript: return validKeyEvent(event, 'FechaIntimacionPago', 'DATETIME')" value="">
+                                                                <input type="text" id="FechaIntimacionPago" name="FechaIntimacionPago" class="formobj" maxlength="50" onkeypress="javascript: return validKeyEvent(event, 'FechaIntimacionPago', 'DATETIME')" value="">
                                                             </td>
                                                             <td width="1%"></td>
 
@@ -2532,13 +2433,13 @@ var Options
                                                             <td width="10%" align="right"><b>Fecha Sentencia</b></td>
                                                             <td width="1%"></td>
                                                             <td width="10%" align="right">
-                                                                <input type="text" id="FechaSentencia" name="FechaSentencia" class="formobjConsulta" maxlength="102" onkeypress="javascript: return validKeyEvent(event, 'FechaSentencia', 'DATETIME')" value="">
+                                                                <input type="text" id="FechaSentencia" name="FechaSentencia" class="formobj" maxlength="50" onkeypress="javascript: return validKeyEvent(event, 'FechaSentencia', 'DATETIME')" value="">
                                                             </td>
                                                             <td width="5%"></td>
                                                             <td width="23%" align="right"><b>Fecha Notificación Sentencia</b></td>
                                                             <td width="1%"></td>
                                                             <td width="10%" align="right">
-                                                                <input type="text" id="FechaNotificacion" name="FechaNotificacion" class="formobjConsulta" maxlength="102" onkeypress="javascript: return validKeyEvent(event, 'FechaNotificacion', 'DATETIME')" value="">
+                                                                <input type="text" id="FechaNotificacion" name="FechaNotificacion" class="formobj" maxlength="50" onkeypress="javascript: return validKeyEvent(event, 'FechaNotificacion', 'DATETIME')" value="">
                                                             </td>
                                                             <td width="39%"></td>
                                                         </tr>
@@ -2601,9 +2502,7 @@ var Options
                                                                             <td width="1%" height="30"></td>
                                                                             <td width="10%" align="right"><b>Resuelve</b>&nbsp;</td>
                                                                             <td width="1%"></td>
-                                                                            <td width="87%" align="right">
-                                                                                <input class="formobjConsulta" Id="Resuelve" Name="Resuelve" Value="">
-                                                                            </td>
+                                                                            <td width="87%" align="right"><textarea style="width:100%;height:98%" class="formobj" Id="Resuelve" Name="Resuelve"></textarea></td>
                                                                             <td width="1%"></td>
                                                                         </tr>
                                                                         <tr><td height="3" colspan="5"></td></tr>
@@ -2616,9 +2515,7 @@ var Options
                                                                             <td width="1%" height="30"></td>
                                                                             <td width="10%" align="right"><b>Objeto</b></td>
                                                                             <td width="1%"></td>
-                                                                            <td width="87%" align="right">
-                                                                                <input class="formobjConsulta" Id="Objeto" Name="Objeto" Value="">
-                                                                            </td>
+                                                                            <td width="87%" align="right"><textarea style="width:100%;height:98%" class="formobj" Id="Objeto" Name="Objeto"></textarea></td>
                                                                             <td width="1%"></td>
                                                                         </tr>
                                                                         <tr><td height="3" colspan="5"></td></tr>
@@ -2631,9 +2528,7 @@ var Options
                                                                             <td width="1%" height="30"></td>
                                                                             <td width="10%" align="right"><b>Juicios</b></td>
                                                                             <td width="1%"></td>
-                                                                            <td width="87%" align="right">
-                                                                                <input class="formobjConsulta" Id="Juicios" Name="Juicios" Value="">
-                                                                            </td>
+                                                                            <td width="87%" align="right"><textarea style="width:100%;height:98%" class="formobj" Id="Juicios" Name="Juicios"></textarea></td>
                                                                             <td width="1%"></td>
                                                                         </tr>
                                                                         <tr><td height="3" colspan="5"></td></tr>
@@ -2646,9 +2541,7 @@ var Options
                                                                             <td height="30" width="1%"></td>
                                                                             <td width="10%" align="right"><b>Observaciones</b>&nbsp;</td>
                                                                             <td width="1%"></td>
-                                                                            <td width="87%" align="right">
-                                                                                <input class="formobjConsulta" Id="Observaciones" Name="Observaciones" Value="">
-                                                                            </td>
+                                                                            <td width="87%" align="right"><textarea style="width:100%;height:98%" class="formobj" Id="Observaciones" Name="Observaciones"></textarea></td>
                                                                             <td width="1%"></td>
                                                                         </tr>
                                                                         <tr><td height="3" colspan="5"></td></tr>
@@ -2668,7 +2561,7 @@ var Options
                                     <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
                                         <tr>
                                             <td align="right" width="100%">
-                                                <button name="Buscar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="b" onclick="javascript:FireEvent('Buscar')"><u>B</u>uscar</button>
+                                                <button name="Grabar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="javascript:FireEvent('Grabar')"><u>G</u>rabar</button>
                                                 &nbsp;
                                                 <button name="Cancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="c" onclick="javascript:FireEvent('Cancelar')"><u>C</u>ancelar</button>
                                             </td>
@@ -2678,137 +2571,6 @@ var Options
                                     <br>
                                 </div>
                                 <!-- FIN divAbmForm -->
-                                <!-- Titulos resultado -->
-                                <table class="tablaEncabezadoTitulos" cellSpacing="0" cellPadding="0" width="98%" align="center" border="0" ID="TTitulosGrilla">
-                                    <tbody>
-                                        <tr>
-                                            <td width="1%" height="22"></td>
-                                            <!--td width="10%"><b></b></td-->
-                                            <td width="5%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1" onclick="javascript:Ordenar('NumeroInterno');return false;">N&#176; Int.+</a></b></td>
-                                            <td width="1%"></td>
-                                            <td width="4%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1" onclick="javascript:Ordenar('Carpeta');return false;">Carpeta+</a></b></td>
-                                            <td width="1%"></td>
-                                            <td width="12%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1" onclick="javascript:Ordenar('ExpedienteMTSS');return false;">N&#176; MTSS+</a></b></td>
-                                            <td width="1%"></td>
-                                            <td width="12%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1" onclick="javascript:Ordenar('ExpedienteJudicial');return false;">N&#176; Judicial+</a></b></td>
-                                            <td width="1%"></td>
-                                            <td width="51%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1" onclick="javascript:Ordenar('Autos');return false;">Autos+</a></b></td>
-                                            <td width="1%"></td>
-                                            <td width="10%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1" onclick="javascript:Ordenar('TotalInicialDemandado');return false;">Importe Nominal+</a></b></td>
-                                            <td width="13%"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <!-- /Titulos resultado -->
-                                <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
-                                    <tbody>
-                                        <tr>
-                                            <td vAlign="top" align="middle" width="100%">
-                                                <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'208548');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('208548');FireEvent('Modificar');" width="100%" cellpadding="0" cellspacing="0">
-                                                    <tbody>
-
-                                                        <!-- Item resultado -->
-                                                        <tr class="campos">
-                                                            <td width="1%" height="22"></td>
-                                                            <!--td width="10%">
-                                                            </td-->
-                                                            <td width="1%"></td>
-                                                            <td width="5%">
-                                                                <span style="font-weight: bold; color: red;">202010</span>
-                                                            </td>
-                                                            <td width="4%">48997</td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%">7-51-97341-2014</td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%">123/2017</td>
-                                                            <td width="1%"></td>
-                                                            <td width="51%">MINISTERIO DE TRABAJO, EMPLEO Y SEGURIDAD SOCIAL c/ GARDIEN DE SECURITE SRL S/EJECUCION FISCAL</td>
-                                                            <td width="1%"></td>
-                                                            <td width="8%" align="right">112406.00</td>
-                                                            <td width="3%"></td>
-                                                        </tr>
-                                                        <!-- /Item resultado -->
-                                                    </tbody>
-                                                </table>
-                                                <!-- Barra de Navegación -->
-                                                <!-- Linea de Separación -->
-                                                <table cellSpacing="0" cellPadding="0" width="100%" border="0" bgcolor="#339900">
-                                                    <tr>
-                                                        <td height="1"></td>
-                                                    </tr>
-                                                </table>
-                                                <!-- Fin Linea de Separación -->
-
-                                                <table class="tablaAbmImPar" cellSpacing="0" cellPadding="0" width="100%" border="0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td noWrap width="15%" height="25">
-                                                                <!-- Combo de navegación de páginas -->
-                                                                <font class="Campos">&nbsp;Pag: </font>
-                                                                <select class="Campos" onchange="javascript:IrComboPagina(this)" Id="ComboPagina" name="ComboPagina">
-                                                                    <option value="1" selected>1</option>
-                                                                </select>
-                                                                <!-- Fin Combo de navegación de páginas -->
-
-                                                            </td>
-                                                            <td noWrap width="20%">
-                                                                <!-- Combo de cantidad de filas a mostrar -->
-                                                                <font class="Campos">&nbsp;Mostrar: </font>
-                                                                <select class="Campos" onchange="javascript:CambiarCantFilas(this)" Id="ComboCantFilas" name="ComboCantFilas">
-                                                                    <option value="15">de a 15</option>
-                                                                    <option value="30">de a 30</option>
-                                                                    <option value="50" selected>de a 50</option>
-                                                                    <option value="100">de a 100</option>
-                                                                    <option value="500">de a 500</option>
-                                                                </select>
-                                                                <!-- Fin Combo de cantidad de filas a mostrar -->
-
-                                                            </td>
-                                                            <td noWrap align="center" width="35%">
-
-                                                                <!-- Botones de Navegación -->
-                                                                <!-- Linea de Separación -->
-                                                                <img height="25" src="../Images/Navegacion/Line.gif" width="12"><!-- MasAtras - Ir 10 páginas atrás --><a tabindex="-1"
-                                                                                                                                                                          onmouseover="this.style.cursor='pointer';MasAtras.src='../Images/Navegacion/MasAtrasOn.gif';window.status='Ir 10 páginas atrás';return true"
-                                                                                                                                                                          onmouseout="this.style.cursor='default';MasAtras.src='../Images/Navegacion/MasAtras.gif';window.status='';return true"
-                                                                                                                                                                          onclick="javascript:IrPagina(1)"
-                                                                                                                                                                          onkeypress="if (event.keyCode==13 || event.keyCode==32 ) {IrPagina(1);}"><img alt="Ir 10 páginas atrás" src="../Images/Navegacion/MasAtras.gif" border="0" name="MasAtras"></a><!-- Atras - Ir 1 página atras --><a tabindex="-1"
-                                                                                                                                                                                                                                                                                                                                                                                              onmouseover="this.style.cursor='pointer';Atras.src='../Images/Navegacion/AtrasOn.gif';window.status='Ir 1 página atras';return true"
-                                                                                                                                                                                                                                                                                                                                                                                              onmouseout="this.style.cursor='default';Atras.src='../Images/Navegacion/Atras.gif';window.status='';return true"
-                                                                                                                                                                                                                                                                                                                                                                                              onclick="javascript:IrPagina(1)"
-                                                                                                                                                                                                                                                                                                                                                                                              onkeypress="if (event.keyCode==13 || event.keyCode==32 ) {IrPagina(1);}"><img alt="Ir 1 página atras" src="../Images/Navegacion/Atras.gif" border="0" name="Atras"></a><!-- Adelante - Ir 1 página adelante --><a tabindex="-1"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onmouseover="this.style.cursor='pointer';Adelante.src='../Images/Navegacion/AdelanteOn.gif';window.status='Ir 1 página adelante';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onmouseout="this.style.cursor='default';Adelante.src='../Images/Navegacion/Adelante.gif';window.status='';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onclick="javascript:IrPagina(2)"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onkeypress="if (event.keyCode==13 || event.keyCode==32 ) {IrPagina(2);}"><img alt="Ir 1 página adelante" src="../Images/Navegacion/Adelante.gif" border="0" name="Adelante"></a><!-- MasAdelante - Ir 10 páginas adelante --><a tabindex="-1"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onmouseover="this.style.cursor='pointer';MasAdelante.src='../Images/Navegacion/MasAdelanteOn.gif';window.status='Ir 10 páginas adelante';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onmouseout="this.style.cursor='default';MasAdelante.src='../Images/Navegacion/MasAdelante.gif';window.status='';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onclick="javascript:IrPagina(20)"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                onkeypress="if (event.keyCode==13 || event.keyCode==32 ) {IrPagina(20);}"><img alt="Ir 10 páginas adelante" src="../Images/Navegacion/MasAdelante.gif" border="0" name="MasAdelante"></a><!-- Linea de Separación --><img height="25" src="../Images/Navegacion/Line.gif" width="12"><!-- Exportar - Exportar datos a Excel --><a tabindex="-1"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  onmouseover="this.style.cursor='pointer';Exportar.src='../Images/Navegacion/ExcelOn.gif';window.status='Exportar datos a Excel';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  onmouseout="this.style.cursor='default';Exportar.src='../Images/Navegacion/Excel.gif';window.status='';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  onclick="javascript:FireEvent('Exportar')"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  onkeypress="if (event.keyCode==13 || event.keyCode==32 ) {FireEvent('Exportar');}"><img alt="Exportar datos a Excel" src="../Images/Navegacion/Excel.gif" border="0" name="Exportar"></a><!-- Linea de Separación --><img height="25" src="../Images/Navegacion/Line.gif" width="12"><!-- Ayuda - Haga click aquí para ver la ayuda --><a tabindex="-1"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            onmouseover="this.style.cursor='pointer';Ayuda.src='../Images/Navegacion/AyudaOn.gif';window.status='Haga click aquí para ver la ayuda';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            onmouseout="this.style.cursor='default';Ayuda.src='../Images/Navegacion/Ayuda.gif';window.status='';return true"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            href="javascript:ShowHelpWindowScroll('','&lt;p&gt;&lt;h2&gt;Combo P&#225;g:&lt;/h2&gt;&lt;h4&gt;Utilice este combo para desplazarse a otra p&#225;gina sin tener que utilizar la barra de desplazamiento.&lt;/h4&gt;&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Combo Mostrar:&lt;/h2&gt;&lt;h4&gt;Utilice este combo para seleccionar cuantos resultados quiere recibir por p&#225;gina.&lt;/h4&gt;&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Barra de navegaci&#243;n&lt;/h2&gt;&lt;h4&gt;&lt;img src=../images/Navegacion/MasAtras.gif align=absmiddle&gt; Con este bot&#243;n retrocedemos 10 p&#225;ginas, si estamos en las primeras 10 vamos directamente a la primer p&#225;gina.&lt;/h4&gt;<br>&lt;h4&gt;&lt;img src=../images/Navegacion/Atras.gif align=absmiddle&gt; Con el segundo bot&#243;n accedemos a la p&#225;gina anterior.&lt;/h4&gt;<br>&lt;h4&gt;&lt;img src=../images/Navegacion/Adelante.gif align=absmiddle&gt; El tercer bot&#243;n nos permite acceder a la p&#225;gina siguiente.&lt;/h4&gt;<br>&lt;h4&gt;&lt;img src=../images/Navegacion/MasAdelante.gif align=absmiddle&gt; Con el &#250;ltimo bot&#243;n avanzamos 10 p&#225;ginas, si estamos en las &#250;ltimas 10 vamos directamente a la &#250;ltima p&#225;gina.&lt;/h4&gt;<br>&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Bot&#243;n Excel&lt;/h2&gt;&lt;h4&gt;&lt;img src=../images/Navegacion/Excel.gif align=absmiddle&gt; Este bot&#243;n se utiliza para exportar los resultados de la consulta a un archivo Excel.&lt;/h4&gt;&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Informaci&#243;n de registros&lt;/h2&gt;&lt;h4&gt;Indica entre qu&#233; registros estoy navegando. Por ejemplo, si estamos en la primera p&#225;gina y en el segundo combo le indicamos que nos muestre <b>de a 15</b>, vamos a ver <b>Registros: 1-15</b>&lt;/h4&gt;&lt;/p&gt;')"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            onkeypress="if (event.keyCode==13) {ShowHelpWindowScroll('','&lt;p&gt;&lt;h2&gt;Combo P&#225;g:&lt;/h2&gt;&lt;h4&gt;Utilice este combo para desplazarse a otra p&#225;gina sin tener que utilizar la barra de desplazamiento.&lt;/h4&gt;&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Combo Mostrar:&lt;/h2&gt;&lt;h4&gt;Utilice este combo para seleccionar cuantos resultados quiere recibir por p&#225;gina.&lt;/h4&gt;&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Barra de navegaci&#243;n&lt;/h2&gt;&lt;h4&gt;&lt;img src=../images/Navegacion/MasAtras.gif align=absmiddle&gt; Con este bot&#243;n retrocedemos 10 p&#225;ginas, si estamos en las primeras 10 vamos directamente a la primer p&#225;gina.&lt;/h4&gt;<br>&lt;h4&gt;&lt;img src=../images/Navegacion/Atras.gif align=absmiddle&gt; Con el segundo bot&#243;n accedemos a la p&#225;gina anterior.&lt;/h4&gt;<br>&lt;h4&gt;&lt;img src=../images/Navegacion/Adelante.gif align=absmiddle&gt; El tercer bot&#243;n nos permite acceder a la p&#225;gina siguiente.&lt;/h4&gt;<br>&lt;h4&gt;&lt;img src=../images/Navegacion/MasAdelante.gif align=absmiddle&gt; Con el &#250;ltimo bot&#243;n avanzamos 10 p&#225;ginas, si estamos en las &#250;ltimas 10 vamos directamente a la &#250;ltima p&#225;gina.&lt;/h4&gt;<br>&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Bot&#243;n Excel&lt;/h2&gt;&lt;h4&gt;&lt;img src=../images/Navegacion/Excel.gif align=absmiddle&gt; Este bot&#243;n se utiliza para exportar los resultados de la consulta a un archivo Excel.&lt;/h4&gt;&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Informaci&#243;n de registros&lt;/h2&gt;&lt;h4&gt;Indica entre qu&#233; registros estoy navegando. Por ejemplo, si estamos en la primera p&#225;gina y en el segundo combo le indicamos que nos muestre <b>de a 15</b>, vamos a ver <b>Registros: 1-15</b>&lt;/h4&gt;&lt;/p&gt;');}"><img alt="Haga click aquí para ver la ayuda" src="../Images/Navegacion/Ayuda.gif" border="0" name="Ayuda"></a>
-                                                            </td>
-                                                            <!-- Fin Botones de Navegación -->
-
-                                                            <td noWrap align="right" width="30%">
-                                                                <font class="Campos">Registros: 1-1&nbsp;</font>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <!-- Fin Barra de Navegación -->
-
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
                                 <table border="0"><tr><td height="3px"></td></tr></table>
                             </td>
                         </tr>
