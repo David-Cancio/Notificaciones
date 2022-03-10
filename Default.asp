@@ -5,6 +5,10 @@
        <!--#include file="Partials/Header.asp"-->
     <div class="listado">
         <h1>SIAJ</h1>
+         <h2>Redireccion</h2>
+           <div style="padding-left:35%;padding-right:35%;">
+            <a class="dropdown-item" href="/archivoPrueba/prueba.html">Boton</a>
+            </div>
         <h2>Notificaciones</h2>
         <div style="padding-left:35%;padding-right:35%;">
             <a class="dropdown-item" href="/Notificacion/Agregar/IngresoNuevaNotificacion.asp">Generar Notificacón</a>
