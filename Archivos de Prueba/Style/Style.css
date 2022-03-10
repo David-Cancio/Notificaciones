@@ -1,0 +1,1138 @@
+/****************************************************
+      HOJA DE ESTILO - General de la aplicación
+****************************************************/
+body
+{	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+    font-family: Verdana, Arial, Helvetica;
+    color: Black;
+    background-color: white;
+}
+p
+{   margin-top: 1em;
+    font-size: 70%;
+    margin-bottom: 1em;
+    line-height: 1.3em
+}
+h1
+{
+    margin-top: 0em;
+    font-weight: normal;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Trebuchet MS, Verdana, Arial;
+}
+h2
+{
+	font-size: 75%;
+	margin-bottom: 0em;
+	color: #339900;
+}
+h3
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 13;
+	color: #000000;
+}
+h4
+{
+	margin-top: 1em;
+	font-weight: normal;
+	font-size: 80%;
+	margin-bottom: 0em;
+	color: #000000;
+	font-family: Arial;
+}
+a:link
+{
+	color: #339900;
+    text-decoration: none
+}
+a:visited
+{
+    color: #339900;
+    text-decoration: none
+}
+a:hover
+{
+    color: #339900;
+    text-decoration: underline
+}
+.leftHeader
+{
+	font-weight: 500;
+	font-size: 11px;
+	color: black;
+	font-family: Tahoma, Verdana, Arial;
+	background-color: #E8EEEE;
+}
+
+.PageTitle
+{
+    font-size: 100%;
+    color: #339900;
+    font-family: Arial, Helvetica, Tahoma, Verdana;
+    line-height: 14px;
+}
+
+.clsNorm
+{
+    font-size: 8pt;
+    cursor: hand;
+    color: black;
+    font-family: Verdana;
+    background-color: #DDE7F6
+}
+.clsDisabled
+{
+    font-size: 8pt;
+    cursor: hand;
+    color: gray;
+    font-family: Verdana;
+    background-color: #DDE7F6
+}
+.clsLite
+{
+    font-size: 8pt;
+    cursor: hand;
+    color: white;
+    font-family: Verdana;
+    background-color: #339900
+}
+/* Links de sitios de informacion */
+.info-detail
+{
+	color: #000000 !important;
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.info
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+a.info:link
+{
+	color: #006666;
+    text-decoration: none
+}
+a.info:visited
+{
+    color: #006666;
+    text-decoration: none
+}
+a.info:hover
+{
+    color: #006666;
+    text-decoration: underline;
+}
+.PiePagina {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+/* * * */
+
+/********************************/
+/* Objetos de formularios       */
+/*
+select
+{
+    behavior: url(../include/Select.htc)-->
+}
+*/
+.formobj {
+	font-size: 11px;
+	width: 100%;
+	color: black;
+	font-family: tahoma;
+}
+.formobjDisabled
+{
+    font-size: 11px;
+    width: 100%;
+    color: gray;
+    font-family: tahoma;
+    background-color: whitesmoke
+}
+.formobjConsulta
+{
+	font-size: 11px;
+	width: 100%;
+	color: black;
+	font-family: tahoma;
+	background-color: #fbfdfd;
+}
+/********************************/
+/* Tabs                         */
+.tabUnsel
+{
+    height: 19px;
+    background-color: #339900;
+    font-weight: bold;
+    font-size: 9px;
+    color: #ffffff;
+    line-height: 13px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none;
+	text-align: center;
+}
+.tabSel
+{
+    height: 19px;
+    background-color: #E8EEEE;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 13px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none;
+    border-top: 1px solid #339900;
+    text-align: center;
+}
+.tab {
+  background: url(../images/tabs/tab.png);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 84px;
+}
+.tabOver, .tab:hover 
+{
+	background-image: url(../images/tabs/tab_hover.png);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 84px;
+}
+.tabSelected, .tab:hover 
+{
+	background-image: url(../images/tabs/tab_hover.png);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 84px;
+}
+.tabMediano {
+  background: url(../images/tabs/tabMediano.png);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 55px;
+}
+.tabOverMediano, .tabMediano:hover 
+{
+	background-image: url(../images/tabs/tab_hoverMediano.png);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 55px;
+}
+.tabSelectedMediano, .tabMediano:hover 
+{
+	background-image: url(../images/tabs/tab_hoverMediano.png);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 55px;
+}
+
+.tabText
+{
+	font-size: 11px;	
+	color: #000000;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	font-family: Arial;
+	text-align: center;
+	text-decoration: none;
+}
+.tabTextSelected
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #000000;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	font-family: Arial;
+	text-align: center;
+	text-decoration: none;
+}
+.tabTextDisabled
+{
+	font-family: Arial;
+	font-size: 11px;
+	text-decoration: none;
+	color:#999999;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	text-align: center;
+	text-decoration: none;
+}
+.tabTable{
+	border-bottom: solid 1px #999999;
+	border-top: solid 1px #999999;
+	border-left: solid 1px #999999;
+	border-right: solid 1px #999999;
+}
+/********************************/
+/* Tablas                       */
+.TablaEncabezado
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+}
+
+.EncabezadoResaltado
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	background-color: #DCEDCB;
+	text-align: center;
+}
+.TablaEncabezadoGrilla
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+}
+.TablaCollapseDiv
+{
+	border-right: solid 1px #AAAAAA;
+	border-left: solid 1px #AAAAAA;
+	border-bottom: solid 1px #AAAAAA;
+}
+.TablaEncabezadoTitulos
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	background-image: url(../images/titulos/fondo_Verde.jpg);
+	background-repeat:  repeat-x;
+	font-weight: bold;
+  font-size: 11px;
+  color: #ffffff;
+  font-family: Tahoma, Arial, Helvetica;
+  text-decoration: none;
+}
+.TablaTabEncabezado
+{
+	border-right: #339900 1px solid;
+	border-left: #339900 1px solid;
+	border-bottom: #339900 1px solid;
+	border-top: #339900 1px solid;
+	background-color: #339900;
+}
+.tablaAbmImpar
+{
+    border-top: white 1px;
+    BACKGROUND-COLOR: #F8F8F8;
+}
+.tablaAbmPar
+{
+    BORDER-TOP: white 1px;
+    BACKGROUND-COLOR: #EEEEEE;
+}
+.tablaAbmOver
+{
+	border-top: white 1px;
+	/*background-color: #55b347;*/
+	/*background-color: #CDCDCD;*/
+	background-color: #D2E8BD;
+}
+.tablaAbmSelected
+{
+	border-top: white 1px;
+	/*background-color: palegreen;*/
+	/*background-color: #D2E8BD;*/
+	background-color: #CDCDCD;
+}
+.tablaAbmImparContable
+{
+    font-weight: normal;
+	font-size: 10px;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+    border-top: white 1px;
+    background-color: #F8F8F8;
+    border-left: solid 1px #339900;
+	/*border-right: solid 1px #339900;*/
+}
+
+.tablaAbmParContable
+{
+    font-weight: normal;
+	font-size: 10px;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+    border-top: white 1px;
+    background-color: #EEEEEE;
+    border-left: solid 1px #339900;
+	/*border-right: solid 1px #339900;*/
+}
+
+.tablaTotal
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	/*border-top: solid 1px #339900;*/
+	background-color: #DCEDCB;
+	text-align: center;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Tahoma, Arial, Helvetica;
+}
+
+.encDebeHaber
+{
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	background-color: #DCEDCB;
+	text-align: center;
+	font-weight: normal;
+	font-size: 10px;
+	font-family: Tahoma, Arial, Helvetica;
+}
+
+td#ContCol
+{
+	border-left: solid 1px #339900;
+	font-weight: normal;
+	font-size: 10px;
+	color: black;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+	text-align: right;
+}
+td#ContColDisabled
+{
+	border-left: solid 1px #339900;
+	font-weight: normal;
+	font-size: 10px;
+	color:#949494;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+	text-align: right;
+}
+/********************************/
+/*Repostes                      */
+.TablaEncabezadoReporte
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: 1px #339900;
+	border-top: solid 1px #339900;
+}
+.tablaAbmReporte
+{
+    border-top: white 1px;
+    BACKGROUND-COLOR: White;
+}
+
+/********************************/
+/* Botones                      */
+.buttonNew
+{
+	border-top: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-right: solid 1px #339900;
+	background-color:#F8F8F8;
+	font-family: Tahoma, Verdana;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	height:22px;
+}
+/********************************/
+/* Etiquetas                    */
+.campos {
+	font-weight: normal;
+	font-size: 11px;
+	color: black;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.camposDestacados
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #006699;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.camposReadOnly{
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-right: solid 1px #339900;
+	background-color:White;
+	font-size: 11px;
+	height: 12px;
+	color: #333333;
+	font-weight:normal;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.camposdisabled {
+	font-weight: normal;
+	font-size: 10px;
+	color: #949494;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+	/*text-align: right;*/
+}
+.camposcontables {
+	font-weight: normal;
+	font-size: 10px;
+	color: black;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+	/*text-align: right;*/
+}
+.camposResaltados
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #FF6600;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+.camposResaltadosAclaracion
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #f62217;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+.DescripcionSumarioAsigando
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #FF0000;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+.DescripcionCertificadoSecloAsignado
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #FF0000;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.camposBordeIzq
+{	
+	font-weight: normal;
+	font-size: 11px;
+	color: black;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+	border-left: solid 1px #339900;
+}
+/***************************************/
+/* Titulos y textos                    */
+.SubTitulo
+{
+	line-height: 17px;
+/*	Me rompe la linea de abajo del ABM
+	line-height: 15px;
+	padding-top: 1px;
+	padding-bottom: 1px; */
+	background-image: url(../Images/Titulos/fondo_gris.jpg);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #AAAAAA;
+	border-bottom-color: #AAAAAA;
+}
+.encabezado
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #ffffff;
+    line-height: 13px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none
+}
+.subEncabezado
+{
+	line-height: 17px;
+/*	padding-top: 1px;
+	padding-bottom: 1px;*/
+	font-weight: bold;
+	font-size: 11px;
+	color:#336633;
+	font-family: Tahoma, Arial, Helvetica;
+	background-image: url(../Images/Titulos/fondo_gris.jpg);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #AAAAAA;
+	border-bottom-color: #AAAAAA;
+}
+.ErrorTitulo2 {
+	margin-top: 0em;
+	font-weight: normal;
+	font-size: 110%;
+	font-family: Trebuchet MS, Verdana, Arial
+}
+.ErrorTitulo3 {
+	margin-top: 0em;
+	font-weight: bolder;
+	font-size: 90%;
+	color: #339900;
+	font-family: Trebuchet MS, Verdana, Arial;
+}
+.Errortext {
+	margin-top: 0em;
+	font-weight: normal;
+	font-size: 80%;
+	font-family: Trebuchet MS, Verdana, Arial
+}
+.ContentleftLinks
+{
+    font-size: 65%
+}
+.TipText
+{
+	font-family:Arial;
+	font-size: 11px;
+	color:Black;
+	text-align: justify;
+}
+.TipTitle
+{
+	font-family:Arial;
+	font-size: 12px;
+	color:Black;
+}
+.TituloConLinea {
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-bottom: 1px solid;
+	border-bottom-color:#339900;
+}
+.InformacionTitulo
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: #339900;
+	font-family: Arial, Verdana;
+	text-decoration: none;
+}
+.EstadisticaTitulo
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #006666;
+	font-family: Arial, Verdana;
+	text-decoration: none;
+}
+.SubTituloEstadisticas
+{
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	background-color: #DCEDCB;
+	height: 20px;
+}
+.EstadisticasEncabezado
+{	
+	font-family: Arial, Verdana;
+	font-weight: normal;
+	font-size: 13px;
+	text-decoration: none;
+}
+.version
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: #006699;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.titulobusqueda
+{
+	font-family: Arial;
+	color: #339900;
+	font-size: 16;
+}
+/***************************************/
+/* Backgrounds                         */
+.MenuleftBkg {
+	background-color: #F1F3F5;
+	border-bottom: 1px solid #cccccc;
+}
+.BannerBkg
+{
+	background-image: url(../images/banner/bannerBKG.png);
+	background-repeat:	repeat;
+	background-position: 100%;
+}
+.BkgTotales 
+{
+	background-color: #FFD86F;
+	font-weight: normal;
+	font-size: 11px;
+	color: black;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+/***************************************/
+/* Lineas                              */
+.LineaSeparador {
+	background-color: #339900;
+}
+.LineaIzq
+{	border-left: solid 1px #339900;
+	text-align: center;
+}
+/***************************************/
+/* Salto de Pagina en impresion */
+ Salto.SaltoDePagina
+ {
+     PAGE-BREAK-BEFORE: always
+ }
+/***************************************/
+/* Texto de ayuda en línea */
+.HelpText {
+	font-family: Tahoma;
+	font-size: 10px;
+	font-style: normal;
+	color: #FF6600;
+	text-decoration: none;
+}
+
+
+/***************************************/
+/* Clases en desuso - Borrar luego */
+/**************************************
+.Content
+{
+    margin-top: 1em;
+    font-size: 70%;
+    margin-bottom: 1em;
+    line-height: 1.3em
+} 
+.ContentHeader
+{
+    font-weight: bold;
+    color: #010000
+}
+.StoreHeader
+{
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 70%;
+    margin-bottom: 1em;
+    color: white;
+    line-height: 1.3em;
+    background-color: #41509d
+}
+.TableHeader
+{
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 70%;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+    background-color: #cccccc
+}
+.TableData
+{
+    margin-top: 1em;
+    font-size: 70%;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+    background-color: #eeeeee
+}
+.Feature
+{
+    border-right: #243696 1px solid;
+    border-top: #243696 1px solid;
+    border-left: #243696 1px solid;
+    border-bottom: #243696 1px solid;
+    background-color: #fbefef
+}
+.Featuretext
+{
+    font-size: 65%
+}
+.leftNav
+{
+    font-size: 65%
+}
+.leftTip
+{
+    font-size: 70%;
+    color: #339900;
+    line-height: 14px
+}
+
+.leftTipAyuda
+{
+	font-size: 10px;
+	color: #339900;
+	line-height: 14px;
+}
+.HomeContent
+{
+    font-size: 7.5pt
+}
+.HomeTable
+{
+    font-size: 100%
+}
+.Input
+{
+    font-size: x-small;
+    font-family: Verdana, Arial, Helvetica
+}
+.InputInvalid
+{
+    font-size: x-small;
+    color: #cf0000;
+    font-family: Verdana, Arial, Helvetica
+}
+.Fine
+{
+    font-size: 55%
+}
+.Clear
+{
+    font-size: 100%
+}
+.SectionHeader
+{
+    font-weight: normal;
+    font-size: 90%;
+    color: white;
+    font-family: Trebuchet MS, Verdana, Arial;
+    background-color: black
+}
+.Subset
+{
+    margin-top: 0em;
+    font-size: 100%
+}
+.Highlight
+{
+    background-color: yellow
+}
+.CodeComment
+{
+    color: green
+}
+H1.Generic
+{
+    margin-top: 1em;
+    font-weight: normal;
+    font-size: 110%;
+    border-bottom: black 1px solid;
+    font-family: Trebuchet MS, Verdana, Arial
+}
+.H1BuyIt
+{
+    font-weight: normal;
+    font-size: 110%;
+    border-bottom: 0px;
+    font-family: Trebuchet MS, Verdana, Arial
+}
+H3
+{
+	margin-top: 1em;
+	font-weight: bold;
+	font-size: 70%;
+	margin-bottom: 0em;
+	color: #339900;
+}
+A.HomeHeader:link
+{
+    color: black;
+    text-decoration: none
+}
+A.HomeHeader:visited
+{
+    color: black;
+    text-decoration: none
+}
+A.HomeHeader:hover
+{
+	color: #41509d;
+	text-decoration: underline;
+}
+.ErrorTitulo1 {
+	margin-top: 0em;
+	font-weight: normal;
+	font-size: 140%;
+	font-family: Trebuchet MS, Verdana, Arial
+}
+.clsMainLite
+{
+    border-right: white 1px solid;
+    font-weight: bold;
+    font-size: 8pt;
+    border-left: white 1px solid;
+    cursor: hand;
+    color: black;
+    font-family: Verdana;
+    background-color: #ffffff;
+    text-ALIGN: center
+}
+.clsMainNorm
+{
+	border-right: white 1px solid;
+	font-weight: bold;
+	font-size: 8pt;
+	border-left: white 1px solid;
+	cursor: hand;
+	color: white;
+	font-family: Verdana;
+	background-color: #339900;
+	text-align: center;
+}
+.titulo1
+{
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    line-height: 24px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none
+}
+.titulo2
+{
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    line-height: 21px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none
+}
+.titulo3
+{
+    font-weight: bold;
+    font-size: 13px;
+    color: black;
+    line-height: 20px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none
+}
+.titulos
+{
+    font-weight: bold;
+    font-size: 17px;
+    color: #000000;
+    line-height: 19px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none
+}
+.formobjResaltado
+{
+	font-weight: bolder;
+	font-size: 11px;
+	width: 100%;
+	color: crimson;
+	font-family: tahoma;
+}
+.formobjDisabledResaltado
+{
+	font-weight: bolder;
+	font-size: 11px;
+	width: 100%;
+	color: crimson;
+	font-family: tahoma;
+	background-color: whitesmoke;
+}
+.formobjConsultaResaltado
+{
+	font-weight: bolder;
+	font-size: 11px;
+	width: 100%;
+	color: crimson;;
+	font-family: tahoma;
+	background-color: #fbfdfd;
+}
+.formobj2
+{
+    border-right: #c0c1c2 1px solid;
+    border-top: #c0c1c2 1px solid;
+    font-size: 11px;
+    border-left: #c0c1c2 1px solid;
+    width: 100%;
+    border-bottom: #c0c1c2 1px solid;
+    font-family: tahoma;
+    background-color: #eeeeee
+}
+.TreeViewTerminarl
+{
+	border-top: white 1px;
+	font-size: 3mm;
+	font-family: Arial;
+	background-color: white;
+}
+.TreeViewNodos
+{
+	border-top: white 1px;
+	height: 5px;
+	background-color: #e8eeee;
+}
+.tablaAbmAyuda
+{
+    background-color: #ffffff;
+}
+.button
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: black;
+    font-family: Tahoma, Verdana;
+    background-color: #e8eeee
+}
+.buttonNewDisabled
+{
+	border-right: darkgray 2px solid;
+	border-top: white 2px solid;
+	font-weight: 800;
+	font-size: 11px;
+	border-left: white 2px solid;
+	color: dimgray;
+	border-bottom: darkgray 2px solid;
+	font-family: Tahoma, Verdana;
+	background-color: #ced4d4;
+}
+.camposTotal {
+	font-weight: normal;
+	font-size: 11px;
+	color: red;
+	line-height: 13px;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.subMenuBox
+{
+    border-right: #DDE7F6 1px solid;
+    border-top: #339900 1px solid;
+    z-index: 1;
+    visibility: hidden;
+    border-left: #DDE7F6 1px solid;
+    border-bottom: #339900 1px solid
+}
+UL
+{
+    margin-top: -1em;
+    font-size: 70%;
+    line-height: 1.3em
+}
+OL
+{
+    margin-top: -1em;
+    font-size: 70%;
+    line-height: 1.3em
+}
+UL.Nested
+{
+    margin-top: 0em;
+    font-size: 100%
+}
+OL.Nested
+{
+    margin-top: 0em;
+    font-size: 100%
+}
+UL.Pad
+{
+    margin-top: 0em
+}
+OL.Pad
+{
+    margin-top: 0em
+}
+.Pad
+{
+    margin-bottom: 1em;
+    background-color: #c0c0c0
+}*/
+	
+.TablaEncabezadoTitulosReliquidacion
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	background-color: #DCEDCB;
+	background-repeat:  repeat-x;
+	font-weight: bold;
+	font-size: 11px;
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+.CeldaDerecha
+{
+	border-right: solid 1px #DCDCDC;
+	background-repeat:  repeat-x;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+.DetalleTotales
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	background-color: #EEEEEE;
+	text-align: center;
+	font-size: 11px;
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	font-weight:bolder;
+	text-decoration: none;
+}
+
+.TablaEncabezadoReliquidacion
+{
+	border-right: solid 1px #339900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+}
+
+.BordeSuperior
+{
+	border-top: solid 1px #000000;
+	background-repeat:  repeat-x;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
