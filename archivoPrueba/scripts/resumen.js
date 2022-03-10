@@ -331,7 +331,15 @@
     ['<img src="../images/menu/language.png" />','Jerarquia de las oficinas','../Tablas/AbmOficinaAcceso.asp',null,'Configuración de la Jerarquia de las Oficinas']
     ],
     _cmSplit,
-    [null,'Oficina Activa','../Tablas/SeleccionOficina.asp',null,'Selección de Oficina Activa'],
+            [null, 'Oficina Activa', '../Tablas/SeleccionOficina.asp', null, 'Selección de Oficina Activa'],
+    _cmSplit,
+    [null, 'Oficina Activa', '../Tablas/SeleccionOficina.asp', null, 'Selección de Oficina Activa'],
+    [null, 'Oficina Activa', '../Tablas/SeleccionOficina.asp', null, 'Notificaciones Electronicas'
+    ['<img src="../images/menu/edit.png"/>', 'Cache', '../Main/Cache.asp', null, 'Administrar Cache'],
+        ['<img src="../images/menu/edit.png"/>', 'Bandeja de Movimientos', '../Seguridad/AbmVariable.asp', null, 'Variables'],
+        ['<img src="../images/menu/edit.png"/>', 'Consulta de Lotes', '../Seguridad/AbmDiccionario.asp', null, 'Diccionario'],
+        ['<img src="../images/menu/edit.png"/>', 'Consulta Histórica de NE', '../Seguridad/AbmDiccionario.asp', null, 'Diccionario'],
+    ],
     [null,'Salir','../Salir/Salir.asp',null,'Salir']
     ];
 
