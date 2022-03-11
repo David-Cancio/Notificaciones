@@ -5,9 +5,9 @@
        <!--#include file="Partials/Header.asp"-->
     <div class="listado">
         <h1>SIAJ</h1>
-         <h2>Redireccion</h2>
+         <h2>Prototipo Funcional</h2>
            <div style="padding-left:35%;padding-right:35%;">
-            <a class="dropdown-item" href="/archivoPrueba/prueba.html">Boton</a>
+            <a class="dropdown-item" href="/archivoPrueba/Index.html">Index</a>
             </div>
         <h2>Notificaciones</h2>
         <div style="padding-left:35%;padding-right:35%;">
