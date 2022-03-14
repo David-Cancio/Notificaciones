@@ -189,6 +189,7 @@ No funciona... :o(
                     <table class="tabTable" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td>
+                                <fieldset id="billing">
                                 <table border="0"><tr><td height="3px"></td></tr></table>
 
                                 <div id="divAbmForm">
@@ -609,6 +610,7 @@ No funciona... :o(
                                 <table border="0"><tr><td height="3px"></td></tr></table>
 
                                 <div id="divAbmForm">
+                         
                                     <input type="hidden" id="EscritoParametros" name="EscritoParametros" class="formobj" value="">
                                     <input type="hidden" id="GeneraAlerta" name="GeneraAlerta" class="formobj" maxlength="0" value="0">
                                     <!-- TABLA TITULO -->
@@ -622,17 +624,19 @@ No funciona... :o(
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table>  
+                                    
+
                                     <!-- FIN TABLA TITULO -->
                                     <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
                                         <tbody>
                                             <tr>
 
                                                 <td vAlign=top>
-
-
+                                                    
                                                     <!-- Orden | Pendiente -->
                                                     <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table2">
+                                                       
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
                                                             <td width="10%" align="right"><b>Orden</b></td>
@@ -644,10 +648,12 @@ No funciona... :o(
                                                             <td width="10%" align="right"><b><font color="red">*</font>Pendiente</b></td>
                                                             <td width="1%"></td>
                                                             <td width="6%">
-                                                                <select id="Pendiente" name="Pendiente" class="formobj" width="100%">
+                                                                <select id="Pendiente" 
+                                                                onclick="javascript:disablearTodo();return false;"
+                                                                 name="Pendiente" class="formobj" width="100%">
                                                                     <option value="">--Seleccione--</option>
-                                                                    <option value="0" selected>No</option>
-                                                                    <option value="1">S&#237;</option>
+                                                                    <option value="0" selected>Si</option>
+                                                                    <option value="1">No</option>
                                                                 </select>
 
                                                             </td>
@@ -663,6 +669,7 @@ No funciona... :o(
                                                             </td>
                                                             <td width="2%"></td>
                                                         </tr>
+                                                    
                                                     </table>
                                                     <!-- /Orden | Pendiente -->
                                                     <!-- Tipo | Fecha | Vencimiento -->
@@ -740,6 +747,7 @@ No funciona... :o(
                                                     <!-- /Descripci�n -->
                                                     <!-- Etapa | Estado -->
                                                     <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="TDatos2">
+                                                       
                                                         <tr class="campos">
                                                             <td width="1%" height="30"></td>
                                                             <td width="10%" align="right"><b><font color="red">*</font>Etapa</b></td>
@@ -779,7 +787,9 @@ No funciona... :o(
                                                             </td>
                                                             <td width="1%"></td>
                                                         </tr>
+                                                   
                                                     </table>
+                                               
                                                     <!-- /Etapa | Estado -->
                                                     <!-- Separador -->
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table3">
@@ -977,6 +987,7 @@ No funciona... :o(
                                                     <table cellSpacing="0" cellPadding="0" width="100%" border="0">
                                                         <tr><td width="100%" height="10"></td></tr>
                                                     </table>
+                                                
                                                     <!-- /Separador -->
                                                     <!-- TABLA TITULO -->
                                                     <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
@@ -1259,7 +1270,7 @@ No funciona... :o(
                                                                 <td align="left" height="25" width="49%"><font color=#000000><b>Si no puede abrir el documento con Word, haga click </b></font><font color=#cc00ff><b><A HREF="javascript:AbrirAyuda();">Aqu�</A></b></font></td>
 
                                                                 <td align="right" height="25" width="49%">
-                                                                    <button name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:EscritoAgregar();return false;"> Agregar Escrito</button>
+                                                                    <input type="button" name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:EscritoAgregar();return false;" value="Agregar Escrito"> </input>
                                                                 </td>
 
                                                                 <td width="1%"></td>
@@ -1370,6 +1381,7 @@ No funciona... :o(
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
+                                                           
                                                             </table>
                                                             <!-- FIN TABLA TITULO ARCHIVOS -->
 
@@ -1383,7 +1395,7 @@ No funciona... :o(
                                                                 <td width="1%"></td>
                     
                                                                 <td align="right" height="25" width="49%">
-                                                                    <button name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;"> Agregar Archivo</button>
+                                                                    <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;" value="Agregar Archivo"> </input>
                                                                 </td>
 
                                                                 <td width="1%"></td>
@@ -1392,6 +1404,7 @@ No funciona... :o(
                                                         </table>
                                                     </div>
                                                     <!-- /Botones Aceptar Cancelar-->
+                                               
                                                 </td>
                                                 
                                             </tr>
@@ -1404,7 +1417,8 @@ No funciona... :o(
                                             <td height="3px"></td>
                                         </tr>
                                     </table>
-
+                                       
+                                    </fieldset>
                                     <!-- Botones -->
                                     <div id="divBotones">
                                         <table cellSpacing="0" cellPadding="0" width="100%" border="0" ID="TButtons">
@@ -1428,6 +1442,7 @@ No funciona... :o(
                                         </table>
                                     </div>
                                     <!-- /Botones -->
+                                
                                 </div>
                                 <!-- FIN divAbmForm -->
                                 <table border="0"><tr><td height="3px"></td></tr></table>
@@ -1455,22 +1470,57 @@ No funciona... :o(
 </html>
 
 
-<script>
-    function agregarFila(){
-    document.getElementById("Table13").insertRow(-1).innerHTML = ' <td width="2%" height="35"></td><td width="29%"><table><tr class="camposDestacados"><td width="100%"><img  width="10%" src="../images/pdf.png" border="0" align="absmiddle">Adjunto</td></tr></table></td><td width="11%"></td><td width="7%" class="Campos">29/8/2016</td><td width="7%"><a href="" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menu/edit.png" border="0" align="absmiddle"> Adjunto</a></td><td width="1%"></td><td width="7%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="absmiddle"> Eliminar</a></td><td width="1%"></td><td width="12%"></td><td width="1%"></td><td width="21%"><input type="file"></td>';
-  }
-  
-  function eliminarFila(){
-    var table = document.getElementById("Table13");
-    var rowCount = table.rows.length;
-    console.log(rowCount);
-    
-    if(rowCount <= 1)
-      alert('No se puede eliminar el encabezado');
-    else
-      table.deleteRow(rowCount -1);
-  }
-</script>
+        <script>
+
+                // Esperar a que la página termine de cargarse
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Adjunte el detector de eventos `change` al checkbox
+                    document.getElementById('Pendiente').onchange = toggleBilling;
+                    console.log(document.getElementById('Pendiente').value)
+                    if(document.getElementById('Pendiente').value == 1){
+                        toggleBilling()
+                    }
+                }, false);
+                function toggleBilling() {
+                // Seleccione los campos de texto de facturación
+                    var billingItems = document.querySelectorAll('#billing input, select, textarea');
+                    let valorId = document.getElementById("Pendiente")
+                    console.log(valorId.id)
+                    // Alternar los campos de texto de facturación
+                    for (var i = 0; i < billingItems.length; i++) {
+                        if(billingItems[i].id != valorId.id ){
+                            billingItems[i].disabled = !billingItems[i].disabled;
+                        }
+                    }
+                }
+
+
+            function agregarFila(){
+            document.getElementById("Table13").insertRow(-1).innerHTML = ' <td width="2%" height="35"></td><td width="29%"><table><tr class="camposDestacados"><td width="100%"><img  width="10%" src="../images/pdf.png" border="0" align="absmiddle">Adjunto</td></tr></table></td><td width="11%"></td><td width="7%" class="Campos">29/8/2016</td><td width="7%"><a href="" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menu/edit.png" border="0" align="absmiddle"> Adjunto</a></td><td width="1%"></td><td width="7%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="absmiddle"> Eliminar</a></td><td width="1%"></td><td width="12%"></td><td width="1%"></td><td width="21%"><input type="file"></td>';
+        }
+        
+        function eliminarFila(){
+            var table = document.getElementById("Table13");
+            var rowCount = table.rows.length;
+            console.log(rowCount);
+            
+            if(rowCount <= 1)
+            alert('No se puede eliminar el encabezado');
+            else
+            table.deleteRow(rowCount -1);
+        }
+
+        function disablearTodo(){
+            let seleccion = document.getElementById("Pendiente").value 
+            console.log(seleccion)
+
+            if(seleccion == 0){
+                let fileset = document.getElementsByTagName('fieldset');
+                fileset[0].disable
+            }
+        }
+
+        </script>
 
 <script type="text/javascript" src="../scripts/prototype.js"></script>
 <script type="text/javascript" src="../scripts/abm.js"></script>
