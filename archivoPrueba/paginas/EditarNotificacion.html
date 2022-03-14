@@ -648,8 +648,7 @@ No funciona... :o(
                                                             <td width="10%" align="right"><b><font color="red">*</font>Pendiente</b></td>
                                                             <td width="1%"></td>
                                                             <td width="6%">
-                                                                <select id="Pendiente" 
-                                                                onclick="javascript:disablearTodo();return false;"
+                                                                <select id="Pendiente"
                                                                  name="Pendiente" class="formobj" width="100%">
                                                                     <option value="">--Seleccione--</option>
                                                                     <option value="0" selected>Si</option>
@@ -1474,7 +1473,7 @@ No funciona... :o(
 
                 // Esperar a que la página termine de cargarse
                 document.addEventListener('DOMContentLoaded', function () {
-                    // Adjunte el detector de eventos `change` al checkbox
+                    // Adjunte el detector de eventos `change`
                     document.getElementById('Pendiente').onchange = toggleBilling;
                     console.log(document.getElementById('Pendiente').value)
                     if(document.getElementById('Pendiente').value == 1){
@@ -1482,11 +1481,11 @@ No funciona... :o(
                     }
                 }, false);
                 function toggleBilling() {
-                // Seleccione los campos de texto de facturación
+                // Seleccione los campos
                     var billingItems = document.querySelectorAll('#billing input, select, textarea');
                     let valorId = document.getElementById("Pendiente")
-                    console.log(valorId.id)
-                    // Alternar los campos de texto de facturación
+                   // console.log(valorId.id)
+                    // Alternar los campos
                     for (var i = 0; i < billingItems.length; i++) {
                         if(billingItems[i].id != valorId.id ){
                             billingItems[i].disabled = !billingItems[i].disabled;
@@ -1495,7 +1494,7 @@ No funciona... :o(
                 }
 
 
-            function agregarFila(){
+        function agregarFila(){
             document.getElementById("Table13").insertRow(-1).innerHTML = ' <td width="2%" height="35"></td><td width="29%"><table><tr class="camposDestacados"><td width="100%"><img  width="10%" src="../images/pdf.png" border="0" align="absmiddle">Adjunto</td></tr></table></td><td width="11%"></td><td width="7%" class="Campos">29/8/2016</td><td width="7%"><a href="" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menu/edit.png" border="0" align="absmiddle"> Adjunto</a></td><td width="1%"></td><td width="7%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="absmiddle"> Eliminar</a></td><td width="1%"></td><td width="12%"></td><td width="1%"></td><td width="21%"><input type="file"></td>';
         }
         
@@ -1508,16 +1507,6 @@ No funciona... :o(
             alert('No se puede eliminar el encabezado');
             else
             table.deleteRow(rowCount -1);
-        }
-
-        function disablearTodo(){
-            let seleccion = document.getElementById("Pendiente").value 
-            console.log(seleccion)
-
-            if(seleccion == 0){
-                let fileset = document.getElementsByTagName('fieldset');
-                fileset[0].disable
-            }
         }
 
         </script>
