@@ -1,6 +1,3 @@
-<!-- Header.asp
-No funciona... :o(
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 <html>
@@ -12,25 +9,9 @@ No funciona... :o(
     <meta content="Ministerio de trabajo, empleo y seguridad social" name="description">
     <meta content="INDEX,FOLLOW" name="robots">
     <link href="../Style/style.css" type="text/css" rel="stylesheet">
-    <!-- Menu -->
     <link rel="stylesheet" href="../Style/menu.css" type="text/css">
-
-    <!--<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="../include/infobox.js"></SCRIPT>-->
-
-
 </head>
 <body>
-
-
-    <!-- COMIENZO - Ayuda dinamica
-        <DIV ID="infodiv" STYLE="position:absolute; visibility:hidden; z-index:20; top:0px; left:0px;"></DIV>
-        <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-            maketip('linux','Ayuda','Die Japanische KNOPPIX Version wird weiterentwickelt vom National Institute of Advanced Industrial Science and Technology (AIST), Japan');
-        </SCRIPT>
-
-        <DIV id="TipLayer" style="visibility:hidden;position:absolute;z-index:1000;top:-100;"></DIV>
-    FIN - Ayuda dinamica -->
-    <!-- Encabezamiento, escudo ministerio y banner aplicaci�n -->
     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
         <tr>
             <td width="5%" height="79">&nbsp;</td>
@@ -43,13 +24,20 @@ No funciona... :o(
             <td colspan="5" height="1" bgcolor="#E8E8E8"></td>
         </tr>
     </table>
-
-
-    <!-- Menu -->
-    <link rel="stylesheet" href="../Style/develmenu.css" type="text/css">
-
     <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
     <script type="text/javascript" src="../scripts/menu/theme.js"></script>
+    <script languaje=javascript>
+        function escritos(num) {
+                document.getElementById('1').hidden = true
+                document.getElementById('2').hidden = true
+                document.getElementById('3').hidden = true
+                document.getElementById('4').hidden = true
+                document.getElementById(num).hidden = false
+        }
+        function generarNotificacion() {
+            alert("Notificación Generada")
+        }
+    </script>
 
 
     <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
@@ -635,7 +623,7 @@ No funciona... :o(
                                 <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
                                     <tr>
                                         <td vAlign="top" align="middle" width="100%">
-                                            <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('1');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
 
                                                     <!-- RENGLON RESULTADO -->
@@ -662,7 +650,7 @@ No funciona... :o(
                                                         <td width="1%"></td>
                                                         <td width="15%"><b>SENTENCIA 1ª FAVORABLE</b></td>
                                                         <td width="1%"></td>
-                                                        <td width="12%">2</td>
+                                                        <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
                                                         <td width="1%"></td>
                                                         <td width="12%">3</td>
                                                         <td width="1%"></td>
@@ -676,7 +664,7 @@ No funciona... :o(
 
                                                 </tbody>
                                             </table>
-                                            <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('2');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');javascript:escritos('2');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
 
                                                     <!-- RENGLON RESULTADO -->
@@ -703,7 +691,7 @@ No funciona... :o(
                                                         <td width="1%"></td>
                                                         <td width="15%"><b>LIQUIDACIÓN FIRME</b></td>
                                                         <td width="1%"></td>
-                                                        <td width="12%">1</td>
+                                                        <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
                                                         <td width="1%"></td>
                                                         <td width="12%">4</td>
                                                         <td width="1%"></td>
@@ -717,7 +705,7 @@ No funciona... :o(
 
                                                 </tbody>
                                             </table>
-                                            <table class="tablaAbmPar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2353653');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('3');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            <table class="tablaAbmPar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2353653');javascript:escritos('3');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
 
                                                     <!-- RENGLON RESULTADO -->
@@ -744,7 +732,7 @@ No funciona... :o(
                                                         <td width="1%"></td>
                                                         <td width="15%"><b>NOTIFICACIÓN DE RESOLUCIÓN</b></td>
                                                         <td width="1%"></td>
-                                                        <td width="12%">1</td>
+                                                        <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
                                                         <td width="1%"></td>
                                                         <td width="12%">0</td>
                                                         <td width="1%"></td>
@@ -758,7 +746,7 @@ No funciona... :o(
 
                                                 </tbody>
                                             </table>
-                                            <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('4');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('4');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
 
                                                     <!-- RENGLON RESULTADO -->
@@ -785,7 +773,7 @@ No funciona... :o(
                                                         <td width="1%"></td>
                                                         <td width="15%"><b>EMBARGO EJECUTORIO</b></td>
                                                         <td width="1%"></td>
-                                                        <td width="12%">2</td>
+                                                        <td width="12%"></td>
                                                         <td width="1%"></td>
                                                         <td width="12%">1</td>
                                                         <td width="1%"></td>
@@ -820,7 +808,7 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="15%"><b></b></td>
                                                             <td width="1%"></td>
-                                                            <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                                            <td width="12%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>INGRESOS BANCARIOS</b></td>
                                                             <td width="1%"></td>
@@ -844,7 +832,7 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="15%"><b></b></td>
                                                             <td width="1%"></td>
-                                                            <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                                            <td width="12%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>RECHAZO BANCARIO</b></td>
                                                             <td width="1%"></td>
@@ -866,11 +854,11 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="9%"></td>
                                                             <td width="1%"></td>
-                                                            <td width="15%"><b></b></td>
+                                                            <td width="15%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"></td>
                                                             <td width="1%"></td>
-                                                            <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                                            <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Entidad Bancaria</b></td>
                                                             <td width="1%"></td>
                                                             <td width="8%"></td>
                                                             <td width="1%"></td>
@@ -897,7 +885,7 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="15%"><b></b></td>
                                                             <td width="1%"></td>
-                                                            <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                                            <td width="12%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>DECLARACION DE BIENES</b></td>
                                                             <td width="1%"></td>
@@ -943,7 +931,7 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="9%"></td>
                                                             <td width="1%"></td>
-                                                            <td width="15%"><b></b></td>
+                                                            <td width="15%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"></td>
                                                             <td width="1%"></td>
@@ -967,7 +955,7 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="9%"></td>
                                                             <td width="1%"></td>
-                                                            <td width="15%"><b></b></td>
+                                                            <td width="15%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"></td>
                                                             <td width="1%"></td>
@@ -996,9 +984,9 @@ No funciona... :o(
                                                             <td width="1%"></td>
                                                             <td width="9%"></td>
                                                             <td width="1%"></td>
-                                                            <td width="15%"><b></b></td>
+                                                            <td width="15%"></td>
                                                             <td width="1%"></td>
-                                                            <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                                            <td width="12%"></td>
                                                             <td width="1%"></td>
                                                             <td width="12%"></td>
                                                             <td width="1%"></td>
@@ -1008,30 +996,6 @@ No funciona... :o(
                                                             <td width="3%"></td>
                                                             <td width="1%"></td>
                                                         </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table  class="tablaAbmimpar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
-                                                    <tbody>
-                                                        <tr class="campos">
-                                                            <td width="1%" height="22"></td>
-                                                            <td width="14%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="6%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="9%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="15%"><b></b></td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="8%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%"></td>
-                                                            <td width="3%"></td>
-                                                            <td width="1%"></td>
-                                                        </tr>            
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -1063,39 +1027,12 @@ No funciona... :o(
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                                <table  class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
-                                                    <tbody>
-                                                        <tr class="campos">
-                                                            <td width="1%" height="22"></td>
-                                                            <td width="14%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="6%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="9%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="15%"><b></b></td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="8%"></td>
-                                                            <td width="1%"></td>
-                                                            <td width="12%"></td>
-                                                            <td width="3%"></td>
-                                                            <td width="1%"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-
-                                            <table border="0"><tr><td height="3px"></td></tr></table>     
+                                            </div>  
                                             <br>
                                             <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
                                                 <tr>
                                                     <td align="right" width="50%">
-                                                        <button name="GenerarNotificacion" style="width:120px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="Destildar()"><u>G</u>enerar Notificación</button>
+                                                        <button name="GenerarNotificacion" style="width:120px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick=generarNotificacion() ><u>G</u>enerar Notificación</button>
                                                     </td>
                                                 </tr>
                                             </table> 
@@ -1115,16 +1052,6 @@ No funciona... :o(
         </table>
         <!-- /Tabla Principal -->
     </form>
-
-    <script type="text/javascript">
-        function escritos(num) {
-                document.getElementById('1').hidden = true
-                document.getElementById('2').hidden = true
-                document.getElementById('3').hidden = true
-                document.getElementById('4').hidden = true
-                document.getElementById(num).hidden = false
-        }
-    </script>
 </body>
 <!--
     Esto es para que no cachee las paginas
@@ -1135,7 +1062,6 @@ No funciona... :o(
 </HEAD>
 
 </html>
-<script type="text/javascript" src="../include/ayuda.js"></script>
 <script type="text/javascript" src="../scripts/prototype.js"></script>
 <script type="text/javascript" src="../scripts/abm.js"></script>
 <script type="text/javascript" src="../scripts/date.js"></script>
