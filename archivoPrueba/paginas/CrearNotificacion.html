@@ -37,7 +37,11 @@
         function agregarFila() {
             document.getElementById("Table13").insertRow(-1).innerHTML = ' <td width="2%" height="35"></td><td width="29%"><table><tr class="camposDestacados"><td width="100%"><img  width="10%" src="../images/pdf.png" border="0" align="absmiddle">Adjunto</td></tr></table></td><td width="11%"></td><td width="7%" class="Campos">29/8/2016</td><td width="7%"><a href="" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menu/edit.png" border="0" align="absmiddle"> Adjunto</a></td><td width="1%"></td><td width="7%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="absmiddle" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="absmiddle"> Eliminar</a></td><td width="1%"></td><td width="12%"></td><td width="1%"></td><td width="21%"><input type="file"></td>';
         }
-
+        function Agregar() {
+            alert("Notificación Generada")
+        } function Cancelar() {
+            alert("Notificación Cancelada")
+        }
         function eliminarFila() {
             var table = document.getElementById("Table13");
             var rowCount = table.rows.length;
@@ -304,8 +308,7 @@
                                             <td width="1%"></td>
                                             <td width="12%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Modificado Por+</a></td>
                                             <td width="1%"></td>
-                                            <td width="3%"></td>
-                                            <td width="1%"></td>
+                                            <td width="4%"></td>
                                         </tr>
                                     </table>
                                     <!-- /Titulos -->
@@ -319,19 +322,6 @@
                                                         <!-- RENGLON RESULTADO -->
                                                         <tr class="campos">
                                                             <td width="1%" height="22"></td>
-                                                            <!--<td width="3%" align="right">&nbsp;&nbsp;	</td>
-                                                            <!-- Botones de subir y bajar el orden
-                                                            <td width="3%">
-                                                                <table border="0" cellSpacing="0" cellPadding="0" ID="Table4">
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="javascript:IdClickValue(); FireEvent('MovimientoSubir')"><img border="0" src="../images/Otros/movimiento_subir.PNG"></a><a href="javascript:IdClickValue(); FireEvent('MovimientoBajar')"><img border="0" src="../images/Otros/movimiento_bajar.PNG"></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                            <!-- /Botones de subir y bajar el orden
-                                                            <td width="1%"></td>-->
                                                             <td width="12%">RECEPCI&#211;N DE CERTIFICADO</td>
                                                             <td width="1%"></td>
                                                             <td width="8%">24/10/2015</td>
@@ -348,8 +338,9 @@
                                                             <td width="1%"></td>
                                                             <td width="12%">Souto, Silvia Manuela</td>
                                                             <td width="1%"></td>
-                                                            <td width="3%"> </td>
-                                                            <td width="1%"></td>
+                                                            <td width="4%" height="22" align="center">
+                                                                <input type="radio" value="0" name="Movimiento" checked>
+                                                            </td>
                                                         </tr>
                                                         <!-- FIN RENGLON RESULTADO -->
 
@@ -390,8 +381,9 @@
                                                             <td width="1%"></td>
                                                             <td width="12%">Medina, Ernesto Javier</td>
                                                             <td width="1%"></td>
-                                                            <td width="3%"> </td>
-                                                            <td width="1%"></td>
+                                                            <td width="4%" height="22" align="center">
+                                                                <input type="radio" value="1" name="Movimiento">
+                                                            </td>
                                                         </tr>
                                                         <!-- FIN RENGLON RESULTADO -->
 
@@ -432,8 +424,9 @@
                                                             <td width="1%"></td>
                                                             <td width="12%">VILASECO, Nelida Alejandra</td>
                                                             <td width="1%"></td>
-                                                            <td width="3%"> </td>
-                                                            <td width="1%"></td>
+                                                            <td width="4%" height="22" align="center">
+                                                                <input type="radio" value="2" name="Movimiento">
+                                                            </td>
                                                         </tr>
                                                         <!-- FIN RENGLON RESULTADO -->
 
@@ -946,9 +939,9 @@
 
                                                                                                 <!-- BOTON IMPRIMIR ANTIGUO NO VA MAS-->
                                                                                                 <!--<td width="1%"></td>
-                                                                                                <td width="10%">
-                                                                                                    < % '= getEscritoBtnImprimir(XmlRow.selectSingleNode("@EscritoId").Text) %>
-                                                                                                </td>-->
+                                            <td width="10%">
+                                                < % '= getEscritoBtnImprimir(XmlRow.selectSingleNode("@EscritoId").Text) %>
+                                            </td>-->
 
                                                                                                 <td width="1%"></td>
 
@@ -1188,8 +1181,8 @@
                                                             <table cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table16">
                                                                 <tr>
                                                                     <td align="right" width="97%">
-                                                                        <button name="btnEscritoAceptar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:EscritoAceptarNew();return false;">Grabar</button>
-                                                                        &nbsp<button name="btnEscritoCancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:EscritoCancelar();return true;">Cancelar</button>
+                                                                        <button name="btnEscritoAceptar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="Grabar()">Grabar</button>
+                                                                        &nbsp<button name="btnEscritoCancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="Cancelar()">Cancelar</button>
                                                                     </td>
                                                                     <td width="3%">&nbsp;&nbsp;</td>
                                                                 </tr>
@@ -1343,7 +1336,7 @@
                                                 <td width="1%" height="22"></td>
                                                 <!--<td width="6%" align="right"><b></b></td>
                                                 <td width="1%"></td>-->
-                                                <td width="14%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo Movimiento</a></b></td>
+                                                <td width="14%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Movimiento</a></b></td>
                                                 <td width="1%"></td>
                                                 <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha</a></b></td>
                                                 <td width="1%"></td>
@@ -1386,7 +1379,7 @@
                                                                 </td>
                                                                 <!-- /Botones de subir y bajar el orden
                                                                 <td width="1%"></td>-->
-                                                                <td width="14%">CEDULA DE NOTIFICACION</td>
+                                                                <td width="14%">NE   CEDULA DE NOTIFICACION</td>
                                                                 <td width="1%"></td>
                                                                 <td width="6%">29/8/2016</td>
                                                                 <td width="1%"></td>
@@ -1427,7 +1420,7 @@
                                                                 </td>
                                                                 <!-- /Botones de subir y bajar el orden
                                                                 <td width="1%"></td>-->
-                                                                <td width="14%">CEDULA DE NOTIFICACION</td>
+                                                                <td width="14%">NE   CEDULA DE NOTIFICACION</td>
                                                                 <td width="1%"></td>
                                                                 <td width="6%">9/9/2016</td>
                                                                 <td width="1%"></td>
@@ -1468,7 +1461,7 @@
                                                                 </td>
                                                                 <!-- /Botones de subir y bajar el orden
                                                                 <td width="1%"></td>-->
-                                                                <td width="14%">CEDULA DE NOTIFICACION</td>
+                                                                <td width="14%">NM   CEDULA DE NOTIFICACION</td>
                                                                 <td width="1%"></td>
                                                                 <td width="6%">20/10/2016</td>
                                                                 <td width="1%"></td>
@@ -1509,7 +1502,7 @@
                                                                 </td>
                                                                 <!-- /Botones de subir y bajar el orden
                                                                 <td width="1%"></td>-->
-                                                                <td width="14%">EMBARGO</td>
+                                                                <td width="14%">NM   EMBARGO</td>
                                                                 <td width="1%"></td>
                                                                 <td width="6%">10/2/2017</td>
                                                                 <td width="1%"></td>
