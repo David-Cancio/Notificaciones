@@ -1,39 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba</title>
+    <title>Acciones Judiciales</title>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta content="Acciones Judiciales" name="keywords">
+    <meta content="Ministerio de trabajo, empleo y seguridad social" name="description">
+    <meta content="INDEX,FOLLOW" name="robots">
+    <link href="./Style/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./Style/menu.css" type="text/css">
 </head>
 <body>
-    <h2>Redireccion</h2>
-    <div style="padding-left:35%;padding-right:35%;">
-        <ul>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/EditarNotificacion2.html">Editar Notificaciones</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/BandejaNotificaciones.html">Bandeja de Notificaciones</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/CrearNotificacion.html">Crear Notificaciones</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/CrearNuevoLote.html">Crear Nuevo Lote</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/EnviarLote.html">Enviar Lote</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/HistoricoLotes.html">Historico de Lotes</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="/archivoPrueba/paginas/LoteDetallado.html">Detalle del Lote</a>
-            </li>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
+        <tr>
+            <td width="5%" height="79">&nbsp;</td>
+            <td width="20%" align="right"><img src="./images/banner/Titulo.gif" align="absmiddle"></td>
+            <td width="50%">&nbsp;</td>
+            <td width="20%" align="right"><img src="./images/banner/escudoMTEySS.gif" width="160" height="50" align="absmiddle"></td>
+            <td width="5%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5" height="1" bgcolor="#E8E8E8"></td>
+        </tr>
+    </table>
 
-        </ul>
-        
-    </div>
+    <script type="text/javascript" src="./scripts/menu/JSCookMenu.js"></script>
+    <script type="text/javascript" src="./scripts/menu/theme.js"></script>
+    <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
+        <tr>
+            <td width="70%" class="menuBackgr"><div id="mainMenuID"></div></td>
+            <td width="5%" class="menuBackgr">
+                <a href="http://Agenda.trabajo.gob.ar/Consultas/AbmAlerta.asp?Servicio=Juicios" style="color:red" target="_blank" title="Alertas"><b><img width="16px" height="18px" src="./images/menu/alerta.png" align="absmiddle" border="0">(0)</b></a>&nbsp;
+            </td>
+            <td width="10%" class="menuBackgr"></td>
+            <td width="20%" class="menuUsuarioDisplay" align="right">
+                <div ondblclick="window.open( '..\\seguridad\\entorno.asp', 'entorno', 'width=700, height=350, toolbar=0, menubar=0, directories=0, scrollbars=0, location=0, status=0' ); return false;">
+                    usuario: &nbsp;TRABAJO\CAUSLENDER&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="./scripts/resumen.js"></script>
+    <table align="center" style="text-align: center; font-size: 150%;">
+        <tr>
+            <td>
+                <table><tr heigth="3px"></tr></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 style="text-align: center; font-size: 300%;">Notificaciones Electronicas</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 style="text-align: center; font-size: 150%;">Nuevo Sistema de Crear Notificaciones</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/BandejaNotificaciones.html">Bandeja de Notificaciones</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/CrearNotificacion.html">Crear Notificaciones</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 style="text-align: center; font-size: 150%;">Sistema de Lotes</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/BandejaLotes.html">Bandeja de Lotes Pendientes</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/HistoricoLotes.html">Historico de Lotes</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/LoteDetallado.html">Detalle del Lote (Enviado)</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/CrearNuevoLote.html">Crear Nuevo Lote</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/EnviarLote.html">Enviar Lote</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 style="text-align: center; font-size: 150%;">1er Sistema Notificaciones</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="dropdown-item" href="/archivoPrueba/paginas/EditarNotificacion2.html">Crear Notificaciones sin Movimiento Asociado</a>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
