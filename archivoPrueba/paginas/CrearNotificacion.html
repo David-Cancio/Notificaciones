@@ -9,6 +9,7 @@
     <meta content="INDEX,FOLLOW" name="robots">
     <link href="../Style/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/menu.css" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
@@ -49,7 +50,18 @@
             var id = 'radio'+(num) 
             document.getElementById(id).checked = true
         }
+
+        function BOTON(){
+            console.log("entre al boton")
+            setTimeout(alertaSwal(), 2000);
+        }
+        function alertaSwal(evt){
+            swal("Grabado Exitoso","", "success");
+
+        }
+   
     </script>
+
     <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
         <tr>
             <td width="70%" class="menuBackgr"><div id="mainMenuID"></div></td>
@@ -102,7 +114,7 @@
     </table>
 
 
-    <form id="Formulario" name="Formulario" action="" enctype="multipart/form-data" method="post">
+    <form id="Formulario" name="Formulario"  enctype="multipart/form-data" >
         <!-- Tabla Principal -->
         <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" ID="TGeneral">
             <tr>
@@ -683,9 +695,9 @@
                                                 <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
                                                     <tr>
                                                         <td align="right" width="100%">
-                                                            <button name="Grabar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="javascript:FireEvent('Grabar')"><u>G</u>rabar</button>
+                                                            <button name="Grabar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="javascript:alertaSwal()"><u>G</u>rabar</button>
                                                             &nbsp;
-                                                            <button name="Cancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="c" onclick="javascript:FireEvent('Cancelar')"><u>C</u>ancelar</button>
+                                                            <button name="Cancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="c" ><u>C</u>ancelar</button>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -702,6 +714,8 @@
             </tr>
         </table>
     </form>
+
+
 </body>
 </html>
 
