@@ -30,7 +30,7 @@ conexion.open
     <!--#include virtual="/Partials/head.asp"-->
 <body>
     <!--#include virtual="/Partials/header.asp"-->
-    <div class="listado">   
+    <div class="listado">       
         <form action="ConfirmarCrearNotificacion.asp" name="formulario" method="post">
             <input type="text" name="univoco" value="<%response.write(univoco)%>" hidden/>
             <h1>Ingrese una nueva Notificación</h1>
