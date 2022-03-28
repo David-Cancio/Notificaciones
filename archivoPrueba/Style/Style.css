@@ -365,6 +365,20 @@ select
 	/*background-color: #D2E8BD;*/
 	background-color: #CDCDCD;
 }
+.tablaAbmSelected1
+{
+	border-top: white 1px;
+	/*background-color: palegreen;*/
+	/*background-color: #D2E8BD;*/
+	background-color: #c5e0b4;
+}
+.tablaAbmSelected2
+{
+	border-top: white 1px;
+	/*background-color: palegreen;*/
+	/*background-color: #D2E8BD;*/
+	background-color: #e2f0d9;
+}
 .tablaAbmImparContable
 {
     font-weight: normal;
