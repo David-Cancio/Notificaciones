@@ -139,7 +139,7 @@
     ['<img src="../images/menu/edit.png" />','Feriados','../Tablas/AbmFeriado.asp',null,'Feriado']
     ],
     _cmSplit,
-    ['<img src="../images/menu/document.png" />','Información','../Tablas/AbmInformacion.asp',null,'Sitios de interés'],
+        ['<img src="../images/menu/document.png" />','Informaci&oacute;n','../Tablas/AbmInformacion.asp',null,'Sitios de interés'],
     ['<img src="../images/menu/edit.png" />','Tipos de Información','../Tablas/AbmTipoInformacion.asp',null,'Tipos de información'],
     _cmSplit,
     ['<img src="../images/menu/users_002.png" />','Usuarios','../Tablas/AbmUsuario.asp',null,'Usuarios'],
@@ -242,9 +242,9 @@
     _cmSplit,
     ['<img src="../images/menu/edit.png" />','Auditoría Casos P.T.N.','../Consultas/ConsultaCasosAdvocatus.asp',null,'Auditoría de Causas P.T.N.']
     ],
-    [null,'Información','../Informacion/Informacion.asp',null,'Sitios de interés'],
+            [null,'Informaci&oacute;n','../Informacion/Informacion.asp',null,'Sitios de interés'],
     _cmSplit,
-    [null,'Estadísticas','#',null,'Estadisticas',
+            [null,'Estad&iacute;sticas','#',null,'Estadisticas',
     ['<img width="16px" height="16px" src="../images/menu/blank.png" />','Multas SECLO','#',null,'Multas SECLO',
     ['<img src="../images/menu/search_text.png" />','Casos por Oficina','../Estadisticas/JuiciosPorPeriodo.asp?Area=SECLO&Consulta=TipoOficina',null,'Estadística de Casos por Oficina'],
     ['<img src="../images/menu/search_text.png" />','Casos por Etapa','../Estadisticas/PorEtapa.asp?Area=SECLO',null,'Estadística de Casos por Etapa'],
@@ -307,7 +307,7 @@
     ]
     ]
     ],
-    [null,'Configuración','#',null,'Administracion',
+            [null,'Configuraci&oacute;n','#',null,'Administracion',
         ['<img src="../images/menu/edit.png" />','Cache','../Main/Cache.asp',null,'Administrar Cache'],
         ['<img src="../images/menu/edit.png" />','Variables','../Seguridad/AbmVariable.asp',null,'Variables'],
         ['<img src="../images/menu/edit.png" />','Diccionario','../Seguridad/AbmDiccionario.asp',null,'Diccionario'],

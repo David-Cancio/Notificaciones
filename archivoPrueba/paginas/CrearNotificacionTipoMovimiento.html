@@ -1,0 +1,650 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <title>Acciones Judiciales</title>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta content="Acciones Judiciales" name="keywords">
+    <meta content="Ministerio de trabajo, empleo y seguridad social" name="description">
+    <meta content="INDEX,FOLLOW" name="robots">
+    <link href="../Style/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/menu.css" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
+        <tr>
+            <td width="5%" height="79">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/Titulo.gif" align="middle"></td>
+            <td width="50%">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/escudoMTEySS.gif" width="160" height="50" align="middle"></td>
+            <td width="5%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5" height="1" bgcolor="#E8E8E8"></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
+    <script type="text/javascript" src="../scripts/menu/theme.js"></script>
+    <script language=javascript>
+        function agregarFila() {
+            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">CONSTANCIA IGB</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="20%" class="campos">Souto, Silvia Manuela</td><td width="1%"></td></tr></table>';
+        }
+        function Agregar() {
+            alert("Notificación Generada")
+        } function Cancelar() {
+            alert("Notificación Cancelada")
+        }
+        function eliminarFila() {
+            var table = document.getElementById("Table13");
+            var rowCount = table.rows.length;
+            console.log(rowCount);
+
+            if (rowCount <= 1)
+                alert('No se puede eliminar el encabezado');
+            else
+                table.deleteRow(rowCount - 1);
+        }
+        function radioCheck(num) {
+            var id = 'radio' + (num)
+            document.getElementById(id).checked = true
+        }
+
+        function BOTON() {
+            console.log("entre al boton")
+            setTimeout(alertaSwal(), 2000);
+        }
+        function alertaSwal(evt) {
+            swal("Grabado Exitoso", "", "success");
+
+        }
+
+    </script>
+
+    <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
+        <tr>
+            <td width="70%" class="menuBackgr"><div id="mainMenuID"></div></td>
+            <td width="5%" class="menuBackgr">
+                <a href="http://Agenda.trabajo.gob.ar/Consultas/AbmAlerta.asp?Servicio=Juicios" style="color:red" target="_blank" title="Alertas"><b><img src="../images/menu/alerta.png" align="middle" border="0">(0)</b></a>&nbsp;
+            </td>
+            <td width="10%" class="menuBackgr"></td>
+            <td width="20%" class="menuUsuarioDisplay" align="right">
+                <div ondblclick="window.open( '..\\seguridad\\entorno.asp', 'entorno', 'width=700, height=350, toolbar=0, menubar=0, directories=0, scrollbars=0, location=0, status=0' ); return false;">
+                    usuario: &nbsp;TRABAJO\CAUSLENDER&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="../scripts/resumen.js"></script>
+
+    <table cellSpacing="0" cellPadding="0" width="100%" border="0" Class="MenuLeftBkg">
+        <tbody>
+            <tr>
+                <td class="ContentLeftLinks" align="right" width="98%" height="40" nowrap>
+
+
+                    &nbsp;<IMG src="../images/menus/AltaOff.gif" align="middle" border=0><font style="COLOR: gray"> Alta</font>
+
+
+                    &nbsp;<IMG src="../images/menus/BajaOff.gif" align="middle" border=0><font style="COLOR: gray"> Baja</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ModificarOff.gif" align="middle" border=0><font style="COLOR: gray"> Editar</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ConsultarOff.gif" align="middle" border=0><font style="COLOR: gray"> Consulta</font>
+
+
+                    &nbsp;<IMG src="../images/menus/FichaOff.gif" align="middle" border=0><font style="COLOR: gray"> Ver Ficha</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ExportarOff.gif" align="middle" border=0><font style="COLOR: gray"> Exportar</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ImprimirOff.gif" align="middle" border=0><font style="COLOR: gray"> Imprimir</font>
+
+
+                    &nbsp;
+                </td>
+                <td width="2%">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <form id="Formulario" name="Formulario" enctype="multipart/form-data">
+        <!-- Tabla Principal -->
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" ID="TGeneral">
+            <tr>
+                <td width="96%">
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="55" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Principal</font></a>
+                                </div>
+                            </td>
+                            <td width="84" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Certificados</font></a>
+                                </div>
+                            </td>
+                            <td width="84" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoExpedientes.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Expedientes</font></a>
+                                </div>
+                            </td>
+                            <td width="55" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoAbogado.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Letrados</font></a>
+                                </div>
+                            </td>
+                            <td width="55" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoParte.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Partes</font></a>
+                                </div>
+                            </td>
+                            <td width="84" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovimiento.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Movimientos</font></a>
+                                </div>
+                            </td>
+                            <td width="55" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovContable.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Contable</font></a>
+                                </div>
+                            </td>
+                            <td width="84" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoLiquidacion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Liquidaciones</font></a>
+                                </div>
+                            </td>
+                            <td width="55" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoPagos.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Pagos</font></a>
+                                </div>
+                            </td>
+                            <td width="55" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoBoleta.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Boletas</font></a>
+                                </div>
+                            </td>
+                            <td width="84" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                                    <a href="javascript:FireEvent( 'Consultar', 'AbmCasoOficioBCRA.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Oficios BCRA</font></a>
+                                </div>
+                            </td>
+                            <td width="84" valign="bottom" align="center">
+                                <div valign="bottom" align="center" class="tabOver" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                                    <a href="#0" class="tabTextSelected"><font class="tabTextSelected">Notificaciones</font></a>
+                                </div>
+                            </td>
+                            <td width="800">&nbsp;</td>
+                        </tr>
+                    </table>
+
+                    <table class="tabTable" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td>
+                                <table border="0"><tr><td height="3px"></td></tr></table>
+
+                                <div id="divAbmForm">
+                                    <!-- TABLA TITULO -->
+                                    <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                        <tbody>
+                                            <tr>
+                                                <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
+                                                    &nbsp;&nbsp;CASO&nbsp;&nbsp;&nbsp;&nbsp;48997
+                                                </td>
+                                                <td width="60%" align="right">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- FIN TABLA TITULO -->
+                                    <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                        <tbody>
+                                            <tr>
+
+                                                <td vAlign=top>
+
+
+                                                    <!-- FORMULARIO -->
+                                                    <!-- COMIENZO DE RENGLON-->
+
+                                                    <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%">
+                                                        <tbody>
+                                                            <tr class="campos">
+                                                                <td width="1%" height="30"></td>
+                                                                <td align="right" width="5%"><b>&Aacute;rea</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="14%">Multas PNRT</td>
+                                                                <td width="1%"></td>
+                                                                <td width="4%" align="right"><b>Carpeta</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="5%">48997</td>
+                                                                <td width="1%"></td>
+                                                                <td width="8%" align="right"><b>Nº.MTEySS</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="11%">7-51-97341-2014</td>
+                                                                <td width="1%"></td>
+                                                                <td align="right" width="8%"><b>Nº.Judicial</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="8%">123/2017</td>
+                                                                <td width="1%"></td>
+                                                                <td align="right" width="8%"><b>F.Ingreso</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="7%">9/1/2015</td>
+                                                                <td width="1%"></td>
+                                                                <td width="10%"><font color="red"><b>Nº202010</b></font></td>
+                                                                <td width="1%"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- FIN RENGLON FORMULARIO -->
+                                                    <!-- COMIENZO RENGLON FORMULARIO -->
+                                                    <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table2">
+                                                        <tr class="campos">
+                                                            <td width="1%" height="30"></td>
+                                                            <td align="right" width="5%"><b>Autos</b></td>
+                                                            <td width="1%"></td>
+                                                            <td width="64%" align="left">MINISTERIO DE TRABAJO, EMPLEO Y SEGURIDAD SOCIAL c/ GARDIEN DE SECURITE SRL S/EJECUCION FISCAL</td>
+                                                            <td width="1%"></td>
+                                                            <td align="right" width="8%"><b>F.Inicio</b></td>
+                                                            <td width="1%"></td>
+                                                            <td align="left" width="7%">8/3/2022</td>
+                                                            <td width="1%"></td>
+                                                            <td width="10%"><span class="HelpText">(promoción de la demanda)</span></td>
+                                                            <td width="1%"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table border="0"><tr><td height="3px"></td></tr></table>
+                                </div>
+                                <table width="98%" align="center" class="TituloConLinea">
+                                    <tr>
+                                        <td width="25%" align="left">
+                                            <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="middle">&nbsp;&nbsp;<b>Asociar Movimiento</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0"><tr><td height="3px"></td></tr></table>
+                                <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" align="center">
+                                    <tr>
+                                        <td width="1%" height="22"></td>
+                                        <td width="16%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo+</a></b></td>
+                                        <td width="1%"></td>
+                                        <td width="8%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha+</a></b></td>
+                                        <td width="1%"></td>
+                                        <td width="40%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Descripci&#243;n+</a></b></td>
+                                        <td width="1%"></td>
+                                        <td width="10%" align=Left><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Estado+</a></b></td>
+                                        <td width="1%"></td>
+                                        <td width="15%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Modificado Por+</a></td>
+                                        <td width="1%"></td>
+                                        <td width="5%"></td>
+                                    </tr>
+                                </table>
+                                <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                                    <tr>
+                                        <td vAlign="top" align="center" width="100%">
+                                            <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('0');javascript:rowOnClick(this,'2239748')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr class="campos">
+                                                        <td width="1%" height="22"></td>
+                                                        <td width="16%">CEDULA DE NOTIFICACI&#211;N</td>
+                                                        <td width="1%"></td>
+                                                        <td width="8%">24/10/2015</td>
+                                                        <td width="1%"></td>
+                                                        <td width="40%"></td>
+                                                        <td width="1%"></td>
+                                                        <td width="10%"><IMG style="width:16px; height:16px" SRC="../images/menus/OkOn.gif"></td>
+                                                        <td width="1%"></td>
+                                                        <td width="15%">Souto, Silvia Manuela</td>
+                                                        <td width="1%"></td>
+                                                        <td width="4%" height="22" align="center">
+                                                            <input id="radio0" type="radio" value="0" name="Movimiento" checked>
+                                                        </td>
+                                                        <td width="1%"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="tablaAbmPar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('1');javascript:rowOnClick(this,'2271693')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2271693');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr class="campos">
+                                                        <td width="1%" height="22"></td>
+                                                        <td width="16%">CEDULA DE NOTIFICACI&#211;N</td>
+                                                        <td width="1%"></td>
+                                                        <td width="8%">12/11/2015</td>
+                                                        <td width="1%"></td>
+                                                        <td width="40%"><b></b></td>
+                                                        <td width="1%"></td>
+                                                        <td width="10%"><IMG style="width:16px; height:16px" SRC="../images/menus/OkOn.gif"></td>
+                                                        <td width="1%"></td>
+                                                        <td width="15%">Medina, Ernesto Javier</td>
+                                                        <td width="1%"></td>
+                                                        <td width="4%" height="22" align="center">
+                                                            <input id="radio1" type="radio" value="1" name="Movimiento">
+                                                        </td>
+                                                        <td width="1%"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="tablaAbmImpar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('2');javascript:rowOnClick(this,'2276217')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2276217');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr class="campos">
+                                                        <td width="1%" height="22"></td>
+                                                        <td width="16%">EMBARGO</td>
+                                                        <td width="1%"></td>
+                                                        <td width="8%">16/11/2015</td>
+                                                        <td width="1%"></td>
+                                                        <td width="40%"><b></b></td>
+                                                        <td width="1%"></td>
+                                                        <td width="10%"><IMG style="width:16px; height:16px" SRC="../images/menus/OkOn.gif"></td>
+                                                        <td width="1%"></td>
+                                                        <td width="15%">VILASECO, Nelida Alejandra</td>
+                                                        <td width="1%"></td>
+                                                        <td width="4%" height="22" align="center">
+                                                            <input id="radio2" type="radio" value="2" name="Movimiento">
+                                                        </td>
+                                                        <td width="1%"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </tr>
+                                </table>
+                                <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                                    <tr>
+                                        <td align="right">
+                                            <input name="agregar" style="width:200px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Selección de Tipo de Notificación">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0"><tr><td height="3px"></td></tr></table>
+                                <table width="98%" align="center" class="TituloConLinea">
+                                    <tr>
+                                        <td width="25%" align="left">
+                                            <IMG src="../images/menus/Editar_24x24.gif" vspace=0 align="middle">&nbsp;&nbsp;<b>Escritos</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0"><tr><td height="3px"></td></tr></table>
+
+                                <div hidden id="divAbmForm">
+                                    <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                        <tbody>
+                                            <tr>
+                                                <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
+                                                    &nbsp;&nbsp;AGREGAR ESCRITOS
+                                                </td>
+                                                <td width="60%" align="right">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                        <tbody>
+                                            <tr>
+                                                <td vAlign=top>
+                                                    <!-- Archivo del movimiento -->
+                                                    <table class="subEncabezado" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table7">
+                                                        <tr><td width="100%" height="15" align="center"><b>Archivo del movimiento</b></td></tr>
+                                                    </table>
+                                                    <!-- /Archivo del movimiento -->
+                                                    <!-- Archivo -->
+                                                    <table class="tablaAbmImpar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table10">
+                                                        <tr class="campos">
+                                                            <td width="1%" height="30"></td>
+                                                            <td width="12%" align="right"><b>Archivo</b>&nbsp;</td>
+                                                            <td width="1%"></td>
+                                                            <td width="66%">
+                                                                <font color="red">No se ha especificado ningún archivo</font>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                            </td>
+                                                            <td width="1%"></td>
+                                                            <td width="18%" align="right">
+                                                                <div id="labelShowdivCambiarArchivo" class="camposDestacados"
+                                                                     onmouseover="this.style.cursor='pointer';imglabelShowdivCambiarArchivo.src='../images/navegacion/expandirOn.gif';window.status='+ Cambiar Archivo';return true;"
+                                                                     onmouseout="this.style.cursor='default';imglabelShowdivCambiarArchivo.src='../images/navegacion/expandir.gif';window.status='';return true;"
+                                                                     onclick="javascript:HideControl('labelShowdivCambiarArchivo');ShowControl('labelHidedivCambiarArchivo');ShowControl('divCambiarArchivo');"><b>+ Cambiar Archivo</b>&nbsp;<img alt="+ Cambiar Archivo" src="../images/navegacion/expandir.gif" border="0" name="imglabelShowdivCambiarArchivo" align="middle">&nbsp;&nbsp;</div>
+
+
+                                                                <div id="labelHidedivCambiarArchivo" class="camposDestacados" style="display:none"
+                                                                     onmouseover="this.style.cursor='pointer';imglabelHidedivCambiarArchivo.src='../images/navegacion/contraerOn.gif';window.status='- Cambiar Archivo';return true;"
+                                                                     onmouseout="this.style.cursor='default';imglabelHidedivCambiarArchivo.src='../images/navegacion/contraer.gif';window.status='';return true;"
+                                                                     onclick="javascript:ShowControl('labelShowdivCambiarArchivo');HideControl('labelHidedivCambiarArchivo');HideControl('divCambiarArchivo');"><b>- Cambiar Archivo</b>&nbsp;<img alt="- Cambiar Archivo" src="../images/navegacion/contraer.gif" border="0" name="imglabelHidedivCambiarArchivo" align="middle">&nbsp;&nbsp;</div>
+                                                            </td>
+                                                            <td width="1%"></td>
+                                                        </tr>
+                                                    </table>
+                                                    <div id="divCambiarArchivo" style="display:none">
+                                                        <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table9">
+                                                            <tr class="campos">
+                                                                <td width="1%" height="30"></td>
+                                                                <td width="12%" align="right"><b><font color="red">*</font>Tipo Archivo</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="20%">
+                                                                    <select id="TipoArchivoId" name="TipoArchivoId" class="formobj">
+                                                                        <option value="" selected> --Seleccione--</option>
+                                                                        <option value="2">Archivo de uso general</option>
+                                                                    </select>
+
+                                                                </td>
+                                                                <td width="1%"></td>
+                                                                <td width="15%" align="right"><b><font color="red">*</font>Nuevo archivo</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="48%">
+                                                                    <input size="50" Type="File" class="formobj" Id="MovimientoArchivo" Name="MovimientoArchivo" maxlength="200">
+                                                                </td>
+                                                                <td width="1%"></td>
+                                                            </tr>
+                                                        </table>
+                                                        <!-- /Cambiar Archivo -->
+                                                        <!-- Descripcion | Publicar -->
+                                                        <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table6">
+                                                            <tr class="campos">
+                                                                <td width="1%" height="30"></td>
+                                                                <td width="12%" align="right"><b><font color="red">*</font>Descripción</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="68%" align="right">
+                                                                    <input class="formobj" Id="ArchivoDescripcion" Name="ArchivoDescripcion" Value="" maxlength="2000">
+                                                                </td>
+                                                                <td width="1%"></td>
+                                                                <td width="9%" align="right"><b><font color="red">*</font>Publicar</b></td>
+                                                                <td width="1%"></td>
+                                                                <td width="6%">
+                                                                    <select id="ArchivoPublico" name="ArchivoPublico" class="formobj" width="100%">
+                                                                        <option value="" selected>--Seleccione--</option>
+                                                                        <option value="0">No</option>
+                                                                        <option value="1">S&#237;</option>
+                                                                    </select>
+
+                                                                </td>
+                                                                <td width="1%"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <table class="subEncabezado" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table8">
+                                                        <tr><td width="100%" height="15" align="center"><b>Escritos</b></td></tr>
+                                                    </table>
+                                                    <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+                                                        <tr><td width="100%" height="10"></td></tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
+                                                &nbsp;&nbsp;CÉDULA DIGITALIZADA
+                                            </td>
+                                            <td width="60%" align="right">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td vAlign=top>
+                                                <div id="divEscritosGrilla">
+                                                    <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table11">
+                                                        <tr class="campos">
+                                                            <td width="100%" height="30" align="center">
+                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12">
+                                                                    <tr>
+                                                                        <td width="1%" height="35"></td>
+                                                                        <td width="45%">
+                                                                            <table>
+                                                                                <tr class="camposDestacados">
+                                                                                    <td width="100%">C&#233;dula Basica:SENTENCIA JUDICIAL EXTRAÍDA DE PJN</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td width="15%">
+                                                                            <table>
+                                                                                <tr class="campos">
+                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td width="15%">
+                                                                            <table>
+                                                                                <tr class="campos">
+                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td width="15%">
+                                                                            <table>
+                                                                                <tr class="campos">
+                                                                                    <td>Souto, Silvia Manuela</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td align="right" width="8%">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar">
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table border="0"><tr><td height="3px"></td></tr></table>
+                                <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
+                                                &nbsp;&nbsp;ESCRITOS ADJUNTOS
+                                            </td>
+                                            <td width="60%" align="right">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td vAlign=top>
+                                                <div id="divEscritosGrilla">
+                                                    <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table11">
+                                                        <tr class="campos">
+                                                            <td width="100%" height="30" align="center">
+                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table13">
+                                                                    <tr>
+                                                                        <td width="1%" height="35"></td>
+                                                                        <td width="43%">
+                                                                            <table>
+                                                                                <tr class="camposDestacados">
+                                                                                    <td width="100%">
+                                                                                        <img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">
+                                                                                        CONSTANCIA IGB
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                        <td width="25%" class="Campos">29/8/2016 10:49</td>
+                                                                        <td width="1%"></td>
+                                                                        <td width="15%">
+                                                                            <a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1">
+                                                                                <img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar
+                                                                            </a>
+                                                                        </td>
+                                                                        <td width="20%" class="campos">
+                                                                            Souto, Silvia Manuela
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                    </tr>
+                                                                </table>                                                            
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="divAgregarEscrito" style="display:block">
+                        <table border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table18">
+                            <tr class="campos">
+                                <td width="1%"></td>
+
+                                <td align="right" height="25" width="49%">
+                                    <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;" value="Agregar Archivo">
+                                </td>
+
+                                <td width="1%"></td>
+                            </tr>
+                            <tr><td height="5"></td></tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table border="0"><tr><td height="3px"></td></tr></table>
+
+        <div id="divBotones">
+            <table cellSpacing="0" cellPadding="0" width="100%" border="0" ID="TButtons">
+                <tr>
+
+                    <td align="right" width="50%">
+                        <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
+                            <tr>
+                                <td align="right" width="100%">
+                                    <button name="Grabar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="javascript:alertaSwal()"><u>C</u>onfirmar</button>
+                                    &nbsp;
+                                    <button name="Cancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="c"><u>C</u>ancelar</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table border="0"><tr><td height="3px"></td></tr></table>
+    </form>
+</body>
+</html>
+
+
