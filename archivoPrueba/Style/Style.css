@@ -1,5 +1,5 @@
 /****************************************************
-      HOJA DE ESTILO - General de la aplicación
+      HOJA DE ESTILO - General de la aplicaciï¿½n
 ****************************************************/
 body
 {	margin-left: 0px;
@@ -308,12 +308,25 @@ select
 }
 .TablaEncabezadoTitulos
 {
-	border-right: solid 1px #339900;
+	border-right: solid 1px #3d9900;
 	border-left: solid 1px #339900;
 	border-bottom: solid 1px #339900;
 	border-top: solid 1px #339900;
 	background-image: url(../images/titulos/fondo_Verde.jpg);
 	background-repeat:  repeat-x;
+	font-weight: bold;
+  font-size: 11px;
+  color: #ffffff;
+  font-family: Tahoma, Arial, Helvetica;
+  text-decoration: none;
+}
+.TablaNueva
+{
+	border-right: solid 1px #3d9900;
+	border-left: solid 1px #339900;
+	border-bottom: solid 1px #339900;
+	border-top: solid 1px #339900;
+	background: #ffe699;
 	font-weight: bold;
   font-size: 11px;
   color: #ffffff;
@@ -580,6 +593,15 @@ td#ContColDisabled
     font-family: Tahoma, Arial, Helvetica;
     text-decoration: none
 }
+.encabezado2
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #000000;
+    line-height: 13px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none
+}
 .subEncabezado
 {
 	line-height: 17px;
@@ -725,7 +747,7 @@ td#ContColDisabled
      PAGE-BREAK-BEFORE: always
  }
 /***************************************/
-/* Texto de ayuda en línea */
+/* Texto de ayuda en lï¿½nea */
 .HelpText {
 	font-family: Tahoma;
 	font-size: 10px;

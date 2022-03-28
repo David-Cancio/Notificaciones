@@ -53,7 +53,7 @@
 
         function BOTON(){
             console.log("entre al boton")
-            setTimeout(alertaSwal(), 2000);
+            setTimeout(alertaSwal(), 5000);
         }
         function alertaSwal(evt){
             swal("Grabado Exitoso","", "success");
@@ -179,7 +179,7 @@
                             </td>
                             <td width="84" valign="bottom" align="center">
                                 <div valign="bottom" align="center" class="tabOver" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
-                                    <a href="#0" class="tabTextSelected"><font class="tabTextSelected">Bandeja de Notificaciones</font></a>
+                                    <a href="#0" class="tabTextSelected"><font class="tabTextSelected">Notificaciones</font></a>
                                 </div>
                             </td>
                             <td width="800">&nbsp;</td>
@@ -695,7 +695,7 @@
                                                 <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
                                                     <tr>
                                                         <td align="right" width="100%">
-                                                            <button name="Grabar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="javascript:alertaSwal()"><u>G</u>rabar</button>
+                                                            <button name="Grabar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick="javascript:BOTON()"><u>G</u>rabar</button>
                                                             &nbsp;
                                                             <button name="Cancelar" style="width:70px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="c" ><u>C</u>ancelar</button>
                                                         </td>
