@@ -1,0 +1,1162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <title>Acciones Judiciales</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta content="Acciones Judiciales" name="keywords">
+    <meta content="Ministerio de trabajo, empleo y seguridad social" name="description">
+    <meta content="INDEX,FOLLOW" name="robots">
+    <link href="../Style/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/menu.css" type="text/css">
+</head>
+<body>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
+        <tr>
+            <td width="5%" height="79">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/Titulo.gif" align="absmiddle"></td>
+            <td width="50%">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/escudoMTEySS.gif" width="160" height="50" align="absmiddle"></td>
+            <td width="5%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5" height="1" bgcolor="#E8E8E8"></td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
+    <script type="text/javascript" src="../scripts/menu/theme.js"></script>
+    <script languaje=javascript>
+        function escritos(num) {
+            document.getElementById('1').hidden = true
+            document.getElementById('2').hidden = true
+            document.getElementById('3').hidden = true
+            document.getElementById('4').hidden = true
+            document.getElementById(num).hidden = false
+        }
+        function generarNotificacion() {
+            alert("Notificación Generada")
+        }
+    </script>
+
+
+    <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
+        <tr>
+            <td width="70%" class="menuBackgr"><div id="mainMenuID"></div></td>
+            <td width="5%" class="menuBackgr">
+                <a href="http://Agenda.trabajo.gob.ar/Consultas/AbmAlerta.asp?Servicio=Juicios" style="color:red" target="_blank" title="Alertas"><b><img width="16px" height="18px" src="../images/menu/alerta.png" align="absmiddle" border="0">(0)</b></a>&nbsp;
+            </td>
+            <td width="10%" class="menuBackgr"></td>
+            <td width="20%" class="menuUsuarioDisplay" align="right">
+                <div ondblclick="window.open( '..\\seguridad\\entorno.asp', 'entorno', 'width=700, height=350, toolbar=0, menubar=0, directories=0, scrollbars=0, location=0, status=0' ); return false;">
+                    usuario: &nbsp;TRABAJO\CAUSLENDER&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="../scripts/resumen.js"></script>
+    <table cellSpacing="0" cellPadding="0" width="100%" border="0" Class="MenuLeftBkg">
+        <tbody>
+            <tr>
+                <td class="ContentLeftLinks" align="right" width="98%" height="40" nowrap>
+
+
+                    &nbsp;<a href="javascript:FireEvent('Agregar')" style="COLOR: black; font-weight: normal" tabindex="-1"><IMG src="../images/menus/AltaOn.gif" align="absmiddle" border=0> Alta</a>
+
+
+                    &nbsp;<IMG src="../images/menus/BajaOff.gif" align="absmiddle" border=0> Baja</a>
+
+
+                    &nbsp;<IMG src="../images/menus/ModificarOff.gif" align="absmiddle" border=0> Editar</a>
+
+
+                    &nbsp;<IMG src="../images/menus/ConsultarOff.gif" align="absmiddle" border=0> Consulta</a>
+
+
+                    &nbsp;<IMG src="../images/menus/FichaOff.gif" align="absmiddle" border=0> Ver Ficha</a>
+
+
+                    &nbsp;<IMG src="../images/menus/ExportarOff.gif" align="absmiddle" border=0><font style="COLOR: gray"> Exportar</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ImprimirOff.gif" align="absmiddle" border=0><font style="COLOR: gray"> Imprimir</font>
+
+
+                    &nbsp;
+                </td>
+                <td width="2%">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table border="0"><tr><td height="3px"></td></tr></table>
+
+
+    <form id="Formulario" name="Formulario" action="" enctype="multipart/form-data" method="post">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Principal</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Certificados</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoExpedientes.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Expedientes</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoAbogado.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Letrados</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoParte.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Partes</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovimiento.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Movimientos</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovContable.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Contable</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoLiquidacion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Liquidaciones</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoPagos.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Pagos</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoBoleta.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Boletas</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoOficioBCRA.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Oficios BCRA</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabOver" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="#0" class="tabTextSelected"><font class="tabTextSelected">Notificaciones</font></a>
+                    </div>
+                </td>
+                <td width="800">&nbsp;</td>
+            </tr>
+        </table>
+        <table class="tabTable" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+
+                    <div id="divAbmForm">
+                        <!-- TABLA TITULO -->
+                        <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                            <tbody>
+                                <tr>
+                                    <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
+                                        &nbsp;&nbsp;CASO&nbsp;&nbsp;&nbsp;&nbsp;48997
+                                    </td>
+                                    <td width="60%" align="right">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                            <tbody>
+                                <tr>
+                                    <td vAlign=top>
+                                        <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%">
+                                            <tbody>
+                                                <tr class="campos">
+                                                    <td width="1%" height="30"></td>
+                                                    <td align="right" width="5%"><b>&Aacute;rea</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="14%">Multas PNRT</td>
+                                                    <td width="1%"></td>
+                                                    <td width="4%" align="right"><b>Carpeta</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="5%">48997</td>
+                                                    <td width="1%"></td>
+                                                    <td width="8%" align="right"><b>N°.MTEySS</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="11%">7-51-97341-2014</td>
+                                                    <td width="1%"></td>
+                                                    <td align="right" width="8%"><b>N°.Judicial</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="8%">93201/2015</td>
+                                                    <td width="1%"></td>
+                                                    <td align="right" width="8%"><b>F.Ingreso</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="7%">19/10/2015</td>
+                                                    <td width="1%"></td>
+                                                    <td width="10%"><font color="red"><b>N°202010</b></font></td-->
+                                                    <td width="1%"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table2">
+                                            <tr class="campos">
+                                                <td width="1%" height="30"></td>
+                                                <td align="right" width="5%"><b>Autos</b></td>
+                                                <td width="1%"></td>
+                                                <td width="64%" align="left">MINISTERIO DE TRABAJO, EMPLEO Y SEGURIDAD SOCIAL c/ GARDIEN DE SECURITE SRL S/EJECUCION FISCAL</td>
+                                                <td width="1%"></td>
+                                                <td align="right" width="8%"><b>F.Inicio</b></td>
+                                                <td width="1%"></td>
+                                                <td align="left" width="7%">13/11/2015</td>
+                                                <td width="1%"></td>
+                                                <td width="10%"><span class="HelpText">(promoción de la demanda)</span></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0"><tr><td height="3px"></td></tr></table>
+                    </div>
+                    <table width="98%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="25%" align="left">
+                                <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Partes</b>
+                            </td>
+                            <td width="45%" align="center">
+                            </td>
+                            <td width="30%" align="right">
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" ID="Table13" align="center">
+                        <tr>
+                            <td width="1%" height="22"></td>
+                            <td width="48%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Nombre</a></b></td>
+                            <td width="48%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Domicilio Fiscal Electrónico</a></b></td>
+                            <td width="1%"></td>
+                        </tr>
+                    </table>
+                    <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                        <tr>
+                            <td vAlign="top" align="middle" width="100%">
+                                <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="48%">SOFIA PEREZ</td>
+                                            <td width="48%">VIGENTE</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');javascript:escritos('2');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="48%">ROSATELLI MARIELA DEL LUJAN</td>
+                                            <td width="48%">VIGENTE</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="48%">JOSE SEPAZ</td>
+                                            <td width="48%">VIGENTE</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="100%" align="center">
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="98%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="25%" align="left">
+                                <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Notificaciones Pendientes a Confirmar</b>
+                            </td>
+                            <td width="45%" align="center">
+                            </td>
+                            <td width="30%" align="right">
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" ID="Table13" align="center">
+                        <tr>
+                            <td width="1%" height="22"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo</a></b></td>
+                            <td width="1%"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">NºNotificación</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha Elab.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha Envío.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha AFIP.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="25%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo de Notificación</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%" align=Left><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Cédula</a></b></td>
+                            <td width="1%"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Adjuntos</a></b></td>
+                            <td width="1%"></td>
+                            <td width="8%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></td>
+                            <td width="1%"></td>
+                            <td width="8%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></td>
+                            <td width="3%"></td>
+                            <td width="1%"></td>
+                        </tr>
+                    </table>
+                    <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                        <tr>
+                            <td vAlign="top" align="middle" width="100%">
+                                <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">18961</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">30/9/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">10/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 1ra Instancia Desfavorable</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');javascript:escritos('2');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">20113</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">10/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">02/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 1ra Instancia Desfavorable - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmPar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2353653');javascript:escritos('3');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">23051</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">05/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">04/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 2da Instancia Favorable</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('8');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Papel</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">29171</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/5/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">17/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Traba de IGB - Inhibición - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" align="center" class="TituloConLinea">
+                                    <tr>
+                                        <td width="100%" align="center">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="98%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="50%" align="left">
+                                <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Notificaciones a Multiples Partes a Confirmar</b>
+                            </td>
+                            <td width="20%" align="center">
+                            </td>
+                            <td width="30%" align="right">
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" ID="Table13" align="center">
+                        <tr>
+                            <td width="1%" height="22"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo</a></b></td>
+                            <td width="1%"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">NºNotificación</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha Elab.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha Envío.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha AFIP.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="25%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo de Notificación</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%" align=Left><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Cédula</a></b></td>
+                            <td width="1%"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Adjuntos</a></b></td>
+                            <td width="1%"></td>
+                            <td width="8%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></td>
+                            <td width="1%"></td>
+                            <td width="8%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></td>
+                            <td width="3%"></td>
+                            <td width="1%"></td>
+                        </tr>
+                    </table>
+                    <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                        <tr>
+                            <td vAlign="top" align="middle" width="100%">
+                                <table class="tablaAbmImpar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">18961</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">30/9/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">10/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 1ra Instancia Desfavorable</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');javascript:escritos('2');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">20113</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">10/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">02/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 1ra Instancia Desfavorable - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2353653');javascript:escritos('3');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">23051</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">05/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">04/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 2da Instancia Favorable</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('8');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Papel</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">29171</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/5/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">17/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Traba de IGB - Inhibición - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b></b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" align="center" class="TituloConLinea">
+                                    <tr>
+                                        <td width="100%" align="center">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="98%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="25%" align="left">
+                                <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Notificaciónes Confirmadas</b>
+                            </td>
+                            <td width="45%" align="center">
+                            </td>
+                            <td width="30%" align="right">
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" ID="Table13" align="center">
+                        <tr>
+                            <td width="1%" height="22"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo</a></b></td>
+                            <td width="1%"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">NºNotificación</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha Elab.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha Envío.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Fecha AFIP.</a></b></td>
+                            <td width="1%"></td>
+                            <td width="25%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Tipo de Notificación</a></b></td>
+                            <td width="1%"></td>
+                            <td width="6%" align=Left><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Cédula</a></b></td>
+                            <td width="1%"></td>
+                            <td width="7%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Adjuntos</a></b></td>
+                            <td width="1%"></td>
+                            <td width="8%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Estado AFIP</a></td>
+                            <td width="1%"></td>
+                            <td width="8%"><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Motivo Estado AFIP</a></td>
+                            <td width="3%"></td>
+                            <td width="1%"></td>
+                        </tr>
+                    </table>
+                    <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                        <tr>
+                            <td vAlign="top" align="middle" width="100%">
+                                <table class="tablaAbmPar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">18961</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">30/9/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">10/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 1ra Instancia Desfavorable</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b>Leída AFIP</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b>Leída en VE</b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');javascript:escritos('2');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">20113</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">10/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">02/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 1ra Instancia Desfavorable - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b>Aceptada AFIP</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b>Publicada en VE</b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmPar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2353653');javascript:escritos('3');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">23051</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">05/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">04/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Sentencia 2da Instancia Favorable</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b>Leída AFIP</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="blue"><b>Leída en VE</b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('4');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">25454</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">04/12/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">02/01/2022</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Escrito Liquidación</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="red"><b>Rechazada AFIP</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="red"><b>Error Parámetros</b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmPar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('5');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">27531</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/10/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">06/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Escrito Liquidación - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="green"><b>Lote Confirmado a Enviar</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="green"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('6');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">28151</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/4/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">03/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">06/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Constancia de Embargo</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b>Lote Pendiente de Envío</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmPar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('7');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Electrónica</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">29553</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/4/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">17/12/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/12/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Traba de IGB - Inhibición</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b>Lote Pendiente de Envío</b></font></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><font color="orange"><b></b></font></td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');escritos('8');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="7%">Papel</td>
+                                            <td width="1%"></td>
+                                            <td width="7%">29171</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">21/5/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">17/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="6%">20/11/2021</td>
+                                            <td width="1%"></td>
+                                            <td width="25%">Traba de IGB - Inhibición - Rectificativa</td>
+                                            <td width="1%"></td>
+                                            <td width="6%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="7%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle"></td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><input type="radio" name="Leida1" value="1">Entregada</td>
+                                            <td width="1%"></td>
+                                            <td width="8%"><input type="radio" name="Leida1" value="2">No Entregada</td>
+                                            <td width="3%"></td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" align="center" class="TituloConLinea">
+                                    <tr>
+                                        <td width="100%" align="center">
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <div hidden id="1">
+                                    <table class="tablaAbmPar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('a');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"><b></b></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>INGRESOS BANCARIOS</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="tablaAbmimpar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('2');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"><b></b></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>RECHAZO BANCARIO</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="tablaAbmPar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('2');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Entidad Bancaria</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div hidden id="2">
+                                    <table class="tablaAbmPar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('3');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"><b></b></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>DECLARACION DE BIENES</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="tablaAbmimpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('4');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"><b></b></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>ERROR PROCESAL</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="tablaAbmPar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('4');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>BANCO NACION</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="tablaAbmimpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:escritos('4');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>CITACION JUDICIAL</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div hidden id="3">
+                                    <table class="tablaAbmPar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div hidden id="4">
+                                    <table class="tablaAbmPar" numrow="4" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2239748');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tbody>
+
+                                            <tr class="campos">
+                                                <td width="1%" height="22"></td>
+                                                <td width="14%"></td>
+                                                <td width="1%"></td>
+                                                <td width="6%"></td>
+                                                <td width="1%"></td>
+                                                <td width="9%"></td>
+                                                <td width="1%"></td>
+                                                <td width="15%"><b></b></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"><IMG src="../images/menus/Adobe_24x24.png" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>DECLARACION DE BIENES</b></td>
+                                                <td width="1%"></td>
+                                                <td width="8%"></td>
+                                                <td width="1%"></td>
+                                                <td width="12%"></td>
+                                                <td width="3%"></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
+                        <tr>
+                            <td align="right" width="50%">
+                                <button name="GenerarNotificacion" style="width:200px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick=generarNotificacion()><u>R</u>elación Movimientos - Notificaciones</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- /Registro grilla -->
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                </td>
+            </tr>
+        </table>
+        </td>
+        <!-- /Panel General -->
+        <td width="2%"></td>
+        </tr>
+        </table>
+        <!-- /Tabla Principal -->
+    </form>
+</body>
+<!--
+    Esto es para que no cachee las paginas
+    VER http://support.microsoft.com/kb/222064
+-->
+<HEAD>
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+</HEAD>
+
+</html
+
+<!-- Fin CloseLayout -->

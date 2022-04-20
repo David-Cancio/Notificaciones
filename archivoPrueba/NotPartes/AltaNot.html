@@ -1,0 +1,374 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <title>Acciones Judiciales</title>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta content="Acciones Judiciales" name="keywords">
+    <meta content="Ministerio de trabajo, empleo y seguridad social" name="description">
+    <meta content="INDEX,FOLLOW" name="robots">
+    <link href="../Style/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/menu.css" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
+        <tr>
+            <td width="5%" height="79">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/Titulo.gif" align="middle"></td>
+            <td width="50%">&nbsp;</td>
+            <td width="20%" align="right"><img src="../images/banner/escudoMTEySS.gif" width="160" height="50" align="middle"></td>
+            <td width="5%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5" height="1" bgcolor="#E8E8E8"></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
+    <script type="text/javascript" src="../scripts/menu/theme.js"></script>
+
+    <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
+        <tr>
+            <td width="70%" class="menuBackgr"><div id="mainMenuID"></div></td>
+            <td width="5%" class="menuBackgr">
+                <a href="http://Agenda.trabajo.gob.ar/Consultas/AbmAlerta.asp?Servicio=Juicios" style="color:red" target="_blank" title="Alertas"><b><img src="../images/menu/alerta.png" align="middle" border="0">(0)</b></a>&nbsp;
+            </td>
+            <td width="10%" class="menuBackgr"></td>
+            <td width="20%" class="menuUsuarioDisplay" align="right">
+                <div ondblclick="window.open( '..\\seguridad\\entorno.asp', 'entorno', 'width=700, height=350, toolbar=0, menubar=0, directories=0, scrollbars=0, location=0, status=0' ); return false;">
+                    usuario: &nbsp;TRABAJO\CAUSLENDER&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="../scripts/resumen.js"></script>
+
+    <table cellSpacing="0" cellPadding="0" width="100%" border="0" Class="MenuLeftBkg">
+        <tbody>
+            <tr>
+                <td class="ContentLeftLinks" align="right" width="98%" height="40" nowrap>
+
+
+                    &nbsp;<IMG src="../images/menus/AltaOff.gif" align="middle" border=0><font style="COLOR: gray"> Alta</font>
+
+
+                    &nbsp;<IMG src="../images/menus/BajaOff.gif" align="middle" border=0><font style="COLOR: gray"> Baja</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ModificarOff.gif" align="middle" border=0><font style="COLOR: gray"> Editar</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ConsultarOff.gif" align="middle" border=0><font style="COLOR: gray"> Consulta</font>
+
+
+                    &nbsp;<IMG src="../images/menus/FichaOff.gif" align="middle" border=0><font style="COLOR: gray"> Ver Ficha</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ExportarOff.gif" align="middle" border=0><font style="COLOR: gray"> Exportar</font>
+
+
+                    &nbsp;<IMG src="../images/menus/ImprimirOff.gif" align="middle" border=0><font style="COLOR: gray"> Imprimir</font>
+
+
+                    &nbsp;
+                </td>
+                <td width="2%">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <form id="Formulario" name="Formulario" enctype="multipart/form-data">
+        <!-- Tabla Principal -->
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Principal</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoInfraccion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Certificados</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoExpedientes.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Expedientes</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoAbogado.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Letrados</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoParte.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Partes</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovimiento.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Movimientos</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoMovContable.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Contable</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoLiquidacion.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Liquidaciones</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoPagos.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Pagos</font></a>
+                    </div>
+                </td>
+                <td width="55" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabMediano" id="" onmouseover="this.className='tabOverMediano'" onmouseout="this.className='tabMediano'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoBoleta.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Boletas</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tab" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="javascript:FireEvent( 'Consultar', 'AbmCasoOficioBCRA.asp?TipoJuicio=MULTAS PNRT')" class="tabText"><font class="tabText">Oficios BCRA</font></a>
+                    </div>
+                </td>
+                <td width="84" valign="bottom" align="center">
+                    <div valign="bottom" align="center" class="tabOver" id="" onmouseover="this.className='tabOver'" onmouseout="this.className='tab'">
+                        <a href="#0" class="tabTextSelected"><font class="tabTextSelected">Notificaciones</font></a>
+                    </div>
+                </td>
+                <td width="800">&nbsp;</td>
+            </tr>
+        </table>
+        <table class="tabTable" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <div id="divAbmForm">
+                        <!-- TABLA TITULO -->
+                        <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                            <tbody>
+                                <tr>
+                                    <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
+                                        &nbsp;&nbsp;CASO&nbsp;&nbsp;&nbsp;&nbsp;48997
+                                    </td>
+                                    <td width="60%" align="right">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- FIN TABLA TITULO -->
+                        <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
+                            <tbody>
+                                <tr>
+
+                                    <td vAlign=top>
+
+
+                                        <!-- FORMULARIO -->
+                                        <!-- COMIENZO DE RENGLON-->
+
+                                        <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%">
+                                            <tbody>
+                                                <tr class="campos">
+                                                    <td width="1%" height="30"></td>
+                                                    <td align="right" width="5%"><b>&Aacute;rea</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="14%">Multas PNRT</td>
+                                                    <td width="1%"></td>
+                                                    <td width="4%" align="right"><b>Carpeta</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="5%">48997</td>
+                                                    <td width="1%"></td>
+                                                    <td width="8%" align="right"><b>Nº.MTEySS</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="11%">7-51-97341-2014</td>
+                                                    <td width="1%"></td>
+                                                    <td align="right" width="8%"><b>Nº.Judicial</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="8%">123/2017</td>
+                                                    <td width="1%"></td>
+                                                    <td align="right" width="8%"><b>F.Ingreso</b></td>
+                                                    <td width="1%"></td>
+                                                    <td width="7%">9/1/2015</td>
+                                                    <td width="1%"></td>
+                                                    <td width="10%"><font color="red"><b>Nº202010</b></font></td>
+                                                    <td width="1%"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- FIN RENGLON FORMULARIO -->
+                                        <!-- COMIENZO RENGLON FORMULARIO -->
+                                        <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table2">
+                                            <tr class="campos">
+                                                <td width="1%" height="30"></td>
+                                                <td align="right" width="5%"><b>Autos</b></td>
+                                                <td width="1%"></td>
+                                                <td width="64%" align="left">MINISTERIO DE TRABAJO, EMPLEO Y SEGURIDAD SOCIAL c/ GARDIEN DE SECURITE SRL S/EJECUCION FISCAL</td>
+                                                <td width="1%"></td>
+                                                <td align="right" width="8%"><b>F.Inicio</b></td>
+                                                <td width="1%"></td>
+                                                <td align="left" width="7%">8/3/2022</td>
+                                                <td width="1%"></td>
+                                                <td width="10%"><span class="HelpText">(promoción de la demanda)</span></td>
+                                                <td width="1%"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0"><tr><td height="3px"></td></tr></table>
+                    </div>
+                    <table width="98%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="25%" align="left">
+                                <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="middle">&nbsp;&nbsp;<b></b>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" align="center">
+                        <tr>
+                            <td width="1%" height="22"></td>
+                            <td width="98%" align="center"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Selecionar Opción</a></b></td>
+                            <td width="1%"></td>
+                        </tr>
+                    </table>
+                    <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                        <tr>
+                            <td vAlign="top" align="center" width="100%">
+                                <table class="tablaAbmPar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('0');javascript:rowOnClick(this,'2239748')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="42%">Selección de Movimiento</td>
+                                            <td width="1%"></td>
+                                            <td width="5%" align="center">
+                                            </td>
+                                            <td width="1%"></td>
+                                            <td width="1%" height="22"></td>
+                                            <td width="42%"></td>
+                                            <td width="1%"></td>
+                                            <td width="5%" align="center">
+                                                <input id="radio1" type="radio" value="0" name="Cedula" checked>
+                                            </td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('1');javascript:rowOnClick(this,'2271693')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2271693');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="42%">Selección por Tipo de Notificación</td>
+                                            <td width="1%"></td>
+                                            <td width="5%" align="center">
+                                            </td>
+                                            <td width="1%"></td>
+                                            <td width="1%" height="22"></td>
+                                            <td width="42%"></td>
+                                            <td width="1%"></td>
+                                            <td width="5%" align="center">
+                                                <input id="radio1" type="radio" value="2" name="Cedula">
+                                            </td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmPar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('1');javascript:rowOnClick(this,'2271693')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2271693');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="42%">Notificación Papel</td>
+                                            <td width="1%"></td>
+                                            <td width="5%" align="center">
+                                            </td>
+                                            <td width="1%"></td>
+                                            <td width="1%" height="22"></td>
+                                            <td width="42%"></td>
+                                            <td width="1%"></td>
+                                            <td width="5%" align="center">
+                                                <input id="radio1" type="radio" value="2" name="Cedula">
+                                            </td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="98%" align="center" class="TituloConLinea">
+                        <tr>
+                            <td width="25%" align="left">
+                                <IMG src="../images/menus/Consultar_24x24.gif" vspace=0 align="absmiddle">&nbsp;&nbsp;<b>Partes</b>
+                            </td>
+                            <td width="45%" align="center">
+                            </td>
+                            <td width="30%" align="right">
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+
+                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="98%" ID="Table13" align="center">
+                        <tr>
+                            <td width="1%" height="22"></td>
+                            <td width="48%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Nombre</a></b></td>
+                            <td width="48%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Domicilio Fiscal Electrónico</a></b></td>
+                            <td width="1%"></td>
+                        </tr>
+                    </table>
+                    <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
+                        <tr>
+                            <td vAlign="top" align="middle" width="100%">
+                                <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="48%">SOFIA PEREZ</td>
+                                            <td width="48%">VIGENTE</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmImpar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2276217');javascript:escritos('2');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="48%">ROSATELLI MARIELA DEL LUJAN</td>
+                                            <td width="48%">VIGENTE</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:rowOnClick(this,'2271693');javascript:escritos('1');" onkeyup="javascript:HandleAbmKey();" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr class="campos">
+                                            <td width="1%" height="22"></td>
+                                            <td width="48%">JOSE SEPAZ</td>
+                                            <td width="48%">VIGENTE</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0"><tr><td height="3px"></td></tr></table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
