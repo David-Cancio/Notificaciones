@@ -29,7 +29,7 @@
     <script type="text/javascript" src="../scripts/menu/theme.js"></script>
     <script language=javascript>
         function agregarFila() {
-            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">CONSTANCIA IGB</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="20%" class="campos">Souto, Silvia Manuela</td><td width="1%"></td></tr></table>';
+            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">CONSTANCIA IGB</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="20%" class="campos"></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr></table>';
         }
         function Agregar() {
             alert("Notificación Generada")
@@ -306,7 +306,7 @@
                                                         <td width="1%"></td>
                                                         <td width="10%"><IMG style="width:16px; height:16px" SRC="../images/menus/OkOn.gif"></td>
                                                         <td width="1%"></td>
-                                                        <td width="15%">Souto, Silvia Manuela</td>
+                                                        <td width="15%"></td>
                                                         <td width="1%"></td>
                                                         <td width="4%" height="22" align="center">
                                                             <input id="radio0" type="radio" value="0" name="Movimiento" checked>
@@ -498,6 +498,20 @@
                                         <tr>
                                             <td vAlign=top>
                                                 <div id="divEscritosGrilla">
+                                                    <table class="tablaEncabezadoTitulos" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12" align="center">
+                                                        <tr>
+                                                            <td width="1%" height="22"></td>
+                                                            <td width="25%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Cédula</a></b></td>
+                                                            <td width="15%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Nombre del Demandado</a></b></td>
+                                                            <td width="8%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Domicilio Fiscal</a></b></td>
+                                                            <td width="12%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Estado</a></b></td>
+                                                            <td width="12%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1">Etapa</a></b></td>
+                                                            <td width="10%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></b></td>
+                                                            <td width="8%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></b></td>
+                                                            <td width="8%"><b><a href="#" class="encabezado" style="color: #FFFFFF" tabindex="-1"></a></b></td>
+                                                            <td width="1%"></td>
+                                                        </tr>
+                                                    </table>
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table11">
                                                         <tr class="campos">
                                                             <td width="100%" height="30" align="center">
@@ -518,36 +532,39 @@
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
+                                                                        <td width="8%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td width="100%">Domicilio Fiscal Electronico: Vigente</td>
+                                                                                    <td width="100%">Vigente</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                    <td>SENTENCIA 1ª FAVORABLE</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                    <td>SENTENCIA 1RA INSTANCIA</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="10%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Souto, Silvia Manuela</td>
+                                                                                    <td></td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td align="right" width="8%">
                                                                             <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar">
+                                                                        </td>
+                                                                        <td align="right" width="8%">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula">
                                                                         </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
@@ -565,40 +582,43 @@
                                                                         <td width="15%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td width="100%">Delfina Perez</td>
+                                                                                    <td width="100%">DELFINA PEREZ</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
+                                                                        <td width="8%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td width="100%">Domicilio Fiscal Electronico: Vigente</td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                        <td width="12%">
-                                                                            <table>
-                                                                                <tr class="campos">
-                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                    <td width="100%">Vigente</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                    <td>SENTENCIA 1ª FAVORABLE</td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td width="12%">
+                                                                            <table>
+                                                                                <tr class="campos">
+                                                                                    <td>SENTENCIA 1RA INSTANCIA</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="10%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Souto, Silvia Manuela</td>
+                                                                                    <td></td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td align="right" width="8%">
                                                                             <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar">
+                                                                        </td>
+                                                                        <td align="right" width="8%">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula">
                                                                         </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
@@ -620,36 +640,39 @@
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
+                                                                        <td width="8%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td width="100%">Domicilio Fiscal Electronico: Vigente</td>
+                                                                                    <td width="100%">Vigente</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                    <td>SENTENCIA 1ª FAVORABLE</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                    <td>SENTENCIA 1RA INSTANCIA</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="10%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Souto, Silvia Manuela</td>
+                                                                                    <td></td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td align="right" width="8%">
                                                                             <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar">
+                                                                        </td>
+                                                                        <td align="right" width="8%">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula">
                                                                         </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
@@ -671,36 +694,38 @@
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
+                                                                        <td width="8%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td width="100%">Domicilio Fiscal Electronico: <b style="color:red">No Vigente</b></td>
+                                                                                    <td width="100%"><b style="color:red">No Vigente</b></td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                    <td>SENTENCIA 1ª FAVORABLE</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="12%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                    <td>SENTENCIA 1RA INSTANCIA</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="10%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Souto, Silvia Manuela</td>
+                                                                                    <td></td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td align="right" width="8%">
-                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Agregar Escrito">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Agegar Cédula">
+                                                                        </td>
+                                                                        <td align="right" width="8%">
                                                                         </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
@@ -749,14 +774,14 @@
                                                                         <td width="1%"></td>
                                                                         <td width="25%" class="Campos">29/8/2016 10:49</td>
                                                                         <td width="1%"></td>
+                                                                        <td width="20%" class="campos">
+</td>                                                                   </td>   
                                                                         <td width="15%">
                                                                             <a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1">
                                                                                 <img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar
                                                                             </a>
                                                                         </td>
-                                                                        <td width="20%" class="campos">
-                                                                            Souto, Silvia Manuela
-                                                                        </td>
+                                                                        
                                                                         <td width="1%"></td>
                                                                     </tr>
                                                                 </table>                                                            
@@ -776,7 +801,7 @@
                                 <td width="1%"></td>
 
                                 <td align="right" height="25" width="49%">
-                                    <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;" value="Agregar Archivo">
+                                    <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;" value="Agregar Escrito">
                                 </td>
 
                                 <td width="1%"></td>
