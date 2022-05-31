@@ -10,6 +10,25 @@
     <meta content="INDEX,FOLLOW" name="robots">
     <link href="../Style/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/menu.css" type="text/css">
+    <style type="text/css">
+        .aButtonNew {
+            border-top: solid 1px #339900;
+            border-bottom: solid 1px #339900;
+            border-left: solid 1px #339900;
+            border-right: solid 1px #339900;
+            background-color: #F8F8F8;
+            font-family: Tahoma, Verdana;
+            font-size: 11px;
+            color: #000000;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            display:inline-block;
+            width:200px;
+            height:20px;
+        }
+    </style>
+
 </head>
 <body>
     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BannerBKG" ID="TBanner">
@@ -33,9 +52,6 @@
             document.getElementById('3').hidden = true
             document.getElementById('4').hidden = true
             document.getElementById(num).hidden = false
-        }
-        function generarNotificacion() {
-            alert("Notificación Generada")
         }
     </script>
 
@@ -685,7 +701,7 @@
                     <table align="center" cellSpacing="0" cellPadding="0" width="98%" border="0">
                         <tr>
                             <td align="right" width="50%" height="30px">
-                                <button name="GenerarNotificacion" style="width:200px; height:35px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" accesskey="g" onclick=generarNotificacion()><u>R</u>elación Movimientos - Notificaciones</button>
+                            <a style="display: block; width:200px; height=30px; color: rgb(0, 0, 0); cursor: default; padding-top:6px" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" href="./DetalleNotificaciones.html" accesskey="r"><u>R</u>elación Movimientos - Notificaciones  </a>
                             </td>
                         </tr>
                     </table>
