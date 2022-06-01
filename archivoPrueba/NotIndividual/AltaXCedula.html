@@ -252,9 +252,6 @@
                                 <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
                                     <tr>
                                         <td vAlign="top" align="center" width="100%">
-                                            
-                                                
-                                            </select>
                                             <table class="tablaAbmImpar" numrow="1"  border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr class="campos">
@@ -325,35 +322,22 @@
                                                                 <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" id="cedulaBasica">
                                                                     <tr>
                                                                         <td width="1%" height="35"></td>
-                                                                        <td width="37%">
+                                                                        <td width="43%">
                                                                             <table>
                                                                                 <tr class="camposDestacados">
-                                                                                    <td width="100%">MOVIMIENTO POR SELECCIONAR</td>
+                                                                                    <td width="100%" id="nombreCedula">TIPO DE NOTIFICACI&#211;N POR SELECCIONAR</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
-                                                                            <table>
-                                                                                <tr class="campos">
-                                                                                    <!--td>Estado: SENTENCIA 1ª FAVORABLE</td-->
-                                                                                </tr>
-                                                                            </table>
+                                                                        <td width="1%"></td>
+                                                                        <td width="17%" class="Campos fechaHora"></td>
+                                                                        <td width="1%"></td>
+                                                                        <td align="right" width="15%" hidden class="btnSelect">
+                                                                            <a style="display: block; width:100px; height:20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew btnSelect" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:Completar();">Completar</a>
+
                                                                         </td>
-                                                                        <td width="15%">
-                                                                            <table>
-                                                                                <tr class="campos">
-                                                                                    <!--td>Etapa: SENTENCIA 1RA INSTANCIA</td-->
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                        <td width="9%">
-                                                                            
-                                                                        </td>
-                                                                        <td align="right" width="11%">
-                                                                            <input name="agregar" style="width:100px" class="buttonNew btnSelect" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar" hidden>
-                                                                        </td>
-                                                                        <td align="right" width="11%">
-                                                                            <input name="agregar" style="width:100px" class="buttonNew btnSelect" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula" hidden>
+                                                                        <td align="right" width="15%" hidden class="btnSelect">
+                                                                            <a style="display: block; width:100px; height:20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:CargarCedula(1);">Cambiar C&#233;dula</a>
                                                                         </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
@@ -366,10 +350,28 @@
                                                                             <input size="50" Type="File" class="formobj" Id="ArchivoCedula" Name="ArchivoCedula" maxlength="200">
                                                                         </td>
                                                                         <td width="1%"></td>
-                                                                        <td width="25%" class="Campos" id="fechaHora"></td>
+                                                                        <td width="25%" class="Campos fechaHora"></td>
                                                                         <td width="1%"></td>
                                                                         <td width="20%" class="campos"></td>
                                                                         <td width="15%"></td>
+                                                                        <td width="1%"></td>
+                                                                    </tr>
+
+                                                                </table>
+                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12 cedulaFile" hidden>
+                                                                    <tr>
+                                                                        <td width="1%" height="35"></td>
+                                                                        <td width="43%">
+                                                                            <input size="50" Type="File" class="formobj" Id="ArchivoCedula" Name="ArchivoCedula" maxlength="200">
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                        <td width="17%" class="Campos fechaHora"></td>
+                                                                        <td width="1%"></td>
+                                                                        <td align="right" width="15%">
+                                                                        </td>
+                                                                        <td align="right" width="15%" hidden class="btnSelect">
+                                                                            <a style="display: block; width:100px; height:20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:CargarCedula(0);">C&#233;dula Basica</a>
+                                                                        </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
 
@@ -481,59 +483,97 @@
         </div>
 
     </form>
-    <script language=javascript>
-        
-    var input = document.getElementById("Cedulas");
-    function tipoCedula() {
-        //Cargo los campos
-        var opciones = ["Sentencia 1era. Favorable", "Sentencia 1era. Desfavorable","Sentencia 2da. Favorable","Sentencia 2da. Desfavorable","Liquidación","Embargo", "Traba IGB Inhibición","Traba IGB Acredita Inhibición Inscripta", "Re-Inscripción IGB Inhibición","Acredita Re-Inscripción IGB Inhibición"];
-		var selectOpt= '<option value="0">--Seleccionar--</option>';
-		for (i=0, e=1; i < opciones.length; i++) {
-			selectOpt += '<option value="'+ e + '">' + opciones[i] +' Normal</option>';
-            e++
-            selectOpt += '<option value="'+ e + '">' + opciones[i] +' Rectificada</option>';
-            e++
-		}
-        selectOpt += '<option value="1000">Genérico</option>';
-		input.innerHTML = selectOpt;	
-    } 
-    window.onload = tipoCedula();
-    input.addEventListener('change', updateValue);
+    <script language=javascript>    
+        var input = document.getElementById("Cedulas");
+        function tipoCedula() {
+            //Cargo los campos
+            var opciones = ["Sentencia 1era. Favorable", "Sentencia 1era. Desfavorable","Sentencia 2da. Favorable","Sentencia 2da. Desfavorable","Liquidación","Embargo", "Traba IGB Inhibición","Traba IGB Acredita Inhibición Inscripta", "Re-Inscripción IGB Inhibición","Acredita Re-Inscripción IGB Inhibición"];
+		    var selectOpt= '<option value="0">--Seleccionar--</option>';
+		    for (i=0, e=1; i < opciones.length; i++) {
+			    selectOpt += '<option value="'+ e + '">' + opciones[i] +' Normal</option>';
+                e++
+                selectOpt += '<option value="'+ e + '">' + opciones[i] +' Rectificada</option>';
+                e++
+		    }
+            selectOpt += '<option value="1000">Genérico</option>';
+		    input.innerHTML = selectOpt;	
+        } 
+        window.onload = tipoCedula();
+        input.addEventListener('change', updateValue);
 
-    function updateValue() {
-        var Generico = document.getElementsByClassName('Generico');
-        var Botones = document.getElementsByClassName('btnSelect');
-        var Cedula = document.getElementById('cedulaBasica');
+        function updateValue() {
+            var Generico = document.getElementsByClassName('Generico');
+            var Botones = document.getElementsByClassName('btnSelect');
+            var Cedula = document.getElementById('cedulaBasica');
+            var Nombre = document.getElementById('nombreCedula');
         
-        if(input.value==1000){
-            for (var i = 0; i < Generico.length; i ++) {
-                Generico[i].removeAttribute("hidden")
-            }
+            if(input.value==1000){
+                for (var i = 0; i < Generico.length; i ++) {
+                    Generico[i].removeAttribute("hidden")
+                }
             
-            Cedula.setAttribute("hidden","true")
-        }
-        else{
-            for (var i = 0; i < Generico.length; i ++) {
-                Generico[i].removeAttribute("hidden") 
-                Generico[i].setAttribute("hidden","true")
+                Cedula.setAttribute("hidden", "true")
+                FechaHora();
             }
-            Cedula.removeAttribute("hidden")
-        }
-        if (input.value==0){
-            for (var i = 0; i < Botones.length; i ++) {
-                Botones[i].setAttribute("hidden","true")
-            }
-        }
-        else{
-            for (var i = 0; i < Botones.length; i ++) {
-                Botones[i].removeAttribute("hidden")
+            else{
+                for (var i = 0; i < Generico.length; i ++) {
+                    Generico[i].removeAttribute("hidden") 
+                    Generico[i].setAttribute("hidden","true")
+                }
+                Cedula.removeAttribute("hidden")
+                if (input.value == 0) {
+                    for (var i = 0; i < Botones.length; i++) {
+                        Botones[i].setAttribute("hidden", "true")
+                    }
+                    Nombre.textContent = "C\u00C9DULA BASICA: TIPO DE NOTIFICACI\u00D3N POR SELECCIONAR"
+                }
+                else {
+                    for (var i = 0; i < Botones.length; i++) {
+                        Botones[i].removeAttribute("hidden")
+                    }
+                }
+                if ((input.value > 0) && (input.value < 9)) {
+                    Nombre.textContent = "C\u00C9DULA BASICA: SENTENCIA JUDICIAL EXTRA\u00CDDA DE PJN"
+                }
+                if ((input.value == 9) || (input.value == 10)) {
+                    Nombre.textContent = "C\u00C9DULA BASICA: ESCRITO PRACTICA LIQUIDACI\u00D3N PRESENTADO JUDICIALMENTE"
+                }
+                if ((input.value == 11) || (input.value == 12)) {
+                    Nombre.textContent = "C\u00C9DULA BASICA: CONSTANCIA EMBARGO SOJ"
+                }
+                if ((input.value > 12) && (input.value < 999)) {
+                    Nombre.textContent = "C\u00C9DULA BASICA: CONSTANCIA DE IGB"
+                }
+                CargarCedula(0)
             }
         }
 
-    }
+        function CargarCedula(a) {
+            var basica = document.getElementById("cedulaBasica")
+            var file = document.getElementById("cedulaFile")
+            FechaHora()
+            if (a == 0) {
+                basica.removeAttribute("hidden")
+                file.setAttribute("hidden", "true")
+            } else {
+                file.removeAttribute("hidden")
+                basica.setAttribute("hidden", "true")
+            }
+        }
 
-    
+        function FechaHora() {
+            var campos = document.getElementsByClassName("fechaHora")
+            let date = new Date();
+            for (var i = 0; i < campos.length; i++) {
+                campos[i].textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+            }
+        }
 
+        
+
+        function Completar() {
+            alert("Actualmente en Desarrollo, \n Se Abre un Pop Up para modificar los Datos de la Cedula")
+        }
     </script>
 </body>
 </html>
