@@ -31,7 +31,8 @@
         var i = 0
         var visible = 0
         function agregarFila() {
-            document.getElementById("TablaEscritos").insertRow(-1).innerHTML = '<tr id="Escrito' + i + '"><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">Escrito N°' + (i +1) + '</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="20%" class="campos"></td><td width="15%"><a onclick="javascript:eliminarFila('+i+');return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
+            let date = new Date();
+            document.getElementById("TablaEscritos").insertRow(-1).innerHTML = '<tr id="Escrito' + i + '"><td width="1%" height="35"></td><td width="43%"><input size="50" Type="File" class="formobj" Id="ArchivoEscrito'+ i+'" Name="ArchivoEscrito'+ i+'" maxlength="200"></td><td width="1%"></td><td width="25%" class="Campos">'+ date.toLocaleDateString() + ' ' + date.toLocaleTimeString() + '</td><td width="1%"></td><td width="20%" class="campos"></td><td width="15%"><a onclick="javascript:eliminarFila('+i+');return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
             i++
             visible ++
             sinFilas()
@@ -61,6 +62,26 @@
         function radioCheck(num) {
             var id = 'radio' + (num)
             document.getElementById(id).checked = true
+            cambiarCedula(num)
+            
+        }
+        function cambiarCedula(num){
+            var cedula = document.getElementById("CedulaCambiar");
+            var Inicio = "C\u00C9DULA BASICA:";
+            if(num==2){
+                cedula.textContent = Inicio + " CONSTANCIA EMBARGO SOJ";
+            }
+            else{
+                cedula.textContent = Inicio + " SENTENCIA JUDICIAL EXTRAÍDA DE PJN";
+            }
+        }
+        
+        function CargarCedula() {
+            alert("Actualmente en Desarrollo, \n Se Abre un explorador de archivos para Selecionar la Cedula Correspondiente")
+        }
+
+        function Completar() {
+            alert("Actualmente en Desarrollo, \n Se Abre un Pop Up para modificar los Datos de la Cedula")
         }
 
         function BOTON() {
@@ -311,7 +332,7 @@
                                 <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
                                     <tr>
                                         <td vAlign="top" align="center" width="100%">
-                                            <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('0');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            <table class="tablaAbmImpar" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('0');" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr class="campos">
                                                         <td width="1%" height="22"></td>
@@ -395,117 +416,12 @@
                                     </table>
                                     <table border="0"><tr><td height="3px"></td></tr></table>
 
-                                    <div hidden id="divAbmForm">
-                                        <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
-                                                        &nbsp;&nbsp;AGREGAR ESCRITOS
-                                                    </td>
-                                                    <td width="60%" align="right">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <table class="TablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
-                                            <tbody>
-                                                <tr>
-                                                    <td vAlign=top>
-                                                        <!-- Archivo del movimiento -->
-                                                        <table class="subEncabezado" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table7">
-                                                            <tr><td width="100%" height="15" align="center"><b>Archivo del movimiento</b></td></tr>
-                                                        </table>
-                                                        <!-- /Archivo del movimiento -->
-                                                        <!-- Archivo -->
-                                                        <table class="tablaAbmImpar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table10">
-                                                            <tr class="campos">
-                                                                <td width="1%" height="30"></td>
-                                                                <td width="12%" align="right"><b>Archivo</b>&nbsp;</td>
-                                                                <td width="1%"></td>
-                                                                <td width="66%">
-                                                                    <font color="red">No se ha especificado ningún archivo</font>
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;
-
-                                                                </td>
-                                                                <td width="1%"></td>
-                                                                <td width="18%" align="right">
-                                                                    <div id="labelShowdivCambiarArchivo" class="camposDestacados"
-                                                                            onmouseover="this.style.cursor='pointer';imglabelShowdivCambiarArchivo.src='../images/navegacion/expandirOn.gif';window.status='+ Cambiar Archivo';return true;"
-                                                                            onmouseout="this.style.cursor='default';imglabelShowdivCambiarArchivo.src='../images/navegacion/expandir.gif';window.status='';return true;"
-                                                                            onclick="javascript:HideControl('labelShowdivCambiarArchivo');ShowControl('labelHidedivCambiarArchivo');ShowControl('divCambiarArchivo');"><b>+ Cambiar Archivo</b>&nbsp;<img alt="+ Cambiar Archivo" src="../images/navegacion/expandir.gif" border="0" name="imglabelShowdivCambiarArchivo" align="middle">&nbsp;&nbsp;</div>
-
-
-                                                                    <div id="labelHidedivCambiarArchivo" class="camposDestacados" style="display:none"
-                                                                            onmouseover="this.style.cursor='pointer';imglabelHidedivCambiarArchivo.src='../images/navegacion/contraerOn.gif';window.status='- Cambiar Archivo';return true;"
-                                                                            onmouseout="this.style.cursor='default';imglabelHidedivCambiarArchivo.src='../images/navegacion/contraer.gif';window.status='';return true;"
-                                                                            onclick="javascript:ShowControl('labelShowdivCambiarArchivo');HideControl('labelHidedivCambiarArchivo');HideControl('divCambiarArchivo');"><b>- Cambiar Archivo</b>&nbsp;<img alt="- Cambiar Archivo" src="../images/navegacion/contraer.gif" border="0" name="imglabelHidedivCambiarArchivo" align="middle">&nbsp;&nbsp;</div>
-                                                                </td>
-                                                                <td width="1%"></td>
-                                                            </tr>
-                                                        </table>
-                                                        <div id="divCambiarArchivo" style="display:none">
-                                                            <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table9">
-                                                                <tr class="campos">
-                                                                    <td width="1%" height="30"></td>
-                                                                    <td width="12%" align="right"><b><font color="red">*</font>Tipo Archivo</b></td>
-                                                                    <td width="1%"></td>
-                                                                    <td width="20%">
-                                                                        <select id="TipoArchivoId" name="TipoArchivoId" class="formobj">
-                                                                            <option value="" selected> --Seleccione--</option>
-                                                                            <option value="2">Archivo de uso general</option>
-                                                                        </select>
-
-                                                                    </td>
-                                                                    <td width="1%"></td>
-                                                                    <td width="15%" align="right"><b><font color="red">*</font>Nuevo archivo</b></td>
-                                                                    <td width="1%"></td>
-                                                                    <td width="48%">
-                                                                        <input size="50" Type="File" class="formobj" Id="MovimientoArchivo" Name="MovimientoArchivo" maxlength="200">
-                                                                    </td>
-                                                                    <td width="1%"></td>
-                                                                </tr>
-                                                            </table>
-                                                            <!-- /Cambiar Archivo -->
-                                                            <!-- Descripcion | Publicar -->
-                                                            <table class="tablaAbmImpar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table6">
-                                                                <tr class="campos">
-                                                                    <td width="1%" height="30"></td>
-                                                                    <td width="12%" align="right"><b><font color="red">*</font>Descripción</b></td>
-                                                                    <td width="1%"></td>
-                                                                    <td width="68%" align="right">
-                                                                        <input class="formobj" Id="ArchivoDescripcion" Name="ArchivoDescripcion" Value="" maxlength="2000">
-                                                                    </td>
-                                                                    <td width="1%"></td>
-                                                                    <td width="9%" align="right"><b><font color="red">*</font>Publicar</b></td>
-                                                                    <td width="1%"></td>
-                                                                    <td width="6%">
-                                                                        <select id="ArchivoPublico" name="ArchivoPublico" class="formobj" width="100%">
-                                                                            <option value="" selected>--Seleccione--</option>
-                                                                            <option value="0">No</option>
-                                                                            <option value="1">S&#237;</option>
-                                                                        </select>
-
-                                                                    </td>
-                                                                    <td width="1%"></td>
-                                                                </tr>
-                                                            </table>
-                                                        </div>
-                                                        <table class="subEncabezado" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table8">
-                                                            <tr><td width="100%" height="15" align="center"><b>Escritos</b></td></tr>
-                                                        </table>
-                                                        <table cellSpacing="0" cellPadding="0" width="100%" border="0">
-                                                            <tr><td width="100%" height="10"></td></tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    
                                     <table cellSpacing="0" cellPadding="0" width="98%" border="0" align="center">
                                         <tbody>
                                             <tr>
                                                 <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
-                                                    &nbsp;&nbsp;CÉDULA DIGITALIZADA
+                                                    &nbsp;&nbsp;C&#201;DULA DIGITALIZADA
                                                 </td>
                                                 <td width="60%" align="right">
                                                 </td>
@@ -526,32 +442,32 @@
                                                                             <td width="37%">
                                                                                 <table>
                                                                                     <tr class="camposDestacados">
-                                                                                        <td width="100%">C&#233;dula Basica:SENTENCIA JUDICIAL EXTRAÍDA DE PJN</td>
+                                                                                        <td width="100%" id="CedulaCambiar">C&#233;dula Basica: SENTENCIA JUDICIAL EXTRAÍDA DE PJN</td>
                                                                                     </tr>
                                                                                 </table>
                                                                             </td>
                                                                             <td width="15%">
                                                                                 <table>
                                                                                     <tr class="campos">
-                                                                                        <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                        <!--td>Estado: SENTENCIA 1ª FAVORABLE</td-->
                                                                                     </tr>
                                                                                 </table>
                                                                             </td>
                                                                             <td width="15%">
                                                                                 <table>
                                                                                     <tr class="campos">
-                                                                                        <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                        <!--td>Etapa: SENTENCIA 1RA INSTANCIA</td-->
                                                                                     </tr>
                                                                                 </table>
                                                                             </td>
-                                                                            <td width="15%">
+                                                                            <td width="7%">
                                                                             
                                                                             </td>
-                                                                            <td align="right" width="8%">
-                                                                                <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar">
+                                                                            <td align="right" width="12%">
+                                                                                <a style="display: block; width:100px; height=20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:Completar();">Completar</a>
                                                                             </td>
-                                                                            <td align="right" width="8%">
-                                                                                <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula">
+                                                                            <td align="right" width="12%">
+                                                                                <a style="display: block; width:100px; height=20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:CargarCedula();">Cambiar Cedula</a>
                                                                             </td>
                                                                             <td width="1%"></td>
                                                                         </tr>
@@ -631,7 +547,7 @@
                                     <td width="1%"></td>
 
                                     <td align="right" height="25" width="49%">
-                                        <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;" value="Agregar Escritos">
+                                        <a style="display: block; width:100px; height=20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();" accesskey="A"><u>A</u>gregar Escritos</a>
                                     </td>
 
                                     <td width="1%"></td>

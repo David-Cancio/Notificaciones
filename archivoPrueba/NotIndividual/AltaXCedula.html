@@ -27,40 +27,7 @@
 
     <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
     <script type="text/javascript" src="../scripts/menu/theme.js"></script>
-    <script language=javascript>
-        function agregarFila() {
-            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">CONSTANCIA IGB</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="20%" class="campos"></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr></table>';
-        }
-        function Agregar() {
-            alert("Notificación Generada")
-        } function Cancelar() {
-            alert("Notificación Cancelada")
-        }
-        function eliminarFila() {
-            var table = document.getElementById("Table13");
-            var rowCount = table.rows.length;
-            console.log(rowCount);
-
-            if (rowCount <= 1)
-                alert('No se puede eliminar el encabezado');
-            else
-                table.deleteRow(rowCount - 1);
-        }
-        function radioCheck(num) {
-            var id = 'radio' + (num)
-            document.getElementById(id).checked = true
-        }
-
-        function BOTON() {
-            console.log("entre al boton")
-            setTimeout(alertaSwal(), 2000);
-        }
-        function alertaSwal(evt) {
-            swal("Grabado Exitoso", "", "success");
-
-        }
-
-    </script>
+    
 
     <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
         <tr>
@@ -285,103 +252,42 @@
                                 <table class="tablaEncabezado" cellSpacing="0" cellPadding="0" width="98%" border="0" ID="TGrilla" align="center">
                                     <tr>
                                         <td vAlign="top" align="center" width="100%">
-                                            <table class="tablaAbmSelected" numrow="1" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('0');javascript:rowOnClick(this,'2239748')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2239748');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            
+                                                
+                                            </select>
+                                            <table class="tablaAbmImpar" numrow="1"  border="0" width="100%" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr class="campos">
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">1Era. Sentencia Favorable Normal o Rectificada</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="0" name="Cedula" checked>
+                                                        <td width="5%" height="22"></td>
+                                                        <td width="90%">
+                                                            <select id="Cedulas" class="formobj"></select>
                                                         </td>
-                                                        <td width="1%"></td>
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">1Era. Sentencia Desfavorable Normal o Rectificada</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="1" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
+                                                        <td width="5%"></td>
                                                     </tr>
+                                                    
                                                 </tbody>
                                             </table>
-                                            <table class="tablaAbmPar" numrow="2" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('1');javascript:rowOnClick(this,'2271693')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2271693');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                            <table class="tablaAbmPar Generico" numrow="1"  border="0" width="100%" cellpadding="0" cellspacing="0" hidden>
                                                 <tbody>
-                                                    <tr class="campos">
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">2da. Sentencia Favorable Normal o Rectificada</td>
+                                                    <tr class="campos ">
+                                                        <td width="5%" height="22"></td>
+                                                        <td width="2%">Etapa:</td>
                                                         <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="2" name="Cedula">
+                                                        <td width="37%">
+                                                            <select class="formobj">
+                                                                <option value="0">--Seleccionar--</option>
+                                                                <option value="1">En Desarrollo</option>
+                                                            </select>
                                                         </td>
+                                                        <td width="10%"></td>
+                                                        <td width="2%">Estado:</td>
                                                         <td width="1%"></td>
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">2da. Sentencia Desfavorable Normal o Rectificada</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="3" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table class="tablaAbmImpar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('2');javascript:rowOnClick(this,'2276217')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2276217');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
-                                                <tbody>
-                                                    <tr class="campos">
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">Liquidación Normal o Rectificada</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="4" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">Embargo Normal o Rectificada</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="5" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table class="tablaAbmpar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('2');javascript:rowOnClick(this,'2276217')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2276217');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
-                                                <tbody>
-                                                    <tr class="campos">
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">Traba IGB Inhibición Normal o Rectifativa</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="6" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">Traba IGB Acredita Inhibición Inscripta  Normal o Rectifativa</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="7" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table class="tablaAbmImpar" numrow="3" onmouseover="javascript:rowOnMouseOver(this);" onmouseout="javascript:rowOnMouseOut(this);" onclick="javascript:radioCheck('2');javascript:rowOnClick(this,'2276217')" onkeyup="javascript:HandleAbmKey();" ondblclick="javascript:IdClickValue('2276217');FireEvent('Modificar');" border="0" width="100%" cellpadding="0" cellspacing="0">
-                                                <tbody>
-                                                    <tr class="campos">
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">Re-Inscripción IGB Inhibición Normal o Rectifativa</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="8" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
-                                                        <td width="1%" height="22"></td>
-                                                        <td width="42%">Acredita Re-Inscripción IGB Inhibición Normal o Rectifativa</td>
-                                                        <td width="1%"></td>
-                                                        <td width="5%" align="center">
-                                                            <input id="radio1" type="radio" value="9" name="Cedula">
-                                                        </td>
-                                                        <td width="1%"></td>
+                                                        <td width="37%">
+                                                            <select class="formobj">
+                                                                <option value="0">--Seleccionar--</option>
+                                                                <option value="1">En Desarrollo</option>
+                                                            </select></td>
+                                                        <td width="5%"></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -401,7 +307,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="TablaEncabezadoTitulos" width="40%" height="22" align="center">
-                                                &nbsp;&nbsp;CÉDULA DIGITALIZADA
+                                                &nbsp;&nbsp;C&#201;DULA DIGITALIZADA
                                             </td>
                                             <td width="60%" align="right">
                                             </td>
@@ -416,44 +322,58 @@
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table11">
                                                         <tr class="campos">
                                                             <td width="100%" height="30" align="center">
-                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12">
+                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" id="cedulaBasica">
                                                                     <tr>
                                                                         <td width="1%" height="35"></td>
                                                                         <td width="37%">
                                                                             <table>
                                                                                 <tr class="camposDestacados">
-                                                                                    <td width="100%">(CÉDULA SELECIONADA)</td>
+                                                                                    <td width="100%">MOVIMIENTO POR SELECCIONAR</td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="15%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
+                                                                                    <!--td>Estado: SENTENCIA 1ª FAVORABLE</td-->
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="15%">
                                                                             <table>
                                                                                 <tr class="campos">
-                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
+                                                                                    <!--td>Etapa: SENTENCIA 1RA INSTANCIA</td-->
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
+                                                                        <td width="9%">
                                                                             
                                                                         </td>
-                                                                        <td align="right" width="8%">
-                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar">
+                                                                        <td align="right" width="11%">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew btnSelect" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Completar" hidden>
                                                                         </td>
-                                                                        <td align="right" width="8%">
-                                                                            <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula">
+                                                                        <td align="right" width="11%">
+                                                                            <input name="agregar" style="width:100px" class="buttonNew btnSelect" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="" value="Cambiar Cédula" hidden>
                                                                         </td>
                                                                         <td width="1%"></td>
                                                                     </tr>
 
                                                                 </table>
+                                                                <table class="tablaAbmPar Generico" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12" hidden>
+                                                                    <tr>
+                                                                        <td width="1%" height="35"></td>
+                                                                        <td width="43%">
+                                                                            <input size="50" Type="File" class="formobj" Id="ArchivoCedula" Name="ArchivoCedula" maxlength="200">
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                        <td width="25%" class="Campos" id="fechaHora"></td>
+                                                                        <td width="1%"></td>
+                                                                        <td width="20%" class="campos"></td>
+                                                                        <td width="15%"></td>
+                                                                        <td width="1%"></td>
+                                                                    </tr>
 
+                                                                </table>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -561,6 +481,60 @@
         </div>
 
     </form>
+    <script language=javascript>
+        
+    var input = document.getElementById("Cedulas");
+    function tipoCedula() {
+        //Cargo los campos
+        var opciones = ["Sentencia 1era. Favorable", "Sentencia 1era. Desfavorable","Sentencia 2da. Favorable","Sentencia 2da. Desfavorable","Liquidación","Embargo", "Traba IGB Inhibición","Traba IGB Acredita Inhibición Inscripta", "Re-Inscripción IGB Inhibición","Acredita Re-Inscripción IGB Inhibición"];
+		var selectOpt= '<option value="0">--Seleccionar--</option>';
+		for (i=0, e=1; i < opciones.length; i++) {
+			selectOpt += '<option value="'+ e + '">' + opciones[i] +' Normal</option>';
+            e++
+            selectOpt += '<option value="'+ e + '">' + opciones[i] +' Rectificada</option>';
+            e++
+		}
+        selectOpt += '<option value="1000">Genérico</option>';
+		input.innerHTML = selectOpt;	
+    } 
+    window.onload = tipoCedula();
+    input.addEventListener('change', updateValue);
+
+    function updateValue() {
+        var Generico = document.getElementsByClassName('Generico');
+        var Botones = document.getElementsByClassName('btnSelect');
+        var Cedula = document.getElementById('cedulaBasica');
+        
+        if(input.value==1000){
+            for (var i = 0; i < Generico.length; i ++) {
+                Generico[i].removeAttribute("hidden")
+            }
+            
+            Cedula.setAttribute("hidden","true")
+        }
+        else{
+            for (var i = 0; i < Generico.length; i ++) {
+                Generico[i].removeAttribute("hidden") 
+                Generico[i].setAttribute("hidden","true")
+            }
+            Cedula.removeAttribute("hidden")
+        }
+        if (input.value==0){
+            for (var i = 0; i < Botones.length; i ++) {
+                Botones[i].setAttribute("hidden","true")
+            }
+        }
+        else{
+            for (var i = 0; i < Botones.length; i ++) {
+                Botones[i].removeAttribute("hidden")
+            }
+        }
+
+    }
+
+    
+
+    </script>
 </body>
 </html>
 
