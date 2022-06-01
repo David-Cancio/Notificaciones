@@ -358,7 +358,7 @@
                                                                     </tr>
 
                                                                 </table>
-                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12 cedulaFile" hidden>
+                                                                <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="cedulaFile" hidden>
                                                                     <tr>
                                                                         <td width="1%" height="35"></td>
                                                                         <td width="43%">
@@ -404,34 +404,31 @@
                                                     <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table11">
                                                         <tr class="campos">
                                                             <td width="100%" height="30" align="center">
+                                                            <table id="TablaEscritos">
                                                                 <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table13">
-                                                                    <tr>
+                                                                    <tr id="Escrito0">
                                                                         <td width="1%" height="35"></td>
                                                                         <td width="43%">
                                                                             <table>
                                                                                 <tr class="camposDestacados">
                                                                                     <td width="100%">
-                                                                                        <img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">
-                                                                                        CONSTANCIA IGB
+                                                                                        Aun no hay Escritos Cargados
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
                                                                         <td width="1%"></td>
-                                                                        <td width="25%" class="Campos">29/8/2016 10:49</td>
+                                                                        <td width="25%" class="Campos"></td>
                                                                         <td width="1%"></td>
                                                                         <td width="20%" class="campos">
-                                                                           
                                                                         </td>
                                                                         <td width="15%">
-                                                                            <a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1">
-                                                                                <img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar
-                                                                            </a>
+                                         
                                                                         </td>
-                                                                  
+
                                                                         <td width="1%"></td>
                                                                     </tr>
-                                                                </table>
+                                                                </table>                                                            
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -449,7 +446,7 @@
                                 <td width="1%"></td>
 
                                 <td align="right" height="25" width="49%">
-                                    <input name="agregar" style="width:100px" class="buttonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();return false;" value="Agregar Escrito">
+                                    <a style="display: block; width:100px; height=20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:agregarFila();" accesskey="A"><u>A</u>gregar Escritos</a>
                                 </td>
 
                                 <td width="1%"></td>
@@ -569,10 +566,36 @@
             }
         }
 
-        
 
         function Completar() {
             alert("Actualmente en Desarrollo, \n Se Abre un Pop Up para modificar los Datos de la Cedula")
+        }
+
+        var i = 0
+        var visible = 0
+        function agregarFila() {
+            let date = new Date();
+            document.getElementById("TablaEscritos").insertRow(-1).innerHTML = '<tr id="Escrito' + i + '"><td width="1%" height="35"></td><td width="43%"><input size="50" Type="File" class="formobj" Id="ArchivoEscrito'+ i+'" Name="ArchivoEscrito'+ i+'" maxlength="200"></td><td width="1%"></td><td width="25%" class="Campos">'+ date.toLocaleDateString() + ' ' + date.toLocaleTimeString() + '</td><td width="1%"></td><td width="20%" class="campos"></td><td width="15%"><a onclick="javascript:eliminarFila('+i+');return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
+            i++
+            visible ++
+            sinFilas()
+        }
+
+        function sinFilas() {
+            var table = document.getElementById("Escrito0");
+            if (visible==0){
+                table.hidden=false
+            }
+            else{
+                table.hidden=true
+            }
+        }
+
+        function eliminarFila(i) {
+            var table = document.getElementById("TablaEscritos");
+            table.rows[i].hidden=true;
+            visible --
+            sinFilas()
         }
     </script>
 </body>
