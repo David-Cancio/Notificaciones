@@ -453,31 +453,13 @@
                                                                         <td width="45%">
                                                                             <table>
                                                                                 <tr class="camposDestacados">
-                                                                                    <td width="100%"><img style="width: 6%;" src="../images/pdf.png" border="0" align="middle">SENTENCIA JUDICIAL EXTRAÍDA DE PJN</td>
+                                                                                    <td width="100%">
+                                                                                        <img style="width: 6%; cursor: pointer;" src="../images/pdf.png" border="0" align="middle" onclick="javascript:Completar();">SENTENCIA JUDICIAL EXTRAÍDA DE PJN
+                                                                                    </td>
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
-                                                                        <td width="15%">
-                                                                            <table>
-                                                                                <tr class="campos">
-                                                                                    <td>Estado: SENTENCIA 1ª FAVORABLE</td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                        <td width="15%">
-                                                                            <table>
-                                                                                <tr class="campos">
-                                                                                    <td>Etapa: SENTENCIA 1RA INSTANCIA</td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                        <td width="15%">
-                                                                            <table>
-                                                                                <tr class="campos">
-                                                                                    <td>Souto, Silvia Manuela</td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
+                                                                       
                                                                         <td width="1%"></td>
                                                                     </tr>
 
@@ -533,9 +515,7 @@
                                                                                     <img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar
                                                                                 </a>
                                                                             </td>
-                                                                            <td width="20%" class="campos">
-                                                                                Souto, Silvia Manuela
-                                                                            </td>
+                                                     
                                                                             <td width="1%"></td>
                                                                         </tr>
                                                                     </table>
@@ -688,7 +668,7 @@
         var visible = 0
         function agregarFila() {
             let date = new Date();
-            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr id="Escrito"><td width="1%" height="35"></td><td width="43%"><input size="50" Type="File" class="formobj" Id="ArchivoEscrito'+ i+'" Name="ArchivoEscrito'+ i+'" maxlength="200"></td><td width="1%"></td><td width="25%" class="Campos">'+ date.toLocaleDateString() + ' ' + date.toLocaleTimeString() + '</td><td width="1%"></td><td width="20%" class="campos"></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal; cursor: pointer;" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
+            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr id="Escrito"><td width="1%" height="35"></td><td width="43%"><input size="50" Type="File" class="formobj" Id="ArchivoEscrito'+ i+'" Name="ArchivoEscrito'+ i+'" maxlength="200"></td><td width="1%"></td><td width="25%" class="Campos">'+ date.toLocaleDateString() + ' ' + date.toLocaleTimeString() + '</td><td width="1%"></td></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal; cursor: pointer;" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
             i++
             visible ++
             sinFilas()
