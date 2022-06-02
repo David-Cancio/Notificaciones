@@ -76,8 +76,25 @@
             }
         }
         
-        function CargarCedula() {
-            alert("Actualmente en Desarrollo, \n Se Abre un explorador de archivos para Selecionar la Cedula Correspondiente")
+        function CargarCedula(a) {
+            var basica = document.getElementById("cedulaBasica")
+            var file = document.getElementById("cedulaFile")
+            FechaHora()
+            if (a == 0) {
+                basica.removeAttribute("hidden")
+                file.setAttribute("hidden", "true")
+            } else {
+                file.removeAttribute("hidden")
+                basica.setAttribute("hidden", "true")
+            }
+        }
+
+        function FechaHora() {
+            var campos = document.getElementsByClassName("fechaHora")
+            let date = new Date();
+            for (var i = 0; i < campos.length; i++) {
+                campos[i].textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+            }
         }
 
         function Completar() {
@@ -436,7 +453,7 @@
                                                         <table class="tablaAbmPar" cellSpacing="0" cellPadding="0" width="100%" border="0" ID="Table11">
                                                             <tr class="campos">
                                                                 <td width="100%" height="30" align="center">
-                                                                    <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table12">
+                                                                    <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="cedulaBasica">
                                                                         <tr>
                                                                             <td width="1%" height="35"></td>
                                                                             <td width="37%">
@@ -446,34 +463,39 @@
                                                                                     </tr>
                                                                                 </table>
                                                                             </td>
-                                                                            <td width="15%">
-                                                                                <table>
-                                                                                    <tr class="campos">
-                                                                                        <!--td>Estado: SENTENCIA 1ª FAVORABLE</td-->
-                                                                                    </tr>
-                                                                                </table>
+                                                                            <td width="1%"></td>
+                                                                            <td width="16%" class="Campos fechaHora"></td>
+                                                                            <td width="1%"></td>
+                                                                            <td align="right" width="15%">
+                                                                                <a style="display: block; width:100px; height:20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:Completar();">Completar</a>
+
                                                                             </td>
-                                                                            <td width="15%">
-                                                                                <table>
-                                                                                    <tr class="campos">
-                                                                                        <!--td>Etapa: SENTENCIA 1RA INSTANCIA</td-->
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                            <td width="7%">
-                                                                            
-                                                                            </td>
-                                                                            <td align="right" width="12%">
-                                                                                <a style="display: block; width:100px; height=20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:Completar();">Completar</a>
-                                                                            </td>
-                                                                            <td align="right" width="12%">
+                                                                            <td width="1%"></td>
+                                                                            <td align="right" width="15%">
                                                                                 <a style="display: block; width:100px; height=20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:CargarCedula();">Cambiar Cedula</a>
                                                                             </td>
                                                                             <td width="1%"></td>
                                                                         </tr>
 
                                                                     </table>
+                                                                    <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="cedulaFile" hidden>
+                                                                    <tr>
+                                                                        <td width="1%" height="35"></td>
+                                                                        <td width="43%">
+                                                                            <input size="50" Type="File" class="formobj" Id="ArchivoCedula" Name="ArchivoCedula" maxlength="200">
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                        <td width="17%" class="Campos fechaHora"></td>
+                                                                        <td width="1%"></td>
+                                                                        <td align="right" width="15%">
+                                                                        </td>
+                                                                        <td align="right" width="15%">
+                                                                            <a style="display: block; width:100px; height:20px; color: rgb(0, 0, 0); cursor: default;" class="ButtonNew" onMouseOver="this.style.color='#308D02'; this.style.cursor='pointer';" onMouseOut="this.style.color='#000000'; this.style.cursor='default';" onclick="javascript:CargarCedula(0);">C&#233;dula Basica</a>
+                                                                        </td>
+                                                                        <td width="1%"></td>
+                                                                    </tr>
 
+                                                                </table>
                                                                 </td>
                                                             </tr>
                                                         </table>
