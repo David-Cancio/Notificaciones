@@ -27,40 +27,7 @@
 
     <script type="text/javascript" src="../scripts/menu/JSCookMenu.js"></script>
     <script type="text/javascript" src="../scripts/menu/theme.js"></script>
-    <script language=javascript>
-        function agregarFila() {
-            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%;" src="../images/pdf.png" border="0" align="middle">CONSTANCIA IGB</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="20%" class="campos">Souto, Silvia Manuela</td><td width="1%"></td></tr></table>';
-        }
-        function Agregar() {
-            alert("Notificación Generada")
-        } function Cancelar() {
-            alert("Notificación Cancelada")
-        }
-        function eliminarFila() {
-            var table = document.getElementById("Table13");
-            var rowCount = table.rows.length;
-            console.log(rowCount);
 
-            if (rowCount <= 1)
-                alert('No se puede eliminar el encabezado');
-            else
-                table.deleteRow(rowCount - 1);
-        }
-        function radioCheck(num) {
-            var id = 'radio' + (num)
-            document.getElementById(id).checked = true
-        }
-
-        function BOTON() {
-            console.log("entre al boton")
-            setTimeout(alertaSwal(), 2000);
-        }
-        function alertaSwal(evt) {
-            swal("Grabado Exitoso", "", "success");
-
-        }
-
-    </script>
 
     <table class="menuBar" border="0" cellpadding="0" cellspacing="0" width="100%" id="TMenu">
         <tr>
@@ -495,7 +462,7 @@
                                                             <td width="100%" height="30" align="center">
                                                                 <table id="tablaAdjuntos">
                                                                     <table class="tablaAbmPar" border="0" cellSpacing="0" cellPadding="0" width="100%" ID="Table13">
-                                                                        <tr id="Escrito1000">
+                                                                        <tr id="Escrito0" style="display: none;">
                                                                             <td width="1%" height="35"></td>
                                                                             <td width="43%">
                                                                                 <table>
@@ -519,7 +486,7 @@
                                                                             <td width="1%"></td>
                                                                         </tr>
                                                                     </table>
-                                                                </table>                                                            
+                                                                                                                          
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -574,83 +541,11 @@
         <table border="0"><tr><td height="3px"></td></tr></table>
     </form>
 
-    <script language=javascript>    
-        var input = document.getElementById("Cedulas");
-        function tipoCedula() {
-            //Cargo los campos
-            var opciones = ["Sentencia 1era. Favorable", "Sentencia 1era. Desfavorable","Sentencia 2da. Favorable","Sentencia 2da. Desfavorable","Liquidación","Embargo", "Traba IGB Inhibición","Traba IGB Acredita Inhibición Inscripta", "Re-Inscripción IGB Inhibición","Acredita Re-Inscripción IGB Inhibición"];
-		    var selectOpt= '<option value="0">--Seleccionar--</option>';
-		    for (i=0, e=1; i < opciones.length; i++) {
-			    selectOpt += '<option value="'+ e + '">' + opciones[i] +' Normal</option>';
-                e++
-                selectOpt += '<option value="'+ e + '">' + opciones[i] +' Rectificada</option>';
-                e++
-		    }
-            selectOpt += '<option value="1000">Genérico</option>';
-		    input.innerHTML = selectOpt;	
-        } 
-        window.onload = tipoCedula();
-        input.addEventListener('change', updateValue);
+    <script language=javascript>
 
-        function updateValue() {
-            var Generico = document.getElementsByClassName('Generico');
-            var Botones = document.getElementsByClassName('btnSelect');
-            var Cedula = document.getElementById('cedulaBasica');
-            var Nombre = document.getElementById('nombreCedula');
         
-            if(input.value==1000){
-                for (var i = 0; i < Generico.length; i ++) {
-                    Generico[i].removeAttribute("hidden")
-                }
-            
-                Cedula.setAttribute("hidden", "true")
-                FechaHora();
-            }
-            else{
-                for (var i = 0; i < Generico.length; i ++) {
-                    Generico[i].removeAttribute("hidden") 
-                    Generico[i].setAttribute("hidden","true")
-                }
-                Cedula.removeAttribute("hidden")
-                if (input.value == 0) {
-                    for (var i = 0; i < Botones.length; i++) {
-                        Botones[i].setAttribute("hidden", "true")
-                    }
-                    Nombre.textContent = "C\u00C9DULA BASICA: TIPO DE NOTIFICACI\u00D3N POR SELECCIONAR"
-                }
-                else {
-                    for (var i = 0; i < Botones.length; i++) {
-                        Botones[i].removeAttribute("hidden")
-                    }
-                }
-                if ((input.value > 0) && (input.value < 9)) {
-                    Nombre.textContent = "C\u00C9DULA BASICA: SENTENCIA JUDICIAL EXTRA\u00CDDA DE PJN"
-                }
-                if ((input.value == 9) || (input.value == 10)) {
-                    Nombre.textContent = "C\u00C9DULA BASICA: ESCRITO PRACTICA LIQUIDACI\u00D3N PRESENTADO JUDICIALMENTE"
-                }
-                if ((input.value == 11) || (input.value == 12)) {
-                    Nombre.textContent = "C\u00C9DULA BASICA: CONSTANCIA EMBARGO SOJ"
-                }
-                if ((input.value > 12) && (input.value < 999)) {
-                    Nombre.textContent = "C\u00C9DULA BASICA: CONSTANCIA DE IGB"
-                }
-                CargarCedula(0)
-            }
-        }
 
-        function CargarCedula(a) {
-            var basica = document.getElementById("cedulaBasica")
-            var file = document.getElementById("cedulaFile")
-            FechaHora()
-            if (a == 0) {
-                basica.removeAttribute("hidden")
-                file.setAttribute("hidden", "true")
-            } else {
-                file.removeAttribute("hidden")
-                basica.setAttribute("hidden", "true")
-            }
-        }
+
 
         function FechaHora() {
             var campos = document.getElementsByClassName("fechaHora")
@@ -665,14 +560,22 @@
             alert("Actualmente en Desarrollo, \n Se Abre un Pop Up para modificar los Datos de la Cedula")
         }
 
-        var i = 0
+        var n = 0;
         var visible = 0
         function agregarFila() {
             let date = new Date();
-            document.getElementById("Table13").insertRow(-1).innerHTML = '<tr id="Escrito"><td width="1%" height="35"></td><td width="43%"><input size="50" Type="File" class="formobj" Id="ArchivoEscrito'+ i+'" Name="ArchivoEscrito'+ i+'" maxlength="200"></td><td width="1%"></td><td width="25%" class="Campos">'+ date.toLocaleDateString() + ' ' + date.toLocaleTimeString() + '</td><td width="1%"></td></td><td width="15%"><a onclick="javascript:eliminarFila();return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal; cursor: pointer;" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
-            i++
+            document.getElementById("tablaAdjuntos").insertRow(-1).innerHTML = '<tr id="Escrito' + n + '"><td width="1%" height="35"></td><td width="43%"><input size="50" Type="File" class="formobj" Id="ArchivoEscrito'+ n+'" Name="ArchivoEscrito'+ n+'" maxlength="200"></td><td width="1%"></td><td width="25%" class="Campos">'+ date.toLocaleDateString() + ' ' + date.toLocaleTimeString() + '</td><td width="1%"></td></td><td width="15%"><a onclick="javascript:eliminarFila('+n+');return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
+            n++
             visible ++
             sinFilas()
+        }
+        function agregarFilaOriginal() {
+            console.log(n);
+            let date = new Date();
+            document.getElementById("tablaAdjuntos").insertRow(-1).innerHTML = '<tr id="Escrito'+n+'"><td width="1%" height="35"></td><td width="43%"><table><tr class="camposDestacados"><td width="100%"><img style="width: 7%; cursor: pointer" src="../images/pdf.png" border="0" align="middle" onclick="javascript:Completar();">CONSTANCIA IGB</td></tr></table></td><td width="1%"></td><td width="25%" class="Campos">29/8/2016 10:49</td><td width="1%"></td><td width="15%"><a onclick="javascript:eliminarFila('+n+');return false;" class="ContentLeftLinks" align="center" style="COLOR: black; font-size: 11px; font-weight: normal; cursor: pointer;" tabindex="-1"><img src="../images/menus/baja_16x16.gif" border="0" align="middle"> Eliminar</a></td><td width="1%"></td></tr>';
+            n++
+            visible ++
+            sinFilas();
         }
 
         function sinFilas() {
@@ -685,22 +588,19 @@
             }
         }
 
-        function eliminarFil(i) {
-            var table = document.getElementById("Table13");
-            table.rows[i].hidden=true;
+        function eliminarFila(n) {
+            console.log(n);
+            var table = document.getElementById("tablaAdjuntos");
+            table.rows[n].hidden=true;
             visible --
             sinFilas()
         }
-        function eliminarFila(){
-            var table = document.getElementById("Table13");
-            var rowCount = table.rows.length;
-            //console.log(rowCount);
-            
-            if(rowCount <= 1)
-                alert('No se puede eliminar el encabezado');
-            else
-                table.deleteRow(rowCount -1);
-        }
+
+        window.onload = agregarFilaOriginal();
+        window.onload = agregarFilaOriginal();
+
+
+
     </script>
 </body>
 </html>
